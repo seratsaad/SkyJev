@@ -148,6 +148,22 @@ program's maximum score:
 | gradient boosting on planner numbers (no LLM) | 0.72 % | 83.9 % |
 | logistic regression (no LLM) | 0.68 % | 84.1 % |
 
+**System 1 (AnyJev on Qwen3-1.7B) on the same question.** The heads were fit on 1,203 labelled
+candidates from 318 training states (LDA at layer 20 of 28). The language model is slow, so it
+was tested on 120 of the held-out states, with greedy and random scored on the same states:
+
+| Chooser | Mean regret | Within 0.5 % of best |
+|---|---|---|
+| random | 1.45 % | 58.3 % |
+| AnyJev L0 (zero labels) | 0.85 % | 77.5 % |
+| AnyJev L2, lowest expected regret | 0.77 % | 80.0 % |
+| AnyJev L2, highest P(best) | 0.64 % | 83.3 % |
+| greedy planner | 0.59 % | 84.2 % |
+
+The P(best) calibration error (ECE) is 0.10. On the per-state questions, the sky transparency head
+is right 99.2 % of the time, where always answering "photometric" would score 84.2 %. The dome
+head (closure within 30 min) scores 98.3 %, the same as always answering "no": it has no skill.
+
 **What this means**
 * The greedy planner already makes nearly every choice that can be predicted from what is
   observable. The remaining regret against hindsight comes from weather that has not happened yet.
