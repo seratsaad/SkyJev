@@ -1,0 +1,258 @@
+# Mock classical night on Keck I with LRIS, 2026-09-24 HST (near full Moon).
+# Science targets are fictitious but realistic; the flux standards are real.
+name: "Keck I / LRIS - mock bright-time transient night"
+telescope: keck1
+date: "2026-09-24"
+description: >
+  Classical LRIS night two days before full Moon: transient classification, a z~6 quasar,
+  a lensed quasar with a fixed slit PA, an eclipse window, an FRB host, and a ToO alert
+  that arrives in the second half. Oversubscribed on purpose: not everything fits.
+night_start: 12deg
+night_end: 12deg
+partial_credit: 0.3
+observer_notes: >
+  Dichroic D560, blue 600/4000 grism, red 400/8500 grating, 1.0" long slit, 1x1 binning.
+  Flux standard at the start and end of the night. ADC in the beam.
+targets:
+  - name: "BD+28 4211"
+    template: hot_star
+    kind: standard
+    ra: "21:51:11.02"
+    dec: "+28:51:50.4"
+    config: LRIS-B600
+    mag: 10.51
+    band: V
+    mag_system: Vega
+    sed: "bb:70000"
+    snr: 150
+    lam: 4500
+    priority: 2
+    t_exp: 30
+    twilight_ok: true
+    min_moon_sep: 15
+    notes: "Spectrophotometric standard (Oke 1990). Take at the start of the night, parallactic PA."
+
+  - name: "AT 2026dhx"
+    template: hot_star
+    sed: "bb:15000"
+    ra: "20:31:40.2"
+    dec: "+12:46:03"
+    config: LRIS-B600
+    mag: 20.8
+    band: g
+    snr: 10
+    lam: 4500
+    priority: 1
+    t_exp: 900
+    max_airmass: 1.8
+    window: ["2026-09-25T05:00:00Z", "2026-09-25T10:30:00Z"]
+    program: "U123"
+    pi: "Chen"
+    notes: "Fast blue transient, fading 0.3 mag/day. Classification spectrum needed tonight, before it sets."
+
+  - name: "WD J1946+2957"
+    template: white_dwarf
+    sed: "bb:12000"
+    ra: "19:46:22.5"
+    dec: "+29:57:08"
+    config: LRIS-B600
+    mag: 18.4
+    band: g
+    snr: 30
+    lam: 4500
+    priority: 1
+    t_exp: 300
+    window: ["2026-09-25T07:10:00Z", "2026-09-25T07:50:00Z"]
+    program: "U088"
+    pi: "Okafor"
+    notes: "Eclipsing double white dwarf: only exposures inside the eclipse window count (ephemeris +-2 min)."
+
+  - name: "FRB 20260812A host"
+    template: galaxy
+    sed: "bb:5500"
+    z: 0.241
+    ra: "21:13:05.2"
+    dec: "+03:44:10"
+    config: LRIS-R400
+    mag: 22.3
+    band: r
+    snr: 5
+    lam: 7000
+    priority: 2
+    t_exp: 1200
+    max_seeing: 1.1
+    program: "U201"
+    pi: "Ramos"
+    notes: "Host redshift from [OII]/Halpha; 5 per A in the continuum is enough."
+
+  - name: "SN 2026aer"
+    template: sn_ia
+    z: 0.04
+    ra: "00:42:17.3"
+    dec: "+31:07:44"
+    config: LRIS-R400
+    mag: 19.1
+    band: r
+    snr: 25
+    lam: 6500
+    priority: 1
+    t_exp: 900
+    program: "U123"
+    pi: "Chen"
+    notes: "SN Ia at z=0.04, 5 days before peak. PI prefers it before 01:00 HST if possible."
+
+  - name: "QSO J0056+2513"
+    template: qso
+    z: 6.1
+    ra: "00:56:12.9"
+    dec: "+25:13:40"
+    config: LRIS-R400
+    mag: 21.2
+    band: z
+    snr: 8
+    snr_unit: per_pix
+    lam: 8600
+    priority: 2
+    t_exp: 1200
+    max_seeing: 0.9
+    program: "U310"
+    pi: "Nakamura"
+    notes: "z=6.1 quasar; Lyman-alpha break at 8630 A. Needs good seeing (slit loss)."
+
+  - name: "NGC 628 HII-17"
+    template: hii
+    z: 0.0022
+    ra: "01:36:41.7"
+    dec: "+15:47:01"
+    config: LRIS-R400
+    mag: 20.5
+    band: r
+    source_kind: extended
+    extent_arcsec: 2.0
+    snr: 15
+    lam: 6563
+    priority: 3
+    t_exp: 1200
+    program: "U415"
+    pi: "Adeyemi"
+    notes: "HII region abundances; extended, insensitive to seeing."
+
+  - name: "AT 2026cvn"
+    template: sn_ii
+    z: 0.03
+    ra: "23:25:10.6"
+    dec: "-01:02:30"
+    config: LRIS-B600
+    mag: 19.9
+    band: g
+    snr: 12
+    lam: 4500
+    priority: 2
+    t_exp: 900
+    min_moon_sep: 30
+    program: "U123"
+    pi: "Chen"
+    notes: "Transient 7 deg from the Moon tonight: blue side is sky-limited; skip unless nothing else."
+
+  - name: "Lensed QSO J0217-0513"
+    template: qso
+    z: 1.9
+    ra: "02:17:48.9"
+    dec: "-05:13:21"
+    config: LRIS-R400
+    mag: 20.1
+    band: i
+    snr: 20
+    lam: 7500
+    priority: 2
+    t_exp: 1200
+    pa: 45.0
+    max_airmass: 1.6
+    program: "U310"
+    pi: "Nakamura"
+    notes: "Both images on the slit at PA=45 (fixed). ADC in, so no differential refraction loss."
+
+  - name: "ZwCl 0024 BCG"
+    template: galaxy
+    sed: "bb:4700"
+    z: 0.39
+    ra: "00:26:35.7"
+    dec: "+17:09:43"
+    config: LRIS-R400
+    mag: 19.8
+    band: r
+    snr: 20
+    lam: 6500
+    priority: 3
+    t_exp: 1200
+    program: "U415"
+    pi: "Adeyemi"
+    notes: "Stellar kinematics of the BCG."
+
+  - name: "WISE J0410+1502"
+    template: brown_dwarf
+    sed: "bb:1500"
+    ra: "04:10:22.7"
+    dec: "+15:02:48"
+    config: LRIS-R400
+    mag: 21.8
+    band: i
+    snr: 10
+    lam: 8500
+    priority: 2
+    t_exp: 1200
+    max_seeing: 0.8
+    program: "U520"
+    pi: "Lindqvist"
+    notes: "Brown dwarf candidate; spectral typing from the red continuum. Rises late."
+
+  - name: "TDE 2026sep"
+    template: hot_star
+    sed: "bb:30000"
+    kind: too
+    ra: "03:22:10.1"
+    dec: "+19:36:52"
+    config: LRIS-B600
+    mag: 19.6
+    band: g
+    snr: 20
+    lam: 4500
+    priority: 1
+    t_exp: 900
+    appears_at: "2026-09-25T11:40:00Z"
+    program: "ToO-7"
+    pi: "Chen"
+    notes: "Target-of-opportunity: candidate tidal disruption event from a survey alert."
+
+  - name: "2MASS J0309+4952"
+    template: m_dwarf
+    sed: "bb:3200"
+    kind: backup
+    ra: "03:09:47.1"
+    dec: "+49:52:10"
+    config: LRIS-R400
+    mag: 14.6
+    band: r
+    snr: 80
+    lam: 7500
+    priority: 4
+    t_exp: 300
+    program: "backup"
+    notes: "Bright M dwarf backup: fine through clouds and bad seeing."
+
+  - name: "G191-B2B"
+    template: white_dwarf
+    kind: standard
+    ra: "05:05:30.62"
+    dec: "+52:49:51.9"
+    config: LRIS-B600
+    mag: 11.78
+    band: V
+    mag_system: Vega
+    sed: "bb:60000"
+    snr: 150
+    lam: 4500
+    priority: 2
+    t_exp: 60
+    twilight_ok: true
+    notes: "Spectrophotometric standard for the end of the night."

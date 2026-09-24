@@ -1,0 +1,236 @@
+# Mock dark-time night on Magellan Clay with MIKE, 2026-10-10 (new Moon), Las Campanas.
+# CS 22892-052 and CS 31082-001 are real, well-studied r-process-enhanced stars (public
+# coordinates); every other target is fictitious but placed where such targets live.
+name: "Magellan Clay / MIKE - mock dark-time metal-poor star night"
+telescope: clay
+date: "2026-10-10"
+description: >
+  High-resolution abundances of metal-poor halo stars, r-process candidates and ultra-faint
+  dwarf galaxy members. Blue arm for neutron-capture lines, red arm for the fainter stars.
+  A new r-process candidate arrives from a survey alert mid-night.
+night_start: 12deg
+night_end: 12deg
+partial_credit: 0.3
+observer_notes: >
+  MIKE 1.0" x 5" slit, 2x2 binning, slow readout. Afternoon: bias, milky flats, quartz flats,
+  ThAr arcs. ThAr after every science target. Telluric B star at the start.
+targets:
+  - name: "Telluric B star T1"
+    kind: standard
+    template: hot_star
+    ra: "23:30:15.0"
+    dec: "-30:45:00"
+    config: MIKE-RED
+    mag: 5.5
+    band: V
+    mag_system: Vega
+    sed: "bb:14000"
+    snr: 200
+    snr_unit: per_pix
+    lam: 6500
+    priority: 3
+    t_exp: 20
+    twilight_ok: true
+    notes: "Rapidly rotating B star for telluric correction."
+
+  - name: "CS 22892-052"
+    template: galaxy
+    sed: "bb:4700"
+    ra: "22:17:01.66"
+    dec: "-16:39:27.1"
+    config: MIKE-BLUE
+    mag: 13.2
+    band: V
+    mag_system: Vega
+    snr: 60
+    snr_unit: per_pix
+    lam: 4500
+    priority: 1
+    t_exp: 1800
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Benchmark r-process-enhanced giant; Eu II 4129 and 4205 need S/N>=60 in the blue."
+
+  - name: "CS 31082-001"
+    template: galaxy
+    sed: "bb:4900"
+    ra: "01:29:31.14"
+    dec: "-16:00:45.5"
+    config: MIKE-BLUE
+    mag: 11.32
+    band: V
+    mag_system: Vega
+    snr: 100
+    snr_unit: per_pix
+    lam: 4500
+    priority: 1
+    t_exp: 1200
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Actinide-boost star; Th II 4019 and U II 3860 need high blue S/N."
+
+  - name: "RPE J2319-3346"
+    template: galaxy
+    sed: "bb:4800"
+    ra: "23:19:44.2"
+    dec: "-33:46:12"
+    config: MIKE-BLUE
+    mag: 14.1
+    band: V
+    mag_system: Vega
+    snr: 40
+    snr_unit: per_pix
+    lam: 4500
+    priority: 1
+    t_exp: 1800
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Survey r-process candidate: confirm [Eu/Fe] from Eu II 4129."
+
+  - name: "CEMP C-88"
+    template: galaxy
+    sed: "bb:4600"
+    ra: "23:58:44.0"
+    dec: "-40:12:30"
+    config: MIKE-BLUE
+    mag: 13.8
+    band: V
+    mag_system: Vega
+    snr: 50
+    snr_unit: per_pix
+    lam: 4500
+    priority: 2
+    t_exp: 1800
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Carbon-enhanced metal-poor star; CH G band and Ba II 4554."
+
+  - name: "Sgr stream giant S-12"
+    template: galaxy
+    sed: "bb:4500"
+    ra: "21:45:12.0"
+    dec: "-24:18:40"
+    config: MIKE-RED
+    mag: 15.2
+    band: V
+    mag_system: Vega
+    snr: 25
+    snr_unit: per_pix
+    lam: 6500
+    priority: 2
+    t_exp: 1800
+    max_seeing: 1.1
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Radial velocity and alpha elements; sets early in the night."
+
+  - name: "Tuc II member T-4"
+    template: galaxy
+    sed: "bb:4700"
+    ra: "22:52:16.1"
+    dec: "-58:34:08"
+    config: MIKE-RED
+    mag: 17.4
+    band: V
+    mag_system: Vega
+    snr: 15
+    snr_unit: per_pix
+    lam: 6500
+    priority: 2
+    t_exp: 2700
+    max_seeing: 0.8
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Ultra-faint dwarf member; only worth doing in good seeing (slit losses at 1.0\")."
+
+  - name: "Ret II member R-7"
+    template: galaxy
+    sed: "bb:4700"
+    ra: "03:35:42.1"
+    dec: "-54:02:57"
+    config: MIKE-RED
+    mag: 16.8
+    band: V
+    mag_system: Vega
+    snr: 20
+    snr_unit: per_pix
+    lam: 6500
+    priority: 2
+    t_exp: 2700
+    max_seeing: 0.9
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Reticulum II r-process galaxy member; rises in the second half."
+
+  - name: "MP dwarf MPD-0412"
+    template: galaxy
+    sed: "bb:5900"
+    ra: "04:12:55.3"
+    dec: "-31:10:07"
+    config: MIKE-BLUE
+    mag: 12.9
+    band: V
+    mag_system: Vega
+    snr: 80
+    snr_unit: per_pix
+    lam: 4500
+    priority: 3
+    t_exp: 1200
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "Metal-poor turn-off star; Li 6708 and Be not accessible, Sr/Ba in the blue."
+
+  - name: "LMC giant L-221"
+    template: galaxy
+    sed: "bb:4300"
+    ra: "05:23:34.0"
+    dec: "-69:45:22"
+    config: MIKE-RED
+    mag: 16.5
+    band: V
+    mag_system: Vega
+    snr: 30
+    snr_unit: per_pix
+    lam: 6500
+    priority: 3
+    t_exp: 2700
+    program: "CN-2026B-12"
+    pi: "Ting"
+    notes: "LMC bar red giant; circumpolar-ish at LCO, observable late."
+
+  - name: "RPE J0302-4102"
+    kind: too
+    template: galaxy
+    sed: "bb:4800"
+    ra: "03:02:11.4"
+    dec: "-41:02:44"
+    config: MIKE-BLUE
+    mag: 13.5
+    band: V
+    mag_system: Vega
+    snr: 50
+    snr_unit: per_pix
+    lam: 4500
+    priority: 1
+    t_exp: 1800
+    appears_at: "2026-10-11T04:00:00Z"
+    program: "ToO-3"
+    pi: "Ting"
+    notes: "New r-process candidate from a survey alert (arrives ~01:00 CLT)."
+
+  - name: "Bright giant backup B-1"
+    kind: backup
+    template: galaxy
+    sed: "bb:4500"
+    ra: "04:40:18.0"
+    dec: "-25:10:30"
+    config: MIKE-RED
+    mag: 9.6
+    band: V
+    mag_system: Vega
+    snr: 150
+    snr_unit: per_pix
+    lam: 6500
+    priority: 4
+    t_exp: 300
+    notes: "Backup for clouds or bad seeing."

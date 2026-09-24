@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>obsassist console</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- ================================================================ status bar -->
+<header id="statusbar">
+  <div class="sb-grp sb-ident">
+    <div class="sb-line1"><span id="sb-tel">—</span> <span class="sep">/</span> <span id="sb-inst">—</span> <span class="sep" id="sb-sitesep">·</span> <span id="sb-site" class="dim">—</span></div>
+    <div class="sb-line2" id="sb-program" title="">—</div>
+  </div>
+  <div class="sb-grp sb-clock">
+    <div class="sb-line1"><span class="k">UT</span> <span id="sb-ut" class="big mono">--:--:--</span> <span id="sb-date" class="dim mono"></span></div>
+    <div class="sb-line2"><span class="k">LT</span> <span id="sb-lt" class="mono">--:--:--</span> <span class="k">LST</span> <span id="sb-lst" class="mono">--:--:--</span></div>
+  </div>
+  <div class="sb-grp">
+    <div class="sb-line1"><span class="k">Sun</span> <span id="sb-sun" class="mono">—</span></div>
+    <div class="sb-line2"><span id="sb-twi" class="twi">—</span></div>
+  </div>
+  <div class="sb-grp">
+    <div class="sb-line1"><span class="k">Moon</span> <span id="sb-moon" class="mono">—</span></div>
+    <div class="sb-line2"><span class="k">illum</span> <span id="sb-moonill" class="mono">—</span></div>
+  </div>
+  <div class="sb-grp">
+    <div class="sb-line1"><span id="sb-dome" class="pill">DOME ?</span></div>
+    <div class="sb-line2 dim" id="sb-domewhy"></div>
+  </div>
+  <div class="sb-grp">
+    <div class="sb-line1"><span class="k">Night left</span> <span id="sb-left" class="mono">—</span></div>
+    <div class="sb-line2"><span class="k">12°</span> <span id="sb-twi12" class="mono dim">—</span></div>
+  </div>
+  <div class="sb-grp">
+    <div class="sb-line1"><span class="k">Score</span> <span id="sb-score" class="mono big">—</span></div>
+    <div class="sb-line2"><span class="k">proj.</span> <span id="sb-proj" class="mono dim">—</span></div>
+  </div>
+  <div class="sb-grp sb-sim">
+    <div class="sb-line1">
+      <button id="sim-pause" class="btn" title="Pause / resume the simulated clock">❚❚ Pause</button>
+      <span id="sim-speeds" class="btn-group"></span>
+      <button id="sim-ff" class="btn" title="Jump to the next event (end of exposure / readout / slew) — command ff">⏭&#xFE0E; next<span class="lg-only"> event</span></button>
+    </div>
+    <div class="sb-line2">
+      <select id="prog-sel" title="Program"></select>
+      <label class="k">seed</label><input id="prog-seed" type="number" value="0" min="0" step="1" class="w4">
+      <button id="prog-reset" class="btn" title="Restart the night with this program and seed">Reset</button>
+    </div>
+  </div>
+  <div class="sb-grp sb-toggles">
+    <div class="sb-line1">
+      <label class="toggle" title="Allow the assistant app to send commands to the console"><input type="checkbox" id="tg-assist"> <span class="lg-only">Assistant control</span><span class="sm-only">Assistant</span></label>
+      <label class="toggle red" title="Red-on-black display for dark adaptation"><input type="checkbox" id="tg-night"> <span class="lg-only">Night mode</span><span class="sm-only">Night</span></label>
+    </div>
+    <div class="sb-line2">
+      <button id="btn-debrief" class="btn warn" title="Hindsight-optimal night vs what you did (reveals the truth)"><span class="lg-only">Debrief (reveals the truth)</span><span class="sm-only">Debrief…</span></button>
+      <span id="conn" class="conn off" title="WebSocket connection">●</span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ============================================================ column 1: instrument + log -->
+  <section id="col1" class="col">
+    <div class="win" id="win-inst">
+      <div class="win-title"><span id="inst-title">Instrument</span><span class="win-sub" id="inst-sub"></span></div>
+      <div class="tk" id="inst"></div>
+    </div>
+    <div class="win grow" id="win-log">
+      <div class="win-title"><span>Night log</span>
+        <span class="win-tools" id="log-filters"></span>
+      </div>
+      <div id="term">
+        <div id="term-out" tabindex="0"></div>
+        <form id="term-form" autocomplete="off">
+          <span class="prompt">obs&gt;</span><input id="term-in" type="text" spellcheck="false" placeholder="command (help, goto, start all, ff …)   ↑/↓ history,  / to focus">
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ column 2: TCS + guider + operator -->
+  <section id="col2" class="col">
+    <div class="win" id="win-tcs">
+      <div class="win-title"><span>TCS · telescope operator</span><span class="win-sub" id="tcs-busy"></span></div>
+      <div class="tk tcs">
+        <div class="tcs-head">
+          <span id="tcs-state" class="pill st-parked">PARKED</span>
+          <span id="tcs-name" class="tcs-name">—</span>
+        </div>
+        <div class="kv4">
+          <label>R.A.</label><span class="ro mono" id="tcs-ra">—</span>
+          <label>Dec.</label><span class="ro mono" id="tcs-dec">—</span>
+          <label>Alt</label><span class="ro mono" id="tcs-alt">—</span>
+          <label>Az</label><span class="ro mono" id="tcs-az">—</span>
+          <label>Airmass</label><span class="ro mono" id="tcs-x">—</span>
+          <label>HA</label><span class="ro mono" id="tcs-ha">—</span>
+          <label>Par.ang</label><span class="ro mono" id="tcs-par">—</span>
+          <label>Rotator</label><span class="ro mono" id="tcs-rot">—</span>
+          <label>Offset</label><span class="ro mono" id="tcs-off">—</span>
+          <label>Focus</label><span class="ro mono" id="tcs-focus" title="Temperature change since the last focus">—</span>
+        </div>
+        <fieldset class="tk-lf">
+          <legend>Request</legend>
+          <div class="row">
+            <select id="req-target" class="grow" title="Program targets"></select>
+            <button class="tk-btn" id="req-go" title="goto &lt;name&gt;">Request</button>
+          </div>
+          <div class="row">
+            <input id="req-ra" class="mono w8" placeholder="hh:mm:ss.s" title="R.A. (J2000)">
+            <input id="req-dec" class="mono w8" placeholder="±dd:mm:ss" title="Dec. (J2000)">
+            <input id="req-name" class="grow" placeholder="name" title="Name for manual coordinates">
+            <button class="tk-btn" id="req-manual" title="goto &lt;ra&gt; &lt;dec&gt; &lt;name&gt;">Request</button>
+          </div>
+          <div class="row">
+            <label>dRA</label><input id="off-ra" class="mono w4" value="0" title="arcsec E">
+            <label>dDec</label><input id="off-dec" class="mono w4" value="0" title="arcsec N">
+            <button class="tk-btn" id="off-go" title="offset dra ddec (arcsec)">Offset</button>
+            <span class="spacer"></span>
+            <button class="tk-btn" id="focus-go" title="Run a focus sequence">Focus</button>
+          </div>
+          <div class="row">
+            <label>Rot PA</label><input id="rot-pa" class="mono w4" placeholder="deg">
+            <button class="tk-btn" id="rot-set" title="rot &lt;pa&gt;">Set PA</button>
+            <button class="tk-btn" id="rot-par" title="rot parallactic">Parallactic</button>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="win" id="win-guider">
+      <div class="win-title"><span>Guider / slit viewer</span><span class="win-sub" id="guider-sub"></span></div>
+      <div class="guider-body">
+        <canvas id="guider-cv" width="360" height="200"></canvas>
+        <canvas id="guider-strip" width="360" height="70"></canvas>
+      </div>
+    </div>
+    <div class="win grow" id="win-to">
+      <div class="win-title"><span>Operator</span><span class="win-sub">TO messages</span></div>
+      <div id="to-chat"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ column 3: tabs -->
+  <section id="col3" class="col">
+    <div class="win grow" id="win-tabs">
+      <nav id="tabbar">
+        <button data-tab="weather" class="tab">Weather</button>
+        <button data-tab="sky" class="tab">Sky &amp; plan</button>
+        <button data-tab="targets" class="tab">Targets</button>
+        <button data-tab="etc" class="tab">ETC</button>
+        <button data-tab="data" class="tab">Data / quick-look</button>
+        <button data-tab="assistant" class="tab" title="What the assistant proposes and every exchange behind it (JSON in and out)">Assistant</button>
+        <span class="spacer"></span>
+        <button id="tab-wide" class="tab-tool" title="Widen this pane over the TCS column">⇔</button>
+      </nav>
+
+      <!-- weather -->
+      <div class="tabpane" id="tab-weather">
+        <div class="wx-wrap">
+          <div class="wx-charts">
+            <div class="wx-hdr"><span class="wx-site" id="wx-site">weather</span><span class="dim" id="wx-upd"></span></div>
+            <canvas id="wx-seeing" class="wx-cv" data-h="150"></canvas>
+            <canvas id="wx-temp" class="wx-cv" data-h="165"></canvas>
+            <canvas id="wx-wind" class="wx-cv" data-h="140"></canvas>
+            <canvas id="wx-press" class="wx-cv" data-h="95"></canvas>
+          </div>
+          <div class="wx-side">
+            <canvas id="wx-rose" width="220" height="220"></canvas>
+            <table class="wx-now" id="wx-now"></table>
+          </div>
+        </div>
+      </div>
+
+      <!-- sky & plan -->
+      <div class="tabpane" id="tab-sky">
+        <div class="sky-top">
+          <canvas id="sky-map" width="330" height="330"></canvas>
+          <div class="sky-side">
+            <div class="sky-legend" id="sky-legend"></div>
+            <div class="proj-box" id="proj-box"></div>
+          </div>
+        </div>
+        <canvas id="am-chart" class="am-cv"></canvas>
+        <div class="subhead">Airmass planner <span class="dim">(sorted by time of minimum airmass during the night)</span></div>
+        <table class="grid small" id="am-table"></table>
+      </div>
+
+      <!-- targets -->
+      <div class="tabpane" id="tab-targets">
+        <div class="tbl-scroll">
+          <table class="grid" id="tg-table"></table>
+        </div>
+        <div class="dim small pad">Click a row to select the target (fills the TCS request and the ETC). Hover for notes. Click a header to sort.</div>
+      </div>
+
+      <!-- ETC -->
+      <div class="tabpane" id="tab-etc">
+        <div class="etc-form tk">
+          <label>Target</label><select id="etc-target"></select>
+          <label>Seeing ″</label><input id="etc-seeing" class="mono w4" placeholder="now">
+          <label>Cloud mag</label><input id="etc-cloud" class="mono w4" placeholder="now">
+          <label>t_exp s</label><input id="etc-texp" class="mono w5" placeholder="prog">
+          <button class="tk-btn" id="etc-go">Compute</button>
+          <button class="tk-btn" id="etc-now" title="Use the current nowcast seeing and cloud">Now</button>
+          <button class="tk-btn" id="etc-apply" title="Set exposure time and loops on the arm that counts for this target">Apply to arm</button>
+        </div>
+        <div class="etc-body">
+          <div class="etc-res" id="etc-res"><div class="dim pad">Select a target.</div></div>
+          <canvas id="etc-plot" class="etc-cv"></canvas>
+        </div>
+      </div>
+
+      <!-- data / quick-look -->
+      <!-- the assistant watching this console: its proposal and trace -->
+      <div class="tabpane" id="tab-assistant">
+        <div class="dim small pad" id="as-none">No assistant connected. Start one with
+          <code>obsassist assistant --console http://127.0.0.1:8765</code>; it announces itself here.</div>
+        <iframe id="as-frame" title="Assistant trace" hidden></iframe>
+      </div>
+      <div class="tabpane" id="tab-data">
+        <div class="dq-list">
+          <div class="dq-listbar">
+            <span class="subhead">Frames tonight</span>
+            <label class="toggle"><input type="checkbox" id="dq-follow" checked> <span>follow newest</span></label>
+            <span class="dim" id="dq-count"></span>
+          </div>
+          <div class="tbl-scroll"><table class="grid small" id="dq-table"></table></div>
+        </div>
+        <div class="dq-view">
+          <div class="dq-overview tk">
+            <div class="dq-bar">
+              <b id="dq-title">Overview</b>
+              <label>Stretch</label>
+              <select id="dq-stretch"><option value="zscale">zscale</option><option value="asinh">asinh</option><option value="linear">linear 99.5%</option><option value="minmax">min/max</option><option value="manual">manual</option></select>
+              <label>Min</label><input id="dq-min" class="mono w6">
+              <label>Max</label><input id="dq-max" class="mono w6">
+              <label>Bin</label><select id="dq-bin"><option>1</option><option selected>2</option><option>4</option></select>
+            </div>
+            <div class="dq-cvwrap" id="dq-cvwrap">
+              <canvas id="dq-cv"></canvas>
+              <div class="dq-msg" id="dq-msg">No frame selected.</div>
+            </div>
+          </div>
+          <div class="dq-mag tk">
+            <div class="dq-bar"><b>Magnifier</b> <span class="dim">x4</span></div>
+            <canvas id="dq-magcv" width="160" height="160"></canvas>
+            <table class="magtab" id="dq-magtab"></table>
+          </div>
+        </div>
+        <div class="dq-bottom">
+          <div class="dq-spec">
+            <div class="dq-bar"><b>Quick-look spectrum</b> <span class="dim" id="dq-qlsum"></span></div>
+            <canvas id="dq-speccv" class="dq-speccv"></canvas>
+            <div id="dq-flags" class="dq-flags"></div>
+          </div>
+          <div class="dq-hdr">
+            <div class="dq-bar"><b>FITS header</b> <input id="dq-hdrfilter" class="w8" placeholder="filter"></div>
+            <pre id="dq-hdr" class="hdr">—</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================================================================ modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <div class="win-title"><span id="modal-title">Debrief</span><button class="modal-x" id="modal-x">✕</button></div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="/static/app.js"></script>
+<script src="/static/charts.js"></script>
+<script src="/static/gui.js"></script>
+<script src="/static/weather.js"></script>
+<script src="/static/plan.js"></script>
+<script src="/static/data.js"></script>
+<script>OA.start();</script>
+</body>
+</html>

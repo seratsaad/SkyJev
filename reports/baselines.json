@@ -1,0 +1,31 @@
+{
+ "n_train_rows": 56161,
+ "n_test_states": 3601,
+ "gbdt": {
+  "mean_regret_pct": 0.723,
+  "within_0.5pct": 0.839,
+  "n": 3601
+ },
+ "logreg": {
+  "mean_regret_pct": 0.68,
+  "within_0.5pct": 0.841,
+  "n": 3601
+ },
+ "greedy": {
+  "mean_regret_pct": 0.663,
+  "within_0.5pct": 0.847,
+  "n": 3601
+ },
+ "merit_top": {
+  "mean_regret_pct": 0.663,
+  "within_0.5pct": 0.847,
+  "n": 3601
+ },
+ "random_mean": {
+  "mean_regret_pct": 1.431
+ },
+ "oracle": {
+  "mean_regret_pct": 0.0,
+  "within_0.5pct": 1.0
+ }
+}
