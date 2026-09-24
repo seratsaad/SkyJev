@@ -2,6 +2,7 @@
 it reads."""
 
 import json
+import time
 
 import pytest
 
@@ -81,3 +82,23 @@ def test_observation_from_model_and_snapshot_render(obs):
     assert "Evaluate:" in txt and "Seeing" in txt
     o2 = from_model(obs.model, obs.state, Nowcast.from_history(obs.model, obs.t))
     assert {c["name"] for c in o2["candidates"]} == {c["name"] for c in o1["candidates"]}
+
+
+def test_system2_is_asked_only_when_there_is_a_choice(obs):
+    asked = []
+
+    class FakeSystem2:
+        enabled, trace = True, None
+
+        def deliberate(self, context, effort="low", tag=None):
+            asked.append(tag)
+            return {"action": "none", "target": "", "rationale": ""}
+
+    a = Assistant(LocalAdapter(obs), s1=None, s2=FakeSystem2(), settings=Settings(mode="autopilot"))
+    for _ in range(80):  # from dusk: in twilight only the telluric standard is observable
+        a.step()
+        obs.advance(3.0)
+    time.sleep(0.2)  # escalations run in a background thread
+    obs_entries = [e for e in a.trace.since(0, 100000) if e["kind"] == "observation"]
+    feasible = {e["decision"]: int(e["summary"].split()[0]) for e in obs_entries}  # "N feasible candidates"
+    assert 1 in feasible.values() and asked and all(feasible[d] > 1 for d in asked)

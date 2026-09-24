@@ -300,9 +300,10 @@ class Assistant:
         rec.commands = self.commands_for(pick["name"], pick["t_exp"], rec.n_exp)
         self._set(rec)
         self.trace.add("recommendation", None, rec, decision=rec.id, summary=f"{rec.source}: observe {rec.target}")
-        # a second opinion when System 1 disagrees with the planner (or cannot judge)
+        # a second opinion when System 1 disagrees with the planner (or cannot judge), if there is a choice
         if (
-            (disagree or level != "L2")
+            len(feas) > 1
+            and (disagree or level != "L2")
             and self.settings.escalate
             and self.s2 is not None
             and self.s2.enabled

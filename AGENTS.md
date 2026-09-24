@@ -10,7 +10,7 @@ and who makes it: [docs/decisions.md](docs/decisions.md).
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate && pip install -e ".[all]"
-python -m pytest -q                                    # 243 tests, a minute or two, no network, no GPU
+python -m pytest -q                                    # 244 tests, a minute or two, no network, no GPU
 ruff check obsassist tests && ruff format --check obsassist tests
 ```
 

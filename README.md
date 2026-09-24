@@ -30,7 +30,7 @@ Every observing decision, and who makes it, is listed in [docs/decisions.md](doc
 git clone https://github.com/tingyuansen/astrojev.git && cd astrojev
 python3 -m venv .venv && source .venv/bin/activate    # --system-site-packages reuses an installed torch
 pip install -e ".[all]"
-python -m pytest -q                                   # 243 tests, a minute or two, no network or GPU needed
+python -m pytest -q                                   # 244 tests, a minute or two, no network or GPU needed
 ```
 
 * Extras: `decide` (System 1: AnyJev at a pinned commit, torch, transformers), `llm` (System 2:
@@ -109,7 +109,7 @@ and the ETC's peak counts (its saturation model) to 0.86–1.07.
 
 **The ephemerides against astropy**: altitude and azimuth agree to within 0.01° at Maunakea and Las
 Campanas on four dates; LST, twilight times and the Moon also agree. The Krisciunas & Schaefer
-published table is reproduced to within 5 %. The 243 tests check the physics against these
+published table is reproduced to within 5 %. The 244 tests check the physics against these
 references and closed forms, and the console's timing and bookkeeping against what the planner
 assumes.
 
@@ -214,7 +214,7 @@ docs/            decisions.md, etc.md, research/ (sourced instrument and site nu
 heads/           fitted AnyJev heads (JSON)
 reports/         benchmark outputs
 scripts/        reproduce.sh (every number above), osc/ (Slurm job arrays)
-tests/           243 tests
+tests/           244 tests
 data/            generated: FITS frames, datasets, assistant traces (not versioned)
 AGENTS.md        how to work on the code: setup, rules, common tasks, open directions (CLAUDE.md points to it)
 ```
