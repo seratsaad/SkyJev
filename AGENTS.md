@@ -41,7 +41,7 @@ console's Assistant tab: it shows every exchange behind every decision as JSON.
    future; the truth is for the simulator, the oracle and the debrief.
 5. **Numbers come from sources.** Instrument, telescope and site values carry a source URL and a
    confidence in `docs/research/`. Do not change one without a source.
-6. **A physics fix comes with a regression test** (see `docs/audit.md` for the pattern).
+6. **Every fix comes with a test that fails without it**, in the test file of its subject.
 7. **README numbers come from `reports/`**, and `scripts/reproduce.sh` regenerates all of them. If
    you change the simulator, the ETC, the planner or the prompt, rerun it and update the README.
 8. **Generated files go under `data/` (not versioned), `heads/` or `reports/`** (`obsassist/paths.py`).

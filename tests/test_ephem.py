@@ -1,8 +1,5 @@
-"""Audit: ephemerides against astropy as the independent reference (both sites, four dates).
-
-Tolerances are the ones that matter for scheduling: 0.02 deg in alt/az above 10 deg elevation,
-1 min in twilight times, 0.15 deg for the Moon (interpolated from a 10-min grid).
-"""
+"""Ephemerides against astropy (both sites, four dates): alt/az, LST, twilight, Moon, parallactic
+angle, precession, refraction, airmass, local time and coordinate formatting."""
 
 import datetime as dt
 
@@ -25,14 +22,21 @@ from obsassist.astro.ephem import (
     precess_to_date,
     refraction_deg,
 )
-from obsassist.astro.sites import SITES
+from obsassist.astro.sites import SITES, TELESCOPES, extra_el_limit
 
 E._offline_astropy()
-pytestmark = pytest.mark.filterwarnings("ignore::astropy.utils.exceptions.AstropyWarning")
+
+
 DATES = ("2026-01-15", "2026-06-21", "2026-09-24", "2026-12-10")
+
+
 CASES = [(s, d) for s in ("maunakea", "lco") for d in DATES]
+
+
 # declinations -85..+85 incl. near-zenith (site latitude) and circumpolar ones for both hemispheres
 RAS = np.linspace(0.0, 348.0, 30)
+
+
 DECS = np.array([-85, -75, -60, -45, -29.0, -20, -10, 0, 10, 19.8, 30, 45, 60, 75, 85] * 2, dtype=float)
 
 
@@ -43,6 +47,11 @@ def _loc(site):
 @pytest.fixture(scope="module")
 def ephs():
     return {(s, d): NightEphem(SITES[s], d) for s, d in CASES}
+
+
+@pytest.fixture(scope="module")
+def eph():
+    return NightEphem(SITES["maunakea"], "2026-09-24")
 
 
 @pytest.mark.parametrize("site_key,date", CASES)
@@ -124,8 +133,7 @@ def test_night_grid_is_the_local_evening(ephs, site_key, date):
 
 
 def test_local_time_follows_chile_daylight_saving():
-    """Found in audit: `local()` used a fixed UTC-3 for Chile (its summer time); from April to
-    early September Chile is on UTC-4."""
+    """Local time at Las Campanas follows Chile's daylight saving: UTC-4 in winter, UTC-3 in summer."""
     e = NightEphem(SITES["lco"], "2026-06-21")
     assert e.local(0.0).utcoffset() == dt.timedelta(hours=-4)
     e2 = NightEphem(SITES["lco"], "2026-01-15")
@@ -255,7 +263,7 @@ def test_airmass_kasten_young():
 
 
 def test_sexagesimal_formatting_never_shows_60_seconds():
-    """Found in audit: fmt_ra/fmt_dec split before rounding and printed e.g. '01:59:60.00'."""
+    """Coordinates round before splitting into h/m/s, so 60 seconds never appears."""
     assert fmt_ra(15 * (1 + 59 / 60 + 59.9999 / 3600)) == "02:00:00.00"
     assert fmt_ra(359.99999999) == "00:00:00.00"
     assert fmt_dec(-(10 + 59 / 60 + 59.99 / 3600)) == "-11:00:00.0"
@@ -273,3 +281,57 @@ def test_sexagesimal_formatting_never_shows_60_seconds():
 def test_lst_function_matches_gmst_plus_longitude():
     jd = 2461308.5
     assert lst_deg(jd, -70.6917) == pytest.approx((E.gmst_deg(jd) - 70.6917) % 360)
+
+
+def test_fast_altaz_matches_astropy(eph):
+    import astropy.units as u
+    from astropy.coordinates import AltAz, EarthLocation, SkyCoord
+    from astropy.time import Time
+
+    ra, dec = [18.0, 330.0, 45.0, 120.0], [20.0, -5.0, 60.0, -30.0]
+    tg = eph.targets(ra, dec)
+    s = eph.site
+    loc = EarthLocation(lat=s.lat_deg * u.deg, lon=s.lon_deg * u.deg, height=s.elev_m * u.m)
+    idx = np.arange(0, eph.n, 45)
+    frame = AltAz(
+        obstime=Time(eph.jd[idx], format="jd"),
+        location=loc,
+        pressure=s.pressure_hpa * u.hPa,
+        temperature=s.temp_c * u.deg_C,
+        relative_humidity=0.2,
+        obswl=0.55 * u.um,
+    )
+    for k in range(len(ra)):
+        aa = SkyCoord(ra[k] * u.deg, dec[k] * u.deg).transform_to(frame)
+        up = aa.alt.deg > 15
+        if not up.any():
+            continue
+        assert np.abs(tg["alt"][k, idx][up] - aa.alt.deg[up]).max() < 0.02
+        daz = ((tg["az"][k, idx][up] - aa.az.deg[up] + 180) % 360) - 180
+        assert np.abs(daz * np.cos(np.radians(aa.alt.deg[up]))).max() < 0.02
+
+
+def test_twilight_order_and_night_length(eph):
+    tw = eph.twilight
+    assert tw.sunset < tw.civil_dusk < tw.nautical_dusk < tw.astro_dusk < tw.astro_dawn < tw.nautical_dawn < tw.sunrise
+    hours = (tw.nautical_dawn - tw.nautical_dusk) * 24
+    assert 9.5 < hours < 11.5  # late-September night at 20 deg N
+
+
+def test_airmass_limits():
+    assert airmass_from_alt(90.0) == pytest.approx(1.0, abs=1e-3)
+    assert airmass_from_alt(30.0) == pytest.approx(1.995, abs=0.01)
+    assert airmass_from_alt(10.0) > 5.0
+
+
+def test_keck_deck_limits_documented():
+    k1, k2 = TELESCOPES["keck1"], TELESCOPES["keck2"]
+    assert extra_el_limit(k1, 90.0) == pytest.approx(33.3)
+    assert extra_el_limit(k1, 200.0) == pytest.approx(18.0)
+    assert extra_el_limit(k2, 250.0) == pytest.approx(36.8)
+
+
+def test_coordinate_round_trip():
+    for ra, dec in [(0.0, 0.0), (123.456, -45.678), (359.9, 89.5)]:
+        assert parse_ra(fmt_ra(ra)) == pytest.approx(ra, abs=1e-3)
+        assert parse_dec(fmt_dec(dec)) == pytest.approx(dec, abs=1e-3)

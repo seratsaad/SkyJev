@@ -3,7 +3,7 @@
 Tiers, cheapest first:
   planner   - deterministic ETC + merit + projection. It chooses the next action: on held-out
               simulated nights it reaches 0.945 of the hindsight optimum and its single-step
-              choices have lower regret than any learned chooser we tried (README, Results);
+              choices have lower regret than the learned choosers tested (README, Results);
   System 1  - AnyJev over a local LLM: calibrated per-candidate expected regret and P(best), sky
               transparency and dome-closure risk. When it disagrees with the planner the call goes
               to System 2; it may override the planner only above `s1_override_tau` (off by default);

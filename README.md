@@ -109,9 +109,9 @@ and the ETC's peak counts (its saturation model) to 0.86–1.07.
 
 **The ephemerides against astropy**: altitude and azimuth agree to within 0.01° at Maunakea and Las
 Campanas on four dates; LST, twilight times and the Moon also agree. The Krisciunas & Schaefer
-published table is reproduced to within 5 %. An independent audit found 14 bugs in the physics and
-console code and fixed them, each with a regression test ([docs/audit.md](docs/audit.md)). The
-test suite has 243 tests.
+published table is reproduced to within 5 %. The 243 tests check the physics against these
+references and closed forms, and the console's timing and bookkeeping against what the planner
+assumes.
 
 **Whole nights**: 40 held-out nights (34 random programs at Keck I and Clay, and the two demo
 programs under three weather seeds each), as a fraction of the pilot oracle's score:
@@ -134,8 +134,8 @@ so it is loose.
 | 50 % | +2.3 % | 7.9 % |
 | 75 % | +0.6 % | 5.8 % |
 
-The forecast relaxes the seeing toward the night's own observed level. An earlier version relaxed
-it toward the site median, and that version projected poor nights about 35 % too high.
+The forecast relaxes the seeing toward the night's own observed level; relaxing it toward the site
+median instead projects poor nights about 35 % too high.
 
 **Next-target choice, one decision at a time**: 3,601 decision states from 150 held-out nights, 56k
 labelled training decisions from 600 nights. Regret is measured in hindsight, as a share of the
@@ -210,7 +210,7 @@ obsassist/
                  adapters/ (sim, manual, ktl helpers), server.py, static/
   learn/         dataset.py, fit.py, baselines.py, evaluate.py, tune.py
   paths.py       where generated files go (data/, heads/, reports/)
-docs/            decisions.md, etc.md, audit.md, research/ (sourced instrument and site numbers), img/
+docs/            decisions.md, etc.md, research/ (sourced instrument and site numbers), img/
 heads/           fitted AnyJev heads (JSON)
 reports/         benchmark outputs
 scripts/        reproduce.sh (every number above), osc/ (Slurm job arrays)

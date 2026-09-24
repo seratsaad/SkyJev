@@ -53,3 +53,5 @@ ignore = ["E731"]            # small named lambdas are fine
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# the ephemerides run offline: astropy falls back to mean polar motion for future dates (arcsec level)
+filterwarnings = ["ignore:Tried to get polar motions:astropy.utils.exceptions.AstropyWarning"]

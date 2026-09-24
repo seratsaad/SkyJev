@@ -1,5 +1,5 @@
-"""Audit: planner candidates, projection, the oracle's guarantees (pilot >= greedy, the upper
-bound is a bound), the batch CLI and the catalog exports."""
+"""The planner (candidates, exposure lengths, projection), the oracle's guarantees (pilot >= greedy,
+the upper bound is a bound), the batch CLI and the catalog exports."""
 
 import json
 
@@ -9,16 +9,12 @@ import pytest
 from obsassist.astro.ephem import NightEphem, parse_dec, parse_ra
 from obsassist.planning import oracle as O
 from obsassist.planning.catalogs import keck_starlist, magellan_catalog
+from obsassist.planning.oracle import pilot, upper_bound
 from obsassist.planning.planner import GreedyPolicy, Nowcast, _exp_len, candidates, project, run_policy
 from obsassist.programs.generator import generate_program
 from obsassist.sim.night import NightModel
 from obsassist.targets import builtin_programs, load_program
 from obsassist.weather import generate
-
-
-@pytest.fixture(scope="module")
-def lris():
-    return NightModel(load_program(builtin_programs()["keck1_lris_tonight"]), seed=6)
 
 
 def test_candidates_notes_and_feasibility(lris):
@@ -83,9 +79,8 @@ def test_pilot_between_greedy_and_upper_bound(tel, date, seed):
 
 
 def test_upper_bound_counts_twilight_time():
-    """Found in audit: the bound's capacity ignored the civil-twilight time in which twilight_ok
-    targets are observed, so a night whose dome is open only in twilight had bound 0 while the
-    standard was observed there for full credit."""
+    """The upper bound's capacity includes the civil twilight in which twilight_ok targets are
+    observed: a night open only in twilight still bounds what the standard can score."""
     p = load_program(builtin_programs()["keck1_lris_tonight"])
     e = NightEphem(p.site, p.date)
     w = generate(p.site, e.t_min, seed=1, clear=True, fog_event=False)
@@ -111,8 +106,7 @@ def test_batch_cli_runs(tmp_path, monkeypatch):
 
 
 def test_catalog_exports_parse_back():
-    """Found in audit: both exports cut the declination to 10 characters, dropping the tenths of
-    arcsec ('+28 51 50.' for +28:51:50.4)."""
+    """Both exports keep the full declination (tenths of an arcsecond) and parse back."""
     for key in ("keck1_lris_tonight", "clay_mike_darktime"):
         p = load_program(builtin_programs()[key])
         rows = [ln for ln in magellan_catalog(p).splitlines() if not ln.startswith("#")]
@@ -130,3 +124,36 @@ def test_catalog_exports_parse_back():
             assert abs((parse_ra(ra.replace(" ", ":")) - t.ra + 180) % 360 - 180) * 3600 < 0.08
             assert abs(parse_dec(dec.replace(" ", ":")) - t.dec) * 3600 < 0.051
             assert ln[40:46] == "2000.0"
+
+
+def test_policies_are_ordered(mike, lris):
+    for m in (mike, lris):
+        g, _ = run_policy(m, GreedyPolicy())
+        best = pilot(m)
+        assert best.score >= m.score(g) - 1e-9  # the pilot method never loses to greedy
+        assert best.score <= upper_bound(m) + 1e-6  # nothing beats the relaxation
+        assert best.score <= m.max_score()
+
+
+def test_projection_runs_from_any_state(mike):
+    s = mike.initial_state()
+    s.t = mike.t_start + 200
+    p = project(mike, s, Nowcast.from_history(mike, s.t))
+    assert p.score >= 0 and all(b.end > b.start for b in p.blocks)
+
+
+def test_candidates_explain_infeasibility(lris):
+    s = lris.initial_state()
+    s.t = lris.t_start + 30
+    c = {x.name: x for x in candidates(lris, s, Nowcast.from_history(lris, s.t))}
+    assert not c["AT 2026cvn"].feasible and c["AT 2026cvn"].note
+    assert not c["TDE 2026sep"].feasible and "announced" in c["TDE 2026sep"].note
+
+
+def test_catalog_exports():
+    p = load_program(builtin_programs()["clay_mike_darktime"])
+    cat = magellan_catalog(p)
+    rows = [ln for ln in cat.splitlines() if not ln.startswith("#")]
+    assert len(rows) == len(p.targets) and all(len(r.split()) == 16 for r in rows)
+    sl = keck_starlist(load_program(builtin_programs()["keck1_lris_tonight"]))
+    assert "2000.0" in sl and len(sl.splitlines()) == 15

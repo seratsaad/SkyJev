@@ -1,4 +1,5 @@
-"""The console engine (headless) and the assistant loop against it, without models or network."""
+"""The assistant loop against the headless console (no models, no network), and the observation
+it reads."""
 
 import json
 
@@ -8,7 +9,6 @@ from obsassist.assistant.adapters.sim import SimConsoleAdapter
 from obsassist.assistant.observation import from_model, from_snapshot, render
 from obsassist.assistant.policy import Assistant, Settings
 from obsassist.console.engine import Observatory
-from obsassist.planning.catalogs import keck_starlist, magellan_catalog
 from obsassist.planning.planner import Nowcast
 from obsassist.targets import builtin_programs, load_program
 
@@ -50,46 +50,6 @@ def obs(tmp_path):
     return Observatory(p, seed=5, data_root=str(tmp_path), write_frames=False, allow_assistant_control=True)
 
 
-def test_manual_observing_sequence(obs):
-    obs.advance(75)  # past 12-degree twilight
-    assert obs.dome_open
-    assert obs.command("goto CS 22892-052") == "ok"
-    obs.fast_forward()
-    obs.fast_forward()
-    assert obs.tcs.state == "guiding"
-    obs.command("all exptime 600")
-    obs.command("start all")
-    assert all(a.state == "exposing" for a in obs.arms.values())
-    obs.fast_forward()
-    obs.fast_forward()
-    i = obs.program.target_index("CS 22892-052")
-    assert obs.state.n_exp[i] == 1 and obs.state.snr2[i] > 0
-
-
-def test_abort_discards_and_stop_reads_out(obs):
-    obs.advance(75)
-    obs.command("goto CS 22892-052")
-    obs.fast_forward()
-    obs.fast_forward()
-    obs.command("blue exptime 1200")
-    obs.command("start blue")
-    obs.advance(5)
-    obs.command("abort blue")
-    obs.advance(1)
-    assert obs.arms["blue"].state == "idle" and obs.state.n_exp.sum() == 0
-    obs.command("start blue")
-    obs.advance(5)
-    obs.command("stop blue")
-    obs.advance(2)
-    assert obs.state.n_exp.sum() == 1 and 250 < obs.state.open_s.sum() < 330
-
-
-def test_assistant_commands_refused_without_control(tmp_path):
-    p = load_program(builtin_programs()["clay_mike_darktime"])
-    o = Observatory(p, seed=5, data_root=str(tmp_path), write_frames=False, allow_assistant_control=False)
-    assert o.command("goto CS 22892-052", source="assistant").startswith("refused")
-
-
 def test_autopilot_observes_a_night(obs):
     a = Assistant(LocalAdapter(obs), s1=None, s2=None, settings=Settings(mode="autopilot"))
     obs.advance(70)
@@ -121,12 +81,3 @@ def test_observation_from_model_and_snapshot_render(obs):
     assert "Evaluate:" in txt and "Seeing" in txt
     o2 = from_model(obs.model, obs.state, Nowcast.from_history(obs.model, obs.t))
     assert {c["name"] for c in o2["candidates"]} == {c["name"] for c in o1["candidates"]}
-
-
-def test_catalog_exports():
-    p = load_program(builtin_programs()["clay_mike_darktime"])
-    cat = magellan_catalog(p)
-    rows = [ln for ln in cat.splitlines() if not ln.startswith("#")]
-    assert len(rows) == len(p.targets) and all(len(r.split()) == 16 for r in rows)
-    sl = keck_starlist(load_program(builtin_programs()["keck1_lris_tonight"]))
-    assert "2000.0" in sl and len(sl.splitlines()) == 15

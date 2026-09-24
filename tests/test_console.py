@@ -1,5 +1,5 @@
-"""Audit: the console engine, headless (write_frames=False): command grammar, instrument timing,
-TO behaviour at limits and closures, ToO alerts, S/N bookkeeping and snapshots."""
+"""The console engine, headless: command grammar, instrument timing, the operator's behaviour at
+limits and closures, ToO alerts, S/N bookkeeping and snapshots."""
 
 import json
 
@@ -26,6 +26,12 @@ def _on_target(o, name="CS 22892-052"):
     return o.program.target_index(name)
 
 
+@pytest.fixture()
+def obs(tmp_path):
+    p = load_program(builtin_programs()["clay_mike_darktime"])
+    return Observatory(p, seed=5, data_root=str(tmp_path), write_frames=False, allow_assistant_control=True)
+
+
 def test_goto_grammar_and_limits(tmp_path):
     o = _obs(tmp_path)
     o.advance(75)
@@ -35,7 +41,7 @@ def test_goto_grammar_and_limits(tmp_path):
     # by (partial, unique) name
     assert o.command("goto 22892") == "ok" and o.tcs.name == "CS 22892-052" and o.tcs.target is not None
     assert o.command("goto nonexistent").startswith("error")
-    # by sexagesimal and by decimal-degree coordinates (the latter was parsed as a name before the audit)
+    # by sexagesimal and by decimal-degree coordinates
     assert o.command(f"goto {fmt_ra(lst)} {fmt_dec(-35.0)} field1") == "ok"
     assert o.tcs.target is None and o.tcs.name == "field1" and o.tcs.dec == pytest.approx(-35.0)
     assert o.command(f"goto {lst:.3f} -35.5 field2") == "ok"
@@ -78,8 +84,7 @@ def test_offsets_rotator_focus_and_arm_settings(tmp_path):
 
 
 def test_readout_time_matches_the_configuration(tmp_path):
-    """Found in audit: readout times were divided by sqrt(binned pixels) although the configs
-    quote them at their own (2x2) binning, so MIKE read out in 20 s instead of 41 s."""
+    """Readout times are the configuration's (quoted at its own binning), e.g. 41 s for MIKE blue 2x2."""
     o = _obs(tmp_path)
     b, r = o.arms["blue"], o.arms["red"]
     assert b.binning == (2, 2) and b.readout_s() == pytest.approx(b.cfg.readout_s) == pytest.approx(41.0)
@@ -237,7 +242,7 @@ def test_fast_forward_lands_on_each_event_in_turn(tmp_path):
 
 
 def test_snapshot_is_strict_json(tmp_path):
-    """Found in audit: projection blocks carried numpy bools ('done'), which json.dumps rejects."""
+    """The snapshot, projection blocks included, is plain JSON (no numpy types)."""
     o = _obs(tmp_path)
     for dt in (0.0, 80.0, 30.0):
         o.advance(dt)
@@ -247,8 +252,8 @@ def test_snapshot_is_strict_json(tmp_path):
 
 
 def test_dome_closing_during_acquisition_does_not_freeze_fast_forward(tmp_path):
-    """Found in audit: a closure (or the elevation limit) during an acquisition left a stale TCS
-    busy time behind, and every later fast-forward advanced only 0.6 s."""
+    """A closure (or the elevation limit) during an acquisition clears the TCS busy time, so
+    fast-forward keeps jumping to the next event."""
     o = _obs(tmp_path, seed=20)
     ((c0, _),) = o.model.weather.closed_intervals()
     o.advance(c0 - 1.5 - o.t)
@@ -288,8 +293,8 @@ def test_too_cannot_be_observed_before_its_alert(tmp_path):
 
 
 def test_console_readout_matches_what_the_planner_assumes(tmp_path):
-    """Found in audit: arms always started in 'Slow' readout, so an LDSS3 night read out in 166 s
-    per frame while the planner and the night model charge the configuration's 30 s (fast)."""
+    """Every arm starts in the readout speed whose time the planner and the night model charge
+    (LDSS3: fast, 30 s)."""
     from obsassist.console.engine import INSTRUMENT_ARMS
     from obsassist.instruments.base import all_configs
 
@@ -306,3 +311,43 @@ def test_console_readout_matches_what_the_planner_assumes(tmp_path):
             o = Observatory(load_program(prog), seed=1, data_root=str(tmp_path), write_frames=False)
             arm = next(a for a in o.arms.values() if a.cfg.key == key)
             assert arm.readout_s() == pytest.approx(cfg.readout_s), key
+
+
+def test_manual_observing_sequence(obs):
+    obs.advance(75)  # past 12-degree twilight
+    assert obs.dome_open
+    assert obs.command("goto CS 22892-052") == "ok"
+    obs.fast_forward()
+    obs.fast_forward()
+    assert obs.tcs.state == "guiding"
+    obs.command("all exptime 600")
+    obs.command("start all")
+    assert all(a.state == "exposing" for a in obs.arms.values())
+    obs.fast_forward()
+    obs.fast_forward()
+    i = obs.program.target_index("CS 22892-052")
+    assert obs.state.n_exp[i] == 1 and obs.state.snr2[i] > 0
+
+
+def test_abort_discards_and_stop_reads_out(obs):
+    obs.advance(75)
+    obs.command("goto CS 22892-052")
+    obs.fast_forward()
+    obs.fast_forward()
+    obs.command("blue exptime 1200")
+    obs.command("start blue")
+    obs.advance(5)
+    obs.command("abort blue")
+    obs.advance(1)
+    assert obs.arms["blue"].state == "idle" and obs.state.n_exp.sum() == 0
+    obs.command("start blue")
+    obs.advance(5)
+    obs.command("stop blue")
+    obs.advance(2)
+    assert obs.state.n_exp.sum() == 1 and 250 < obs.state.open_s.sum() < 330
+
+
+def test_assistant_commands_refused_without_control(tmp_path):
+    p = load_program(builtin_programs()["clay_mike_darktime"])
+    o = Observatory(p, seed=5, data_root=str(tmp_path), write_frames=False, allow_assistant_control=False)
+    assert o.command("goto CS 22892-052", source="assistant").startswith("refused")

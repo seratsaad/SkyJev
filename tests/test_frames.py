@@ -218,9 +218,8 @@ def _ql_peak_native(which, src, template, seeing, X, t, sky, seed=1):
 
 def test_peak_pixel_lead_case_mike_red_cool_star():
     """MIKE-RED, V=13.2 (Vega) 4700 K star, 'galaxy' template, 0.6" seeing, X=1.1, 1800 s: the
-    frame's trace peak must match the ETC's brightest pixel over 5200-9000 A and not saturate
-    (it used to be 1.5-1.8x higher: template colour applied on top of the SED, and the
-    console's total binning taken as extra binning)."""
+    frame's trace peak matches the ETC's brightest pixel over 5200-9000 A and does not saturate
+    (the template adds structure only, the continuum slope is the SED's; binning is counted once)."""
     cfg = get_config("MIKE-RED")
     src = Source(13.2, band="V", system="Vega", sed="bb:4700")
     etc = _etc_peak_max(cfg, CLAY, LAS_CAMPANAS, src, 0.6, 1.1, 1800.0, 21.0, 5200.0, 9000.0)
