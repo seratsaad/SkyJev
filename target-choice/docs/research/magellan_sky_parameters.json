@@ -1,0 +1,3469 @@
+{
+ "_meta": {
+  "title": {
+   "value": "Magellan/LCO observing-night simulator + ETC parameters",
+   "unit": "",
+   "source": "docs/research/magellan_sky_parameters.md",
+   "confidence": "documented",
+   "note": "Compiled 2026-09-24. confidence: documented = stated in source; approximate = read off plot, derived, or proxy site; estimate = not found, reasoned value."
+  }
+ },
+ "site": {
+  "name": {
+   "value": "Las Campanas Observatory (Magellan site = Cerro Manqui)",
+   "unit": "",
+   "source": "https://arxiv.org/abs/1101.2340",
+   "confidence": "documented",
+   "note": "Magellan telescopes sit on Co. Manqui; GMT is on Co. Las Campanas."
+  },
+  "latitude_deg": {
+   "value": -29.015,
+   "unit": "deg",
+   "source": "https://en.wikipedia.org/wiki/Magellan_Telescopes",
+   "confidence": "approximate",
+   "note": "Wikipedia 29d00m54s S. IRAF obs-db 'lco' entry (du Pont area) gives -29.00333; Angeloni+2023 LCO sky-camera site 29d00m41.98s S."
+  },
+  "longitude_deg": {
+   "value": -70.6917,
+   "unit": "deg (east positive)",
+   "source": "https://en.wikipedia.org/wiki/Magellan_Telescopes",
+   "confidence": "approximate",
+   "note": "Wikipedia 70d41m30s W. IRAF obs-db 'lco' gives 289.29833 E (= -70.70167)."
+  },
+  "elevation_m": {
+   "value": 2380,
+   "unit": "m",
+   "source": "https://en.wikipedia.org/wiki/Las_Campanas_Observatory",
+   "confidence": "approximate",
+   "note": "Wikipedia LCO 2380 m; lco.cl/CfA pages say ~2400 m for Magellan; IRAF 'lco' entry 2282 m is the du Pont level. Use 2380-2400 m."
+  },
+  "timezone": {
+   "value": "America/Santiago (Chile/Continental)",
+   "unit": "",
+   "source": "https://raw.githubusercontent.com/astropy/astropy-data/gh-pages/coordinates/sites.json",
+   "confidence": "documented",
+   "note": ""
+  },
+  "dark_sky_zenith": {
+   "V_LCO_measured": {
+    "value": 21.95,
+    "unit": "mag/arcsec^2 (Johnson V, Vega)",
+    "source": "https://arxiv.org/abs/2312.10542",
+    "confidence": "documented",
+    "note": "Sky-quality-camera zenith (ZA<5 deg) value at LCO on 2019-11-24, Angeloni+2023 Table 5 (Table 4 gives 22.02). ~11% of radiance is artificial light (ALAN)."
+   },
+   "UBVRI_adopted_CTIO_proxy": {
+    "value": {
+     "U": 22.12,
+     "B": 22.82,
+     "V": 21.79,
+     "R": 21.19,
+     "I": 19.85
+    },
+    "unit": "mag/arcsec^2 (Vega), zenith, dark time",
+    "source": "https://arxiv.org/abs/0705.1153",
+    "confidence": "approximate",
+    "note": "CTIO 1992-2006 means (Krisciunas+2007 Table 6); CTIO is ~100 km S of LCO with similar altitude/climate. Consistent with LCO V=21.95. sigma ~0.2 mag night-to-night."
+   },
+   "UBVRI_Paranal": {
+    "value": {
+     "U": 22.28,
+     "B": 22.64,
+     "V": 21.61,
+     "R": 20.87,
+     "I": 19.71
+    },
+    "unit": "mag/arcsec^2 (Vega), zenith-corrected, dark time",
+    "source": "https://arxiv.org/abs/astro-ph/0301115",
+    "confidence": "documented",
+    "note": "Patat 2003 Table 4 (solar max 2000-2001); rms 0.18-0.25 mag."
+   },
+   "UBVRI_Walker_CTIO_newmoon": {
+    "value": {
+     "U": 22.0,
+     "B": 22.7,
+     "V": 21.8,
+     "R": 20.9,
+     "I": 19.9
+    },
+    "unit": "mag/arcsec^2 (Vega)",
+    "source": "https://www.noao.edu/noao/noaonews/mar94/art20.html",
+    "confidence": "approximate",
+    "note": "Walker 1987 table (NOAO Newsletter Mar 1994). Page currently offline; values as indexed by search engine and also used as 'sky mag' column in LCO IMACS 2022 handout."
+   },
+   "ugrizy_AB_CerroPachon_proxy": {
+    "value": {
+     "u": 23.05,
+     "g": 22.25,
+     "r": 21.2,
+     "i": 20.46,
+     "z": 19.61,
+     "y": 18.6
+    },
+    "unit": "mag/arcsec^2 (AB), zenith, dark",
+    "source": "https://smtn-002.lsst.io/",
+    "confidence": "approximate",
+    "note": "Rubin/LSST SMTN-002 dark-sky model for Cerro Pachon; proxy for LCO."
+   },
+   "LCO_ETC_sky_model_newmoon": {
+    "value": {
+     "U": 22.09,
+     "B": 22.78,
+     "V": 21.83,
+     "R": 21.06,
+     "I": 19.74,
+     "Z": 18.76,
+     "Y": 17.61,
+     "J": 16.87,
+     "H": 14.42,
+     "K": 15.25
+    },
+    "unit": "mag/arcsec^2 (Vega), zenith",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/database/sky/readme_0.txt",
+    "confidence": "documented",
+    "note": "ESO SkyCalc v1.4.3 output used by the official LCO ETC (day 0: Sun-Moon sep 0 deg, solar flux 130 sfu). NIR broadband values from SkyCalc are unreliable for LCO; prefer FourStar values."
+   },
+   "IMACS_handout_sky_mags": {
+    "value": {
+     "B": 22.7,
+     "V": 21.8,
+     "R": 20.9,
+     "I": 19.0,
+     "g": 21.6,
+     "r": 20.7,
+     "i": 20.0,
+     "z": 18.4
+    },
+    "unit": "mag/arcsec^2",
+    "source": "https://www.lco.cl/wp-content/uploads/2022/09/IMACShandout2022.pdf",
+    "confidence": "documented",
+    "note": "Sky magnitudes tabulated next to IMACS imaging zero points (2022 handout). I=19.9 in manual."
+   },
+   "NIR_broadband_LCO_FourStar": {
+    "value": {
+     "J1_Y": 16.9,
+     "J": 15.6,
+     "H": 13.8,
+     "Ks": 13.1
+    },
+    "unit": "mag/arcsec^2 (Vega)",
+    "source": "http://instrumentation.obs.carnegiescience.edu/FourStar/calibration.html",
+    "confidence": "documented",
+    "note": "'Typical background' on Magellan/Baade FourStar page. AB-Vega offsets from same page: J1 +0.68, J +0.92, H +1.36, Ks +1.85."
+   },
+   "NIR_broadband_Paranal": {
+    "value": {
+     "J": 16.5,
+     "H": 14.4,
+     "Ks": 13.0
+    },
+    "unit": "mag/arcsec^2 (Vega)",
+    "source": "https://www.eso.org/sci/publications/messenger/archive/no.101-sep00/messenger-no101-2-8.pdf",
+    "confidence": "documented",
+    "note": "Cuby+2000 Messenger 101 Table 2, typical."
+   },
+   "NIR_broadband_other": {
+    "value": {
+     "CerroPachon": {
+      "J": 16.0,
+      "H": 13.9,
+      "Ks": 13.5
+     },
+     "MaunaKea_avg": {
+      "J": 15.6,
+      "H": 14.0,
+      "Ks": 13.4
+     }
+    },
+    "unit": "mag/arcsec^2 (Vega)",
+    "source": "https://arxiv.org/abs/0809.4988",
+    "confidence": "documented",
+    "note": "Sanchez+2008 compilation Table 4."
+   },
+   "NIR_H_duPont": {
+    "value": 14.7,
+    "unit": "mag/arcsec^2 (Vega), H",
+    "source": "https://arxiv.org/abs/astro-ph/0108171",
+    "confidence": "approximate",
+    "note": "Chen+2002 'typical H-band sky brightness of 14.7 magnitudes' at du Pont/LCO."
+   },
+   "NIR_interline_continuum_LCO": {
+    "value": {
+     "Y_AB": 20.05,
+     "J_AB": 19.55,
+     "H_AB": 18.8
+    },
+    "unit": "mag/arcsec^2 (AB)",
+    "source": "https://arxiv.org/abs/1207.0817",
+    "confidence": "documented",
+    "note": "Sullivan & Simcoe 2012 (FIRE, R=6000) dark-sky means; +0.15/-0.18 mag systematic. H 'continuum' mostly OH wings; zero-OH extrapolation H_AB~19.4. Moon raises Y,J continuum."
+   }
+  },
+  "extinction_mag_per_airmass": {
+   "u": {
+    "value": 0.511,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "Swope+SITe3, CSP-I 2004-2009, Krisciunas+2017 Table 4; +-0.057 (std of distribution)."
+   },
+   "B": {
+    "value": 0.242,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.022"
+   },
+   "g": {
+    "value": 0.191,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.021"
+   },
+   "V": {
+    "value": 0.144,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.018"
+   },
+   "r": {
+    "value": 0.103,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.019"
+   },
+   "i": {
+    "value": 0.059,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.020"
+   },
+   "Y": {
+    "value": 0.044,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "RetroCam/WIRC, +-0.012"
+   },
+   "J": {
+    "value": 0.076,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.015"
+   },
+   "H": {
+    "value": 0.041,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "+-0.013"
+   },
+   "U": {
+    "value": 0.46,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "estimate",
+    "note": "Not measured at LCO; ~0.9x u-band (Johnson U bluer cut-on is similar); typical Chilean value."
+   },
+   "R": {
+    "value": 0.09,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "estimate",
+    "note": "Interpolated between r (0.103) and i (0.059) at lambda_eff ~6400-6500 A."
+   },
+   "I": {
+    "value": 0.05,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "estimate",
+    "note": "Slightly below i (0.059) at lambda_eff ~8000 A. BiSON LCO Ic median 0.033 (arXiv:1707.06647) suggests clear-sky minimum."
+   },
+   "z": {
+    "value": 0.04,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "estimate",
+    "note": "Extrapolated from i (0.059) and Y (0.044)."
+   },
+   "Ks": {
+    "value": 0.07,
+    "unit": "mag/airmass",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "estimate",
+    "note": "Not in CSP table; typical dry-site Ks 0.05-0.08."
+   },
+   "stability_note": {
+    "value": "Nightly extinction terms very stable over 5 CSP campaigns",
+    "unit": "",
+    "source": "https://arxiv.org/abs/1709.05146",
+    "confidence": "documented",
+    "note": "Justifies fixed coefficients in a simulator; add ~0.02 mag rms nightly jitter."
+   }
+  },
+  "seeing_DIMM": {
+   "percentiles_Co_Manqui": {
+    "value": {
+     "p10": 0.42,
+     "p25": 0.51,
+     "p50": 0.62,
+     "p75": 0.79,
+     "p90": 0.99
+    },
+    "unit": "arcsec FWHM at 500 nm, zenith",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "GMT site-testing DIMM 2005-2008, Magellan site; Co. Las Campanas 0.42/0.50/0.63/0.79/0.99."
+   },
+   "median_Floyd2010": {
+    "value": 0.625,
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "876 DIMM/IQ pairs, 62 nights 2007-2008; mean 0.658 +- 0.205, skew 1.04."
+   },
+   "lognormal_sigma_ln": {
+    "value": 0.34,
+    "unit": "dex(e)",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "approximate",
+    "note": "Derived from GMT quartiles: sigma_ln = ln(0.79/0.51)/1.349 ~ 0.32-0.34; Floyd mean/std gives ~0.30."
+   },
+   "free_atmosphere_percentiles": {
+    "value": {
+     "p10": 0.24,
+     "p25": 0.32,
+     "p50": 0.45,
+     "p75": 0.63,
+     "p90": 0.85
+    },
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "MASS (above ~500 m)."
+   },
+   "ground_layer_Manqui_percentiles": {
+    "value": {
+     "p10": 0.18,
+     "p25": 0.27,
+     "p50": 0.37,
+     "p75": 0.5,
+     "p90": 0.67
+    },
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "~65% of seeing from ground layer in median conditions."
+   },
+   "seasonal": {
+    "value": "Summer/fall better; driven by free atmosphere",
+    "unit": "",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": ""
+   },
+   "outer_scale_L0": {
+    "value": 25,
+    "unit": "m",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "Average L0 inferred at Magellan; vK model with L0=25 m bounds the data."
+   }
+  },
+  "magellan_delivered_IQ": {
+   "median_science_images": {
+    "value": 0.575,
+    "unit": "arcsec FWHM at 500 nm, airmass 1",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "IMACS/LDSS3/MagIC frames (DIPSF); mean 0.585 +- 0.150. Guide cameras median 0.688."
+   },
+   "fit_vs_DIMM": {
+    "value": "FWHM_IQ = 0.53*FWHM_DIMM + 0.24",
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "Magellan sharper than DIMM 69% of time (98% when DIMM>=1\")."
+   },
+   "median_excluding_wind_gt_10ms": {
+    "value": 0.553,
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "DIMM median 0.594 in same subset."
+   },
+   "telescope_optics_psf": {
+    "value": {
+     "LDSS3_MagIC_ports": 0.17,
+     "IMACS": 0.3
+    },
+    "unit": "arcsec (Gaussian FWHM)",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "From Shack-Hartmann; add in quadrature."
+   },
+   "predicted_ideal_IQ_for_0.65_seeing": {
+    "value": {
+     "500nm": 0.52,
+     "1um": 0.41,
+     "2um": 0.29,
+     "5um": 0.26
+    },
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1005.0174",
+    "confidence": "documented",
+    "note": "L0=25 m von Karman."
+   }
+  },
+  "weather": {
+   "photometric_fraction": {
+    "value": 0.64,
+    "unit": "fraction of time",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "+-0.04; ~50% in austral winter, higher in summer."
+   },
+   "clear_plus_partly_clear_fraction": {
+    "value": 0.8,
+    "unit": "fraction",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "+-0.04; 'spectroscopic' 75-80%."
+   },
+   "useful_time_fraction_longterm": {
+    "value": 0.85,
+    "unit": "fraction",
+    "source": "https://giantmagellan.org/wp-content/uploads/2021/11/GMT-ID-01741-Site-Evaluation.pdf",
+    "confidence": "documented",
+    "note": "Average photometric 60-65%, ~85% of potential time useful (telescope logs)."
+   },
+   "wind_limit_close": {
+    "value": 15.6,
+    "unit": "m/s",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "'current operating limit for the Magellan telescopes is 15.6 m/s'. ~1% of useful time at Manqui above it."
+   },
+   "wind_percentiles_Manqui_clear": {
+    "value": {
+     "p10": 1.3,
+     "p25": 3.1,
+     "p50": 5.8,
+     "p75": 9.4,
+     "p90": 13.0,
+     "p95": 14.8,
+     "p97": 15.6,
+     "p99": 17.9
+    },
+    "unit": "m/s",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "Nighttime clear/partly clear."
+   },
+   "wind_direction": {
+    "value": {
+     "NE": 0.8,
+     "SW": 0.2
+    },
+    "unit": "fraction",
+    "source": "https://giantmagellan.org/wp-content/uploads/2021/11/GMT-ID-01741-Site-Evaluation.pdf",
+    "confidence": "documented",
+    "note": "Bimodal; SW stronger in summer and early night."
+   },
+   "humidity_median": {
+    "value": 35,
+    "unit": "% RH",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "Winter drier."
+   },
+   "humidity_percentiles_Manqui_usable": {
+    "value": {
+     "p10": 22,
+     "p25": 28,
+     "p50": 38,
+     "p75": 51,
+     "p90": 59
+    },
+    "unit": "% RH",
+    "source": "https://giantmagellan.org/wp-content/uploads/2021/11/GMT-ID-01741-Site-Evaluation.pdf",
+    "confidence": "documented",
+    "note": "During DIMM operation (usable conditions)."
+   },
+   "time_lost_to_humidity": {
+    "value": 0.01,
+    "unit": "fraction (upper limit)",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "<1%; most humidity closures <2 h."
+   },
+   "humidity_close_limit": {
+    "value": 90,
+    "unit": "% RH",
+    "source": "https://www.ls.eso.org/lasilla/Telescopes/2p2T/E2p2M/WFI/docs/Weather.html",
+    "confidence": "estimate",
+    "note": "Magellan limit NOT published. Proxy: ESO La Silla rule (RH>90% or T within 2 C of dew point, wind>20 m/s). Many sites use 80-85%; simulate 85-90%."
+   },
+   "dewpoint_margin_close": {
+    "value": 2.0,
+    "unit": "deg C (T - T_dew)",
+    "source": "https://www.ls.eso.org/lasilla/Telescopes/2p2T/E2p2M/WFI/docs/Weather.html",
+    "confidence": "estimate",
+    "note": "Proxy from ESO La Silla rule; not published for Magellan."
+   },
+   "reopen_rule": {
+    "value": 30,
+    "unit": "min below limits before reopening",
+    "source": "https://www.eso.org/sci/facilities/lasilla/telescopes/3p6/overview.html",
+    "confidence": "estimate",
+    "note": "Proxy: ESO 3.6m requires 30 min (2.2m: 45 min) below limits, esp. for humidity. Magellan rule not published."
+   },
+   "temperature_range": {
+    "value": {
+     "extreme_min": -5,
+     "extreme_max": 25,
+     "monthly_median_min": 7,
+     "monthly_median_max": 14
+    },
+    "unit": "deg C",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": ""
+   },
+   "PWV_percentiles_all": {
+    "value": {
+     "p10": 1.2,
+     "p25": 2.1,
+     "p50": 3.7,
+     "p75": 6.1,
+     "p90": 8.2
+    },
+    "unit": "mm",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": "Winter median 1.4 mm; summer 5.1 mm. Stable within a night."
+   }
+  }
+ },
+ "telescopes": {
+  "Baade": {
+   "aperture_m": {
+    "value": 6.5,
+    "unit": "m",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": "f/1.25 primary."
+   },
+   "central_obscuration_ratio": {
+    "value": 0.29,
+    "unit": "linear (D_obs/D)",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6050306/",
+    "confidence": "documented",
+    "note": "'0.29 central obscuration of Magellan' (Briguglio+2018)."
+   },
+   "effective_collecting_area": {
+    "value": 30.638,
+    "unit": "m^2",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/instruments",
+    "confidence": "documented",
+    "note": "ATEL=306383.8 cm^2 in every Magellan PARAM file of the official LCO ETC. Cross-check: pi/4*6.5^2*(1-0.29^2)=30.39 m^2."
+   },
+   "foci": {
+    "value": {
+     "Nasmyth": "f/11",
+     "Cassegrain": "f/15",
+     "auxiliary": "three f/11 aux ports on centre section"
+    },
+    "unit": "",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "mount": {
+    "value": "alt-azimuth, oil-bearing",
+    "unit": "",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "tracking_precision": {
+    "value": 0.02,
+    "unit": "arcsec (calm conditions)",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "blind_pointing_rms": {
+    "value": "a few",
+    "unit": "arcsec rms",
+    "source": "https://instrumentation.obs.carnegiescience.edu/imacs/pdf_files/spie_imacs.pdf",
+    "confidence": "approximate",
+    "note": "'Baade telescope sets to an rms accuracy of a few arcseconds' (Dressler, Sutin & Bigelow)."
+   },
+   "elevation_lower_limit": {
+    "value": 15,
+    "unit": "deg",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND in public docs (not on cited LCO page). Typical for 6.5-m alt-az; practical science limit usually airmass<=2 (el>=30 deg). Also avoid zenith keyhole (~>87 deg) for alt-az rotator speed."
+   },
+   "slew_rate_azimuth": {
+    "value": 2.0,
+    "unit": "deg/s",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND (not on cited LCO page). Typical of 6.5-8 m alt-az mounts."
+   },
+   "slew_rate_elevation": {
+    "value": 1.0,
+    "unit": "deg/s",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND (not on cited LCO page). Typical of 6.5-8 m alt-az mounts."
+   },
+   "slew_settle_time": {
+    "value": 30,
+    "unit": "s added to each slew",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND; typical settling plus dome catch-up. Dome rotation may dominate for large az moves."
+   },
+   "setup_guide_and_active_optics": {
+    "value": "a few",
+    "unit": "min",
+    "source": "https://instrumentation.obs.carnegiescience.edu/imacs/pdf_files/spie_imacs.pdf",
+    "confidence": "documented",
+    "note": "Guider + Shack-Hartmann setup 'will take a few minutes, limited by the time for the Shack-Hartman sensor to converge'. Simulate 3-5 min after slew."
+   },
+   "wind_close_limit": {
+    "value": 15.6,
+    "unit": "m/s",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": ""
+   },
+   "operations_window": {
+    "value": "TOs on duty sunset to dawn; twilight calibrations by TO/observer",
+    "unit": "",
+    "source": "https://www.lco.cl/observer-guidelines/",
+    "confidence": "documented",
+    "note": "Science typically between ~12 deg twilights for faint optical work; flats in civil/nautical twilight."
+   },
+   "science_twilight_convention": {
+    "value": -12,
+    "unit": "deg sun altitude",
+    "source": "https://www.lco.cl/observer-guidelines/",
+    "confidence": "estimate",
+    "note": "Not a written LCO rule; common practice (NIR and bright targets start at -10 to -12 deg, faint optical at -15 to -18 deg)."
+   },
+   "first_light": {
+    "value": "2000-09-15",
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Magellan_Telescopes",
+    "confidence": "documented",
+    "note": ""
+   },
+   "instruments": {
+    "value": [
+     "IMACS (f/11 Nasmyth)",
+     "FIRE (AUX1 port since Sept 2022)",
+     "FourStar",
+     "MagE"
+    ],
+    "unit": "",
+    "source": "https://www.lco.cl/?epkb_post_type_1=fire-updates",
+    "confidence": "approximate",
+    "note": "Instrument complement changes; check LCO schedule."
+   }
+  },
+  "Clay": {
+   "aperture_m": {
+    "value": 6.5,
+    "unit": "m",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": "f/1.25 primary."
+   },
+   "central_obscuration_ratio": {
+    "value": 0.29,
+    "unit": "linear (D_obs/D)",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6050306/",
+    "confidence": "documented",
+    "note": "'0.29 central obscuration of Magellan' (Briguglio+2018)."
+   },
+   "effective_collecting_area": {
+    "value": 30.638,
+    "unit": "m^2",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/instruments",
+    "confidence": "documented",
+    "note": "ATEL=306383.8 cm^2 in every Magellan PARAM file of the official LCO ETC. Cross-check: pi/4*6.5^2*(1-0.29^2)=30.39 m^2."
+   },
+   "foci": {
+    "value": {
+     "Nasmyth": "f/11",
+     "Cassegrain": "f/15",
+     "auxiliary": "three f/11 aux ports on centre section"
+    },
+    "unit": "",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "mount": {
+    "value": "alt-azimuth, oil-bearing",
+    "unit": "",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "tracking_precision": {
+    "value": 0.02,
+    "unit": "arcsec (calm conditions)",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "blind_pointing_rms": {
+    "value": "a few",
+    "unit": "arcsec rms",
+    "source": "https://instrumentation.obs.carnegiescience.edu/imacs/pdf_files/spie_imacs.pdf",
+    "confidence": "approximate",
+    "note": "'Baade telescope sets to an rms accuracy of a few arcseconds' (Dressler, Sutin & Bigelow)."
+   },
+   "elevation_lower_limit": {
+    "value": 15,
+    "unit": "deg",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND in public docs (not on cited LCO page). Typical for 6.5-m alt-az; practical science limit usually airmass<=2 (el>=30 deg). Also avoid zenith keyhole (~>87 deg) for alt-az rotator speed."
+   },
+   "slew_rate_azimuth": {
+    "value": 2.0,
+    "unit": "deg/s",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND (not on cited LCO page). Typical of 6.5-8 m alt-az mounts."
+   },
+   "slew_rate_elevation": {
+    "value": 1.0,
+    "unit": "deg/s",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND (not on cited LCO page). Typical of 6.5-8 m alt-az mounts."
+   },
+   "slew_settle_time": {
+    "value": 30,
+    "unit": "s added to each slew",
+    "source": "https://www.lco.cl/magellan-telescopes/",
+    "confidence": "estimate",
+    "note": "NOT FOUND; typical settling plus dome catch-up. Dome rotation may dominate for large az moves."
+   },
+   "setup_guide_and_active_optics": {
+    "value": "a few",
+    "unit": "min",
+    "source": "https://instrumentation.obs.carnegiescience.edu/imacs/pdf_files/spie_imacs.pdf",
+    "confidence": "documented",
+    "note": "Guider + Shack-Hartmann setup 'will take a few minutes, limited by the time for the Shack-Hartman sensor to converge'. Simulate 3-5 min after slew."
+   },
+   "wind_close_limit": {
+    "value": 15.6,
+    "unit": "m/s",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "documented",
+    "note": ""
+   },
+   "operations_window": {
+    "value": "TOs on duty sunset to dawn; twilight calibrations by TO/observer",
+    "unit": "",
+    "source": "https://www.lco.cl/observer-guidelines/",
+    "confidence": "documented",
+    "note": "Science typically between ~12 deg twilights for faint optical work; flats in civil/nautical twilight."
+   },
+   "science_twilight_convention": {
+    "value": -12,
+    "unit": "deg sun altitude",
+    "source": "https://www.lco.cl/observer-guidelines/",
+    "confidence": "estimate",
+    "note": "Not a written LCO rule; common practice (NIR and bright targets start at -10 to -12 deg, faint optical at -15 to -18 deg)."
+   },
+   "first_light": {
+    "value": "2002-09-07",
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Magellan_Telescopes",
+    "confidence": "documented",
+    "note": ""
+   },
+   "instruments": {
+    "value": [
+     "LDSS3-C (West Nasmyth)",
+     "MIKE (East Nasmyth, gravity invariant, does not rotate)",
+     "MagAO/MagAO-X",
+     "M2FS",
+     "PFS"
+    ],
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "approximate",
+    "note": "LDSS3 port from LDSS3 manual (27.5 EQU note)."
+   }
+  }
+ },
+ "instruments": {
+  "IMACS": {
+   "telescope": {
+    "value": "Baade (Magellan I)",
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "status_note": {
+    "value": "Mosaic3 chip 7 'not behaving nominally' (elevated noise, reduced gain) since 2026-08-05; Mosaic3 offline 2025-09-14 to 2025-10-05",
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/updates-2/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "f2_camera": {
+    "detector": {
+     "value": "Mosaic3: 8 x E2V deep-depletion 2Kx4K, 15 um, 8192x8192",
+     "unit": "",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": ""
+    },
+    "pixel_scale": {
+     "value": 0.2,
+     "unit": "arcsec/pix",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "central scale"
+    },
+    "field_of_view": {
+     "value": 27.4,
+     "unit": "arcmin diameter",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "R=12' unvignetted, R=15' 9% vignetted (2022 handout)."
+    },
+    "chip_gaps": {
+     "value": {
+      "short_sides_px": 72,
+      "long_sides_px": 91
+     },
+     "unit": "pix",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "8.0\" and 10.1\"."
+    },
+    "gain": {
+     "value": {
+      "FAST": [
+       1.56,
+       1.68
+      ],
+      "SLOW": [
+       0.55,
+       0.6
+      ]
+     },
+     "unit": "e-/ADU (per-chip range)",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Aug 2018. ETC PARAM uses 0.48 (slow)."
+    },
+    "read_noise": {
+     "value": {
+      "FAST": [
+       5.4,
+       6.8
+      ],
+      "SLOW": [
+       2.8,
+       3.3
+      ]
+     },
+     "unit": "e- (per-chip range)",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "FAST recommended. ETC PARAM uses 3.44 (slow)."
+    },
+    "readout_time": {
+     "value": {
+      "FAST_1x1": 82,
+      "FAST_2x2": 29,
+      "SLOW_1x1": 144,
+      "SLOW_2x2": 46
+     },
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Only FAST/SLOW since 2019-07-25. Measured f/2 2x2 Fast 31.4 s (Diamond-Lowe+2020), 1x1 fast 81 s (Bixel+2019)."
+    },
+    "QE": {
+     "value": {
+      "3500": 0.437,
+      "4000": 0.903,
+      "5000": 0.959,
+      "6500": 0.952,
+      "9000": 0.642,
+      "10000": 0.142
+     },
+     "unit": "fraction vs Angstrom",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Mosaic3."
+    },
+    "grisms": {
+     "value": [
+      {
+       "name": "Gri-150-10.8",
+       "order": 1,
+       "lam_c": 7200,
+       "range": [
+        5000,
+        9000
+       ],
+       "disp_A_pix": 2.63
+      },
+      {
+       "name": "Gri-200-15.0",
+       "order": 1,
+       "lam_c": 6600,
+       "range": [
+        5000,
+        9000
+       ],
+       "disp_A_pix": 2.037
+      },
+      {
+       "name": "Gri-300-17.5",
+       "order": 1,
+       "lam_c": 6700,
+       "range": [
+        3900,
+        8000
+       ],
+       "disp_A_pix": 1.341
+      },
+      {
+       "name": "Gri-300-26.7",
+       "order": 1,
+       "lam_c": 8000,
+       "range": [
+        5000,
+        9000
+       ],
+       "disp_A_pix": 1.25
+      },
+      {
+       "name": "Gri-400-21.2",
+       "order": 1,
+       "lam_c": 4730,
+       "range": [
+        3900,
+        8500
+       ],
+       "disp_A_pix": 0.9
+      }
+     ],
+     "unit": "Angstrom",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Handout gives 3900-5800 for the 400 grism. Names per Carnegie setup doc."
+    },
+    "resolution": {
+     "value": "6-10 A FWHM for 1.0\" slit; R=500-1200 at blaze",
+     "unit": "",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Cooper+2012: 200/15 R~750, 300/17.5 R~1100 at 7500 A. Estimate: 300/17.5 1.0\" slit = 5 px ~6.7 A, R~1000 at 6700 A; R scales ~1/slit."
+    },
+    "LSF_optics_FWHM_ETC": {
+     "value": {
+      "150": 4.0,
+      "200": 4.0,
+      "300-17": 2.6,
+      "300-26": 2.5
+     },
+     "unit": "Angstrom (infinitely narrow slit)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/instruments",
+     "confidence": "documented",
+     "note": "DLSF in ETC PARAM files."
+    },
+    "total_efficiency_Gri-300-17.5": {
+     "value": {
+      "4000": 0.072,
+      "4500": 0.152,
+      "5000": 0.225,
+      "5500": 0.235,
+      "6000": 0.228,
+      "6500": 0.224,
+      "7000": 0.205,
+      "7500": 0.172,
+      "8000": 0.14,
+      "8500": 0.109,
+      "9000": 0.083
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.238 at 5313 A."
+    },
+    "total_efficiency_Gri-300-26.7": {
+     "value": {
+      "5000": 0.047,
+      "5500": 0.11,
+      "6000": 0.161,
+      "6500": 0.198,
+      "7000": 0.223,
+      "7500": 0.222,
+      "8000": 0.198,
+      "8500": 0.164,
+      "9000": 0.135
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.228 at 7278 A."
+    },
+    "total_efficiency_Gri-200-15.0": {
+     "value": {
+      "4500": 0.053,
+      "5000": 0.128,
+      "5500": 0.187,
+      "6000": 0.228,
+      "6500": 0.251,
+      "7000": 0.259,
+      "7500": 0.241,
+      "8000": 0.206,
+      "8500": 0.168,
+      "9000": 0.135
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.259 at 6900 A."
+    },
+    "imaging_zeropoints_2022": {
+     "value": {
+      "B": 27.04,
+      "V": 27.21,
+      "R": 27.49,
+      "I": 26.95,
+      "g": 27.64,
+      "r": 27.67,
+      "i": 27.42,
+      "z": 26.85
+     },
+     "unit": "mag for 1 e-/s at airmass 1",
+     "source": "https://www.lco.cl/wp-content/uploads/2022/09/IMACShandout2022.pdf",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "f4_camera": {
+    "detector": {
+     "value": "Mosaic2: 8 x standard E2V 2Kx4K, 15 um",
+     "unit": "",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "2025-09 Mosaic2 was moved to f/2 temporarily; current f/4 detector status unclear."
+    },
+    "pixel_scale": {
+     "value": 0.111,
+     "unit": "arcsec/pix",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": ""
+    },
+    "field_of_view": {
+     "value": "15.4 x 15.4",
+     "unit": "arcmin",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": ""
+    },
+    "chip_gaps": {
+     "value": {
+      "short_sides_px": 57,
+      "long_sides_px": 92
+     },
+     "unit": "pix",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": ""
+    },
+    "gain": {
+     "value": {
+      "FAST": [
+       0.81,
+       0.86
+      ],
+      "SLOW": [
+       0.3,
+       0.32
+      ]
+     },
+     "unit": "e-/ADU",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "ETC PARAM uses 0.87."
+    },
+    "read_noise": {
+     "value": {
+      "FAST": [
+       3.2,
+       3.5
+      ],
+      "SLOW": [
+       2.3,
+       2.5
+      ]
+     },
+     "unit": "e-",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "ETC PARAM uses 3.80."
+    },
+    "readout_time": {
+     "value": {
+      "FAST_1x1": 81,
+      "FAST_2x2": 29,
+      "SLOW_1x1": 144,
+      "SLOW_2x2": 46
+     },
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "2016 software doc (pre-2019) listed Slow 145/50, Fast 100/40, Turbo 85/30 s (1x1/2x2)."
+    },
+    "QE": {
+     "value": {
+      "3500": 0.318,
+      "4000": 0.501,
+      "5000": 0.826,
+      "6500": 0.957,
+      "9000": 0.607,
+      "10000": 0.129
+     },
+     "unit": "fraction vs Angstrom",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Mosaic2."
+    },
+    "gratings": {
+     "value": [
+      {
+       "name": "Gra-150-3.4",
+       "order": 1,
+       "lam_c": 7550,
+       "range": [
+        3650,
+        9740
+       ],
+       "disp_A_pix": 1.453
+      },
+      {
+       "name": "Gra-300-4.3",
+       "order": 1,
+       "lam_c": 6650,
+       "range": [
+        3650,
+        9740
+       ],
+       "disp_A_pix": 0.743
+      },
+      {
+       "name": "Gra-600-8.6",
+       "order": 1,
+       "lam_c": 5180,
+       "range": [
+        3650,
+        6750
+       ],
+       "disp_A_pix": 0.378
+      },
+      {
+       "name": "Gra-600-13.0",
+       "order": 1,
+       "lam_c": 8410,
+       "range": [
+        6480,
+        10000
+       ],
+       "disp_A_pix": 0.387
+      },
+      {
+       "name": "Gra-1200-17.45",
+       "order": 1,
+       "lam_c": 4440,
+       "range": [
+        3650,
+        5230
+       ],
+       "disp_A_pix": 0.194
+      },
+      {
+       "name": "Gra-1200-26.7",
+       "order": 1,
+       "lam_c": 7200,
+       "range": [
+        6500,
+        8000
+       ],
+       "disp_A_pix": 0.188
+      },
+      {
+       "name": "Gra-1200-26.7",
+       "order": 2,
+       "lam_c": 4040,
+       "range": [
+        3650,
+        4350
+       ],
+       "disp_A_pix": 0.096
+      },
+      {
+       "name": "Gra-1200-32.2",
+       "order": 1,
+       "lam_c": 8200,
+       "range": [
+        7500,
+        9000
+       ],
+       "disp_A_pix": 0.191
+      }
+     ],
+     "unit": "Angstrom",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Coverage per tilt; ETC default tilts: 300 at 6.0, 600-8 at 9.3, 600-13 at 14.0, 1200-17 at 19.0, 1200-27 at 27.0 or 33.5 deg."
+    },
+    "resolution": {
+     "value": "1-12 A FWHM for 1.0\" slit; R=600-5000",
+     "unit": "",
+     "source": "https://iopscience.iop.org/article/10.1086/658908",
+     "confidence": "documented",
+     "note": "Measured: 300 l/mm 5.1 A (1.0\") / 6.7 A (1.3\") (Sun+2017); 600 l/mm 0.7\" 2.0 A (Melena+2008); 1200 l/mm 0.7\" R~11000 at 0.19 A/pix (Simon+2017); Dressler: 600 l/mm 0.8\" 2.75 A."
+    },
+    "LSF_optics_FWHM_ETC": {
+     "value": {
+      "150": 2.8,
+      "300": 1.4,
+      "600": 0.7,
+      "1200": 0.2
+     },
+     "unit": "Angstrom",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/instruments",
+     "confidence": "documented",
+     "note": "1200-17 uses 0.4, 1200-27/33.5 0.3."
+    },
+    "total_efficiency_Gra-300-4.3": {
+     "value": {
+      "4000": 0.059,
+      "4500": 0.13,
+      "5000": 0.187,
+      "5500": 0.208,
+      "6000": 0.208,
+      "6500": 0.193,
+      "7000": 0.168,
+      "7500": 0.134,
+      "8000": 0.105,
+      "8500": 0.087,
+      "9000": 0.063
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.211 at 5705 A (tilt 6.0)."
+    },
+    "total_efficiency_Gra-600-8.6": {
+     "value": {
+      "4000": 0.063,
+      "4500": 0.143,
+      "5000": 0.204,
+      "5500": 0.219,
+      "6000": 0.214
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.220 at 5433 A (tilt 9.3)."
+    },
+    "total_efficiency_Gra-600-13.0": {
+     "value": {
+      "6000": 0.184,
+      "6500": 0.208,
+      "7000": 0.208,
+      "7500": 0.19,
+      "8000": 0.164,
+      "8500": 0.137
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.211 at 6667 A (tilt 14.0)."
+    },
+    "total_efficiency_Gra-1200-17.45": {
+     "value": {
+      "4500": 0.109,
+      "5000": 0.174,
+      "5500": 0.181
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. tilt 19.0."
+    },
+    "total_efficiency_Gra-1200-26.7": {
+     "value": {
+      "6500": 0.204,
+      "7000": 0.203,
+      "7500": 0.189
+     },
+     "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+     "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+     "confidence": "approximate",
+     "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. tilt 27.0; Simon+2017 quote 20% peak telescope+spectrograph."
+    },
+    "imaging_zeropoints_2022": {
+     "value": {
+      "B": 26.98,
+      "V": 27.36,
+      "R": 27.67,
+      "I": 27.08,
+      "g": 27.65,
+      "r": 27.87,
+      "i": 27.58,
+      "z": 26.95
+     },
+     "unit": "mag for 1 e-/s at airmass 1",
+     "source": "https://www.lco.cl/wp-content/uploads/2022/09/IMACShandout2022.pdf",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "dark_current": {
+    "value": 0.001,
+    "unit": "e-/s/pix",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/instruments",
+    "confidence": "approximate",
+    "note": "Value assumed in LCO ETC PARAM files (=3.6 e-/hr); no measured value found in IMACS docs."
+   },
+   "full_well": {
+    "value": {
+     "f2_FAST": 105000,
+     "f2_SLOW": 38000,
+     "f4_FAST": 55000,
+     "f4_SLOW": 20000
+    },
+    "unit": "e- (digital saturation)",
+    "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+    "confidence": "estimate",
+    "note": "NOT FOUND. Estimate = 65535 ADU x gain (assumes 16-bit ADC); physical well of E2V 2Kx4K ~150-200 ke- would not be reached."
+   },
+   "min_exposure": {
+    "value": 2,
+    "unit": "s (must exceed)",
+    "source": "https://www.lco.cl/technical-documentation/updates-2/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "longslit_widths": {
+    "value": [
+     0.7,
+     1.0,
+     1.5,
+     2.0
+    ],
+    "unit": "arcsec",
+    "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+    "confidence": "approximate",
+    "note": "'long-slit slitmasks with widths ranging from 0.7\" to 2.0\" are kept on hand' - exact list not found; intermediate widths assumed. Centerfield slit-viewing slits 0.25/0.5/0.75/1.0/1.3\"."
+   },
+   "masks_in_cassette": {
+    "value": 6,
+    "unit": "masks",
+    "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "imaging_throughput": {
+    "value": [
+     0.3,
+     0.4
+    ],
+    "unit": "fraction incl. telescope, excl. atmosphere",
+    "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+    "confidence": "documented",
+    "note": "Degrades ~1%/month between realuminizations."
+   },
+   "spectroscopic_throughput": {
+    "value": {
+     "f2": [
+      0.25,
+      0.3
+     ],
+     "f4": [
+      0.15,
+      0.25
+     ]
+    },
+    "unit": "fraction peak total",
+    "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+    "confidence": "documented",
+    "note": "Dressler+2011: telescope feed ~60%; IMACS alone >50% (f/2), ~40% (f/4)."
+   },
+   "filters": {
+    "value": [
+     "Bessell B,V,R",
+     "CTIO I",
+     "Sloan u',g',r',i',z'",
+     "GG455",
+     "GG495",
+     "OG570",
+     "WB3600-5700",
+     "WB3800-7000",
+     "WB4800-7800",
+     "WB5600-9200",
+     "WB6300-9500",
+     "NB/MMTF, Halpha6563/40"
+    ],
+    "unit": "",
+    "source": "https://www.lco.cl/?epkb_post_type_1=imacs-filters",
+    "confidence": "documented",
+    "note": "New u' destroyed 2022-07-10."
+   },
+   "overheads": {
+    "grating_or_grism_exchange": {
+     "value": [
+      30,
+      60
+     ],
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": ""
+    },
+    "grating_tilt_change": {
+     "value": 30,
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Repeatable to +-2 px."
+    },
+    "filter_change": {
+     "value": 30,
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "estimate",
+     "note": "Not documented; 'All IMACS mechanical functions can be exercised simultaneously' so it overlaps disperser moves."
+    },
+    "mask_swap_cassette_reload": {
+     "value": 30,
+     "unit": "min",
+     "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+     "confidence": "documented",
+     "note": "Pre-arranged change of the loaded mask complement."
+    },
+    "multislit_mask_alignment": {
+     "value": [
+      5,
+      15
+     ],
+     "unit": "min per setup",
+     "source": "https://instrumentation.obs.carnegiescience.edu/imacs/pdf_files/spie_imacs.pdf",
+     "confidence": "documented",
+     "note": "Early design 10-15 min (Dressler SPIE); 5-10 min per set-up (Dressler+2006 SPIE abstract); 'typically 10 minutes or less' incl. slew (Dressler+2011). Iterative: field image ~10 s, mask image, offsets until negligible."
+    },
+    "longslit_acquisition": {
+     "value": [
+      5,
+      10
+     ],
+     "unit": "min",
+     "source": "https://www.lco.cl/lcoastronomers/~ccontreras/man/OBS/INS/IMACS/",
+     "confidence": "estimate",
+     "note": "Not documented; field image + slit image + imacs_slit_align offset + disperser insertion."
+    },
+    "alignment_image_exposure": {
+     "value": 10,
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/observing-with-a-multi-slit-mask/",
+     "confidence": "documented",
+     "note": "Longer in poor seeing; 1x1 (f/2) or 2x2 (f/4) binning."
+    }
+   }
+  },
+  "LDSS3C": {
+   "telescope": {
+    "value": "Clay (Magellan II), West Nasmyth",
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "detector": {
+    "value": "1 x 2048x4096 fully depleted 250-um LBNL/Fermilab CCD ('S3-171'), 15 um pix, 2 amplifiers",
+    "unit": "",
+    "source": "https://arxiv.org/abs/1511.08226",
+    "confidence": "documented",
+    "note": "Commissioned March 2014; no measurable fringing."
+   },
+   "QE": {
+    "value": {
+     "5000": 0.68,
+     "7000": 0.94,
+     "10000": 0.48
+    },
+    "unit": "fraction vs Angstrom",
+    "source": "https://arxiv.org/abs/1511.08226",
+    "confidence": "documented",
+    "note": ""
+   },
+   "pixel_scale": {
+    "value": 0.189,
+    "unit": "arcsec/pix",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "field_of_view": {
+    "value": 8.3,
+    "unit": "arcmin diameter (6.4' in spatial dir.)",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "gain": {
+    "value": {
+     "SLOW": [
+      0.15,
+      0.13
+     ],
+     "FAST": [
+      1.67,
+      1.45
+     ],
+     "TURBO": [
+      3.04,
+      2.63
+     ]
+    },
+    "unit": "e-/ADU (amp C1, C2)",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "July 2016. Cookbook: use Fast + low gain."
+   },
+   "read_noise": {
+    "value": {
+     "SLOW": [
+      4.4,
+      5.3
+     ],
+     "FAST": [
+      7.0,
+      7.2
+     ],
+     "TURBO": [
+      10,
+      10
+     ]
+    },
+    "unit": "e- (C1, C2)",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "Stevenson+2016: Turbo 10 (8 w/o interference), Fast 12 (5.5), Slow 5 (3). ETC PARAM uses 8.5 (fast)."
+   },
+   "readout_time": {
+    "value": {
+     "SLOW_1x1": 166,
+     "SLOW_2x2": 50,
+     "FAST_1x1": 30,
+     "FAST_2x2": 13,
+     "TURBO_1x1": 25,
+     "TURBO_2x2": 11
+    },
+    "unit": "s",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "Stevenson+2016: Turbo 24, Fast 28, Slow 152 (1x1); Diamond-Lowe+2020 measured 2x2 Fast 15.6 s. Subraster readout disabled until further notice."
+   },
+   "dark_current": {
+    "value": 25,
+    "unit": "e-/pix/hr at 173 K",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "Stevenson+2016 gives 35 e-/hr."
+   },
+   "full_well": {
+    "value": 205000,
+    "unit": "e- (10% nonlinearity)",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "1% linearity to >=175 ke-; in SLOW mode ADC limits effective well to ~10 ke-."
+   },
+   "exposure_limits": {
+    "value": {
+     "min_recommended": 7,
+     "max": 1800,
+     "max_advised": [
+      900,
+      1200
+     ]
+    },
+    "unit": "s",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "Shutter timing good to 1% for >=7 s."
+   },
+   "grisms": {
+    "value": [
+     {
+      "name": "VPH-All",
+      "lines_mm": 400,
+      "R_0.75": 860,
+      "lam_c": 7100,
+      "range": [
+       4250,
+       10000
+      ],
+      "disp_A_pix": 1.89,
+      "peak_eff": 0.34
+     },
+     {
+      "name": "VPH-Blue",
+      "lines_mm": 1090,
+      "R_0.75": 1900,
+      "lam_c": 5000,
+      "range": [
+       3800,
+       6200
+      ],
+      "disp_A_pix": 0.682,
+      "peak_eff": 0.35
+     },
+     {
+      "name": "VPH-Red",
+      "lines_mm": 660,
+      "R_0.75": 1810,
+      "lam_c": 8000,
+      "range": [
+       6000,
+       10000
+      ],
+      "disp_A_pix": 1.175,
+      "peak_eff": 0.38
+     }
+    ],
+    "unit": "Angstrom",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "Peak eff measured Nov 2017 (VPH-Red with OG590). 2022 handout (EG274): 0.30/0.31/0.35. R ~ 1/slit: at 1.0\" est. 645/1425/1360."
+   },
+   "total_efficiency_VPH-All": {
+    "value": {
+     "4000": 0.017,
+     "4500": 0.059,
+     "5000": 0.116,
+     "5500": 0.16,
+     "6000": 0.189,
+     "6500": 0.2,
+     "7000": 0.201,
+     "7500": 0.191,
+     "8000": 0.169,
+     "8500": 0.148,
+     "9000": 0.136,
+     "9500": 0.106,
+     "10000": 0.047
+    },
+    "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+    "confidence": "approximate",
+    "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.201 at 6864 A. Lower than manual 34% (which may exclude telescope)."
+   },
+   "total_efficiency_VPH-Blue": {
+    "value": {
+     "4000": 0.041,
+     "4500": 0.1,
+     "5000": 0.142,
+     "5500": 0.187,
+     "6000": 0.198,
+     "6500": 0.144
+    },
+    "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+    "confidence": "approximate",
+    "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.200 at 5764 A."
+   },
+   "total_efficiency_VPH-Red": {
+    "value": {
+     "6000": 0.084,
+     "6500": 0.149,
+     "7000": 0.194,
+     "7500": 0.218,
+     "8000": 0.223,
+     "8500": 0.227,
+     "9000": 0.235,
+     "9500": 0.226,
+     "10000": 0.114
+    },
+    "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+    "confidence": "approximate",
+    "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.243 at 9359 A."
+   },
+   "LSF_optics_FWHM_ETC": {
+    "value": {
+     "VPH-All": 0.1,
+     "VPH-Blue": 0.4,
+     "VPH-Red": 0.226
+    },
+    "unit": "Angstrom",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/instruments",
+    "confidence": "documented",
+    "note": ""
+   },
+   "longslits": {
+    "value": {
+     "widths": [
+      0.75,
+      1.0,
+      1.25,
+      1.5
+     ],
+     "length_arcmin": 4,
+     "positions": [
+      "center",
+      "blue",
+      "red"
+     ],
+     "variable_width_mask": [
+      2.15,
+      1.4,
+      0.85,
+      0.5,
+      0.65,
+      1.1,
+      1.75
+     ]
+    },
+    "unit": "arcsec",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "Red/blue slits offset +-2'."
+   },
+   "filters": {
+    "value": [
+     "SDSS g',r',i',z'",
+     "Harris B",
+     "OG590",
+     "KG-650/750/850/915/950",
+     "BPF-380-590",
+     "BPF-480-780",
+     "W-630-950",
+     "VR"
+    ],
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": "7 filter slots."
+   },
+   "imaging_zeropoints_2022": {
+    "value": {
+     "g": 27.51,
+     "r": 27.68,
+     "i": 27.69,
+     "z": 27.77
+    },
+    "unit": "mag for 1 e-/s at airmass 1",
+    "source": "https://www.lco.cl/wp-content/uploads/2022/08/LDSS3handout2022.pdf",
+    "confidence": "documented",
+    "note": "May 2018: 27.65/27.82/27.81/27.81."
+   },
+   "rotator": {
+    "value": {
+     "longslit_NS": "27.5 EQU",
+     "parallactic": "-62.5 HRZ"
+    },
+    "unit": "catalog rotator angle/mode",
+    "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "overheads": {
+    "field_image_exposure": {
+     "value": {
+      "multislit": 60,
+      "longslit": [
+       10,
+       30
+      ]
+     },
+     "unit": "s (up to)",
+     "source": "https://www.lco.cl/?epkb_post_type_1=ldss3-c-multi-slit-spectroscopy-cookbook",
+     "confidence": "documented",
+     "note": ""
+    },
+    "mask_image_exposure": {
+     "value": [
+      5,
+      10
+     ],
+     "unit": "s",
+     "source": "https://www.lco.cl/?epkb_post_type_1=ldss3-c-multi-slit-spectroscopy-cookbook",
+     "confidence": "documented",
+     "note": "Repeat alignment if offsets >5\"."
+    },
+    "mask_acquisition_total": {
+     "value": 10,
+     "unit": "min",
+     "source": "https://instrumentation.obs.carnegiescience.edu/imacs/pdf_files/spie_imacs.pdf",
+     "confidence": "estimate",
+     "note": "NOT FOUND for LDSS3; by analogy with IMACS mask alignment."
+    },
+    "longslit_acquisition_total": {
+     "value": [
+      5,
+      8
+     ],
+     "unit": "min",
+     "source": "https://www.lco.cl/?epkb_post_type_1=ldss-3-long-slit-spectroscopy-cookbook",
+     "confidence": "estimate",
+     "note": "NOT FOUND; field image + slit image + offset."
+    },
+    "grism_or_filter_change": {
+     "value": 30,
+     "unit": "s",
+     "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+     "confidence": "estimate",
+     "note": "NOT FOUND; wheel moves (GUI box turns yellow while moving)."
+    },
+    "transit_duty_cycle": {
+     "value": 0.57,
+     "unit": "fraction",
+     "source": "https://arxiv.org/abs/1511.08226",
+     "confidence": "documented",
+     "note": "20 s exposures, 2x2 Turbo."
+    }
+   },
+   "sky_rates": {
+    "value": {
+     "VPH-Red_between_OH_quarter_moon": ">=400",
+     "VPH-All_end_of_night": ">=1200",
+     "blue<450nm_darkest": "<200"
+    },
+    "unit": "e-/hr (per pixel)",
+    "source": "https://arxiv.org/abs/1511.08226",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "FIRE": {
+   "telescope": {
+    "value": "Baade (Magellan I)",
+    "unit": "",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": "Moved to AUX1 port Sept 2022."
+   },
+   "detector": {
+    "value": "Teledyne HAWAII-2RG 2048x2048, 2.5 um cutoff, SIDECAR ASIC, 4 amps",
+    "unit": "",
+    "source": "https://iopscience.iop.org/article/10.1086/670241",
+    "confidence": "documented",
+    "note": "18 um pitch not stated in FIRE docs (standard H2RG)."
+   },
+   "wavelength_coverage": {
+    "value": [
+     0.82,
+     2.51
+    ],
+    "unit": "um (single exposure, both modes)",
+    "source": "https://www.lco.cl/wp-content/uploads/telescopes/magellan/instruments/fire/FIRE-Handout.pdf",
+    "confidence": "documented",
+    "note": "Echelle orders 11-32."
+   },
+   "echelle": {
+    "pixel_scale_spectral_dir": {
+     "value": 0.15,
+     "unit": "arcsec/pix",
+     "source": "https://iopscience.iop.org/article/10.1086/670241",
+     "confidence": "documented",
+     "note": "Older spec pages quote 0.18\"/pix (2008 design)."
+    },
+    "pixel_scale_along_slit": {
+     "value": [
+      0.09,
+      0.12
+     ],
+     "unit": "arcsec/pix (blue to red orders)",
+     "source": "https://iopscience.iop.org/article/10.1086/670241",
+     "confidence": "documented",
+     "note": ""
+    },
+    "slit_widths": {
+     "value": [
+      0.45,
+      0.6,
+      0.75,
+      1.0
+     ],
+     "unit": "arcsec",
+     "source": "https://www.lco.cl/wp-content/uploads/telescopes/magellan/instruments/fire/FIRE-Handout.pdf",
+     "confidence": "documented",
+     "note": "Slit length 6\" (MIT specs say 7\")."
+    },
+    "resolving_power": {
+     "value": {
+      "0.45": 8000,
+      "0.60": 6000,
+      "0.75": 4600,
+      "1.0": 4200
+     },
+     "unit": "R",
+     "source": "https://www.lco.cl/wp-content/uploads/telescopes/magellan/instruments/fire/FIRE-Handout.pdf",
+     "confidence": "documented",
+     "note": "Nominal R=6000 at 0.6\" (F2,F6); 0.45-0.6\" R=6000-8000. Measured ThAr: 0.6\" 59 km/s (R~5100), 0.75\" R~4600, 1.0\" R~4200 (Masters+2014)."
+    },
+    "zero_point": {
+     "value": [
+      17.5,
+      18.0
+     ],
+     "unit": "AB mag giving 1 DN/s per extracted pixel",
+     "source": "https://iopscience.iop.org/article/10.1086/670241",
+     "confidence": "documented",
+     "note": "Handout: ~17-17.5 Y/J, ~18 H, 18-18.5 K."
+    },
+    "total_throughput": {
+     "value": {
+      "YJ": [
+       0.15,
+       0.25
+      ],
+      "H": [
+       0.3,
+       0.4
+      ],
+      "K": [
+       0.35,
+       0.4
+      ]
+     },
+     "unit": "fraction (0% slit loss)",
+     "source": "https://www.lco.cl/wp-content/uploads/telescopes/magellan/instruments/fire/FIRE-Handout.pdf",
+     "confidence": "approximate",
+     "note": "Read off handout Fig.1 (GD71, 0.6\" slit). PASP: 30-35% in H,K; ~25% incl. slit losses; <20% in z,Y."
+    },
+    "recommended_exposure": {
+     "value": [
+      600,
+      900
+     ],
+     "unit": "s per frame (SUTR)",
+     "source": "https://raw.githubusercontent.com/pypeit/PypeIt/release/pypeit/spectrographs/magellan_fire.py",
+     "confidence": "approximate",
+     "note": "No hard max documented. OH lines suffice for lambda-cal only if >8-10 min (F1). Practice: 900 s SUTR (PypeIt, Masters+2014), 15-20 min between nods (Simcoe+2011)."
+    },
+    "nod": {
+     "value": {
+      "default_AB_offset": 2.0,
+      "IDL_fatv_abba": 2.5,
+      "pattern": "ABBA"
+     },
+     "unit": "arcsec",
+     "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+     "confidence": "documented",
+     "note": "A position 1-1.5\" left of slit center."
+    },
+    "rotator": {
+     "value": {
+      "parallactic": "-30 HRZ",
+      "PA": "[PA-30] EQU"
+     },
+     "unit": "catalog",
+     "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "longslit_prism": {
+    "pixel_scale": {
+     "value": 0.15,
+     "unit": "arcsec/pix",
+     "source": "https://web.mit.edu/~rsimcoe/www/FIRE/ob_specs.htm",
+     "confidence": "documented",
+     "note": ""
+    },
+    "slit_widths": {
+     "value": [
+      0.6,
+      0.8,
+      1.0,
+      12.0
+     ],
+     "unit": "arcsec",
+     "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+     "confidence": "documented",
+     "note": "12\" is spectrophotometric slit."
+    },
+    "slit_length": {
+     "value": 40,
+     "unit": "arcsec",
+     "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+     "confidence": "documented",
+     "note": "12\"-wide slit is 56\" long; MIT specs say 50\", handout 1'."
+    },
+    "resolving_power": {
+     "value": {
+      "J": 500,
+      "H": 450,
+      "K": 300
+     },
+     "unit": "R at 0.6\"",
+     "source": "https://www.lco.cl/wp-content/uploads/telescopes/magellan/instruments/fire/FIRE-Handout.pdf",
+     "confidence": "documented",
+     "note": "Measured ~350 (Y/J), ~250 (H/K) at 0.6\" (Burgasser+2010); 1.0\" R~180-300."
+    },
+    "zero_point": {
+     "value": [
+      20.0,
+      20.5
+     ],
+     "unit": "AB mag giving 1 DN/s per extracted pixel (J,H)",
+     "source": "https://www.lco.cl/wp-content/uploads/telescopes/magellan/instruments/fire/FIRE-Handout.pdf",
+     "confidence": "approximate",
+     "note": "Handout Fig.2 range AB 19-20.8; Burgasser+2011: ~3-4 mag fainter than echelle."
+    },
+    "recommended_max_exposure": {
+     "value": 120,
+     "unit": "s (high gain)",
+     "source": "https://arxiv.org/abs/1012.1624",
+     "confidence": "documented",
+     "note": "Avoid K saturation / OH non-linearity. Quasar surveys use low gain SUTR 600-900 s (practice)."
+    },
+    "nod": {
+     "value": {
+      "offset": 5.0
+     },
+     "unit": "arcsec",
+     "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+     "confidence": "documented",
+     "note": "Dither up/down slit (fatv_abba /ls)."
+    },
+    "rotator": {
+     "value": {
+      "parallactic": "60 HRZ",
+      "PA": "[PA+60] EQU"
+     },
+     "unit": "catalog",
+     "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "gain": {
+    "value": {
+     "high": 1.3,
+     "low": 3.8
+    },
+    "unit": "e-/DN",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": "PASP 1.34 (high); cal tables/PypeIt 1.2."
+   },
+   "saturation": {
+    "value": {
+     "high_gain_ADU": 20000,
+     "low_gain_ADU": [
+      30000,
+      32000
+     ]
+    },
+    "unit": "ADU",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": "=> ~26 ke- (high) and ~120 ke- (low, full well). Low gain nonlinear >28000 ADU."
+   },
+   "read_noise": {
+    "value": {
+     "Fowler1_CDS_high_gain_per_amp": [
+      10,
+      9,
+      11,
+      10
+     ],
+     "Fowler1_low_gain_per_amp": [
+      20,
+      19,
+      21,
+      19
+     ],
+     "PASP_high_gain": [
+      16,
+      17.8
+     ],
+     "PASP_low_gain": [
+      21,
+      22
+     ]
+    },
+    "unit": "e-",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": "Current LCO manual vs PASP (on-sky +10-20%). Sources disagree; use ~15 e- for Fowler-1 as compromise."
+   },
+   "read_noise_vs_Fowler_pairs": {
+    "value": {
+     "1": 20,
+     "2": 14,
+     "4": 10,
+     "8": 7,
+     "16": 5
+    },
+    "unit": "e- (typical)",
+    "source": "https://web.mit.edu/~rsimcoe/www/FIRE/ob_manual.htm",
+    "confidence": "approximate",
+    "note": "Read off MIT plot."
+   },
+   "read_noise_vs_SUTR_length": {
+    "value": {
+     "30": 19,
+     "85": 15,
+     "170": 12,
+     "300": 10,
+     "600": 8.3,
+     "900": 7.7
+    },
+    "unit": "e- vs exposure s",
+    "source": "https://web.mit.edu/~rsimcoe/www/FIRE/ob_manual.htm",
+    "confidence": "approximate",
+    "note": "Read off MIT plot; PypeIt default ~5 e- for ~900 s SUTR (echelle)."
+   },
+   "readout_overhead": {
+    "value": {
+     "read_time_per_frame": 10.6,
+     "Fowler_N_overhead": "2*N*10.6",
+     "Fowler1": 21.2,
+     "Fowler2": 42.4,
+     "Fowler4": 84.8,
+     "Fowler8": 169.6,
+     "Fowler16": 339.2,
+     "SUTR_fixed": 30
+    },
+    "unit": "s",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": "Fowler effective exposure = requested + 10.6 s; SUTR exposure must be multiple of 10.6 s (min 21.1 s)."
+   },
+   "dark_current": {
+    "value": 0.0007,
+    "unit": "e-/s/pix",
+    "source": "https://iopscience.iop.org/article/10.1086/670241",
+    "confidence": "documented",
+    "note": "+-0.0004 (~2.5 e-/hr). Y/J read-noise limited, H/K sky limited."
+   },
+   "slit_viewer": {
+    "value": {
+     "scale": 0.147,
+     "fov_arcmin": 1.0,
+     "filter": "MKO J",
+     "limit_J_AB_30s": [
+      19,
+      20
+     ]
+    },
+    "unit": "arcsec/pix",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "mode_change_echelle_prism": {
+    "value": 90,
+    "unit": "s",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "acquisition_overhead": {
+    "value": {
+     "science": [
+      5,
+      10
+     ],
+     "telluric_A0V": [
+      10,
+      15
+     ]
+    },
+    "unit": "min",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "estimate",
+    "note": "NOT FOUND. Components: 30 s slit-viewer frames, blind offsets 0.2-0.3\" rms, 'trust but verify' ~0.15\"."
+   },
+   "telluric_practice": {
+    "value": "A0V star near airmass/position of target between science targets, 5-20 s Fowler-1, AB nod; ThAr arc at every pointing (flexure ~1 px)",
+    "unit": "",
+    "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "sensitivity": {
+    "value": {
+     "echelle_1hr_SN5_AB": 21,
+     "prism_1hr_SN5_AB": [
+      23,
+      24
+     ]
+    },
+    "unit": "AB mag",
+    "source": "https://arxiv.org/abs/1012.1624",
+    "confidence": "documented",
+    "note": "Preliminary (Burgasser+2011)."
+   }
+  },
+  "MIKE": {
+   "telescope": {
+    "value": "Clay (Magellan II), East Nasmyth, gravity-invariant (no rotation)",
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Tilted 30 deg: slit along atmospheric dispersion at ZA=30 deg."
+   },
+   "detectors": {
+    "value": "2 x e2v CCD44-82 2048x4096, 15 um, 2 amps each; red is deep-depletion",
+    "unit": "",
+    "source": "https://instrumentation.obs.carnegiescience.edu/ccd/mike.html",
+    "confidence": "documented",
+    "note": "Earlier: SITe (red), MIT-LL CCID-20 (blue)."
+   },
+   "pixel_scale": {
+    "value": {
+     "blue": 0.12,
+     "red": 0.13
+    },
+    "unit": "arcsec/pix",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Slit viewer 0.067\"/pix."
+   },
+   "dispersion": {
+    "value": {
+     "blue": 0.02,
+     "red": 0.05
+    },
+    "unit": "A/pix (unbinned)",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "wavelength_coverage": {
+    "value": {
+     "blue": [
+      3350,
+      5000
+     ],
+     "red": [
+      4900,
+      9300
+     ]
+    },
+    "unit": "Angstrom",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Handout: red to 9500. Dichroic ~4950 A. Blue orders 71-106, red 37-70."
+   },
+   "resolving_power": {
+    "value": {
+     "blue": {
+      "0.35": 83000,
+      "1.0": 28000
+     },
+     "red": {
+      "0.35": 65000,
+      "1.0": 22000
+     }
+    },
+    "unit": "R",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "R ~ 1/slit. Measured: 0.5\" 55000/48000 (arXiv:1703.00019); 0.7\" 41000/35000 (Roederer+2014)."
+   },
+   "slits": {
+    "value": {
+     "widths": [
+      0.35,
+      0.5,
+      0.7,
+      1.0,
+      1.5,
+      2.0
+     ],
+     "length": 5.0,
+     "aperture_pairs": 16,
+     "pair_separation": 3.0
+    },
+    "unit": "arcsec",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": ""
+   },
+   "gain": {
+    "value": {
+     "blue_slow": 0.45,
+     "blue_fast": 0.9,
+     "red": 0.9
+    },
+    "unit": "e-/DN",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Table ambiguous ([Slow/Fast]); ETC PARAM: blue 0.477, red 1.0 (slow)."
+   },
+   "read_noise": {
+    "value": {
+     "blue": 3.0,
+     "red": 3.0
+    },
+    "unit": "e-",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "GUI section: fast ~4.7 e-, slow ~3.7 e-. e2v lab 2.5 e-. ETC: 2.36 (blue), 2.64 (red) slow."
+   },
+   "readout_time": {
+    "value": {
+     "FAST_2x2": 28,
+     "FAST_1x1": 87,
+     "SLOW_2x2_blue": 41,
+     "SLOW_2x2_red": 48,
+     "SLOW_1x1_blue": 134,
+     "SLOW_1x1_red": 157
+    },
+    "unit": "s",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Same manual's GUI section says fast full frame 95 s, slow 160 s. Telescope may move during readout; arcs can be taken during slews."
+   },
+   "dark_current": {
+    "value": {
+     "blue": 5,
+     "red": 2
+    },
+    "unit": "DN/pix/hr (manual, older CCDs)",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "e2v CCD44-82: <1 e-/pix/hr (Carnegie CCD page). ETC: 0.000625/0.000555 e-/s."
+   },
+   "full_well": {
+    "value": 150000,
+    "unit": "e- (physical)",
+    "source": "https://instrumentation.obs.carnegiescience.edu/ccd/mike.html",
+    "confidence": "documented",
+    "note": "Linear to ADC saturation: ~59 ke- at 0.9 e-/DN (estimate, 16-bit)."
+   },
+   "throughput": {
+    "value": {
+     "slit_to_detector_blue_4500": 0.37,
+     "slit_to_detector_red_6500": 0.2,
+     "total_peak_2022_blue": 0.17,
+     "total_peak_2022_red": 0.13
+    },
+    "unit": "fraction",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Handout 2022 (LTT3864, 2\" slit): blue peak ~0.17 at 4300-4700, ~0.03-0.05 at 3400; red ~0.04 at 5200, peak 0.12-0.13 at 7800-8600. ADC costs 9-10% blue, 6-7% red. ~25% slit loss for 1\" slit in 1\" seeing."
+   },
+   "total_efficiency_blue": {
+    "value": {
+     "3500": 0.048,
+     "4000": 0.122,
+     "4500": 0.177,
+     "5000": 0.087
+    },
+    "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+    "confidence": "approximate",
+    "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.190 at 4674 A (blaze-peak envelope)."
+   },
+   "total_efficiency_red": {
+    "value": {
+     "5000": 0.018,
+     "5500": 0.063,
+     "6000": 0.097,
+     "6500": 0.107,
+     "7000": 0.115,
+     "7500": 0.134,
+     "8000": 0.141,
+     "8500": 0.116,
+     "9000": 0.106
+    },
+    "unit": "fraction (telescope+instrument+detector, no atmosphere)",
+    "source": "https://github.com/gblancm/lcoetc/tree/master/database/zeropoints",
+    "confidence": "approximate",
+    "note": "Derived here from the official LCO ETC zero-point file (git commit 2021-03-30, 'Updating Magellan Zero Points'): eff(lam) = h*lam/A_tel * 10^(0.4*(ZP+48.6+k_lam)), A_tel=306383.8 cm^2, ZP = AB mag giving 1 e-/s/A at airmass 1 (same formula as mkelam() in lcoetc_sspec.py). Telescope+instrument+detector, atmosphere removed; standard-star ZPs likely taken through wide slits, so slit losses mostly excluded. Running-median smoothed. Peak 0.141 at 7951 A."
+   },
+   "zero_points": {
+    "value": {
+     "blue_4300_4600": 19.5,
+     "red_5500": 18.4,
+     "red_9000": 17.5
+    },
+    "unit": "AB mag for 1 e-/s/A at airmass 1",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Blue/9000 read off efficiency plot (approximate)."
+   },
+   "arc_cadence": {
+    "value": [
+     15,
+     60
+    ],
+    "unit": "min between ThAr arcs",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "ThAr 1-10 s; thermal drift ~1 px/night."
+   },
+   "config_overheads": {
+    "value": {
+     "slit_change": "motorized, by eye (<1 min est.)",
+     "grating": "set by instrument specialist per setup form"
+    },
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "No configuration changes typical during night except slit."
+   },
+   "acquisition_overhead": {
+    "value": 5,
+    "unit": "min",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "estimate",
+    "note": "NOT FOUND; slit-viewer acquisition + readout."
+   },
+   "flat_exposures": {
+    "value": {
+     "quartz_0.35": {
+      "blue": 15,
+      "red": 4
+     },
+     "quartz_2.0": {
+      "blue": 3,
+      "red": 1
+     },
+     "milky_0.35": {
+      "blue": 55,
+      "red": 25
+     },
+     "milky_2.0": {
+      "blue": 10,
+      "red": 4
+     }
+    },
+    "unit": "s (2x2, fast)",
+    "source": "https://www.lco.cl/?epkb_post_type_1=mike-calibs",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "sensitivity_anchors": {
+   "MIKE_manual_V15": {
+    "value": {
+     "V": 15,
+     "SN_per_pix": 50,
+     "t_s": 3250,
+     "lam_A": 5500,
+     "disp_A_pix": 0.05,
+     "slit": 0.7,
+     "seeing": 0.8,
+     "airmass": 1.0,
+     "slit_transmission": 0.7
+    },
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "Count rate = 1 e-/s/A x 0.05 A/pix x 10^(0.4(18.4-15)) x 0.7 = 0.77 e-/pix/s; source-noise limited."
+   },
+   "MIKE_manual_V18": {
+    "value": {
+     "V": 18,
+     "SN_per_pix": 20,
+     "t_s": 3360,
+     "lam_A": 5500,
+     "disp_A_pix": 0.1,
+     "binning": "2x spectral",
+     "slit": 0.7,
+     "seeing": 0.6,
+     "slit_transmission": 0.83
+    },
+    "unit": "",
+    "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+    "confidence": "documented",
+    "note": "0.12 e-/pix/s; 400 e-/pix -> 56 min."
+   },
+   "FIRE_echelle_1hr": {
+    "value": {
+     "AB": 21,
+     "SN": 5
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/1012.1624",
+    "confidence": "documented",
+    "note": "Preliminary; per resolution element presumably; dark, typical seeing."
+   },
+   "FIRE_prism_1hr": {
+    "value": {
+     "AB": [
+      23,
+      24
+     ],
+     "SN": 5
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/1012.1624",
+    "confidence": "documented",
+    "note": "Preliminary."
+   },
+   "FIRE_prism_Tdwarf": {
+    "value": {
+     "J_Vega": 16.7,
+     "t": "4x150 s",
+     "SN_at_peaks": [
+      50,
+      80
+     ]
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/1009.5722",
+    "confidence": "documented",
+    "note": ""
+   },
+   "LCO_ETC_rerun_LDSS3_VPHAll": {
+    "value": {
+     "AB_flat_fnu": [
+      20,
+      22
+     ],
+     "SN_per_pix_6500A_newmoon": [
+      42.5,
+      9.4
+     ],
+     "SN_AB20_by_moon_day_6500A": {
+      "0": 42.5,
+      "7": 36.6,
+      "14": 17.8
+     },
+     "SN_AB20_newmoon": {
+      "5000": 34.2,
+      "6500": 42.5,
+      "8000": 31.8
+     }
+    },
+    "unit": "",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/cgi/lcoetc_sspec.py",
+    "confidence": "approximate",
+    "note": "Offline re-computation with the public LCO ETC code/data (not the web form): 1.0\" slit, 0.6\" seeing (Gaussian), airmass 1.2, 3x1200 s, 1x1, aperture 2xFWHM, ESO SkyCalc sky; S/N per unbinned spectral pixel, median over +-50 A."
+   },
+   "LCO_ETC_rerun_IMACS_f2_300_17.5": {
+    "value": {
+     "SN_AB20_newmoon": {
+      "5000": 49.0,
+      "6500": 43.2,
+      "8000": 28.0
+     },
+     "SN_AB22_6500_newmoon": 11.6,
+     "SN_AB20_6500_by_moon_day": {
+      "0": 43.2,
+      "7": 36.8,
+      "14": 17.6
+     }
+    },
+    "unit": "",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/cgi/lcoetc_sspec.py",
+    "confidence": "approximate",
+    "note": "Same assumptions as above."
+   },
+   "LCO_ETC_rerun_IMACS_f4_600_8.6": {
+    "value": {
+     "SN_AB20_newmoon": {
+      "4500": 16.4,
+      "5500": 20.3
+     },
+     "SN_AB20_5500_by_moon_day": {
+      "0": 20.3,
+      "7": 17.6,
+      "14": 8.5
+     }
+    },
+    "unit": "",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/cgi/lcoetc_sspec.py",
+    "confidence": "approximate",
+    "note": "Same assumptions (0.111\"/pix, 0.378 A/pix)."
+   },
+   "LCO_ETC_rerun_MIKE": {
+    "value": {
+     "AB16_red_6500": 43.2,
+     "AB16_red_8000": 44.6,
+     "AB16_blue_4500": 37.7,
+     "AB16_red_6500_fullmoon": 40.0
+    },
+    "unit": "S/N per unbinned pixel",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/cgi/lcoetc_sspec.py",
+    "confidence": "approximate",
+    "note": "1.0\" slit, 0.6\" seeing, X=1.2, 3x1200 s, slow-readout noise; per-pixel at 0.02 (blue)/0.05 (red) A/pix, +-5 A window. Consistent with MIKE manual V=15 example to ~20%."
+   }
+  }
+ },
+ "control": {
+  "operations_model": {
+   "value": "Classical: visiting/remote observer runs instruments & data; Telescope Operator (TO) runs telescope, dome, guiders, rotator",
+   "unit": "",
+   "source": "https://www.lco.cl/remote-observing-guide/",
+   "confidence": "documented",
+   "note": "Support astronomer assists afternoon + first half of night (until 02:00 CLT)."
+  },
+  "observer_controls": {
+   "value": [
+    "instrument configuration",
+    "calibrations",
+    "exposures/data monitoring",
+    "requests to TO: offsets, mirror covers, lamps"
+   ],
+   "unit": "",
+   "source": "https://www.lco.cl/remote-observing-guide/",
+   "confidence": "documented",
+   "note": ""
+  },
+  "TO_controls": {
+   "value": [
+    "telescope open/close near sunset",
+    "slews from catalog",
+    "guider & Shack-Hartmann (outboard guiders)",
+    "rotator",
+    "offsets via GMAP display",
+    "focus"
+   ],
+   "unit": "",
+   "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+   "confidence": "documented",
+   "note": ""
+  },
+  "catalog_format": {
+   "value": [
+    "1 ref number (int)",
+    "2 object name (no whitespace)",
+    "3 RA hh:mm:ss.s or decimal hours",
+    "4 Dec +-dd:mm:ss or decimal deg",
+    "5 equinox yyyy.y",
+    "6 PM RA (s/yr) = PM_RA[mas/yr]/15000/cos(Dec)",
+    "7 PM Dec (arcsec/yr) = PM_Dec/1000",
+    "8 rotator offset angle dd.d deg",
+    "9 rotator mode OFF|EQU|HRZ|GRV",
+    "10-12 guide probe 1 RA, Dec, equinox",
+    "13-15 guide probe 2 RA, Dec, equinox",
+    "16 observation epoch yyyy.y (0 if no PM)"
+   ],
+   "unit": "",
+   "source": "https://www.lco.cl/technical-documentation/observing-catalogs-format/",
+   "confidence": "documented",
+   "note": "Lines beginning with '#' are comments; zeros if no guide-star preselection. Name file like PI.YYMMDD.cat."
+  },
+  "rotator_modes": {
+   "value": {
+    "EQU": "position angle on sky (equatorial)",
+    "HRZ": "fixed w.r.t. horizon (parallactic when set appropriately)",
+    "GRV": "gravity",
+    "OFF": "off"
+   },
+   "unit": "",
+   "source": "https://www.lco.cl/technical-documentation/observing-catalogs-format/",
+   "confidence": "approximate",
+   "note": "Mode meanings inferred from names and instrument examples (LDSS3 27.5 EQU for N-S slit; -62.5 HRZ parallactic)."
+  },
+  "guide_star_requirements": {
+   "value": {
+    "SH_guider": "at least one star <=15 mag",
+    "principal_guider": "<16 mag recommended"
+   },
+   "unit": "mag",
+   "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+   "confidence": "documented",
+   "note": "IMACS guiders sample just outside field (2006 design: 17th mag)."
+  },
+  "IMACS_GUIs": {
+   "value": {
+    "CamGUI": [
+     "exposure time",
+     "number of exposures (Loops)",
+     "object name",
+     "exposure type",
+     "binning (1x1,2x2,...)",
+     "speed FAST/SLOW",
+     "start",
+     "stop",
+     "abort",
+     "pause",
+     "subraster (.sub file)"
+    ],
+    "IMACS-GUI": [
+     "slitmask",
+     "filter",
+     "grating/grism + tilt",
+     "calibration lamps"
+    ],
+    "file_names": {
+     "f4": "iffNNNN.fits",
+     "f2": "iftNNNN.fits"
+    }
+   },
+   "unit": "",
+   "source": "https://www.lco.cl/technical-documentation/imacs-user-manual/",
+   "confidence": "documented",
+   "note": "Camera config locked during exposures; instrument mechanisms are not. Flexure control must be ON."
+  },
+  "IMACS_alignment_tools": {
+   "value": [
+    "maskgen (design, .SMF, masks due 6 weeks ahead)",
+    "icbox (afternoon box finding)",
+    "ialign/ifalign (IRAF)",
+    "imacs_tomask field mask [box]",
+    "imacs_tochipxy f2 1 5 x y",
+    "imacs_slit_align field.fits slit.fits"
+   ],
+   "unit": "",
+   "source": "https://www.lco.cl/lcoastronomers/~ccontreras/man/OBS/INS/IMACS/",
+   "confidence": "documented",
+   "note": "Observer computes offsets and tells the TO to apply them."
+  },
+  "LDSS3_GUI": {
+   "value": {
+    "launch": "ldss3",
+    "fields": [
+     "ExpTime",
+     "Loops",
+     "ExpType",
+     "Speed (Slow/Fast/Turbo)",
+     "Aperture",
+     "Filter",
+     "Grism",
+     "DataPath"
+    ],
+    "buttons": [
+     "Start",
+     "Stop (reads out, saves actual time)",
+     "Abort (no readout)",
+     "Snap (4x4 unlogged)"
+    ]
+   },
+   "unit": "",
+   "source": "https://www.lco.cl/technical-documentation/ldss-3-user-manual/",
+   "confidence": "documented",
+   "note": ""
+  },
+  "FIRE_GUI": {
+   "value": {
+    "FireEngine": [
+     "exposure time",
+     "readout mode (Fowler-N / SUTR)",
+     "slit (10-position wheel)",
+     "gain high/low",
+     "object",
+     "Go button",
+     "A->B nod button (default 2.0\")"
+    ],
+    "loop": "simple loop exists; not recommended for science",
+    "macros": "not supported",
+    "slit_viewer": "fatv (IDL): Acquire, MouseMode Slit/TCS click-to-move",
+    "IDL_commands": [
+     "fatv_slit, x, y",
+     "fatv_abba, /a | /b [, /ls]",
+     "fatv_refoffset, arcsec_east, arcsec_north"
+    ]
+   },
+   "unit": "",
+   "source": "https://www.lco.cl/magellan-instruments/fire-observing-manual-local/",
+   "confidence": "documented",
+   "note": "Telescope-control window must be active so TCS info goes into FITS headers. Since AUX1 move, A->B offsets via IDL."
+  },
+  "MIKE_GUI": {
+   "value": {
+    "launch": "mike",
+    "fields": [
+     "Exptime (editable during exposure)",
+     "image number",
+     "comments",
+     "focus",
+     "grating angles",
+     "slit",
+     "x/y binning",
+     "full/subraster",
+     "speed fast/slow"
+    ],
+    "buttons": [
+     "Start",
+     "Pause",
+     "Abort",
+     "Loop"
+    ],
+    "cameras": "blue/red jointly or independently"
+   },
+   "unit": "",
+   "source": "https://www.lco.cl/technical-documentation/the-mike-magellan-inamori-kyocera-echelle-users-guide/",
+   "confidence": "documented",
+   "note": "Remote box must be in REMOTE."
+  },
+  "remote_access": {
+   "value": {
+    "screen_sharing": "NoMachine Enterprise",
+    "vpn": "FortiClient (Win/Mac), StrongSwan (Linux)",
+    "voice": "Zoom with TO",
+    "portal": "http://observer.lco.cl",
+    "workstation": "Ubuntu 22.04, single 43\" 4K display"
+   },
+   "unit": "",
+   "source": "https://www.lco.cl/remote-observing-guide/",
+   "confidence": "documented",
+   "note": ""
+  },
+  "scriptable_TCS_interface": {
+   "value": "No public documentation of a scriptable/remote TCS command API",
+   "unit": "",
+   "source": "https://www.lco.cl/remote-observing-guide/",
+   "confidence": "documented",
+   "note": "Only instrument-side helpers that send offsets to the TCS are documented (FIRE IDL fatv_* commands; IMACS/LDSS3 alignment tools produce offsets the TO applies). FIRE: 'Macros are not currently supported'."
+  },
+  "setup_forms": {
+   "value": "Instrument setup form >= 14 days before run; masks >= 6 weeks",
+   "unit": "",
+   "source": "https://www.lco.cl/observer-guidelines/",
+   "confidence": "documented",
+   "note": ""
+  }
+ },
+ "sky_models": {
+  "KS91_moonlight": {
+   "reference": {
+    "value": "Krisciunas & Schaefer 1991, PASP 103, 1033",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "doi:10.1086/132921; equations transcribed from ADS scan; cross-checked with DESI specsim implementation https://github.com/desihub/specsim/blob/main/specsim/atmosphere.py"
+   },
+   "eq1_nL_to_mag": {
+    "value": "B[nL] = 34.08 * exp(20.7233 - 0.92104 V)",
+    "unit": "nL, V in mag/arcsec^2",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "Equivalent: B = 0.263 a^(Q-V), a=100^0.2, Q=27.78151."
+   },
+   "eq2_dark_sky_vs_zenith": {
+    "value": "B0(Z) = Bzen * 10^(-0.4 k (X-1)) * X",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "X from eq3."
+   },
+   "eq3_scattering_airmass": {
+    "value": "X(Z) = (1 - 0.96 sin^2 Z)^(-0.5)",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "Use for both sky position and Moon in eq15 (per KS91 recommendation)."
+   },
+   "eq14_extinction_airmass": {
+    "value": "X(Z) = [cos Z + 0.025 exp(-11 cos Z)]^(-1)",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "For directly observed objects (not scattered light)."
+   },
+   "eq8_moon_illuminance": {
+    "value": "I* = 10^(-0.4 (m + 16.57))",
+    "unit": "foot-candles",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": ""
+   },
+   "eq9_moon_magnitude": {
+    "value": "m = -12.73 + 0.026|alpha| + 4e-9 alpha^4",
+    "unit": "V mag; alpha = phase angle deg (0 = full)",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "For |alpha|<7 deg multiply B_moon by 1.00-1.35 (opposition effect; 'about 35% brighter' at exact full). Apogee/perigee changes m by up to +-0.12."
+   },
+   "eq20_combined": {
+    "value": "I* = 10^(-0.4(3.84 + 0.026|alpha| + 4e-9 alpha^4))",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": ""
+   },
+   "eq17_rayleigh": {
+    "value": "fR(rho) = CR [1.06 + cos^2 rho], CR = 2.27e5",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "Eq21 rounds to 10^5.36."
+   },
+   "eq18_mie": {
+    "value": "fM(rho) = 10^(6.15 - rho/40)",
+    "unit": "rho in deg, valid 10-80+ deg",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": ""
+   },
+   "eq19_mie_small_angle": {
+    "value": "fM(rho) = 6.2e7 rho^-2",
+    "unit": "rho < 10 deg",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "Aureole."
+   },
+   "eq21_total_scattering": {
+    "value": "f(rho) = 10^5.36 [1.06 + cos^2 rho] + 10^(6.15 - rho/40)",
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": ""
+   },
+   "eq15_moon_brightness": {
+    "value": "B_moon = f(rho) I* 10^(-0.4 k X(Zm)) [1 - 10^(-0.4 k X(Z))]",
+    "unit": "nL",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "k = V extinction (use 0.144 for LCO)."
+   },
+   "eq22_delta_V": {
+    "value": "dV = -2.5 log10[(B_moon + B0(Z)) / B0(Z)]",
+    "unit": "mag/arcsec^2",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": ""
+   },
+   "calibration_constants": {
+    "value": {
+     "k_V_MaunaKea": 0.172,
+     "Vzen": 21.587,
+     "Bzen_nL": 79.0
+    },
+    "unit": "",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "Used for KS91 Table 2."
+   },
+   "accuracy": {
+    "value": 0.23,
+    "unit": "rms fractional error in B_moon",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "8-11% vs Russian daytime data; Patat 2003 finds KS91 reasonable for B,V,R,I at Paranal."
+   },
+   "table2_test_values_nL": {
+    "value": {
+     "alpha30": {
+      "5": 7216,
+      "30": 1160,
+      "60": 530,
+      "90": 437,
+      "120": 818
+     },
+     "alpha60": {
+      "5": 3364,
+      "30": 541,
+      "60": 247,
+      "90": 204,
+      "120": 381
+     },
+     "alpha90": {
+      "5": 1351,
+      "30": 217,
+      "60": 99,
+      "90": 82,
+      "120": 153
+     },
+     "alpha120": {
+      "5": 391,
+      "30": 63,
+      "60": 29,
+      "90": 24,
+      "120": 44
+     }
+    },
+    "unit": "nL (keys: rho deg)",
+    "source": "https://articles.adsabs.harvard.edu/pdf/1991PASP..103.1033K",
+    "confidence": "documented",
+    "note": "Moon ZA 60 deg, k=0.172, rho measured along great circle through Moon and zenith (rho=60 is zenith). Use as unit test."
+   }
+  },
+  "moonlight_band_scaling": {
+   "method_Noll2012": {
+    "value": "B_moon,R/M(lam) = fR/M(rho) I*(lam) t(lam)^Xmoon (1 - tR/M(lam)^X0); I*(lam) = solar spectrum scaled to KS91 V; fR = 10^5.70(1.06+cos^2 rho); fM = 10^(7.15 - rho/40)",
+    "unit": "",
+    "source": "https://arxiv.org/abs/1205.2003",
+    "confidence": "documented",
+    "note": "Rayleigh/Mie separated with their own transmission curves; factors 2.2 and 10 vs KS91 tuned to Paranal. alpha ~ arccos(1 - 2 FLI). Systematic <~10%, statistical 10-20%."
+   },
+   "moonlight_colors_SkyCalc_fullmoon": {
+    "value": {
+     "U-V": -0.18,
+     "B-V": 0.17,
+     "R-V": 0.02,
+     "I-V": 0.14,
+     "Z-V": 0.22,
+     "J-V": 0.62,
+     "H-V": 0.7
+    },
+    "unit": "mag (m_band - m_V of moonlight excess, Vega)",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/database/sky/readme_14.txt",
+    "confidence": "approximate",
+    "note": "Derived here: SkyCalc full moon (moon sep 45 deg, alt 45 deg) minus new-moon sky, per band, from LCO ETC readme files. Recipe: m_moon,band = m_moon,V(KS91) + color."
+   },
+   "moonlight_colors_Walker_fullmoon": {
+    "value": {
+     "U-V": -3.22,
+     "B-V": -0.67,
+     "R-V": 0.22,
+     "I-V": -0.22
+    },
+    "unit": "mag (moonlight excess colors, Vega)",
+    "source": "https://www.noao.edu/noao/noaonews/mar94/art20.html",
+    "confidence": "approximate",
+    "note": "Derived from Walker 1987 table (day 14 minus day 0). U excess looks implausibly strong; prefer SkyCalc colors."
+   },
+   "Walker_table": {
+    "value": {
+     "0": {
+      "U": 22.0,
+      "B": 22.7,
+      "V": 21.8,
+      "R": 20.9,
+      "I": 19.9
+     },
+     "3": {
+      "U": 21.5,
+      "B": 22.4,
+      "V": 21.7,
+      "R": 20.8,
+      "I": 19.9
+     },
+     "7": {
+      "U": 19.9,
+      "B": 21.6,
+      "V": 21.4,
+      "R": 20.6,
+      "I": 19.7
+     },
+     "10": {
+      "U": 18.5,
+      "B": 20.7,
+      "V": 20.7,
+      "R": 20.3,
+      "I": 19.5
+     },
+     "14": {
+      "U": 17.0,
+      "B": 19.5,
+      "V": 20.0,
+      "R": 19.9,
+      "I": 19.2
+     }
+    },
+    "unit": "mag/arcsec^2 vs days from new moon (CTIO)",
+    "source": "https://www.noao.edu/noao/noaonews/mar94/art20.html",
+    "confidence": "approximate",
+    "note": "Typical, not geometry-specific."
+   },
+   "SkyCalc_fullmoon_LCOETC": {
+    "value": {
+     "U": 17.84,
+     "B": 18.2,
+     "V": 18.01,
+     "R": 18.0,
+     "I": 17.95,
+     "Z": 17.73,
+     "J": 16.68,
+     "H": 14.4
+    },
+    "unit": "mag/arcsec^2",
+    "source": "https://github.com/gblancm/lcoetc/blob/master/database/sky/readme_14.txt",
+    "confidence": "documented",
+    "note": "Day-14 sky used by LCO ETC (Sun-Moon sep 180, moon-target 45 deg, moon alt 45 deg, zenith target)."
+   }
+  },
+  "twilight_Patat2006": {
+   "formula": {
+    "value": "m(zeta) = a0 + a1 (zeta-95) + a2 (zeta-95)^2, zeta = 90 - h_sun (deg), valid 95<=zeta<=105",
+    "unit": "mag/arcsec^2 at zenith (|alpha|<=40 deg), Moon down",
+    "source": "https://arxiv.org/abs/astro-ph/0604128",
+    "confidence": "documented",
+    "note": "Paranal FORS1; includes night-sky contribution; night level reached at zeta~105-106."
+   },
+   "coefficients": {
+    "value": {
+     "U": {
+      "a0": 11.78,
+      "a1": 1.376,
+      "a2": -0.039,
+      "rms": 0.24,
+      "gamma_95_100": 1.23
+     },
+     "B": {
+      "a0": 11.84,
+      "a1": 1.411,
+      "a2": -0.041,
+      "rms": 0.12,
+      "gamma_95_100": 1.24
+     },
+     "V": {
+      "a0": 11.84,
+      "a1": 1.518,
+      "a2": -0.057,
+      "rms": 0.18,
+      "gamma_95_100": 1.14
+     },
+     "R": {
+      "a0": 11.4,
+      "a1": 1.567,
+      "a2": -0.064,
+      "rms": 0.29,
+      "gamma_95_100": 1.09
+     },
+     "I": {
+      "a0": 10.93,
+      "a1": 1.47,
+      "a2": -0.062,
+      "rms": 0.4,
+      "gamma_95_100": 0.94
+     }
+    },
+    "unit": "mag/arcsec^2, deg^-1, deg^-2",
+    "source": "https://arxiv.org/abs/astro-ph/0604128",
+    "confidence": "documented",
+    "note": "gamma = linear slope (mag/arcsec^2/deg) over 95-100; x ~0.23 deg/min at Paranal equinox -> 0.22 (I) to 0.28 (U) mag/arcsec^2/min."
+   },
+   "values_at_sun_altitude": {
+    "value": {
+     "-6": {
+      "U": 13.12,
+      "B": 13.21,
+      "V": 13.3,
+      "R": 12.9,
+      "I": 12.34
+     },
+     "-9": {
+      "U": 16.66,
+      "B": 16.83,
+      "V": 17.0,
+      "R": 16.64,
+      "I": 15.82
+     },
+     "-12": {
+      "U": 19.5,
+      "B": 19.71,
+      "V": 19.67,
+      "R": 19.23,
+      "I": 18.18
+     },
+     "-15": {
+      "U": 21.64,
+      "B": 21.85,
+      "V": 21.32,
+      "R": 20.67,
+      "I": 19.43
+     }
+    },
+    "unit": "mag/arcsec^2 (zenith)",
+    "source": "https://arxiv.org/abs/astro-ph/0604128",
+    "confidence": "approximate",
+    "note": "Evaluated from Table 1 fit."
+   },
+   "values_at_minus18_extrapolated": {
+    "value": {
+     "U": 23.08,
+     "B": 23.25,
+     "V": 21.94,
+     "R": 20.95,
+     "I": 19.56
+    },
+    "unit": "mag/arcsec^2",
+    "source": "https://arxiv.org/abs/astro-ph/0604128",
+    "confidence": "estimate",
+    "note": "Outside fit range (zeta=108); U/B extrapolate fainter than dark sky -> clamp to dark sky. Recommended: F_sky = F_dark + max(0, F_fit(zeta) - F_dark_Paranal) for zeta<=105, else F_dark."
+   },
+   "colors_note": {
+    "value": {
+     "twilight_start_single_scatter_fraction": {
+      "U": 0.4,
+      "B": 0.6,
+      "V": 0.7,
+      "R": 0.8
+     }
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/astro-ph/0604128",
+    "confidence": "documented",
+    "note": "Twilight bluer than night sky; sodium/[OI] flash lines; OH dominates red after astronomical twilight begins."
+   }
+  },
+  "dark_sky_variability": {
+   "night_to_night_rms": {
+    "value": 0.2,
+    "unit": "mag",
+    "source": "https://arxiv.org/abs/astro-ph/0301115",
+    "confidence": "documented",
+    "note": "Paranal sigma 0.18-0.25 per band (Table 4)."
+   },
+   "within_night": {
+    "value": "No systematic decline after twilight on average (0.03-0.04 mag/hr in B/I at most); ~0.1 mag sinusoidal fluctuations on ~0.5 hr time scales; occasional 0.7 mag excursions",
+    "unit": "",
+    "source": "https://arxiv.org/abs/astro-ph/0301115",
+    "confidence": "documented",
+    "note": ""
+   },
+   "zodiacal_correction": {
+    "value": {
+     "U": 0.18,
+     "B": 0.28,
+     "V": 0.18,
+     "R": 0.16,
+     "I": 0.07
+    },
+    "unit": "mag (avg ZL contribution in Paranal dark means)",
+    "source": "https://arxiv.org/abs/astro-ph/0301115",
+    "confidence": "documented",
+    "note": "Sky darker at high ecliptic latitude."
+   },
+   "solar_cycle": {
+    "value": "Dark sky brightens with 10.7 cm solar flux (airglow)",
+    "unit": "",
+    "source": "https://arxiv.org/abs/astro-ph/0301115",
+    "confidence": "documented",
+    "note": "Include ~+-0.2-0.4 mag solar-cycle term (estimate)."
+   }
+  },
+  "NIR_OH": {
+   "OH_free_fraction_vs_R": {
+    "value": {
+     "2000": 0.15,
+     "3000": 0.43,
+     "5000": 0.65,
+     "6000": 0.7,
+     "10000": 0.83
+    },
+    "unit": "fraction of spectrum",
+    "source": "https://bpb-us-e1.wpmucdn.com/sites.mit.edu/dist/e/518/files/2017/03/FIRE-a-near-infrared-cross-dispersed-echellette-spectrometer-for-the-Magellan-telescopes-Simcoe-et-al-2008-SPIE.pdf",
+    "confidence": "approximate",
+    "note": "Read off Simcoe+2008 SPIE Fig.1 (+-3%). MOSFIRE PDR: only ~10% of H free at R~1300; 'R~3000 required for effective OH suppression'."
+   },
+   "true_continuum_fraction": {
+    "value": {
+     "R6000_Y": 0.3,
+     "R6000_JH": 0.25,
+     "R10000_0.9-1.8um_with_scatter": 0.11
+    },
+    "unit": "fraction",
+    "source": "https://arxiv.org/abs/1207.0817",
+    "confidence": "documented",
+    "note": "Sullivan & Simcoe 2012 (R=6000); Ellis & Bland-Hawthorn 2008 (R=10^4, incl. grating scatter). 75% of J,H within 10x continuum."
+   },
+   "interline_photon_rates_Paranal": {
+    "value": {
+     "1.19um": 1200,
+     "1.70um": 2300
+    },
+    "unit": "photons/s/arcsec^2/um/m^2",
+    "source": "https://www.eso.org/sci/publications/messenger/archive/no.101-sep00/messenger-no101-2-8.pdf",
+    "confidence": "documented",
+    "note": "J~18, H~16.5 mag equivalents."
+   }
+  }
+ },
+ "seeing_models": {
+  "airmass_scaling": {
+   "value": "FWHM proportional to X^0.6 (sec z^(3/5))",
+   "unit": "",
+   "source": "https://www.eso.org/observing/etc/doc/helpfors.html",
+   "confidence": "documented",
+   "note": "Also Floyd+2010, Martinez+2010 (Roddier 1981)."
+  },
+  "wavelength_scaling": {
+   "value": "FWHM proportional to (lambda/500nm)^-0.2; r0 proportional to lambda^1.2",
+   "unit": "",
+   "source": "https://www.eso.org/observing/etc/doc/helpfors.html",
+   "confidence": "documented",
+   "note": ""
+  },
+  "ESO_ETC_IQ": {
+   "value": "FWHM_IQ = sqrt(FWHM_atm^2 + FWHM_tel^2 + FWHM_ins^2); FWHM_atm = s X^0.6 (lam/500)^-0.2 sqrt[1 + F_Kolb 2.183 (r0/L0)^0.356]; r0 = 0.100 s^-1 (lam/500)^1.2 X^-0.6 [m]; F_Kolb = 1/(1+300 D/L0) - 1; FWHM_tel = 0.000212 lam[nm]/D[m] arcsec",
+   "unit": "",
+   "source": "https://www.eso.org/observing/etc/doc/helpfors.html",
+   "confidence": "documented",
+   "note": "s = DIMM seeing at 500 nm, zenith. Set FWHM_atm=0 if sqrt argument <0. ESO: L0=46 m, F_Kolb=-0.981644 (VLT)."
+  },
+  "Tokovinin2002_vK": {
+   "value": "(FWHM_vK/FWHM_K)^2 = 1 - 2.183 (r0/L0)^0.356",
+   "unit": "",
+   "source": "https://arxiv.org/abs/1003.4593",
+   "confidence": "documented",
+   "note": "Valid for L0/r0>20 to +-1% (quoted in Martinez+2010 Eq.4 and Floyd+2010 Eq.1; original PASP 114, 1156 not fetched - bot check). FWHM_K = 0.976 lambda/r0. Independent of D for L0/D<=500."
+  },
+  "F_Kolb_Magellan": {
+   "value": -0.9873,
+   "unit": "",
+   "source": "https://www.eso.org/observing/etc/doc/helpfors.html",
+   "confidence": "approximate",
+   "note": "Derived: D=6.5 m, L0=25 m."
+  },
+  "L0_values": {
+   "value": {
+    "LCO_Floyd2010": 25,
+    "Paranal_median": 22,
+    "ESO_ETC_adopted": 46
+   },
+   "unit": "m",
+   "source": "https://arxiv.org/abs/1005.0174",
+   "confidence": "documented",
+   "note": "Paranal 1-sigma 13-37 m (Martinez+2010); ESO 46 m from van den Ancker+2016."
+  },
+  "example_LCO": {
+   "value": {
+    "seeing_500nm": 0.63,
+    "FWHM_atm_500nm": 0.51,
+    "FWHM_atm_2.15um": 0.27
+   },
+   "unit": "arcsec",
+   "source": "https://arxiv.org/abs/1005.0174",
+   "confidence": "approximate",
+   "note": "ESO-ETC formula with L0=25 m, D=6.5 m; consistent with Floyd predictions."
+  },
+  "delivered_IQ_model": {
+   "value": "FWHM_delivered^2 = FWHM_atm^2 + FWHM_optics^2 (+ dome/wind terms); Magellan optics 0.17\" (Nasmyth LDSS3) / 0.30\" (IMACS)",
+   "unit": "",
+   "source": "https://arxiv.org/abs/1005.0174",
+   "confidence": "approximate",
+   "note": "Empirical alternative: FWHM = 0.53 FWHM_DIMM + 0.24."
+  },
+  "temporal": {
+   "Racine1996_efolding": {
+    "value": 17,
+    "unit": "min",
+    "source": "https://iopscience.iop.org/article/10.1086/133732/pdf",
+    "confidence": "documented",
+    "note": "<f(dt)> = <f(inf)> [1 - exp(-dt/tau)]^gamma with f=|w(t+dt)-w(t)|/(w(t+dt)+w(t)); f(inf)=0.218, tau=17+-1 min, gamma=0.66; Mauna Kea free atmosphere (SCIDAR). log-normal sigma_log10=0.175 (sigma_ln 0.40)."
+   },
+   "Tokovinin2003_CTIO": {
+    "value": {
+     "autocorr_50pct_lag_h": {
+      "1km": 0.6,
+      "4km": 1.3,
+      "16km": 1.9
+     },
+     "bursts_low_layers_min": 15,
+     "bursts_high_layers_h": [
+      1,
+      2
+     ]
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/astro-ph/0209432",
+    "confidence": "documented",
+    "note": "Cites seeing time scale ~1.2 h (Sarazin 1997)."
+   },
+   "Herriot2010_TMT_PSD": {
+    "value": "PSD(log r0) = 1.95e-3 f^-1.43",
+    "unit": "units unstated",
+    "source": "https://arxiv.org/abs/1101.2353",
+    "confidence": "documented",
+    "note": "TMT used 100-tap AR generator; 'good seeing lasting hours followed by jumps on minutes'."
+   },
+   "Kornilov2018": {
+    "value": {
+     "sigma_lnJ": 0.673,
+     "sigma_ln_seeing": 0.4,
+     "ARIMA_long_lag_T_min": 425
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/1806.09536",
+    "confidence": "documented",
+    "note": "Forecast scatter 1.8x smaller than unconditional at 1 h, 1.4x at 2 h."
+   },
+   "persistence_forecast_RMSE": {
+    "value": {
+     "VLT_1h": 0.17,
+     "LBT_1h": 0.2,
+     "VLT_2h": [
+      0.22,
+      0.27
+     ],
+     "LBT_2h": [
+      0.25,
+      0.31
+     ]
+    },
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/2607.12900",
+    "confidence": "documented",
+    "note": "De Sepibus, Masciadri+2026; last-10-min mean as forecast."
+   },
+   "within_night_std_SPM": {
+    "value": {
+     "median": 0.19,
+     "q25": 0.12,
+     "q75": 0.29
+    },
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/1206.3319",
+    "confidence": "documented",
+    "note": "San Pedro Martir DIMM; no trend with time of night."
+   },
+   "nightly_IQR_Shatdzhatmaz": {
+    "value": 0.27,
+    "unit": "arcsec (median nightly IQR)",
+    "source": "https://arxiv.org/abs/1403.6820",
+    "confidence": "approximate",
+    "note": "Overall median 0.96\"; read via summary."
+   },
+   "DomeC_good_period_length": {
+    "value": {
+     "0.5arcsec_8m": 30,
+     "0.5arcsec_3m": 10
+    },
+    "unit": "min",
+    "source": "https://arxiv.org/abs/0904.2982",
+    "confidence": "documented",
+    "note": ""
+   },
+   "LCO_specific_time_scale": {
+    "value": null,
+    "unit": "",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "estimate",
+    "note": "NOT FOUND for LCO; Skidmore+2009 not retrievable (bot check)."
+   },
+   "recommended_simulator_model": {
+    "value": {
+     "process": "ln(seeing) = mu + night_offset + OU(t)",
+     "mu": -0.46,
+     "night_to_night_sigma_ln": 0.25,
+     "within_night_sigma_ln": 0.22,
+     "tau_min": 60,
+     "tau_range_min": [
+      20,
+      120
+     ],
+     "expected_1h_change_arcsec_at_0.65": 0.16,
+     "optional": "add power-law f^-1.43 component for jumps"
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/1101.2340",
+    "confidence": "estimate",
+    "note": "Synthesis: total sigma_ln 0.33 matches LCO quartiles (0.34); 1-h change ~0.16\" consistent with VLT persistence RMSE 0.17\" and SPM within-night sigma 0.19\"."
+   }
+  }
+ }
+}

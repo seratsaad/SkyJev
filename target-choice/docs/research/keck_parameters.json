@@ -1,0 +1,5440 @@
+{
+ "_meta": {
+  "title": {
+   "value": "W. M. Keck Observatory parameters for the observing-night simulator + ETC",
+   "unit": "",
+   "source": "docs/research/keck_parameters.md",
+   "confidence": "documented",
+   "note": "Compiled 2026-09-24. confidence: documented = stated in the cited source; approximate = derived by arithmetic from documented numbers, read from a data file by me, secondary source, or older/proxy measurement; estimate = not found publicly, reasoned value (see note)."
+  },
+  "scratch_note": {
+   "value": "Pages fetched live 2026-09-24; CFHT pages via web.archive.org (live site returns 403).",
+   "unit": "",
+   "source": "",
+   "confidence": "documented",
+   "note": ""
+  }
+ },
+ "site": {
+  "name": {
+   "value": "W. M. Keck Observatory, Maunakea, Hawaii",
+   "unit": "",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": ""
+  },
+  "latitude_deg": {
+   "value": 19.8267,
+   "unit": "deg (N positive)",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": "Keck guide (2002): 19d49.6m N. IRAF/astropy 'keck' entry: 19.828333."
+  },
+  "longitude_deg": {
+   "value": -155.4733,
+   "unit": "deg (E positive)",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": "Keck guide (2002): 155d28.4m W. IRAF/astropy 'keck' entry: 204.521667 E = -155.478333."
+  },
+  "elevation_m": {
+   "value": 4123,
+   "unit": "m",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": "Keck guide (2002) altitude. IRAF/astropy 'keck' entry uses 4160 m; commonly quoted 4145 m. Differences are below what matters for an ETC."
+  },
+  "astropy_keck_site": {
+   "value": {
+    "lat": 19.828333,
+    "lon": -155.478333,
+    "height_m": 4160
+   },
+   "unit": "deg, deg, m",
+   "source": "https://github.com/astropy/astropy-data/blob/gh-pages/coordinates/sites.json",
+   "confidence": "documented",
+   "note": "Source field in the registry: 'IRAF Observatory Database'. Use EarthLocation.of_site('keck')."
+  },
+  "telescope_separation_m": {
+   "value": 85,
+   "unit": "m",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": "Keck II lies roughly NE of Keck I."
+  },
+  "timezone": {
+   "value": "Pacific/Honolulu (HST = UTC-10, no DST)",
+   "unit": "",
+   "source": "https://www2.keck.hawaii.edu/inst/common/facsum.html",
+   "confidence": "documented",
+   "note": "FACSUM: UT is '10 hours ahead of HST'."
+  },
+  "mean_pressure_mbar": {
+   "value": 605,
+   "unit": "mbar",
+   "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+   "confidence": "documented",
+   "note": "CFHT manual: unit airmass at Maunakea equals 0.60 sea-level airmasses. Read via web.archive.org; the live page returns 403."
+  },
+  "night_temperature_C": {
+   "value": "2.5 +/- 4 (about 90% of the time)",
+   "unit": "degC",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": "TMT 13N median night temperature at 2 m: 2.3 C."
+  },
+  "median_wind_speed_m_s": {
+   "value": 7,
+   "unit": "m/s",
+   "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+   "confidence": "documented",
+   "note": "Keck guide: ~7 m/s (~14 mph). CFHT: 50% < 7 m/s, 84% < 12 m/s, about 5% > 30 m/s (telescope closed)."
+  },
+  "pwv_median_mm": {
+   "value": 1.9,
+   "unit": "mm",
+   "source": "https://arxiv.org/abs/0904.1183",
+   "confidence": "documented",
+   "note": "TMT 13N site (4050 m): median 1.9 mm, and PWV < 2 mm 54% of the time. The CFHT manual quotes a median of 0.9 mm (older, summit)."
+  },
+  "usable_night_fraction": {
+   "value": {
+    "usable": 0.8,
+    "photometric": 0.55,
+    "spectroscopic": 0.25
+   },
+   "unit": "fraction of nights",
+   "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+   "confidence": "documented",
+   "note": "CFHT manual (2003). Gemini treats its 50th-percentile cloud-cover bin at MK as 'photometric' (no signal loss)."
+  },
+  "cloud_cover_percentiles_gemini": {
+   "value": {
+    "CC50": "photometric, no loss",
+    "CC70": "patchy/thin cirrus, loss <0.3 mag",
+    "CC80": "cloudy, 0.3-1 mag loss",
+    "any": ">1 mag loss (ITC assumes 3 mag)"
+   },
+   "unit": "",
+   "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+   "confidence": "documented",
+   "note": "Based on long-term Maunakea data."
+  },
+  "sky_brightness": {
+   "note": {
+    "value": "Pick one table consistently. For optical ETC work in AB, use the MegaCam values. Use the Gemini percentiles to model the lunar phase, and the MOSFIRE tables for NIR spectroscopy between OH lines.",
+    "unit": "",
+    "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+    "confidence": "approximate",
+    "note": "Editorial guidance, not a measurement."
+   },
+   "megacam_dark_zenith_AB": {
+    "u": {
+     "value": 22.7,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam, zenith, Moon 0%. Read via web.archive.org."
+    },
+    "g": {
+     "value": 22.0,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam, zenith, Moon 0%. Read via web.archive.org."
+    },
+    "r": {
+     "value": 21.3,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam, zenith, Moon 0%. Read via web.archive.org."
+    },
+    "i": {
+     "value": 20.3,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam, zenith, Moon 0%. Read via web.archive.org."
+    },
+    "z": {
+     "value": 19.4,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam, zenith, Moon 0%. Read via web.archive.org."
+    }
+   },
+   "megacam_grey_zenith_AB_moon30pct": {
+    "u": {
+     "value": 21.2,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 30%."
+    },
+    "g": {
+     "value": 21.3,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 30%."
+    },
+    "r": {
+     "value": 20.8,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 30%."
+    },
+    "i": {
+     "value": 20.3,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 30%."
+    },
+    "z": {
+     "value": 19.4,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 30%."
+    }
+   },
+   "megacam_bright_zenith_AB_moon60pct": {
+    "u": {
+     "value": 19.7,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 60%."
+    },
+    "g": {
+     "value": 20.5,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 60%."
+    },
+    "r": {
+     "value": 20.4,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 60%."
+    },
+    "i": {
+     "value": 20.3,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 60%."
+    },
+    "z": {
+     "value": 19.4,
+     "unit": "mag/arcsec^2 (AB)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "Moon 60%."
+    }
+   },
+   "cfht_manual_dark_zenith_vega": {
+    "U": {
+     "value": 21.6,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "B": {
+     "value": 22.3,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "V": {
+     "value": 21.1,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "R": {
+     "value": 20.3,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "I": {
+     "value": 19.2,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "J": {
+     "value": 14.8,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "H": {
+     "value": 13.4,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    },
+    "K": {
+     "value": 12.6,
+     "unit": "mag/arcsec^2 (Vega, presumed)",
+     "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+     "confidence": "documented",
+     "note": "CFHT Observatory Manual Sec. 2, 'average sky brightness at zenith during dark time'."
+    }
+   },
+   "keck_guide_2002_vega": {
+    "U": {
+     "value": 23.2,
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+     "confidence": "documented",
+     "note": "Keck guide 2002. U and B are 0.7-1.6 mag fainter than the CFHT manual values; treat with caution."
+    },
+    "B": {
+     "value": 23.0,
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+     "confidence": "documented",
+     "note": ""
+    },
+    "V_excl_OI5577": {
+     "value": 22.6,
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+     "confidence": "documented",
+     "note": "Excluding the [OI] 5577 line."
+    },
+    "V_incl_OI": {
+     "value": "21.25-22",
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+     "confidence": "documented",
+     "note": "'various estimates that probably include the OI line'."
+    },
+    "R": {
+     "value": 22.0,
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+     "confidence": "documented",
+     "note": "~22."
+    }
+   },
+   "gemini_mk_V_percentiles_vega": {
+    "SB20_darkest": {
+     "value": 21.3,
+     "unit": "mag/arcsec^2 V",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "<=3 nights from new moon. U=V+0.0, B=V+0.8, R=V-0.9."
+    },
+    "SB50_dark": {
+     "value": 20.7,
+     "unit": "mag/arcsec^2 V",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "<=7 nights. U=V-1.5, B=V+0.2, R=V-0.8."
+    },
+    "SB80_grey": {
+     "value": 19.5,
+     "unit": "mag/arcsec^2 V",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "<=11 nights. U=V-2.2, B=V-0.0, R=V-0.4."
+    },
+    "any_bright": {
+     "value": 18.0,
+     "unit": "mag/arcsec^2 V",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "<=14 nights. U=V-3.0, B=V-0.5, R=V-0.1."
+    },
+    "random_target_median": {
+     "value": 20.78,
+     "unit": "mag/arcsec^2 V",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "Fainter than 20.78 for 50% of the time and than 21.37 for 20% of the time, for a random target."
+    },
+    "ecliptic_penalty": {
+     "value": 0.4,
+     "unit": "mag",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "V sky ~0.4 mag brighter at low ecliptic latitude."
+    }
+   },
+   "gemini_mk_nir_vega": {
+    "J": {
+     "value": 16.1,
+     "unit": "mag/arcsec^2 (Vega)",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "Gemini Maunakea near-IR background, any lunar phase."
+    },
+    "H": {
+     "value": 13.8,
+     "unit": "mag/arcsec^2 (Vega)",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "Gemini Maunakea near-IR background, any lunar phase."
+    },
+    "K": {
+     "value": 14.8,
+     "unit": "mag/arcsec^2 (Vega)",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "Gemini Maunakea near-IR background, any lunar phase."
+    }
+   },
+   "mosfire_imaging_sky": {
+    "Y": {
+     "value": {
+      "vega": 17.44,
+      "ab": 18.09
+     },
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "MOSFIRE imaging. SPIE 2012 range 17.37-17.50 Vega (full moon)."
+    },
+    "J": {
+     "value": {
+      "vega": 15.78,
+      "ab": 16.58
+     },
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "SPIE range 15.49-15.87."
+    },
+    "H": {
+     "value": {
+      "vega": 13.74,
+      "ab": 15.14
+     },
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "SPIE range 13.59-13.89."
+    },
+    "Ks": {
+     "value": {
+      "vega": 13.68,
+      "ab": 15.54
+     },
+     "unit": "mag/arcsec^2",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "SPIE range 13.68-14.25. Includes telescope thermal emission."
+    }
+   },
+   "mosfire_spec_between_OH": {
+    "Y": {
+     "value": {
+      "vega": 18.73,
+      "ab": 19.38,
+      "e_per_s_per_pix": 0.34
+     },
+     "unit": "mag/arcsec^2; e-/s/spatial pix",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": "0.7 arcsec slit, per spatial pixel, between OH lines. Measured during full moon."
+    },
+    "J": {
+     "value": {
+      "vega": 18.34,
+      "ab": 19.24,
+      "e_per_s_per_pix": 0.3
+     },
+     "unit": "",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": ""
+    },
+    "H": {
+     "value": {
+      "vega": 17.32,
+      "ab": 18.72,
+      "e_per_s_per_pix": 0.57
+     },
+     "unit": "",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": ""
+    },
+    "K_lt_2.2um": {
+     "value": {
+      "vega": 16.35,
+      "ab": 18.21,
+      "e_per_s_per_pix": 0.39
+     },
+     "unit": "",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": ""
+    },
+    "K_2.35_2.41um": {
+     "value": {
+      "vega": 14.05,
+      "ab": 15.91,
+      "e_per_s_per_pix": 8.0
+     },
+     "unit": "",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": "Thermal part of K."
+    }
+   },
+   "mosfire_band_avg_spec_sky_AB_derived": {
+    "value": {
+     "Y": 17.83,
+     "J": 16.85,
+     "H": 15.66,
+     "K": 16.17
+    },
+    "unit": "mag/arcsec^2 (AB), OH lines included",
+    "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+    "confidence": "approximate",
+    "note": "My flux-average of the MOSFIRE night-sky FITS spectra (data/MosfireSkyspec/*_abmag.fits), linked from sky_lines.html."
+   },
+   "moon_brightening_cfht": {
+    "value": {
+     "U_quarter": 5,
+     "U_full": 65,
+     "V_quarter": 1.3,
+     "V_full": 5
+    },
+    "unit": "multiplicative factor on dark sky",
+    "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+    "confidence": "documented",
+    "note": "Rough, for cirrus-free nights."
+   },
+   "airmass_scaling": {
+    "value": "sky brightness ~ proportional to airmass (first approximation)",
+    "unit": "",
+    "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+    "confidence": "documented",
+    "note": ""
+   },
+   "nir_oh_variability": {
+    "value": {
+     "timescale_min": "5-15",
+     "amplitude_pct": "5-10"
+    },
+    "unit": "",
+    "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+    "confidence": "documented",
+    "note": "OH declines steadily for the first 1-2 h after sunset. MOSFIRE team: OH lines vary by >0.1% on ~30 s timescales."
+   }
+  },
+  "extinction": {
+   "megacam_airmass_terms_AB": {
+    "u": {
+     "value": 0.35,
+     "unit": "mag/airmass",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam photometric airmass term k."
+    },
+    "g": {
+     "value": 0.15,
+     "unit": "mag/airmass",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam photometric airmass term k."
+    },
+    "r": {
+     "value": 0.1,
+     "unit": "mag/airmass",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam photometric airmass term k."
+    },
+    "i": {
+     "value": 0.04,
+     "unit": "mag/airmass",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam photometric airmass term k."
+    },
+    "z": {
+     "value": 0.03,
+     "unit": "mag/airmass",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "CFHT MegaCam photometric airmass term k."
+    }
+   },
+   "krisciunas_median_UKIRT_page": {
+    "U": {
+     "value": 0.358,
+     "unit": "mag/airmass",
+     "source": "https://www2.keck.hawaii.edu/inst/common/exts.html",
+     "confidence": "documented",
+     "note": "n=1 only. Krisciunas et al. 1987 (PASP 99, 887), Dec 1980 to May 1996 compilation."
+    },
+    "B": {
+     "value": 0.194,
+     "unit": "mag/airmass",
+     "source": "https://www2.keck.hawaii.edu/inst/common/exts.html",
+     "confidence": "documented",
+     "note": "median; mean 0.198+/-0.008"
+    },
+    "V": {
+     "value": 0.111,
+     "unit": "mag/airmass",
+     "source": "https://www2.keck.hawaii.edu/inst/common/exts.html",
+     "confidence": "documented",
+     "note": "median; mean 0.119"
+    },
+    "J": {
+     "value": 0.102,
+     "unit": "mag/airmass",
+     "source": "https://www2.keck.hawaii.edu/inst/common/exts.html",
+     "confidence": "documented",
+     "note": "Old UKIRT J filter. Much higher than MKO-filter values."
+    },
+    "H": {
+     "value": 0.059,
+     "unit": "mag/airmass",
+     "source": "https://www2.keck.hawaii.edu/inst/common/exts.html",
+     "confidence": "documented",
+     "note": "old UKIRT filter"
+    },
+    "K": {
+     "value": 0.088,
+     "unit": "mag/airmass",
+     "source": "https://www2.keck.hawaii.edu/inst/common/exts.html",
+     "confidence": "documented",
+     "note": "old UKIRT filter"
+    }
+   },
+   "mko_filters_leggett2006": {
+    "J": {
+     "value": 0.047,
+     "unit": "mag/airmass",
+     "source": "https://academic.oup.com/mnras/article/373/2/781/1277834",
+     "confidence": "documented",
+     "note": "+/-0.024 (21 photometric nights, UKIRT/WFCAM-era MKO filters)"
+    },
+    "H": {
+     "value": 0.029,
+     "unit": "mag/airmass",
+     "source": "https://academic.oup.com/mnras/article/373/2/781/1277834",
+     "confidence": "documented",
+     "note": "+/-0.020"
+    },
+    "K": {
+     "value": 0.052,
+     "unit": "mag/airmass",
+     "source": "https://academic.oup.com/mnras/article/373/2/781/1277834",
+     "confidence": "documented",
+     "note": "+/-0.028"
+    }
+   },
+   "mko_filters_tokunaga2002_2mm_pwv": {
+    "J": {
+     "value": 0.015,
+     "unit": "mag/airmass",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": "Tokunaga, Simons & Vacca 2002, as tabulated by Gemini, for 2 mm PWV."
+    },
+    "H": {
+     "value": 0.015,
+     "unit": "mag/airmass",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": ""
+    },
+    "K": {
+     "value": 0.033,
+     "unit": "mag/airmass",
+     "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "buton2013_median_curve": {
+    "value": [
+     [
+      3200,
+      0.856
+     ],
+     [
+      3300,
+      0.588
+     ],
+     [
+      3400,
+      0.514
+     ],
+     [
+      3500,
+      0.448
+     ],
+     [
+      3600,
+      0.4
+     ],
+     [
+      3700,
+      0.359
+     ],
+     [
+      3800,
+      0.323
+     ],
+     [
+      3900,
+      0.292
+     ],
+     [
+      4000,
+      0.265
+     ],
+     [
+      4100,
+      0.241
+     ],
+     [
+      4200,
+      0.22
+     ],
+     [
+      4300,
+      0.202
+     ],
+     [
+      4400,
+      0.185
+     ],
+     [
+      4500,
+      0.171
+     ],
+     [
+      4600,
+      0.159
+     ],
+     [
+      4700,
+      0.147
+     ],
+     [
+      4800,
+      0.139
+     ],
+     [
+      4900,
+      0.13
+     ],
+     [
+      5000,
+      0.125
+     ],
+     [
+      5100,
+      0.119
+     ],
+     [
+      5200,
+      0.114
+     ],
+     [
+      5300,
+      0.113
+     ],
+     [
+      5400,
+      0.109
+     ],
+     [
+      5500,
+      0.106
+     ],
+     [
+      5600,
+      0.107
+     ],
+     [
+      5700,
+      0.108
+     ],
+     [
+      5800,
+      0.103
+     ],
+     [
+      5900,
+      0.098
+     ],
+     [
+      6000,
+      0.098
+     ],
+     [
+      6100,
+      0.092
+     ],
+     [
+      6200,
+      0.084
+     ],
+     [
+      6300,
+      0.078
+     ],
+     [
+      6400,
+      0.07
+     ],
+     [
+      6500,
+      0.065
+     ],
+     [
+      6600,
+      0.06
+     ],
+     [
+      6700,
+      0.056
+     ],
+     [
+      6800,
+      0.052
+     ],
+     [
+      6900,
+      0.048
+     ],
+     [
+      7000,
+      0.044
+     ],
+     [
+      7100,
+      0.042
+     ],
+     [
+      7200,
+      0.039
+     ],
+     [
+      7300,
+      0.037
+     ],
+     [
+      7400,
+      0.035
+     ],
+     [
+      7500,
+      0.033
+     ],
+     [
+      7600,
+      0.032
+     ],
+     [
+      7700,
+      0.03
+     ],
+     [
+      7800,
+      0.029
+     ],
+     [
+      7900,
+      0.028
+     ],
+     [
+      8000,
+      0.027
+     ],
+     [
+      8100,
+      0.026
+     ],
+     [
+      8200,
+      0.025
+     ],
+     [
+      8300,
+      0.024
+     ],
+     [
+      8400,
+      0.023
+     ],
+     [
+      8500,
+      0.023
+     ],
+     [
+      8600,
+      0.022
+     ],
+     [
+      8700,
+      0.021
+     ],
+     [
+      8800,
+      0.021
+     ],
+     [
+      8900,
+      0.02
+     ],
+     [
+      9000,
+      0.019
+     ],
+     [
+      9100,
+      0.019
+     ],
+     [
+      9200,
+      0.018
+     ],
+     [
+      9300,
+      0.018
+     ],
+     [
+      9400,
+      0.017
+     ],
+     [
+      9500,
+      0.017
+     ],
+     [
+      9600,
+      0.016
+     ],
+     [
+      9700,
+      0.016
+     ],
+     [
+      9800,
+      0.015
+     ],
+     [
+      9900,
+      0.015
+     ],
+     [
+      10000,
+      0.014
+     ]
+    ],
+    "unit": "[wavelength_A, mag/airmass]",
+    "source": "https://arxiv.org/abs/1210.2619",
+    "confidence": "documented",
+    "note": "SNfactory median, 3200-10000 A in 100 A bins (A&A 549, A8, Table 6). Continuum only: add O2/H2O telluric bands separately. Variability rms is ~0.057 mag/airmass at 3300 A and ~0.003 at 9000 A."
+   },
+   "buton2013_at_band_centers_derived": {
+    "u_3550": {
+     "value": 0.424,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 3550 A."
+    },
+    "B_4400": {
+     "value": 0.185,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 4400 A."
+    },
+    "g_4750": {
+     "value": 0.143,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 4750 A."
+    },
+    "V_5500": {
+     "value": 0.106,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 5500 A."
+    },
+    "r_6250": {
+     "value": 0.081,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 6250 A."
+    },
+    "R_6400": {
+     "value": 0.07,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 6400 A."
+    },
+    "i_7650": {
+     "value": 0.031,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 7650 A."
+    },
+    "I_8000": {
+     "value": 0.027,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 8000 A."
+    },
+    "z_9000": {
+     "value": 0.019,
+     "unit": "mag/airmass",
+     "source": "https://arxiv.org/abs/1210.2619",
+     "confidence": "approximate",
+     "note": "Buton Table 6 interpolated at 9000 A."
+    }
+   }
+  },
+  "seeing": {
+   "mkam_dimm_median": {
+    "value": 0.65,
+    "unit": "arcsec (500 nm, zenith)",
+    "source": "https://academic.oup.com/mnras/article/496/4/4734/5865137",
+    "confidence": "approximate",
+    "note": "MKAM DIMM (between CFHT and Gemini-N), 2009-2020, Lyman et al. 2020 mean/median table. Read from the MNRAS HTML through a text-extraction fetch because the PDF host was unreachable; two independent fetches agreed. The text also calls 0.65 arcsec the typical total seeing."
+   },
+   "mkam_dimm_mean": {
+    "value": 0.7,
+    "unit": "arcsec",
+    "source": "https://academic.oup.com/mnras/article/496/4/4734/5865137",
+    "confidence": "approximate",
+    "note": "Same retrieval caveat."
+   },
+   "mkam_mass_free_atm_median": {
+    "value": 0.35,
+    "unit": "arcsec",
+    "source": "https://academic.oup.com/mnras/article/496/4/4734/5865137",
+    "confidence": "approximate",
+    "note": "Mean 0.45. Same retrieval caveat."
+   },
+   "mkam_ground_layer_median": {
+    "value": 0.5,
+    "unit": "arcsec",
+    "source": "https://academic.oup.com/mnras/article/496/4/4734/5865137",
+    "confidence": "approximate",
+    "note": "Mean 0.47. The ground layer is 2/3 to 3/4 of the total seeing. Same retrieval caveat."
+   },
+   "tmt13n_dimm_median": {
+    "value": 0.75,
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/0904.1183",
+    "confidence": "documented",
+    "note": "TMT 13N (4050 m, ~150 m below summit, 7 m DIMM height). 10th percentile 0.46."
+   },
+   "tmt13n_mass_median": {
+    "value": 0.33,
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/0904.1183",
+    "confidence": "documented",
+    "note": "10th percentile 0.15"
+   },
+   "tmt13n_isoplanatic_angle": {
+    "value": 2.69,
+    "unit": "arcsec",
+    "source": "https://arxiv.org/abs/0904.1183",
+    "confidence": "documented",
+    "note": ""
+   },
+   "tmt13n_tau0_ms": {
+    "value": 5.1,
+    "unit": "ms",
+    "source": "https://arxiv.org/abs/0904.1183",
+    "confidence": "documented",
+    "note": ""
+   },
+   "dimm_quartiles": {
+    "value": {
+     "p10": 0.4,
+     "p25": 0.5,
+     "p50": 0.65,
+     "p75": 0.84,
+     "p90": 1.06
+    },
+    "unit": "arcsec",
+    "source": "https://academic.oup.com/mnras/article/496/4/4734/5865137",
+    "confidence": "estimate",
+    "note": "No published quartile table found. Lognormal with median 0.65 (MKAM) and sigma_ln = 0.38. sigma_ln comes from the TMT 13N 10%/50% ratio: 0.46/0.75 gives sigma = -ln(0.613)/1.2816. The implied P(>1.5 arcsec) is ~1.4%, consistent with Marcy+2014 (<10%)."
+   },
+   "seeing_gt_1p5_fraction": {
+    "value": "<0.10",
+    "unit": "fraction of time",
+    "source": "https://arxiv.org/abs/1401.4195",
+    "confidence": "documented",
+    "note": "Stated in passing in Marcy et al. 2014 (HIRES)."
+   },
+   "keck2_visible_median": {
+    "value": 0.6,
+    "unit": "arcsec (0.5 um)",
+    "source": "https://www2.keck.hawaii.edu/optics/lgsao/lgsbasics.html",
+    "confidence": "documented",
+    "note": "'approximately the median for the Keck 2 telescope' (LGS AO page)."
+   },
+   "keck_median_K_band": {
+    "value": 0.5,
+    "unit": "arcsec FWHM (K)",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "Keck guide 2002."
+   },
+   "keck_telescope_optics_EE": {
+    "value": "80% of energy within 0.4 arcsec diameter; FWHM ~0.2 arcsec",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "Segment + f/15 secondary + tertiary optical quality. Add in quadrature to the seeing."
+   },
+   "cfht_free_atmosphere_median": {
+    "value": 0.4,
+    "unit": "arcsec",
+    "source": "https://www.cfht.hawaii.edu/Instruments/ObservatoryManual/CFHT_ObservatoryManual_(Sec_2).html",
+    "confidence": "documented",
+    "note": "Winter 0.45, summer 0.35, 10th percentile ~0.25."
+   },
+   "delivered_iq_examples": {
+    "deimos_good": {
+     "value": 0.5,
+     "unit": "arcsec FWHM",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/primer.html",
+     "confidence": "documented",
+     "note": "'FWHM=0.5 arcsec is achievable under good seeing conditions'."
+    },
+    "mosdef_slit_star_range": {
+     "value": "0.48-0.99 (typ. 0.55-0.80)",
+     "unit": "arcsec FWHM (NIR)",
+     "source": "https://arxiv.org/abs/1412.1835",
+     "confidence": "documented",
+     "note": "MOSFIRE MOSDEF masks, Table 1."
+    },
+    "mosfire_ks_stack": {
+     "value": 0.56,
+     "unit": "arcsec FWHM",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": "1 h Ks stack, commissioning."
+    },
+    "cfht_megacam_median": {
+     "value": {
+      "g": 0.77,
+      "i": 0.66
+     },
+     "unit": "arcsec",
+     "source": "https://www.cfht.hawaii.edu/Instruments/Imaging/Megacam/generalinformation.html",
+     "confidence": "documented",
+     "note": "2003A sample, CFHT (not Keck)."
+    }
+   },
+   "gemini_mk_iq_percentiles_zenith": {
+    "value": {
+     "g": [
+      0.6,
+      0.85,
+      1.1,
+      1.9
+     ],
+     "r": [
+      0.5,
+      0.75,
+      1.05,
+      1.8
+     ],
+     "i": [
+      0.5,
+      0.75,
+      1.05,
+      1.7
+     ],
+     "Z": [
+      0.5,
+      0.7,
+      0.95,
+      1.7
+     ],
+     "J": [
+      0.4,
+      0.6,
+      0.85,
+      1.55
+     ],
+     "H": [
+      0.4,
+      0.6,
+      0.85,
+      1.5
+     ],
+     "K": [
+      0.35,
+      0.55,
+      0.8,
+      1.4
+     ]
+    },
+    "unit": "arcsec FWHM at [20%, 70%, 85%, 100%] percentile",
+    "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+    "confidence": "documented",
+    "note": "Delivered IQ at Gemini-N (8 m), a good proxy for Keck."
+   },
+   "airmass_scaling": {
+    "value": "FWHM proportional to airmass^0.6 (visible and short-wave IR)",
+    "unit": "",
+    "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+    "confidence": "documented",
+    "note": ""
+   },
+   "wavelength_scaling": {
+    "value": "FWHM proportional to lambda^-0.2 (Kolmogorov)",
+    "unit": "",
+    "source": "https://www.gemini.edu/observing/telescopes-and-sites/sites",
+    "confidence": "estimate",
+    "note": "Standard Kolmogorov scaling, not quoted by a Keck page. The Gemini IQ table is roughly consistent with it."
+   },
+   "seasonal": {
+    "value": "best in summer (Jun-Sep)",
+    "unit": "",
+    "source": "https://academic.oup.com/mnras/article/496/4/4734/5865137",
+    "confidence": "documented",
+    "note": "June and September have the most nights with total seeing < 0.6 arcsec."
+   }
+  },
+  "weather_closure": {
+   "policy_note": {
+    "value": "Guidelines only. The Observing Assistant has ultimate authority.",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "wind_close": {
+    "value": "sustained 45 mph; OR sustained >=25 mph with moderate dust accumulation",
+    "unit": "mph",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": "45 mph = 20.1 m/s"
+   },
+   "wind_reopen": {
+    "value": "sustained <=40 mph for >=30 min, gusts <45 mph, minimal dust after a 30-min buildup test, no other adverse weather",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "wind_limit_2002_guide": {
+    "value": 50,
+    "unit": "mph",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "Older guide: 'allowable wind velocity with dome open: 50 mph', which may vary with dust and dome orientation."
+   },
+   "dewpoint_close": {
+    "value": "dewpoint within 2 C of the outside, secondary or primary-mirror temperature, sustained 5 min; or condensation on outside surfaces",
+    "unit": "degC",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": "Humidity is enforced through the dew-point margin; the table gives no RH%."
+   },
+   "dewpoint_reopen": {
+    "value": "dewpoint margin >2 C for >=30 min (precip/condensation) or >=20 min (fog) AND no condensation buildup after 30 min",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "fog_close": {
+    "value": "fog sighted within 200 m of telescope; or within 400 m and within 15 min of contact; sudden dewpoint jump",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "fog_reopen": {
+    "value": "no fog or clouds within 400 m of domes, no low clouds within 1/2 mile of summit, plus dewpoint rule",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "precipitation_close": {
+    "value": "any visible precipitation; stratus/cumulus clouds overhead of the domes",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "high_clouds_close": {
+    "value": "precipitation-producing clouds overhead; or cloud >6 mag extinction AND conditions preclude the primary program",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "ice_snow_on_dome": {
+    "value": "close/do not open if ice or snow has accumulated on the dome, or snow falls in when opening; reopen when winds are sustained <10 mph with no infalling material",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "wind_chill_laser_spotters": {
+    "value": -15,
+    "unit": "degC",
+    "source": "https://www2.keck.hawaii.edu/observing/Weather_Table.html",
+    "confidence": "documented",
+    "note": "Applies to laser spotters only."
+   },
+   "relative_humidity_limit": {
+    "value": 95,
+    "unit": "% RH",
+    "source": "https://arxiv.org/abs/2208.11794",
+    "confidence": "approximate",
+    "note": "Not on the Keck table. van Kooten & Izett 2022 model the Keck criteria as U < 20 m/s, RH < 95% and T - Tdew > 2 K. Use it as an operational proxy."
+   },
+   "closure_statistics": {
+    "value": {
+     "dome_closed_any_reason_frac_2018_2021": 0.4,
+     "weather_share_of_closures_hist": 0.15,
+     "nights_exceeding_met_criteria_frac": "~0.15 -> >0.30 over 30 yr"
+    },
+    "unit": "",
+    "source": "https://arxiv.org/abs/2208.11794",
+    "confidence": "documented",
+    "note": "From Keck records cited by van Kooten & Izett 2022. Interpret with care."
+   }
+  }
+ },
+ "telescope": {
+  "primary": {
+   "segments": {
+    "value": 36,
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "hexagonal, 1.8 m across corners"
+   },
+   "max_diameter_m": {
+    "value": 10.95,
+    "unit": "m",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "equivalent_circular_aperture_m": {
+    "value": 9.96,
+    "unit": "m",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "primary_focal_length_m": {
+    "value": 17.5,
+    "unit": "m",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "collecting_area_m2": {
+   "recommended_for_etc": {
+    "value": 72.3,
+    "unit": "m^2",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/specEffOldRed.html",
+    "confidence": "documented",
+    "note": "72.295 m^2: 'net usable primary area in the f/15 configuration with the baffles retracted' (Nelson 1994, cited by J. Cohen on the LRIS efficiency page)."
+   },
+   "perley2019": {
+    "value": 73.3,
+    "unit": "m^2",
+    "source": "https://arxiv.org/abs/1903.07629",
+    "confidence": "documented",
+    "note": "'physical area of the primary mirror (73.3 m2)', LPipe paper."
+   },
+   "lris_zp_1994": {
+    "value": 76.2,
+    "unit": "m^2",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/photometric_zero_points.html",
+    "confidence": "documented",
+    "note": "0.97*pi*(10 m)^2/4, used for the 1994 LRIS zero points (0.97 for the central hole)."
+   },
+   "from_equivalent_aperture": {
+    "value": 77.9,
+    "unit": "m^2",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "approximate",
+    "note": "pi*(9.96/2)^2, derived."
+   }
+  },
+  "f15_focus": {
+   "focal_length_m": {
+    "value": 149.6,
+    "unit": "m",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "plate_scale_mm_per_arcsec": {
+    "value": 0.725,
+    "unit": "mm/arcsec",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "field_diameter_arcmin": {
+    "value": 20,
+    "unit": "arcmin",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "mirror_reflectivity": {
+   "value": {
+    "primary": 0.86,
+    "secondary": 0.88
+   },
+   "unit": "fraction at ~6000 A",
+   "source": "https://arxiv.org/abs/1903.07629",
+   "confidence": "documented",
+   "note": "Loss budget in Perley 2019 (from Oke et al. 1995). The LRIS-B page says multiply by ~0.8 for the telescope."
+  },
+  "instrument_locations": {
+   "LRIS": {
+    "value": "Keck I Cassegrain",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/lrishome.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "MOSFIRE": {
+    "value": "Keck I Cassegrain",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/mosfire/home.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "HIRES": {
+    "value": "Keck I right Nasmyth",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "Keck guide 2002."
+   },
+   "DEIMOS": {
+    "value": "Keck II right Nasmyth",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "KCWI": {
+    "value": "Keck II left Nasmyth",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/kcwi/specs.html",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "pointing_limits": {
+   "azimuth_convention": {
+    "value": "azimuth from North through East (N=0, E=90)",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "approximate",
+    "note": "Inferred: the K1 deck range 5-146 deg is described as 'North and East' and the K2 range 185-333 deg as 'South and West'."
+   },
+   "keck1_deck_az_range_deg": {
+    "value": [
+     5.3,
+     146.2
+    ],
+    "unit": "deg az",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": "Nasmyth-deck obstruction zone."
+   },
+   "keck1_el_range_in_deck_zone_deg": {
+    "value": [
+     33.3,
+     88.9
+    ],
+    "unit": "deg el",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "keck1_el_range_elsewhere_deg": {
+    "value": {
+     "unvignetted": [
+      18.0,
+      88.9
+     ],
+     "vignetted": [
+      0.0,
+      18.0
+     ]
+    },
+    "unit": "deg el",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "keck2_deck_az_range_deg": {
+    "value": [
+     185.3,
+     332.8
+    ],
+    "unit": "deg az",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "keck2_el_range_in_deck_zone_deg": {
+    "value": [
+     36.8,
+     89.5
+    ],
+    "unit": "deg el",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "keck2_el_range_elsewhere_deg": {
+    "value": {
+     "unvignetted": [
+      18.0,
+      89.5
+     ],
+     "vignetted": [
+      0.0,
+      18.0
+     ]
+    },
+    "unit": "deg el",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "practical_lower_el_deg": {
+    "value": 18.0,
+    "unit": "deg",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": "Unvignetted limit outside the deck zone. From 0 to 18 deg the beam is vignetted."
+   },
+   "guiding_upper_el_deg": {
+    "value": 85,
+    "unit": "deg",
+    "source": "https://www2.keck.hawaii.edu/inst/common/TelLimits.html",
+    "confidence": "documented",
+    "note": "'Stable guiding cannot be guaranteed for targets transiting at elevations higher than ~85 deg'."
+   },
+   "mosfire_guiding_limits": {
+    "value": {
+     "el_deg": 86,
+     "rotator_rate_deg_per_min": 2
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/mosfire/rotator.html",
+    "confidence": "documented",
+    "note": "Guiding degrades above these. Between 87 and 88 deg the MOSFIRE team stopped guiding."
+   },
+   "zenith_blind_spot_radius_deg": {
+    "value": 0.5,
+    "unit": "deg",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "drives": {
+   "az_slew_rate_deg_s": {
+    "value": 1.3,
+    "unit": "deg/s",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "Also quoted in the NIRC manual."
+   },
+   "el_slew_rate_deg_s": {
+    "value": 0.5,
+    "unit": "deg/s",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "az_accel_deg_s2": {
+    "value": 0.05,
+    "unit": "deg/s^2",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "el_accel_deg_s2": {
+    "value": 0.03,
+    "unit": "deg/s^2",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "pointing_accuracy_arcsec_rms": {
+    "value": 4,
+    "unit": "arcsec rms",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": "2002 value; current pointing is likely better."
+   },
+   "closed_loop_tracking_arcsec_rms": {
+    "value": 0.08,
+    "unit": "arcsec rms",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "open_loop_tracking": {
+    "value": "~0.1 arcsec/min",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "open_loop_offset_accuracy": {
+    "value": "0.1 arcsec over several arcsec",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "documented",
+    "note": ""
+   },
+   "slew_settle_s": {
+    "value": 15,
+    "unit": "s",
+    "source": "https://www2.keck.hawaii.edu/inst/nirc/manual/Manual.html",
+    "confidence": "estimate",
+    "note": "No settle time is published. The NIRC manual says a small offset plus guider settle takes ~6 s, and a full acquisition ~5 min. Use 10-20 s for servo settle after a large slew, before guide-star acquisition."
+   },
+   "dome_rotation": {
+    "value": "assume dome keeps pace with the azimuth slew (~1 deg/s)",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+    "confidence": "estimate",
+    "note": "No public dome rotation rate found. Assume the dome is not the bottleneck except on >90 deg azimuth moves."
+   },
+   "rotator_ranges": {
+    "value": {
+     "DEIMOS_physical_deg": [
+      -330,
+      402
+     ],
+     "MOSFIRE": "slightly <530 deg"
+    },
+    "unit": "deg",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+    "confidence": "documented",
+    "note": "DEIMOS from its specs page; MOSFIRE from McLean+2012 SPIE."
+   }
+  },
+  "overheads": {
+   "typical_acquisition_s": {
+    "value": 300,
+    "unit": "s",
+    "source": "https://www2.keck.hawaii.edu/inst/nirc/manual/Manual.html",
+    "confidence": "documented",
+    "note": "'Including a typical slew, identifying the field, centering, and sending to the science detector, a round number to use is 5 minutes for an acquisition' (Keck NIRC manual). The rotator can move during the slew, and the instrument can be reconfigured."
+   },
+   "small_offset_plus_guide_settle_s": {
+    "value": 6,
+    "unit": "s",
+    "source": "https://www2.keck.hawaii.edu/inst/nirc/manual/Manual.html",
+    "confidence": "documented",
+    "note": "'Offsetting the telescope includes the actual move plus the time it takes for the guiding to settle. This is typically 6 sec.'"
+   },
+   "mosfire_dither_s": {
+    "value": "3-4",
+    "unit": "s",
+    "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+    "confidence": "documented",
+    "note": "per telescope nod"
+   },
+   "focus_mira_s": {
+    "value": 600,
+    "unit": "s",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/checklist-align-xbox.html",
+    "confidence": "documented",
+    "note": "'Wait about 10 minutes for the OA to acquire an appropriate star and run Mira.' The MOSFIRE SAT page recommends refocusing when elevation has changed by 30 deg or more since the last focus."
+   },
+   "faint_longslit_acquisition_s": {
+    "value": 600,
+    "unit": "s",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/longslit_setup.html",
+    "confidence": "estimate",
+    "note": "Estimated from the documented LRIS/DEIMOS blind-offset procedure after the ~5-min slew/acquire: a 30 s slit image and a 30 s field image, each plus ~50-90 s readout, a mov/movb offset, an optional confirmation image, a slit re-insert and a focus change. That sums to ~6-12 min. Use 10 min (plus 5 min slew)."
+   },
+   "slitmask_alignment_s": {
+    "value": {
+     "DEIMOS": 300,
+     "LRIS": 600,
+     "MOSFIRE": 600
+    },
+    "unit": "s",
+    "source": "https://arxiv.org/abs/1203.3192",
+    "confidence": "estimate",
+    "note": "DEIMOS ~5 min is documented (DEEP2: 'generally converges after two direct images and takes roughly 5 minutes'). LRIS and MOSFIRE are estimates. MOSFIRE mask execution (<6 min) can run during the slew, then coarse + fine align. LRIS readouts are longer; aligning with blue-side images saves 35-45 min per night per Steidel."
+   }
+  },
+  "rotator_and_parallactic": {
+   "rotator_modes": {
+    "value": [
+     "position angle mode (fixed sky PA)",
+     "vertical angle mode (slit follows parallactic when set to 0)"
+    ],
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/common/parallactic.html",
+    "confidence": "documented",
+    "note": "Long bright on-slit guiding: vertical angle 0. Short offset-guided exposures: PA mode at the current parallactic angle. Long offset-guided: PA = parallactic angle at mid-exposure."
+   },
+   "dcs_keywords": {
+    "value": {
+     "ROTMODE": "rotator tracking mode",
+     "ROTDEST": "rotator user destination",
+     "ROTPOSN": "rotator user position",
+     "ROTPPOSN": "rotator physical position",
+     "PARANG": "parallactic angle astrometric",
+     "PARANTEL": "parallactic angle telescope"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "example": {
+    "value": "dec +40, HA 2h east -> parallactic angle 60 deg",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/common/parallactic.html",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "operations": {
+   "night_definition": {
+    "value": "between 12-degree twilights",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/metrics/Intro.html",
+    "confidence": "documented",
+    "note": "Keck Duty-Cycle Metrics: 'The time between 12 deg twilights is the formal definition of the night.' Split nights are divided at the midpoint between 12 deg twilights."
+   },
+   "split_night_rule": {
+    "value": "first-half observers finish their last exposure at the midpoint",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/SplitNights.html",
+    "confidence": "documented",
+    "note": "LRIS/DEIMOS cannot be reconfigured at night. Split-night PIs submit one shared configuration."
+   },
+   "instrument_reconfig_at_night": {
+    "value": "LRIS gratings / DEIMOS gratings / HIRES cross-disperser fixed for the night",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/observing/SplitNights.html",
+    "confidence": "documented",
+    "note": "HIRES b<->r XD swap is never done at night (blue_vs_red page). LRIS/DEIMOS gratings come from the configuration form."
+   }
+  }
+ },
+ "instruments": {
+  "LRIS": {
+   "general": {
+    "focus": {
+     "value": "Keck I Cassegrain",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/lrishome.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "fov_arcmin": {
+     "value": [
+      6.0,
+      7.8
+     ],
+     "unit": "arcmin",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/lrishome.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "wavelength_range_A": {
+     "value": [
+      3200,
+      10000
+     ],
+     "unit": "A",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/lrishome.html",
+     "confidence": "documented",
+     "note": "Blue arm ~3100-6000 (optimized), red arm via dichroic."
+    },
+    "pixel_scale_arcsec": {
+     "value": 0.135,
+     "unit": "arcsec/pix",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": "Both arms."
+    },
+    "resolving_power_range": {
+     "value": [
+      300,
+      5000
+     ],
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/lrishome.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "peak_system_efficiency": {
+     "value": 0.5,
+     "unit": "fraction",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/lrishome.html",
+     "confidence": "documented",
+     "note": "'peak system efficiencies of ~50%' (home page). The home page does not say what is included; the efficiency pages quote instrument+CCD only (no telescope/atmosphere)."
+    },
+    "dichroics": {
+     "value": {
+      "D460": 4874,
+      "D500": 5091,
+      "D560": 5696,
+      "D680": 6800,
+      "mirror": "all light to blue"
+     },
+     "unit": "A (50% crossover)",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/dichroic.html",
+     "confidence": "documented",
+     "note": "D500 is 4800 in one column of the table; D680 is 6640/6800. Transmission >95%, reflection >98% outside the transition."
+    },
+    "status_note": {
+     "value": "Red CCD Mark IV (4k x 4k LBNL) installed April/May 2021",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/news.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "blue_detector": {
+    "type": {
+     "value": "2 x 2K x 4K Marconi (E2V), 15 um pixels",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "read_noise_e": {
+     "value": [
+      3.9,
+      4.2,
+      3.6,
+      3.6
+     ],
+     "unit": "e- rms per amp 1-4",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "gain_e_per_adu": {
+     "value": [
+      1.55,
+      1.56,
+      1.63,
+      1.7
+     ],
+     "unit": "e-/ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "linearity_adu": {
+     "value": 62000,
+     "unit": "ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": "saturates at 65535"
+    },
+    "full_well_e": {
+     "value": 99000,
+     "unit": "e-",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "approximate",
+     "note": "Derived: linear limit 62000 ADU x 1.55-1.70 e-/ADU = 96k-105k e-. ADC-limited."
+    },
+    "dark_current_e_per_hr": {
+     "value": 2,
+     "unit": "e-/pix/hr",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "estimate",
+     "note": "Not published. Typical of LN2-cooled E2V CCDs; negligible compared with sky."
+    },
+    "erase_s": {
+     "value": 8,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "readout_s": {
+     "value": 42,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": "Full frame, detector page."
+    },
+    "bias_adu": {
+     "value": 1000,
+     "unit": "ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": "~1000"
+    }
+   },
+   "red_detector": {
+    "type": {
+     "value": "LBNL 4k x 4k, 500 um deep-depletion, 15 um pixels (Mark IV)",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "read_noise_e": {
+     "value": [
+      3.64,
+      3.45,
+      3.65,
+      3.52
+     ],
+     "unit": "e- rms per amp L1,L2,U1,U2",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "gain_e_per_adu": {
+     "value": [
+      1.71,
+      1.64,
+      1.61,
+      1.67
+     ],
+     "unit": "e-/ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "linearity_adu": {
+     "value": 59000,
+     "unit": "ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": "saturates at 65535"
+    },
+    "full_well_e": {
+     "value": 98000,
+     "unit": "e-",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "approximate",
+     "note": "Derived: 59000 ADU x ~1.66 e-/ADU."
+    },
+    "dark_current_e_per_hr": {
+     "value": 5,
+     "unit": "e-/pix/hr",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "estimate",
+     "note": "Not published. A thick LBNL CCD at about -100 C: assume a few e-/pix/hr."
+    },
+    "erase_s": {
+     "value": 10,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "readout_s": {
+     "value": 90,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/detectors.html",
+     "confidence": "documented",
+     "note": "Detector-page value. The mode-specific table is below."
+    },
+    "windowing": {
+     "value": "not available on red",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "binning_modes": {
+     "value": {
+      "imaging_4amp": [
+       "1x1",
+       "2x2"
+      ],
+      "spectroscopy_2amp": [
+       "1x1",
+       "2x2",
+       "2x1",
+       "1x2"
+      ]
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/redccdmanual.html",
+     "confidence": "documented",
+     "note": "Set with 'lredccd_setup imag|spec <bx> <by>'. Imaging uses 4 amps, spectroscopy 2 amps."
+    },
+    "cosmic_ray_note": {
+     "value": "thick CCD -> more CR hits",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/news.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "readout_wallclock": {
+    "blue_1x1_full": {
+     "value": 54,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": "Wall clock for a 1-s exposure, including erase + expose + readout."
+    },
+    "blue_spatial_window_100pix_1x1": {
+     "value": 54,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": "Spatial windowing does not save time on blue."
+    },
+    "blue_1x2_full": {
+     "value": 36,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "blue_1x2_half_frame": {
+     "value": 23,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "red_4amp_1x1": {
+     "value": 54,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": "Elapsed for a 0-s exposure, including erase, expose and readout."
+    },
+    "red_4amp_2x2": {
+     "value": 24,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "red_2amp_1x1": {
+     "value": 97,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": "Spectroscopy default (2 amps)."
+    },
+    "red_2amp_1x2": {
+     "value": 55,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "red_2amp_2x1": {
+     "value": 65,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "red_2amp_2x2": {
+     "value": 39,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/win_bin.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "blue_grisms": {
+    "600/4000": {
+     "dispersion_A_per_pix": {
+      "value": 0.63,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "fwhm_1arcsec_A": {
+      "value": [
+       3.8,
+       4.1
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "blue-to-red"
+     },
+     "R": {
+      "value": 1600,
+      "unit": "",
+      "source": "https://arxiv.org/abs/astro-ph/0401439",
+      "confidence": "documented",
+      "note": "R ~= 1600 (Steidel+2004, 0.7-arcsec-class slits)."
+     },
+     "coverage_A": {
+      "value": {
+       "MOS": [
+        3330,
+        5910
+       ],
+       "longslit": [
+        3040,
+        5630
+       ]
+      },
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "instrument_efficiency": {
+      "value": {
+       "3500": 0.22,
+       "4000": 0.43,
+       "4221_peak": 0.49,
+       "4500": 0.48,
+       "5000": 0.445,
+       "5500": 0.405
+      },
+      "unit": "fraction vs A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/data_files/600_mirr_eff.dat",
+      "confidence": "documented",
+      "note": "Mirror in place of dichroic; instrument + CCD, excluding telescope and atmosphere. Data from 2002."
+     },
+     "system_efficiency_peak_with_telescope": {
+      "value": 0.39,
+      "unit": "fraction",
+      "source": "https://sites.astro.caltech.edu/~ccs/lrisb/lrisb_new.html",
+      "confidence": "approximate",
+      "note": "0.49 x 0.8 ('to get total system throughput including the telescope, multiply by about 0.8')."
+     }
+    },
+    "300/5000": {
+     "dispersion_A_per_pix": {
+      "value": 1.43,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "fwhm_1arcsec_A": {
+      "value": [
+       8.4,
+       9.2
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "R": {
+      "value": 900,
+      "unit": "",
+      "source": "https://arxiv.org/abs/astro-ph/0401439",
+      "confidence": "documented",
+      "note": ""
+     },
+     "coverage_A": {
+      "value": {
+       "MOS": [
+        2240,
+        8090
+       ],
+       "longslit": [
+        1600,
+        7450
+       ]
+      },
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Detector coverage. Usable >~3100 A (atmosphere) and <~7000 A (blue camera)."
+     },
+     "instrument_efficiency_peak": {
+      "value": 0.56,
+      "unit": "fraction",
+      "source": "https://sites.astro.caltech.edu/~ccs/lrisb/lrisb_new.html",
+      "confidence": "documented",
+      "note": "'300/5000 grism provides a peak efficiency of about 56%'. The data file gives 0.55 at 5000 A."
+     }
+    },
+    "400/3400": {
+     "dispersion_A_per_pix": {
+      "value": 1.09,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "fwhm_1arcsec_A": {
+      "value": [
+       6.5,
+       7.1
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "R": {
+      "value": 1000,
+      "unit": "",
+      "source": "https://arxiv.org/abs/astro-ph/0401439",
+      "confidence": "documented",
+      "note": "~1000"
+     },
+     "instrument_efficiency_peak": {
+      "value": 0.5,
+      "unit": "fraction at ~3990 A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/data_files/400_mirr_eff.dat",
+      "confidence": "documented",
+      "note": "0.14 at 3200 A, 0.31 at 3500 A"
+     }
+    },
+    "1200/3400": {
+     "dispersion_A_per_pix": {
+      "value": 0.24,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "fwhm_1arcsec_A": {
+      "value": 1.56,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "R": {
+      "value": 3600,
+      "unit": "",
+      "source": "https://arxiv.org/abs/astro-ph/0401439",
+      "confidence": "documented",
+      "note": "with a 0.7 arcsec slit"
+     },
+     "coverage_A": {
+      "value": {
+       "MOS": [
+        3040,
+        4030
+       ],
+       "longslit": [
+        2940,
+        3920
+       ]
+      },
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "instrument_efficiency_peak": {
+      "value": 0.37,
+      "unit": "fraction at ~3774 A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/data_files/1200_d460_eff.dat",
+      "confidence": "documented",
+      "note": "with the D460 dichroic"
+     }
+    }
+   },
+   "red_gratings": {
+    "150/7500": {
+     "dispersion_A_per_pix": {
+      "value": 3.0,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 12288,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 17.7,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "estimate",
+      "note": "Not tabulated; assumed 5.9 pix x dispersion (the tabulated gratings give 5.8-5.9 pix FWHM for a 1 arcsec slit: 4.7/0.80, 6.9/1.16, 9.18/1.59)."
+     }
+    },
+    "300/5000": {
+     "dispersion_A_per_pix": {
+      "value": 1.59,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 6525,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 9.18,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     }
+    },
+    "400/8500": {
+     "dispersion_A_per_pix": {
+      "value": 1.16,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 4762,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 6.9,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     }
+    },
+    "600/5000": {
+     "dispersion_A_per_pix": {
+      "value": 0.8,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 3275,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 4.7,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     }
+    },
+    "600/7500": {
+     "dispersion_A_per_pix": {
+      "value": 0.8,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 3275,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 4.7,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     }
+    },
+    "600/10000": {
+     "dispersion_A_per_pix": {
+      "value": 0.8,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 3275,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 4.7,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": ""
+     }
+    },
+    "831/8200": {
+     "dispersion_A_per_pix": {
+      "value": 0.58,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 2375,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 3.4,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "estimate",
+      "note": "Not tabulated; assumed 5.9 pix x dispersion (the tabulated gratings give 5.8-5.9 pix FWHM for a 1 arcsec slit: 4.7/0.80, 6.9/1.16, 9.18/1.59)."
+     }
+    },
+    "900/5500": {
+     "dispersion_A_per_pix": {
+      "value": 0.53,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 2175,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 3.1,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "estimate",
+      "note": "Not tabulated; assumed 5.9 pix x dispersion (the tabulated gratings give 5.8-5.9 pix FWHM for a 1 arcsec slit: 4.7/0.80, 6.9/1.16, 9.18/1.59)."
+     }
+    },
+    "1200/7500": {
+     "dispersion_A_per_pix": {
+      "value": 0.4,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 1638,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 2.4,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "estimate",
+      "note": "Not tabulated; assumed 5.9 pix x dispersion (the tabulated gratings give 5.8-5.9 pix FWHM for a 1 arcsec slit: 4.7/0.80, 6.9/1.16, 9.18/1.59)."
+     }
+    },
+    "1200/9000": {
+     "dispersion_A_per_pix": {
+      "value": 0.4,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "Calculated for the 4k detector."
+     },
+     "coverage_A": {
+      "value": 1638,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "documented",
+      "note": "4096 px x dispersion (calculated)."
+     },
+     "fwhm_1arcsec_A": {
+      "value": 2.4,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+      "confidence": "estimate",
+      "note": "Not tabulated; assumed 5.9 pix x dispersion (the tabulated gratings give 5.8-5.9 pix FWHM for a 1 arcsec slit: 4.7/0.80, 6.9/1.16, 9.18/1.59)."
+     }
+    }
+   },
+   "slits": {
+    "longslits": {
+     "value": {
+      "long_0.7": [
+       0.7,
+       175
+      ],
+      "long_1.0": [
+       1.0,
+       175
+      ],
+      "long_1.5": [
+       1.5,
+       175
+      ],
+      "long_8.7": [
+       8.7,
+       175
+      ],
+      "pol_1.0": [
+       1.0,
+       25
+      ],
+      "pol_1.5": [
+       1.5,
+       25
+      ]
+     },
+     "unit": "[width, length] arcsec",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/slitmask.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "user_mask_slots": {
+     "value": 8,
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/slitmask.html",
+     "confidence": "documented",
+     "note": "10 positions, 2 reserved (direct + focus holes)."
+    }
+   },
+   "throughput": {
+    "red_old_ccd_peaks_excl_tel_atm": {
+     "value": {
+      "300/5000": 0.34,
+      "600/7500": 0.4,
+      "1200/7500": 0.36
+     },
+     "unit": "fraction",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/specEffOldRed.html",
+     "confidence": "documented",
+     "note": "1995 measurement with the ORIGINAL Tek red CCD. Instrument + CCD only."
+    },
+    "red_400/8500_total_peak": {
+     "value": 0.3,
+     "unit": "fraction incl. telescope, excl. atmosphere",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/specEffOldRed.html",
+     "confidence": "estimate",
+     "note": "No current curve is published for the Mark IV CCD. Estimate: ~0.38-0.40 instrument peak (similar to the 600/7500 old measurement; the Mark IV has 'similar QE' to the previous LBNL mosaic, which was much redder-sensitive than the Tek) x 0.76 telescope. Beyond 9000 A LRIS beats DEIMOS."
+    },
+    "effective_area_observed": {
+     "value": {
+      "blue_m2": 10,
+      "red_m2": 15,
+      "total_throughput": [
+       0.12,
+       0.2
+      ]
+     },
+     "unit": "m^2",
+     "source": "https://arxiv.org/abs/1903.07629",
+     "confidence": "documented",
+     "note": "Includes atmosphere, telescope, slit losses; clear weather, average seeing; over optimal-sensitivity region of each grism/grating (Perley 2019)."
+    },
+    "loss_budget_6000A": {
+     "value": {
+      "atmosphere": 0.9,
+      "primary": 0.86,
+      "secondary": 0.88,
+      "slit_loss": 0.8,
+      "dichroic": 0.95,
+      "rest_of_spectrograph": 0.4,
+      "detector_QE": 0.8
+     },
+     "unit": "fraction",
+     "source": "https://arxiv.org/abs/1903.07629",
+     "confidence": "documented",
+     "note": "Typical conditions, after Oke et al. 1995."
+    }
+   },
+   "exposure_limits": {
+    "red_max_single_s": {
+     "value": 1200,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/news.html",
+     "confidence": "documented",
+     "note": "'we recommend maximum exposure times of 20 minutes to avoid excessive contamination by cosmic rays' (Mark IV)."
+    },
+    "blue_typical_mask_exposure_s": {
+     "value": 1800,
+     "unit": "s",
+     "source": "https://arxiv.org/abs/astro-ph/0401439",
+     "confidence": "documented",
+     "note": "Steidel+2004 LBG masks: 3 x 1800 s, dithered 1-2 arcsec along the slit."
+    }
+   },
+   "overheads": {
+    "blue_element_change_s": {
+     "value": 60,
+     "unit": "s (max)",
+     "source": "https://arxiv.org/abs/astro-ph/0401439",
+     "confidence": "documented",
+     "note": "Dichroic, grism or filter change '<60 seconds'."
+    },
+    "blue_grism_or_filter_deploy_s": {
+     "value": 30,
+     "unit": "s",
+     "source": "https://arxiv.org/abs/astro-ph/0401439",
+     "confidence": "documented",
+     "note": "'~30 seconds' (LRIS-B page: 'less than 30 seconds')."
+    },
+    "red_grating_change": {
+     "value": "several minutes",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/primer.html",
+     "confidence": "documented",
+     "note": "The DEIMOS primer says its grating change is 'comparable to the time required for an LRIS grating change'. Use 300 s."
+    },
+    "red_grating_tilt_change_s": {
+     "value": 60,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/dispersive_elements.html",
+     "confidence": "estimate",
+     "note": "Not published. Grating-angle moves on this class of stage take tens of seconds."
+    },
+    "red_filter_or_slitmask_change_s": {
+     "value": 60,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/slitmask.html",
+     "confidence": "estimate",
+     "note": "Not published. The red side moves 2 mechanisms at once (grating + slitmask/filter/focus)."
+    },
+    "simultaneous_mechanisms": {
+     "value": {
+      "blue": 4,
+      "red": 2
+     },
+     "unit": "",
+     "source": "https://sites.astro.caltech.edu/~ccs/lrisb/lrisb_new.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "faint_target_procedure": {
+     "value": "30 s slit image; 30 s direct image; movb/movr offset; optional confirm; refocus MIRA/AUTOFOC",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/longslit_setup.html",
+     "confidence": "documented",
+     "note": "See telescope.overheads.faint_longslit_acquisition_s for the time estimate."
+    }
+   },
+   "sensitivity_anchors": {
+    "effective_area": {
+     "value": "~10 m^2 blue, ~15 m^2 red (12-20% total)",
+     "unit": "",
+     "source": "https://arxiv.org/abs/1903.07629",
+     "confidence": "documented",
+     "note": "Observed from standard-star response functions."
+    },
+    "old_red_AB20_count_rate": {
+     "value": {
+      "300/5000@6200A": 4.3,
+      "600/7500@6600A_peak": 2.5
+     },
+     "unit": "photons/s/pixel above atmosphere, AB=20",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/specEffOldRed.html",
+     "confidence": "documented",
+     "note": "1995, OLD Tek CCD with 24 um pixels. Use the efficiencies, not these per-pixel rates."
+    },
+    "imaging_zeropoints_1994": {
+     "value": {
+      "B": 27.34,
+      "V": 27.51,
+      "R": 27.52,
+      "I": 27.4
+     },
+     "unit": "mag giving 1 DN/s at airmass 1 (Vega)",
+     "source": "https://www2.keck.hawaii.edu/inst/lris/photometric_zero_points.html",
+     "confidence": "approximate",
+     "note": "Mean of two nights, 1.72 e-/DN, ORIGINAL red CCD. Historical; recalibrate for Mark IV."
+    }
+   }
+  },
+  "DEIMOS": {
+   "general": {
+    "focus": {
+     "value": "Keck II right Nasmyth",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "detector": {
+     "value": "8192 x 8192 mosaic, 2 x 4 of 2K x 4K MIT/LL CCDs, 15 um",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "pixel_scale_arcsec": {
+     "value": 0.1185,
+     "unit": "arcsec/pix",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "imaging_fov_arcmin": {
+     "value": [
+      16.7,
+      5.0
+     ],
+     "unit": "arcmin",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "Mosaic gaps lose 0.4 x 5.0 arcmin."
+    },
+    "slit_length_arcmin": {
+     "value": {
+      "total": 16.7,
+      "usable": 16.3
+     },
+     "unit": "arcmin",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "max_slitlets": {
+     "value": 130,
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "Up to 130 slitlets with 1.5 arcsec gaps; tilted slits up to 30 deg."
+    },
+    "wavelength_range_A": {
+     "value": {
+      "spectra": [
+       4100,
+       11000
+      ],
+      "imaging": [
+       4000,
+       10500
+      ]
+     },
+     "unit": "A",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "filters": {
+     "value": [
+      "B",
+      "V",
+      "R",
+      "I",
+      "Z",
+      "BAL12(clear)",
+      "GG400",
+      "GG455",
+      "GG495",
+      "OG550"
+     ],
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "An order-blocking or broadband filter must always be in."
+    },
+    "flexure_compensation": {
+     "value": "closed-loop FCS, <0.25-0.5 px residual",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/primer.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "mask_slots": {
+     "value": 10,
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "11 in cassette, 1 for focus mask."
+    },
+    "status_note": {
+     "value": "Science CCD5 inoperative; FCS CCD2 inoperative; grating in slider 3 preferred",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/news.html",
+     "confidence": "documented",
+     "note": "Current status page: targets on CCD1 lose the red end of their spectrum."
+    }
+   },
+   "detector": {
+    "gain_e_per_dn_spectral": {
+     "value": [
+      1.179,
+      1.174,
+      1.312,
+      1.212,
+      1.213,
+      1.198,
+      1.204,
+      1.249
+     ],
+     "unit": "e-/DN (amps 1B..8B)",
+     "source": "https://www2.keck.hawaii.edu/inst/obsdata/inst/deimos/www/detector_data/deimos_detector_data.html",
+     "confidence": "documented",
+     "note": "Measured 2024-10-23."
+    },
+    "read_noise_e_spectral": {
+     "value": [
+      2.472,
+      2.461,
+      2.752,
+      2.541,
+      2.542,
+      2.512,
+      2.524,
+      2.619
+     ],
+     "unit": "e- rms",
+     "source": "https://www2.keck.hawaii.edu/inst/obsdata/inst/deimos/www/detector_data/deimos_detector_data.html",
+     "confidence": "documented",
+     "note": "2024-10-23"
+    },
+    "dark_current_e_per_hr": {
+     "value": [
+      3.3,
+      3.6,
+      3.5,
+      3.7,
+      2.7,
+      3.8,
+      3.3,
+      3.7
+     ],
+     "unit": "e-/pix/hr",
+     "source": "https://www2.keck.hawaii.edu/inst/obsdata/inst/deimos/www/detector_data/deimos_detector_data.html",
+     "confidence": "documented",
+     "note": "2024-10-23"
+    },
+    "full_well_e": {
+     "value": 79000,
+     "unit": "e-",
+     "source": "https://www2.keck.hawaii.edu/inst/obsdata/inst/deimos/www/detector_data/deimos_detector_data.html",
+     "confidence": "estimate",
+     "note": "No linearity limit published. 65535 DN x ~1.2 e-/DN = ADC-limited ~79k e-."
+    },
+    "readout_direct_s": {
+     "value": 40,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/primer.html",
+     "confidence": "documented",
+     "note": "'about 40 seconds in imaging mode' (4 CCDs)."
+    },
+    "readout_spectral_s": {
+     "value": 80,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/primer.html",
+     "confidence": "documented",
+     "note": "'80 seconds in spectral readout mode' (8 CCDs). Primer dates from ~2002-2005; may differ slightly today."
+    }
+   },
+   "gratings": {
+    "600ZD": {
+     "blaze_A": {
+      "value": 7500,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 0.65,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "coverage_A": {
+      "value": 5300,
+      "unit": "A (8192 px)",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "Spectral length. The instantaneous window depends on slit position."
+     },
+     "fwhm_0p75arcsec_A": {
+      "value": 3.5,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "0.75 arcsec slit"
+     },
+     "R_at_blaze_0p75arcsec": {
+      "value": 2143,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "approximate",
+      "note": "blaze / FWHM (1200-line uses 1.35 A mid-range). Derived."
+     }
+    },
+    "830G": {
+     "blaze_A": {
+      "value": 8640,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 0.47,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "coverage_A": {
+      "value": 3840,
+      "unit": "A (8192 px)",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "Spectral length. The instantaneous window depends on slit position."
+     },
+     "fwhm_0p75arcsec_A": {
+      "value": 2.5,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "0.75 arcsec slit"
+     },
+     "R_at_blaze_0p75arcsec": {
+      "value": 3456,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "approximate",
+      "note": "blaze / FWHM (1200-line uses 1.35 A mid-range). Derived."
+     }
+    },
+    "900ZD": {
+     "blaze_A": {
+      "value": 5500,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 0.44,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "coverage_A": {
+      "value": 3530,
+      "unit": "A (8192 px)",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "Spectral length. The instantaneous window depends on slit position."
+     },
+     "fwhm_0p75arcsec_A": {
+      "value": 2.1,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "0.75 arcsec slit"
+     },
+     "R_at_blaze_0p75arcsec": {
+      "value": 2619,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "approximate",
+      "note": "blaze / FWHM (1200-line uses 1.35 A mid-range). Derived."
+     }
+    },
+    "1200G": {
+     "blaze_A": {
+      "value": 7760,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 0.33,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "coverage_A": {
+      "value": 2630,
+      "unit": "A (8192 px)",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "Spectral length. The instantaneous window depends on slit position."
+     },
+     "fwhm_0p75arcsec_A": {
+      "value": "1.1-1.6",
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "0.75 arcsec slit"
+     },
+     "R_at_blaze_0p75arcsec": {
+      "value": 5748,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "approximate",
+      "note": "blaze / FWHM (1200-line uses 1.35 A mid-range). Derived."
+     }
+    },
+    "1200B": {
+     "blaze_A": {
+      "value": 4500,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 0.33,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "coverage_A": {
+      "value": 2630,
+      "unit": "A (8192 px)",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "Spectral length. The instantaneous window depends on slit position."
+     },
+     "fwhm_0p75arcsec_A": {
+      "value": "1.1-1.6",
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "documented",
+      "note": "0.75 arcsec slit"
+     },
+     "R_at_blaze_0p75arcsec": {
+      "value": 3333,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/deimos/gratings.html",
+      "confidence": "approximate",
+      "note": "blaze / FWHM (1200-line uses 1.35 A mid-range). Derived."
+     }
+    }
+   },
+   "slits": {
+    "longslits_arcsec": {
+     "value": [
+      0.7,
+      0.8,
+      1.0,
+      1.2,
+      1.5
+     ],
+     "unit": "arcsec",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/standard_slitmasks.html",
+     "confidence": "documented",
+     "note": "Long0.7 ... Long1.5: 12 slitlets x 82 arcsec. LongMirr 0.7 x 205 arcsec. LVMslitC: 0.7-1.5 x 20 arcsec."
+    },
+    "design_width_arcsec": {
+     "value": {
+      "nominal": 1.0,
+      "good_seeing": 0.5
+     },
+     "unit": "arcsec",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "alignment_accuracy_arcsec": {
+     "value": 0.1,
+     "unit": "arcsec",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "throughput": {
+    "measured_2018_incl_telescope": {
+     "value": {
+      "600ZD_GG455_c6500": {
+       "5000": 0.127,
+       "6000": 0.213,
+       "7000": 0.244,
+       "7400_peak": 0.246,
+       "8000": 0.233,
+       "8500": 0.206
+      },
+      "600ZD_OG550_c7500": {
+       "6000": 0.206,
+       "6840_peak": 0.243,
+       "8000": 0.215,
+       "9000": 0.158,
+       "9500": 0.109,
+       "10000": 0.039
+      },
+      "830G_OG550_c8000": {
+       "6500": 0.175,
+       "7000": 0.219,
+       "8130_peak": 0.267,
+       "9000": 0.219,
+       "9500": 0.142
+      },
+      "1200G_GG455_c7000": {
+       "6000": 0.182,
+       "6500": 0.244,
+       "7140_peak": 0.269,
+       "8000": 0.239
+      },
+      "1200G_OG550_c8000": {
+       "7000": 0.204,
+       "7450_peak": 0.214,
+       "8500": 0.182,
+       "9000": 0.155
+      },
+      "900ZD_GG400_c5000": {
+       "4500": 0.117,
+       "5000": 0.17,
+       "6000": 0.228,
+       "6530_peak": 0.235
+      },
+      "1200B_GG400_c5000": {
+       "4000": 0.051,
+       "4500": 0.127,
+       "5000": 0.167,
+       "6000": 0.184
+      }
+     },
+     "unit": "fraction vs wavelength (A)",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/ripisc.html",
+     "confidence": "documented",
+     "note": "Nd/Nt: photons detected over photons hitting the primary (atmosphere removed). Sampled from the ECSV tables (ripisc/<grating>/*.txt), 2010-2018 standards (T. Lai)."
+    },
+    "spec_page_prediction_6000A": {
+     "value": 0.29,
+     "unit": "fraction incl. telescope",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "Predicted (CCD QE 0.6, silver coatings). The primer says the total peaks near 30%."
+    }
+   },
+   "exposure_limits": {
+    "typical_science_exposure_s": {
+     "value": [
+      900,
+      1800
+     ],
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/checklist-align-xbox.html",
+     "confidence": "documented",
+     "note": "'typically 900-1800 sec'"
+    },
+    "deep2_exposures": {
+     "value": "3 x 1200 s per mask, no dithering",
+     "unit": "",
+     "source": "https://arxiv.org/abs/1203.3192",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "overheads": {
+    "mirror_grating_mode_change_s": {
+     "value": [
+      120,
+      190
+     ],
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "'120-190 sec changeover between mirror and grating, depending on slider'."
+    },
+    "grating_change": {
+     "value": "several minutes",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/primer.html",
+     "confidence": "documented",
+     "note": "The primer recommends zeroth-order imaging (GO ZERO / GO BACK) for alignment instead of swapping to the mirror."
+    },
+    "zeroth_order_tilt_s": {
+     "value": 60,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/faint-long.html",
+     "confidence": "estimate",
+     "note": "Not published. A grating tilt move plus FCS re-lock."
+    },
+    "fcs_lock_s": {
+     "value": 120,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/checklist-align-xbox.html",
+     "confidence": "documented",
+     "note": "'It may take a couple of minutes for the FCS to lock.'"
+    },
+    "mask_alignment_s": {
+     "value": 300,
+     "unit": "s",
+     "source": "https://arxiv.org/abs/1203.3192",
+     "confidence": "documented",
+     "note": "DEEP2: converges after two direct images, ~5 min, and is re-checked once after the first exposure."
+    },
+    "slitmask_change_s": {
+     "value": 90,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/checklist-align-xbox.html",
+     "confidence": "estimate",
+     "note": "Not published. Can be done during the slew."
+    },
+    "filter_change_s": {
+     "value": 60,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "estimate",
+     "note": "Not published."
+    }
+   },
+   "sensitivity_anchors": {
+    "spec_prediction_600l": {
+     "value": {
+      "V=22": 21,
+      "V=23": 12,
+      "V=24": 5
+     },
+     "unit": "S/N per pixel in 3600 s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "Point source, 0.75 arcsec slit, 0.7 arcsec seeing, 5500 A, 0.65 A/px, V sky 21.25 mag/arcsec^2. V is the magnitude through the slit (predicted)."
+    },
+    "achieved_1200G_faint_galaxies": {
+     "value": {
+      "R=21": "2.2-4.6",
+      "R=22": "1.2-2.4",
+      "R=23": "0.6-1.2",
+      "R=24": "0.3-0.6"
+     },
+     "unit": "S/N per pixel in 3600 s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "1.0 arcsec slit, ~7000 A, 0.32 A/px, average conditions, total mag (no slit-loss correction)."
+    },
+    "deep2_1200G_1hr": {
+     "value": {
+      "18.5": [
+       5.53,
+       8.37,
+       10.89
+      ],
+      "19.0": [
+       4.81,
+       6.77,
+       9.74
+      ],
+      "19.5": [
+       3.34,
+       5.89,
+       8.28
+      ],
+      "20.0": [
+       2.92,
+       5.35,
+       7.43
+      ],
+      "20.5": [
+       2.67,
+       4.45,
+       6.18
+      ],
+      "21.0": [
+       2.19,
+       3.29,
+       4.6
+      ],
+      "21.5": [
+       1.67,
+       2.42,
+       3.25
+      ],
+      "22.0": [
+       1.23,
+       1.79,
+       2.4
+      ],
+      "22.5": [
+       0.88,
+       1.29,
+       1.73
+      ],
+      "23.0": [
+       0.61,
+       0.88,
+       1.24
+      ],
+      "23.5": [
+       0.42,
+       0.61,
+       0.83
+      ],
+      "24.0": [
+       0.32,
+       0.45,
+       0.61
+      ]
+     },
+     "unit": "R_AB -> [Q1, median, Q3] S/N per pixel in 1 h",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/deep2_s2n.html",
+     "confidence": "documented",
+     "note": "~50,000 DEEP2 galaxies, 1200G, 6600-6830 and 6960-7250 A, 1 arcsec slits. Galaxies are extended, so point sources do better."
+    },
+    "count_rates_predicted": {
+     "value": {
+      "imaging_V21_e_per_s": 800,
+      "spec_6000A_V21_e_per_s": 1.0
+     },
+     "unit": "e-/s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/specs.html",
+     "confidence": "documented",
+     "note": "Predicted; spectroscopic rate per pixel."
+    },
+    "imaging_zeropoints_2015": {
+     "value": {
+      "V": 27.5,
+      "R": 27.9,
+      "I": 28.0,
+      "Z": 27.0
+     },
+     "unit": "Vega mag for 1 DN/s",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/deimos_imaging_zps.html",
+     "confidence": "documented",
+     "note": "2015-12-17, airmass 1.04."
+    },
+    "night_sky_between_OH": {
+     "value": {
+      "1200G_cont": 0.01,
+      "1200G_OH_peak": 1.0,
+      "830G_cont": 0.015,
+      "830G_OH_peak": 1.5
+     },
+     "unit": "e-/s/px",
+     "source": "https://www2.keck.hawaii.edu/inst/deimos/exposure_recipes.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   }
+  },
+  "MOSFIRE": {
+   "general": {
+    "focus": {
+     "value": "Keck I Cassegrain",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/home.html",
+     "confidence": "documented",
+     "note": "since 2012"
+    },
+    "fov_arcmin": {
+     "value": {
+      "imaging": [
+       6.12,
+       6.12
+      ],
+      "spectroscopy_typical": [
+       6.12,
+       3.0
+      ]
+     },
+     "unit": "arcmin",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": "Corners vignetted; the collimator field is 6.8 arcmin."
+    },
+    "pixel_scale_arcsec": {
+     "value": 0.1798,
+     "unit": "arcsec/pix",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "slits": {
+     "value": {
+      "max": 46,
+      "slit_length_per_bar_pair_arcsec": 7.0,
+      "default_width_arcsec": 0.7
+     },
+     "unit": "",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": "Configurable Slit Unit; any width. Recipes assume 0.7 arcsec."
+    },
+    "csu_reconfig_s": {
+     "value": 360,
+     "unit": "s (max)",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": "'Reconfiguration time is < 6 minutes' (SPIE). The home page says 'under 5 minutes'."
+    },
+    "status_note": {
+     "value": "Warmed for servicing after cold-head failure (2026-08-26)",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/news.html",
+     "confidence": "documented",
+     "note": "Check availability for simulated dates after Aug 2026."
+    }
+   },
+   "detector": {
+    "type": {
+     "value": "Teledyne H2RG HgCdTe 2048x2048",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "gain_e_per_adu": {
+     "value": 2.15,
+     "unit": "e-/ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "read_noise_e": {
+     "value": {
+      "CDS": 21,
+      "MCDS4": 10.8,
+      "MCDS8": 7.7,
+      "MCDS16": 5.8,
+      "MCDS32": 4.2,
+      "MCDS64": 3.5,
+      "MCDS128": 3.0
+     },
+     "unit": "e- rms",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": "SPIE: CDS 23.2 e- at the telescope."
+    },
+    "dark_current_e_per_s": {
+     "value": 0.008,
+     "unit": "e-/s/pix (upper limit)",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": "<0.008"
+    },
+    "linearity": {
+     "value": {
+      "1pct_adu": 26000,
+      "1pct_e": 56000,
+      "5pct_adu": 37000,
+      "5pct_e": 80000
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "saturation": {
+     "value": {
+      "adu": 43000,
+      "e": 97000
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "persistence": {
+     "value": {
+      "fraction": 0.0004,
+      "decay_time_s": 600
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": "The persistence page says e-folding ~10-12 min (<1% after 51 min). 'When in doubt, go dark.'"
+    },
+    "min_integration_s": {
+     "value": 1.455,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/detector.html",
+     "confidence": "documented",
+     "note": "Exposure times are quantized by 1.455 s."
+    },
+    "mcds_overhead_s": {
+     "value": "N_reads x 1.455",
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "MCDS8 11.6 s, MCDS16 23.3 s, MCDS32 46.6 s."
+    }
+   },
+   "spectroscopy": {
+    "Y": {
+     "order": {
+      "value": 6,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 1.0855,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "resolution_pix": {
+      "value": 2.82,
+      "unit": "pix (0.7 arcsec slit)",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "lambda_c_A": {
+      "value": 10373,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "slit at field center"
+     },
+     "R": {
+      "value": 3388,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     },
+     "coverage_A": {
+      "value": [
+       9716,
+       11250
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "central slit; changes by ~6-12 A per mm of slit X position"
+     },
+     "throughput_peak_mosfire_plus_tel": {
+      "value": 0.26,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "documented",
+      "note": "Peak of the measured 'Yeff_mosfire+tel.dat' (May 2012), at 10597 A."
+     },
+     "throughput_median_in_band": {
+      "value": 0.24,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "approximate",
+      "note": "Median over the region above half of peak (my computation from the ASCII file)."
+     },
+     "rec_exposure_s": {
+      "value": 180,
+      "unit": "s",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "MCDS16. Tested to be near background-limited between OH lines."
+     },
+     "rec_efficiency": {
+      "value": 0.89,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "texp / (texp + 23.3 s)"
+     },
+     "noise_darkest_regions_e": {
+      "value": [
+       7.8,
+       9.7
+      ],
+      "unit": "[sky, total] e-",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     }
+    },
+    "J": {
+     "order": {
+      "value": 5,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 1.3028,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "resolution_pix": {
+      "value": 2.88,
+      "unit": "pix (0.7 arcsec slit)",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "lambda_c_A": {
+      "value": 12450,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "slit at field center"
+     },
+     "R": {
+      "value": 3318,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     },
+     "coverage_A": {
+      "value": [
+       11530,
+       13520
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "central slit; changes by ~6-12 A per mm of slit X position"
+     },
+     "throughput_peak_mosfire_plus_tel": {
+      "value": 0.32,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "documented",
+      "note": "Peak of the measured 'Jeff_mosfire+tel.dat' (May 2012), at 13313 A."
+     },
+     "throughput_median_in_band": {
+      "value": 0.28,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "approximate",
+      "note": "Median over the region above half of peak (my computation from the ASCII file)."
+     },
+     "rec_exposure_s": {
+      "value": 120,
+      "unit": "s",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "MCDS16. Tested to be near background-limited between OH lines."
+     },
+     "rec_efficiency": {
+      "value": 0.84,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "texp / (texp + 23.3 s)"
+     },
+     "noise_darkest_regions_e": {
+      "value": [
+       6.0,
+       8.3
+      ],
+      "unit": "[sky, total] e-",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     }
+    },
+    "H": {
+     "order": {
+      "value": 4,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 1.6269,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "resolution_pix": {
+      "value": 2.74,
+      "unit": "pix (0.7 arcsec slit)",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "lambda_c_A": {
+      "value": 16321,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "slit at field center"
+     },
+     "R": {
+      "value": 3660,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     },
+     "coverage_A": {
+      "value": [
+       14680,
+       18040
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "central slit; changes by ~6-12 A per mm of slit X position"
+     },
+     "throughput_peak_mosfire_plus_tel": {
+      "value": 0.38,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "documented",
+      "note": "Peak of the measured 'Heff_mosfire+tel.dat' (May 2012), at 16154 A."
+     },
+     "throughput_median_in_band": {
+      "value": 0.34,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "approximate",
+      "note": "Median over the region above half of peak (my computation from the ASCII file)."
+     },
+     "rec_exposure_s": {
+      "value": 120,
+      "unit": "s",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "MCDS16. Tested to be near background-limited between OH lines."
+     },
+     "rec_efficiency": {
+      "value": 0.84,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "texp / (texp + 23.3 s)"
+     },
+     "noise_darkest_regions_e": {
+      "value": [
+       8.3,
+       10.1
+      ],
+      "unit": "[sky, total] e-",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     }
+    },
+    "K": {
+     "order": {
+      "value": 3,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "dispersion_A_per_pix": {
+      "value": 2.1691,
+      "unit": "A/pix",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "resolution_pix": {
+      "value": 2.78,
+      "unit": "pix (0.7 arcsec slit)",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": ""
+     },
+     "lambda_c_A": {
+      "value": 21760,
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "slit at field center"
+     },
+     "R": {
+      "value": 3610,
+      "unit": "",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     },
+     "coverage_A": {
+      "value": [
+       19540,
+       23970
+      ],
+      "unit": "A",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/grating.html",
+      "confidence": "documented",
+      "note": "central slit; changes by ~6-12 A per mm of slit X position"
+     },
+     "throughput_peak_mosfire_plus_tel": {
+      "value": 0.36,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "documented",
+      "note": "Peak of the measured 'Keff_mosfire+tel.dat' (May 2012), at 21090 A."
+     },
+     "throughput_median_in_band": {
+      "value": 0.31,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/throughput.html",
+      "confidence": "approximate",
+      "note": "Median over the region above half of peak (my computation from the ASCII file)."
+     },
+     "rec_exposure_s": {
+      "value": 180,
+      "unit": "s",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "MCDS16. Tested to be near background-limited between OH lines."
+     },
+     "rec_efficiency": {
+      "value": 0.89,
+      "unit": "fraction",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "texp / (texp + 23.3 s)"
+     },
+     "noise_darkest_regions_e": {
+      "value": [
+       8.4,
+       10.2
+      ],
+      "unit": "[sky, total] e-",
+      "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+      "confidence": "documented",
+      "note": "0.7 arcsec slit"
+     }
+    }
+   },
+   "predicted_instrument_only_throughput": {
+    "value": {
+     "Y": 0.308,
+     "J": 0.325,
+     "H": 0.361,
+     "K": 0.35
+    },
+    "unit": "band-average fraction",
+    "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+    "confidence": "documented",
+    "note": "Slit to detector; excludes telescope and atmosphere; agrees with on-sky measurements."
+   },
+   "imaging": {
+    "filters_um": {
+     "value": {
+      "Y": [
+       1.048,
+       0.152
+      ],
+      "J": [
+       1.253,
+       0.2
+      ],
+      "H": [
+       1.637,
+       0.341
+      ],
+      "K": [
+       2.162,
+       0.483
+      ],
+      "Ks": [
+       2.147,
+       0.314
+      ],
+      "J2": [
+       1.181,
+       0.129
+      ],
+      "J3": [
+       1.288,
+       0.122
+      ],
+      "H1": [
+       1.556,
+       0.165
+      ],
+      "H2": [
+       1.709,
+       0.167
+      ]
+     },
+     "unit": "[center, FWHM] um",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/filters.html",
+     "confidence": "documented",
+     "note": "K is not intended for imaging."
+    },
+    "zeropoints_1e_per_s": {
+     "value": {
+      "Y": [
+       28.13,
+       28.8
+      ],
+      "J": [
+       27.89,
+       28.79
+      ],
+      "H": [
+       27.54,
+       28.94
+      ],
+      "Ks": [
+       26.93,
+       28.78
+      ],
+      "J2": [
+       26.93,
+       27.83
+      ],
+      "J3": [
+       26.88,
+       27.78
+      ],
+      "H1": [
+       26.88,
+       28.28
+      ],
+      "H2": [
+       26.85,
+       28.25
+      ]
+     },
+     "unit": "[Vega, AB] mag for 1 e-/s, airmass 1",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/zeropoints.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "optimal_exposure_s": {
+     "value": {
+      "Y": 30,
+      "J": 10.2,
+      "H": 2.9,
+      "Ks": 5.9,
+      "J2": 25,
+      "J3": 30,
+      "H1": 4.4,
+      "H2": 4.3
+     },
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "For targets fainter than the sky."
+    },
+    "sky_rate_e_per_pix_s": {
+     "value": {
+      "Y": [
+       730,
+       820
+      ],
+      "J": [
+       2040,
+       2900
+      ],
+      "H": [
+       8940,
+       11980
+      ],
+      "Ks": 16000
+     },
+     "unit": "e-/pix/s",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "observing_strategy": {
+    "oh_variation_timescale_s": {
+     "value": 30,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": ">0.1% OH variation on ~30 s timescales"
+    },
+    "dither_patterns": {
+     "value": {
+      "mask_nod": "A/B at +/- nod, typical 1-1.5 arcsec",
+      "ABBA": "typical 1-1.5 arcsec",
+      "ABA'B'": "outer 1.5, inner 1.2 arcsec",
+      "slit_nod": "N-point along slit",
+      "imaging": [
+       "box4",
+       "box5",
+       "box9"
+      ]
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/dither_patterns.html",
+     "confidence": "documented",
+     "note": "Default dither space 2.5 arcsec at design; 1.5 arcsec nod, 3 arcsec A-B separation."
+    },
+    "example_clock_time": {
+     "value": {
+      "integration_s": 3600,
+      "sequence": "20 x 180 s K MCDS16",
+      "clock_s": 4150
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/exposure_recipes.html",
+     "confidence": "documented",
+     "note": "4066 s plus ~3-4 s per dither"
+    },
+    "csu_fatal_error": {
+     "value": {
+      "recovery_up_to_min": 90,
+      "avoid_drive_angles": "within 10 deg of 0/180",
+      "2025_test_rate": "1/210 moves"
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/observing_sequences.html",
+     "confidence": "documented",
+     "note": "Rate from the 2025-04-29 news table. Suggested move elevation ~67 deg."
+    },
+    "abort_modes": {
+     "value": [
+      "after frame (default)",
+      "immediately (data corrupt)",
+      "after read",
+      "after group (UTR only)",
+      "after coadd",
+      "after repeat"
+     ],
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/abort_options.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "mask_download_s": {
+     "value": 60,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/dither_patterns.html",
+     "confidence": "documented",
+     "note": "Masks need no advance submission."
+    },
+    "mode_change_s": {
+     "value": 90,
+     "unit": "s",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "estimate",
+     "note": "Filter-wheel/pupil/grating move is not quantified (SPIE: filter-wheel cycle ~2x spec). Assume 60-120 s, overlapped with 'Wait & Go'."
+    }
+   },
+   "rotator": {
+    "pa_definitions": {
+     "value": {
+      "SKYPA0_CSU_normal": "ROTDEST",
+      "SKYPA1_guider_columns": "ROTDEST+90.00",
+      "SKYPA2_detector_columns": "ROTDEST+0.22",
+      "SKYPA3_longslit": "ROTDEST+4.00"
+     },
+     "unit": "deg",
+     "source": "https://www2.keck.hawaii.edu/inst/mosfire/skypa.html",
+     "confidence": "documented",
+     "note": "To put a longslit N-S, set ROTDEST = -4.00."
+    }
+   },
+   "sensitivity_anchors": {
+    "ks_imaging_1hr": {
+     "value": {
+      "Ks_vega": 23.5,
+      "snr": 10,
+      "aperture_arcsec": 0.5,
+      "fwhm_arcsec": 0.56,
+      "t_s": 3600
+     },
+     "unit": "",
+     "source": "https://www.ucolick.org/documents/mosfire_spie.pdf",
+     "confidence": "documented",
+     "note": "9-point dither, commissioning"
+    },
+    "mosdef_3sigma_continuum_per_pixel_2hr": {
+     "value": {
+      "J": [
+       21.4,
+       22.1
+      ],
+      "H": [
+       21.1,
+       22.4
+      ],
+      "K": [
+       20.8,
+       21.6
+      ]
+     },
+     "unit": "AB mag range, per pixel (typ. ~2 h/filter, 60-245 min; seeing 0.5-0.8 arcsec)",
+     "source": "https://arxiv.org/abs/1412.1835",
+     "confidence": "documented",
+     "note": "Kriek+2015 Table 1, total (slit-loss corrected), point source. The MOSFIRE ETC is optimistic by ~2x."
+    },
+    "mosdef_5sigma_line_2hr": {
+     "value": {
+      "typical": 1.5e-17,
+      "optimistic_H": 6.1e-18,
+      "optimistic_K": 7.4e-18
+     },
+     "unit": "erg/s/cm^2",
+     "source": "https://arxiv.org/abs/1412.1835",
+     "confidence": "documented",
+     "note": "Slit-loss corrected"
+    },
+    "steidel2014_5sigma_line_1hr": {
+     "value": {
+      "H": 3.5e-18,
+      "K": "4.5e-18 to 1.4e-17"
+     },
+     "unit": "erg/s/cm^2",
+     "source": "https://arxiv.org/abs/1412.1835",
+     "confidence": "documented",
+     "note": "As quoted by Kriek+2015; not slit-loss corrected"
+    },
+    "mosdef_exposures": {
+     "value": {
+      "Y": 180,
+      "J": 120,
+      "H": 120,
+      "K": 180
+     },
+     "unit": "s per frame",
+     "source": "https://arxiv.org/abs/1412.1835",
+     "confidence": "documented",
+     "note": ""
+    }
+   }
+  },
+  "HIRES": {
+   "general": {
+    "focus": {
+     "value": "Keck I right Nasmyth",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/observing/kecktelgde/ktelinstupdate.pdf",
+     "confidence": "documented",
+     "note": ""
+    },
+    "wavelength_range_um": {
+     "value": [
+      0.3,
+      1.0
+     ],
+     "unit": "um",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/intro.html",
+     "confidence": "documented",
+     "note": "Detector sensitivity 0.36-1.0 um (spec page)."
+    },
+    "configurations": {
+     "value": {
+      "HIRESb": "UV cross-disperser",
+      "HIRESr": "red cross-disperser",
+      "equal_efficiency_A": 4200
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/intro.html",
+     "confidence": "documented",
+     "note": "No switching at night."
+    },
+    "coverage_per_exposure_A": {
+     "value": [
+      3000,
+      4500
+     ],
+     "unit": "A",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/intro.html",
+     "confidence": "documented",
+     "note": "Complete coverage shortward of 6200 A. Longer wavelengths need 2 settings."
+    },
+    "image_rotator": {
+     "value": "optional; holds slit at a PA or at parallactic",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/intro.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "iodine_cell_and_exposure_meter": {
+     "value": true,
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/intro.html",
+     "confidence": "documented",
+     "note": "Exposure meter PMT 300-650 nm; the pick-off costs 1% of the light."
+    }
+   },
+   "detector": {
+    "type": {
+     "value": "3 x MIT/LL 2048x4096, 15 um (B, G, R)",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/instrument_specifications.html",
+     "confidence": "documented",
+     "note": "since Aug 2004"
+    },
+    "gain_low_e_per_adu": {
+     "value": [
+      1.95,
+      2.09,
+      2.09
+     ],
+     "unit": "e-/ADU (B,G,R)",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/ccdgain.html",
+     "confidence": "documented",
+     "note": "Spec page lists 1.9, 2.2, 2.2. Low gain is the default."
+    },
+    "gain_high_e_per_adu": {
+     "value": [
+      0.78,
+      0.84,
+      0.89
+     ],
+     "unit": "e-/ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/ccdgain.html",
+     "confidence": "documented",
+     "note": "Spec page lists 0.78, 0.86, 0.84."
+    },
+    "read_noise_e": {
+     "value": [
+      2.8,
+      3.1,
+      3.1
+     ],
+     "unit": "e- (B,G,R)",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/instrument_specifications.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "linear_limit_adu": {
+     "value": [
+      39800,
+      37900,
+      38400
+     ],
+     "unit": "ADU",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/instrument_specifications.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "full_well_e_low_gain": {
+     "value": 78000,
+     "unit": "e-",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/instrument_specifications.html",
+     "confidence": "approximate",
+     "note": "Derived: 39800 ADU x 1.95. Nonlinearity becomes significant above ~half full well (ccdgain page)."
+    },
+    "dark_current_e_per_hr": {
+     "value": 2,
+     "unit": "e-/pix/hr",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/hires_data.pdf",
+     "confidence": "documented",
+     "note": ""
+    },
+    "spatial_scale_arcsec": {
+     "value": 0.12,
+     "unit": "arcsec/pix",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/binning.html",
+     "confidence": "documented",
+     "note": "'about 0.12 arcseconds on the sky, in the spatial direction'"
+    },
+    "velocity_per_pixel_km_s": {
+     "value": 1.3,
+     "unit": "km/s/pix",
+     "source": "https://arxiv.org/abs/1401.4195",
+     "confidence": "documented",
+     "note": "'each pixel spanned ~1.3 km/s'"
+    },
+    "dispersion_A_per_pix_5500": {
+     "value": 0.024,
+     "unit": "A/pix",
+     "source": "https://arxiv.org/abs/1401.4195",
+     "confidence": "approximate",
+     "note": "Derived from 1.3 km/s x 5500 A / c."
+    }
+   },
+   "readout": {
+    "1x1_s": {
+     "value": 60,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/binning.html",
+     "confidence": "documented",
+     "note": "'about a minute'"
+    },
+    "2x1_s": {
+     "value": 40,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/binning.html",
+     "confidence": "documented",
+     "note": "Binned 2 spatial (default mode)."
+    },
+    "3x1_s": {
+     "value": 30,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/binning.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "2x2_s": {
+     "value": 24,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/binning.html",
+     "confidence": "documented",
+     "note": "'roughly 24 seconds'"
+    }
+   },
+   "deckers": {
+    "value": {
+     "B1-B4": [
+      0.574,
+      72000,
+      67000
+     ],
+     "B5/C1-C3": [
+      0.861,
+      48000,
+      49000
+     ],
+     "C4/C5/D1/D2": [
+      1.148,
+      36000,
+      37000
+     ],
+     "D3/D4": [
+      1.722,
+      24000,
+      24000
+     ],
+     "E1-E4": [
+      0.4,
+      103000,
+      84000
+     ],
+     "E5": [
+      0.8,
+      51000,
+      52000
+     ]
+    },
+    "unit": "[slit width arcsec, R calculated, R measured UV-XD]",
+    "source": "https://www2.keck.hawaii.edu/inst/hires/slitres.html",
+    "confidence": "documented",
+    "note": "Lengths 3.5-28 arcsec by decker (B1 3.5, B2 7, B3 14, B4 28, C2 14, ...). The red-XD measured R is ~1% higher."
+   },
+   "throughput": {
+    "measured_page": {
+     "value": "plot only (Sept/Nov 2005)",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/throughput.html",
+     "confidence": "documented",
+     "note": "Slitless 4x5 arcsec decker; no tabulated values."
+    },
+    "total_peak_incl_telescope": {
+     "value": 0.07,
+     "unit": "fraction (excl. atmosphere & slit)",
+     "source": "https://arxiv.org/abs/1401.4195",
+     "confidence": "estimate",
+     "note": "My back-of-envelope from the Marcy+2014 anchor. The observed ~2% end-to-end includes the iodine cell, 0.86 arcsec slit losses and atmosphere; correcting those gives ~5-8%. Vogt+1994 (pre-2004 CCD) is ~8% near 6000 A per secondary summaries."
+    }
+   },
+   "exposure_limits": {
+    "typical_long_exposure_s": {
+     "value": [
+      600,
+      2700
+     ],
+     "unit": "s",
+     "source": "https://arxiv.org/abs/1401.4195",
+     "confidence": "documented",
+     "note": "'typical long exposures of 10-45 minutes' (CPS / Kepler follow-up)"
+    }
+   },
+   "overheads": {
+    "setup_changes": {
+     "value": "echelle/XD angle changes by software; XD swap impossible at night",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/blue_vs_red.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "exposure_meter_warmup_s": {
+     "value": 600,
+     "unit": "s",
+     "source": "https://www2.keck.hawaii.edu/inst/hires/exposure_meter.html",
+     "confidence": "documented",
+     "note": "'allow at least 10 minutes for the PMT to warm up'."
+    }
+   },
+   "sensitivity_anchors": {
+    "cps_kepler": {
+     "value": {
+      "Kp": 13.0,
+      "t_s": 2700,
+      "snr_per_pixel": 75,
+      "decker": "C2 (0.861 x 14 arcsec)",
+      "R": 50000,
+      "iodine": true
+     },
+     "unit": "",
+     "source": "https://arxiv.org/abs/1401.4195",
+     "confidence": "documented",
+     "note": "'at Kp = 13.0 mag, the typical exposure was 45 minutes, giving SNR=75 per pixel'"
+    }
+   }
+  },
+  "KCWI": {
+   "general": {
+    "focus": {
+     "value": "Keck II left Nasmyth",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "bandpass_nm": {
+     "value": {
+      "blue": [
+       350,
+       560
+      ],
+      "red": [
+       560,
+       1080
+      ]
+     },
+     "unit": "nm",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/specs.html",
+     "confidence": "documented",
+     "note": "The red arm (KCRM) works simultaneously; dichroic at 560 nm."
+    },
+    "slicers": {
+     "value": {
+      "Large": {
+       "fov_arcsec": [
+        33.1,
+        20.4
+       ],
+       "slice_arcsec": 1.35
+      },
+      "Medium": {
+       "fov_arcsec": [
+        16.5,
+        20.4
+       ],
+       "slice_arcsec": 0.69
+      },
+      "Small": {
+       "fov_arcsec": [
+        8.4,
+        20.4
+       ],
+       "slice_arcsec": 0.35
+      }
+     },
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/configurations.html",
+     "confidence": "documented",
+     "note": "R scales 1x : 2x : 4x for L : M : S."
+    },
+    "pixel_scale_arcsec": {
+     "value": 0.147,
+     "unit": "arcsec/pix (along slice, 1x1)",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/configurations.html",
+     "confidence": "documented",
+     "note": "The specs page says 0.15."
+    }
+   },
+   "gratings": {
+    "value": {
+     "BL": {
+      "A_per_pix": 0.563,
+      "R_LMS": [
+       900,
+       1800,
+       3600
+      ],
+      "total_A": [
+       3500,
+       5600
+      ],
+      "inst_A": 2000
+     },
+     "BM": {
+      "A_per_pix": 0.24,
+      "R_LMS": [
+       2000,
+       4000,
+       8000
+      ],
+      "total_A": [
+       3500,
+       5500
+      ],
+      "inst_A": [
+       800,
+       900
+      ]
+     },
+     "BH1": {
+      "A_per_pix": 0.09,
+      "R_LMS": [
+       4500,
+       9000,
+       18000
+      ],
+      "total_A": [
+       3500,
+       4100
+      ],
+      "inst_A": 400
+     },
+     "BH2": {
+      "A_per_pix": 0.111,
+      "R_LMS": [
+       4500,
+       9000,
+       18000
+      ],
+      "total_A": [
+       4000,
+       4800
+      ],
+      "inst_A": [
+       370,
+       440
+      ]
+     },
+     "BH3": {
+      "A_per_pix": 0.129,
+      "R_LMS": [
+       4500,
+       9000,
+       18000
+      ],
+      "total_A": [
+       4700,
+       5600
+      ],
+      "inst_A": [
+       470,
+       530
+      ]
+     },
+     "RL": {
+      "A_per_pix": 0.92,
+      "R_LMS": [
+       ">500",
+       ">1000",
+       ">2000"
+      ],
+      "total_A": [
+       5400,
+       10800
+      ],
+      "inst_A": [
+       3300,
+       3700
+      ]
+     },
+     "RM1": {
+      "A_per_pix": 0.355,
+      "R_LMS": [
+       ">1400",
+       ">2800",
+       ">5600"
+      ],
+      "total_A": [
+       5500,
+       8600
+      ],
+      "inst_A": [
+       1260,
+       1430
+      ]
+     },
+     "RM2": {
+      "A_per_pix": 0.5,
+      "R_LMS": [
+       ">1400",
+       ">2800",
+       ">5600"
+      ],
+      "total_A": [
+       6700,
+       10800
+      ],
+      "inst_A": [
+       1750,
+       2000
+      ]
+     },
+     "RH1": {
+      "A_per_pix": 0.162,
+      "R_LMS": [
+       ">3250",
+       ">6500",
+       ">13000"
+      ],
+      "total_A": [
+       5500,
+       6800
+      ],
+      "inst_A": [
+       560,
+       630
+      ]
+     },
+     "RH2": {
+      "A_per_pix": 0.19,
+      "R_LMS": [
+       ">3250",
+       ">6500",
+       ">13000"
+      ],
+      "total_A": [
+       6300,
+       7800
+      ],
+      "inst_A": [
+       640,
+       730
+      ]
+     },
+     "RH3": {
+      "A_per_pix": 0.223,
+      "R_LMS": [
+       ">3250",
+       ">6500",
+       ">13000"
+      ],
+      "total_A": [
+       7700,
+       9500
+      ],
+      "inst_A": [
+       750,
+       850
+      ]
+     },
+     "RH4": {
+      "A_per_pix": "0.28-0.33",
+      "R_LMS": [
+       ">3250",
+       ">6500",
+       ">13000"
+      ],
+      "total_A": [
+       9200,
+       10800
+      ],
+      "inst_A": [
+       830,
+       1020
+      ]
+     }
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/kcwi/configurations.html",
+    "confidence": "documented",
+    "note": "Red values are lab measurements (unbinned pixels). Nod-and-shuffle cuts the bandpass by ~4x."
+   },
+   "detector": {
+    "blue": {
+     "value": "e2v CCD231-84 4k x 4k, 15 um",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "red": {
+     "value": "LBNL 4k x 4k, 500 um thick, Archon",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/specs.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "read_noise_e": {
+     "value": {
+      "blue_slow": 2.7,
+      "blue_fast": 5,
+      "red_slow": 3
+     },
+     "unit": "e-",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/overheads_estimated.html",
+     "confidence": "documented",
+     "note": ""
+    },
+    "blue_dark_e_per_hr": {
+     "value": 1,
+     "unit": "e-/pix/hr",
+     "source": "https://arxiv.org/abs/1807.10356",
+     "confidence": "documented",
+     "note": "at -110 C (Morrissey+2018)"
+    },
+    "saturation_counts": {
+     "value": {
+      "blue_high_gain": 65000,
+      "red_high_gain": 63000
+     },
+     "unit": "DN",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/detector-info.html",
+     "confidence": "documented",
+     "note": "Nonlinearity starts ~60k (blue) / 58-60k (red)."
+    },
+    "red_cosmic_rays": {
+     "value": "0.8-1.0% of pixels per 300 s at 2x2",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/detector-info.html",
+     "confidence": "documented",
+     "note": ""
+    }
+   },
+   "readout_s": {
+    "value": {
+     "blue_1amp_slow": [
+      337,
+      106
+     ],
+     "blue_2amp_slow": [
+      170,
+      53
+     ],
+     "blue_4amp_slow": [
+      85,
+      27
+     ],
+     "blue_1amp_fast": [
+      75,
+      25
+     ],
+     "blue_2amp_fast": [
+      38,
+      13
+     ],
+     "blue_4amp_fast": [
+      19,
+      7
+     ],
+     "red_2amp_slow": [
+      90,
+      30
+     ],
+     "red_pre_exposure_erase": 13
+    },
+    "unit": "s [1x1, 2x2]",
+    "source": "https://www2.keck.hawaii.edu/inst/kcwi/overheads_estimated.html",
+    "confidence": "documented",
+    "note": "Blue 2-amp slow is the common mode. Do not use quad-amp with N&S."
+   },
+   "overheads": {
+    "value": {
+     "target_acquisition_min": [
+      0.5,
+      5
+     ],
+     "slicer_change_s_per_station": 60,
+     "blue_grating_change_min": 5,
+     "blue_camera_rotation_s": 90,
+     "red_grating_change_min": 2,
+     "red_camera_rotation_s": 30,
+     "cal_set_script_min": 3,
+     "nas_settle_s_per_nod": [
+      10,
+      20
+     ]
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/kcwi/overheads_estimated.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "exposure_limits": {
+    "value": {
+     "red_2x2_max_s": 300,
+     "red_1x1_max_s": 600,
+     "min_exposures_per_position": 3,
+     "blue_example_s": [
+      990,
+      1320
+     ]
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/kcwi/detector-info.html",
+    "confidence": "documented",
+    "note": "Blue exposures can only be shortened in progress; red can be lengthened or shortened."
+   },
+   "throughput": {
+    "note": {
+     "value": "pre-ship and commissioning curves published only as plots",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/throughput.html",
+     "confidence": "documented",
+     "note": "Commissioning curves include atmosphere at airmass 1 and 3 reflections; instrument alone is ~0.2 higher."
+    },
+    "total_peak_BL_BM": {
+     "value": 0.3,
+     "unit": "fraction incl. telescope + atmosphere",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/throughput.html",
+     "confidence": "estimate",
+     "note": "Estimate: instrument ~0.45-0.5 at peak x telescope 0.8 x atmosphere 0.85. BH3 is ~25% below the others."
+    }
+   },
+   "sensitivity_anchors": {
+    "note": {
+     "value": "no numeric S/N anchor found on public pages",
+     "unit": "",
+     "source": "https://www2.keck.hawaii.edu/inst/kcwi/throughput.html",
+     "confidence": "estimate",
+     "note": "Use the KCWI ETC linked from the KCWI pages."
+    }
+   }
+  }
+ },
+ "control": {
+  "ktl_syntax": {
+   "show": {
+    "value": "show [-binary] [-debug] [-terse] [-timestamp] -s <service> [keywords]",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/cl.html",
+    "confidence": "documented",
+    "note": "'show -s <service> keywords' lists all keywords. -terse returns the bare value (for scripts)."
+   },
+   "modify": {
+    "value": "modify -s <service> keyword=value [keyword=value ...] [nowait]",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/cl.html",
+    "confidence": "documented",
+    "note": "Blocks until the move completes unless nowait. Scripts also use 'silent' (e.g. modify -s dcs silent raoff=..)."
+   },
+   "waitfor": {
+    "value": "waitfor -s <service> [-t <timeout_s>] keyword=value",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/goi",
+    "confidence": "documented",
+    "note": "e.g. waitfor -s deiccd -t 10 wdisk=true"
+   },
+   "lris_shortcuts": {
+    "value": {
+     "s": "show -s lris",
+     "sb": "show -s lrisblue",
+     "m": "modify -s lris",
+     "mb": "modify -s lrisblue"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/cl.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "services": {
+    "value": {
+     "Keck I telescope": "dcs",
+     "primary ACS": "acs",
+     "LRIS red+shared": "lris",
+     "LRIS blue detector": "lrisblue",
+     "DEIMOS CCD": "deiccd",
+     "DEIMOS motors": "deimot",
+     "DEIMOS rotator": "deirot",
+     "DEIMOS FCS": "deifcs",
+     "MOSFIRE global": "mosfire",
+     "MOSFIRE detector": "mds",
+     "MOSFIRE CSU": "mcsus",
+     "HIRES CCD": "hiccd",
+     "HIRES instrument": "hires"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/cl.html",
+    "confidence": "documented",
+    "note": "LRIS/ACS/DCS: cl.html; DEIMOS: deimos-keyword-summary.html; MOSFIRE: mosfire_keywords.html; HIRES: troublepage.html (show -s hiccd ..., show -s hires lfilname). On DEIMOS/K2 hosts the telescope service is also addressed as 'dcs' (DEIMOS scripts)."
+   }
+  },
+  "dcs_keywords": {
+   "AIRMASS": {
+    "value": "AIRMASS",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "air mass (double)"
+   },
+   "AZ": {
+    "value": "AZ",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope azimuth (double)"
+   },
+   "EL": {
+    "value": "EL",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope elevation (double)"
+   },
+   "RA": {
+    "value": "RA",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope right ascension (double)"
+   },
+   "DEC": {
+    "value": "DEC",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope declination (double)"
+   },
+   "HA": {
+    "value": "HA",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope hour angle"
+   },
+   "LST": {
+    "value": "LST",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "local apparent sidereal time"
+   },
+   "UT": {
+    "value": "UT",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "coordinated universal time"
+   },
+   "PARANG": {
+    "value": "PARANG",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "parallactic angle astrometric"
+   },
+   "ROTMODE": {
+    "value": "ROTMODE",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "rotator tracking mode (enum)"
+   },
+   "ROTDEST": {
+    "value": "ROTDEST",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "rotator user destination"
+   },
+   "ROTPOSN": {
+    "value": "ROTPOSN",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "rotator user position"
+   },
+   "ROTPPOSN": {
+    "value": "ROTPPOSN",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "rotator physical position"
+   },
+   "TARGNAME": {
+    "value": "TARGNAME",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "target name"
+   },
+   "TARGRA": {
+    "value": "TARGRA",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "target RA"
+   },
+   "TARGDEC": {
+    "value": "TARGDEC",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "target Dec"
+   },
+   "RAOFF": {
+    "value": "RAOFF",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "right ascension offset"
+   },
+   "DECOFF": {
+    "value": "DECOFF",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "declination offset"
+   },
+   "AZOFF": {
+    "value": "AZOFF",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "azimuth offset"
+   },
+   "ELOFF": {
+    "value": "ELOFF",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "elevation offset"
+   },
+   "INSTXOFF": {
+    "value": "INSTXOFF",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "instrument x offset"
+   },
+   "INSTYOFF": {
+    "value": "INSTYOFF",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "instrument y offset"
+   },
+   "REL2BASE": {
+    "value": "REL2BASE",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "offset relative to base (enum)"
+   },
+   "REL2CURR": {
+    "value": "REL2CURR",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "offset relative to current (enum)"
+   },
+   "MARK": {
+    "value": "MARK",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "mark current as base (logical)"
+   },
+   "GOTOBASE": {
+    "value": "GOTOBASE",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "go to base"
+   },
+   "TELLOLM": {
+    "value": "TELLOLM",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope lower el limit"
+   },
+   "TELUPLM": {
+    "value": "TELUPLM",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope upper el limit"
+   },
+   "SLEWTIME": {
+    "value": "SLEWTIME",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "total slew time"
+   },
+   "DOMEPOSN": {
+    "value": "DOMEPOSN",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "dome azimuth"
+   },
+   "TRACKING": {
+    "value": "TRACKING",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope servos tracking"
+   },
+   "GUIDING": {
+    "value": "GUIDING",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "guiding on"
+   },
+   "AUTACTIV": {
+    "value": "AUTACTIV",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "guider active"
+   },
+   "AUTGO": {
+    "value": "AUTGO",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "guider go flag"
+   },
+   "AUTRESUM": {
+    "value": "AUTRESUM",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "guider resume counter (used by wftel)"
+   },
+   "FLIMAGIN": {
+    "value": "FLIMAGIN",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "imaging dome-flat lamp (enum)"
+   },
+   "FLSPECTR": {
+    "value": "FLSPECTR",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "spectral dome-flat lamp (enum)"
+   },
+   "TELFOCUS": {
+    "value": "TELFOCUS",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "telescope focus compensated"
+   },
+   "EXPOSIP": {
+    "value": "EXPOSIP",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/dcs_key_list.html",
+    "confidence": "documented",
+    "note": "instrument exposure in progress"
+   }
+  },
+  "telescope_offset_commands": {
+   "en_radec": {
+    "value": "modify -s dcs silent raoff=<E_arcsec> decoff=<N_arcsec> rel2curr=t",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/en",
+    "confidence": "documented",
+    "note": "DEIMOS 'en' script"
+   },
+   "azel": {
+    "value": "modify -s dcs silent azoff=<arcsec> eloff=<arcsec> rel2curr=t",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/azel",
+    "confidence": "documented",
+    "note": ""
+   },
+   "mxy_instrument": {
+    "value": "modify -s dcs silent instxoff=<x> instyoff=<y> rel2curr=t  (rel2base=t variant exists)",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/mxy",
+    "confidence": "documented",
+    "note": ""
+   },
+   "markbase": {
+    "value": "modify -s dcs mark=true",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/markbase",
+    "confidence": "documented",
+    "note": ""
+   },
+   "gotobase": {
+    "value": "modify -s dcs raoff=0 decoff=0 rel2base=true",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/gotobase",
+    "confidence": "documented",
+    "note": ""
+   },
+   "dome_flats_flag": {
+    "value": "modify -s dcs domecals=true / false",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/exposure_recipes.html",
+    "confidence": "documented",
+    "note": "Tells the summit crew not to enter the dome."
+   },
+   "dome_lamps": {
+    "value": "modify -s dcs flimagin=0 flspectr=1",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/exposure_recipes.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "wftel": {
+    "value": "wftel: wait for telescope move / guider resume (polls dcs AUTACTIV, AUTRESUM, AUTGO)",
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/wftel",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "LRIS": {
+   "keywords": {
+    "value": {
+     "TTIME": "total (exposure) time, integer s (lris & lrisblue)",
+     "EXPTIME": "exposure time (lris)",
+     "OBJECT": "object name",
+     "OBSERVER": "observer",
+     "EXPOSE": "start exposure (logical)",
+     "ABORTEX": "abort exposure",
+     "PAUSE": "pause",
+     "RESUME": "resume",
+     "EXPOSIP": "exposure in progress",
+     "ELAPTIME": "elapsed time",
+     "FRAMENO": "frame number",
+     "OUTFILE": "readout filename",
+     "BINNING": "binning [2]",
+     "WINDOW": "window [5]",
+     "NUMAMPS": "number of amps",
+     "SLITNAME": "slitmask name",
+     "GRANAME": "grating name",
+     "GRANGLE": "grating angle",
+     "WAVELEN": "grating wavelength (longslit)",
+     "MSWAVE": "multislit wavelength",
+     "GRISNAME": "grism name",
+     "BLUFILT": "blue filter",
+     "REDFILT": "red filter",
+     "DICHNAME": "dichroic name",
+     "TRAPDOOR": "hatch",
+     "LAMPS": "lamps [6]"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/instrument_key_list.html",
+    "confidence": "documented",
+    "note": "The list predates the 2021 Mark IV red CCD. Red exposures are now driven by scripts (tintr/goir/abortr); the red-CCD keyword names may differ."
+   },
+   "scripts": {
+    "value": {
+     "tintr <s>": "set/show red exposure time",
+     "tintb <s>": "set/show blue exposure time",
+     "goir [N]": "take N red exposures",
+     "goib [N]": "take N blue exposures",
+     "goibr [N]": "red + blue",
+     "abortr / abortb / abortbr": "abort (red: no readout/save)",
+     "object <name>": "OBJECT",
+     "slit <mask>": "slitmask",
+     "grating [-mswave] <name> <wave>": "grating + central wavelength",
+     "grism <name>": "blue grism",
+     "filterb / filterr <name>": "filters",
+     "dichroic <name>": "dichroic",
+     "lamps <list|off>": "cal lamps",
+     "trapopen / trapclose": "hatch",
+     "lredccd_setup imag|spec <bx> <by>": "Mark IV red binning/amps",
+     "windowb x y w h": "blue window",
+     "binning1x2b / binning2x2b": "blue binning",
+     "en <e> <n>": "offset E/N arcsec",
+     "azel": "offset az/el",
+     "mxy": "offset detector coords",
+     "gxy": "offset guider coords",
+     "sltmov <arcsec>": "move along slit",
+     "movb/movr x1 y1 x2 y2": "put object at pixel",
+     "markbase / gotobase": "base coords",
+     "bxy5b/bxy9br ...": "imaging dithers"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/lris/procs/index.html",
+    "confidence": "documented",
+    "note": "Also redccdmanual.html, dither.html, shell_scripts.html (csh example uses tintr, tintb, goibr, goir, goib, lamps, slit, grating -mswave)."
+   }
+  },
+  "DEIMOS": {
+   "keywords": {
+    "value": {
+     "DEICCD.TTIME": "total time (s)",
+     "DEICCD.EXPTIME": "exposure time",
+     "DEICCD.OBJECT": "object",
+     "DEICCD.EXPOSE": "start exposure (modify -s deiccd expose=t wait)",
+     "DEICCD.ABORTEX": "abort",
+     "DEICCD.STOPEX": "stop exposure",
+     "DEICCD.PAUSE / RESUME": "pause/resume",
+     "DEICCD.EXPOSIP": "exposure in progress",
+     "DEICCD.ELAPTIME": "elapsed",
+     "DEICCD.FRAMENO": "frame number",
+     "DEICCD.OUTDIR / OUTFILE": "output",
+     "DEICCD.WCRATE / WSERV / WDISK": "readout/transfer/write flags",
+     "DEICCD.BINNING": "binning",
+     "DEICCD.MOSMODE": "mosaic readout mode",
+     "DEIMOT.GRATENAM": "grating",
+     "DEIMOT.G3TLTWAV / G4TLTWAV": "slider 3/4 wavelength",
+     "DEIMOT.SLMSKNAM": "slitmask",
+     "DEIMOT.DWFILNAM": "filter",
+     "DEIROT.ROTATVAL": "rotator value"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/deimos-keyword-summary.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "scripts": {
+    "value": {
+     "tint <s>": "modify -s deiccd ttime=<s>",
+     "goi [-nowait] [-dark] [N]": "take N exposures (expose=t, then waitfor wcrate/wserv/wdisk)",
+     "abortex": "modify -s deiccd abortex=1",
+     "object <name>": "modify -s deiccd object=...",
+     "wffcs": "wait for FCS lock",
+     "wfi": "wait for new image",
+     "wftel": "wait for telescope",
+     "spectral / direct": "readout mode",
+     "gozero": "zeroth-order imaging",
+     "grating / slider / wavelen": "grating setup",
+     "slitmask <name>": "mask",
+     "filter <name>": "filter",
+     "skypa / rotang": "rotator",
+     "mov / gmov / mxy / en / azel / markbase / gotobase": "offsets",
+     "abba / ab": "spectroscopic nod sequences",
+     "bxy5/8/9": "imaging dithers"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/deimos/procs/",
+    "confidence": "documented",
+    "note": "Typical science start from the checklist: 'wffcs ; goi'."
+   },
+   "goi_sequence": {
+    "value": [
+     "modify -s deiccd silent expose=t wait",
+     "waitfor -s deiccd wcrate=true",
+     "waitfor -s deiccd wserv=true",
+     "waitfor -s deiccd wcrate=false",
+     "waitfor -s deiccd wserv=false",
+     "waitfor -s deiccd -t 10 wdisk=true",
+     "waitfor -s deiccd wdisk=false"
+    ],
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/realpublic/observing//public_instrument_info/deimos/procs/goi",
+    "confidence": "documented",
+    "note": "Documented end-of-exposure keyword transitions."
+   }
+  },
+  "MOSFIRE": {
+   "keywords": {
+    "value": {
+     "MOSFIRE.ITIME": "integration time per coadd in ms",
+     "MOSFIRE.COADDS": "coadds",
+     "MOSFIRE.SAMPMODE": "1 Single, 2 CDS, 3 MCDS, 4 UTR",
+     "MOSFIRE.NUMREADS": "reads per group",
+     "MOSFIRE.GROUPS": "sampling groups",
+     "MOSFIRE.OBJECT": "object",
+     "MOSFIRE.OBSERVER": "observer",
+     "MOSFIRE.GO": "start a saved exposure",
+     "MOSFIRE.ABORT": "1 now, 2 after read, 3 after group, 4 after coadd",
+     "MOSFIRE.READY": "0 busy/error, 1 ok to expose",
+     "MOSFIRE.EXPOSING": "exposure in progress",
+     "MOSFIRE.IMAGEDONE": "1 when written",
+     "MOSFIRE.PROGRESS": "percent complete",
+     "MOSFIRE.LASTFILE": "last file",
+     "MOSFIRE.FRAMENUM": "frame number",
+     "MOSFIRE.OUTDIR": "outdir",
+     "MOSFIRE.FILTER": "filter",
+     "MOSFIRE.OBSMODE": "observing mode (e.g. 'Y-spectroscopy')",
+     "MOSFIRE.MASKNAME": "current mask",
+     "MOSFIRE.SETUPNAME": "set-up mask",
+     "MOSFIRE.CSUREADY": "CSU state (2 ready, 3 moving, 4 configuring, -1 error)",
+     "MOSFIRE.PATTERN": "dither pattern",
+     "MOSFIRE.NODE": "RA nod offset (arcsec)",
+     "MOSFIRE.NODN": "Dec nod offset (arcsec)",
+     "MDS.* / MCSUS.*": "detector / CSU servers mirror the same names"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/mosfire/mosfire_keywords.html",
+    "confidence": "documented",
+    "note": ""
+   },
+   "commands": {
+    "value": {
+     "modify -s mosfire node=<ra_arcsec>": "imaging dither size RA",
+     "modify -s mosfire nodn=<dec_arcsec>": "imaging dither size Dec",
+     "box4 / box5 / box9": "imaging dither scripts",
+     "markbase": "mark base (on mosfireserver)",
+     "acq_long2pos": "long2pos script",
+     "Quick Dark / Wait & Go (GUI)": "dark filter / start sequence after mechanisms"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/mosfire/observing_sequences.html",
+    "confidence": "documented",
+    "note": ""
+   }
+  },
+  "HIRES": {
+   "services": {
+    "value": {
+     "hiccd": "CCD (e.g. show -s hiccd dwrxfrsw; modify -s hiccd autofill=1)",
+     "hires": "instrument (e.g. show -s hires lfilname)"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/hires/troublepage.html",
+    "confidence": "documented",
+    "note": "No public HIRES exposure keyword list found; exposure keywords not confirmed here."
+   }
+  },
+  "KCWI": {
+   "scripts": {
+    "value": {
+     "tintb <s>": "blue exposure time",
+     "goib [N]": "blue exposures",
+     "object": "object",
+     "slicer": "slicer",
+     "gratingb": "blue grating",
+     "cwaveb / pwaveb": "central / peak wavelength",
+     "filterb": "blue filter",
+     "nsmaskb": "N&S mask",
+     "binningb / ampmodeb / ccdspeedb": "detector",
+     "goifpc / tintfc": "focal-plane camera",
+     "moveFpc": "offset via FPC coords",
+     "hatch / lamp / calmirror": "calibration"
+    },
+    "unit": "",
+    "source": "https://www2.keck.hawaii.edu/inst/kcwi/scripts_docs/index.html",
+    "confidence": "documented",
+    "note": "Red-side equivalents exist (framer, nextfiler, ...), but red exposure-script names were not seen in the public list."
+   }
+  }
+ }
+}

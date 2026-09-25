@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Observing Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand">Observing Assistant <span id="adapter" class="pill"></span></div>
+  <div id="clock" class="mono"></div>
+  <div class="models">
+    <span id="s1info" class="pill"></span>
+    <span id="s2info" class="pill"></span>
+    <label class="switch" title="Advise: you act. Autopilot: the assistant sends commands when the console allows it and it is confident.">
+      <select id="mode"><option value="advise">Advise</option><option value="autopilot">Autopilot</option></select>
+    </label>
+    <a href="/trace" target="_blank" class="pill" title="Every exchange behind every decision, as JSON in and out">trace ↗</a>
+    <button id="nightmode" title="Red night-vision mode">☾</button>
+  </div>
+</header>
+
+<main>
+  <section id="col-left">
+    <div class="card" id="now">
+      <h3>Now</h3>
+      <div id="nowgrid" class="grid2 mono"></div>
+      <div id="s1reads" class="small" title="System 1 (AnyJev) answers to per-state questions"></div>
+    </div>
+    <div class="card">
+      <h3>Program progress <span id="score" class="muted"></span></h3>
+      <div id="progress"></div>
+      <div id="proj" class="muted small"></div>
+    </div>
+    <div class="card" id="manualcard" hidden>
+      <h3>Report (real telescope)</h3>
+      <div class="form">
+        <label>Seeing <input id="r_seeing" type="number" step="0.05" placeholder="0.7"></label>
+        <label>Cloud (mag) <input id="r_cloud" type="number" step="0.1" placeholder="0"></label>
+        <label>RH % <input id="r_hum" type="number" step="1" placeholder="30"></label>
+        <label>Wind mph <input id="r_wind" type="number" step="1" placeholder="10"></label>
+        <button id="r_cond">Update conditions</button>
+      </div>
+      <div class="form">
+        <select id="r_target"></select>
+        <button id="r_on">On target</button>
+        <label>t<sub>exp</sub> <input id="r_texp" type="number" step="10" placeholder="1200"></label>
+        <button id="r_start">Started</button>
+        <label>S/N <input id="r_snr" type="number" step="1" placeholder="(optional)"></label>
+        <button id="r_done">Done</button>
+        <button id="r_abort" class="warn">Aborted</button>
+      </div>
+      <div class="small muted">Catalog for the operator: <a href="/api/catalog?format=magellan" target="_blank">Magellan</a> · <a href="/api/catalog?format=keck" target="_blank">Keck starlist</a></div>
+    </div>
+  </section>
+
+  <section id="col-mid">
+    <div class="card" id="reccard">
+      <div class="rechead">
+        <h3>Recommendation</h3>
+        <span id="recsrc" class="pill"></span>
+        <span id="reclevel" class="pill"></span>
+        <span id="recconf" class="pill"></span>
+        <span id="recstatus" class="pill"></span>
+      </div>
+      <div id="recmain" class="recmain">Waiting for the first decision…</div>
+      <div id="recwhy" class="why"></div>
+      <div id="recrisk" class="risk"></div>
+      <pre id="reccmds" class="cmds mono"></pre>
+      <div class="buttons">
+        <button id="accept" class="primary" title="Mark as accepted; with console control enabled, execute it">Accept</button>
+        <button id="dismiss">Dismiss</button>
+        <button id="deliberate" title="Ask GPT (System 2) to deliberate now">Ask System 2</button>
+        <span id="picks" class="small muted"></span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>System 1 ranking <span class="muted small">expected regret (lower is better) · P(best) · planner merit</span></h3>
+      <table id="rank"><thead><tr><th>Candidate</th><th>Expected regret</th><th>P(best)</th><th>Merit</th><th>Level</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="card">
+      <h3>Decisions <span id="stats" class="muted small"></span></h3>
+      <table id="hist"><thead><tr><th>UT</th><th>Pick</th><th>Source</th><th>Conf</th><th>Planner</th><th>System 1</th><th>System 2</th><th>Status</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <section id="col-right">
+    <div class="card" id="alertcard">
+      <h3>Alerts</h3>
+      <div id="alerts"></div>
+    </div>
+    <div class="card" id="chatcard">
+      <h3>Ask the assistant <span id="s2usage" class="muted small"></span> <button id="nightlog" class="small" title="System 2 writes a night-log entry from the console events">Write night log</button></h3>
+      <div id="chatlog"></div>
+      <form id="chatform"><input id="chatin" placeholder="e.g. Why not the Tuc II star? What if seeing goes to 1.2&quot;?" autocomplete="off"><button>Send</button></form>
+    </div>
+    <div class="card">
+      <h3>Settings</h3>
+      <div class="form">
+        <label title="Off by default (1.01): on held-out decisions the planner beats System 1">Let System 1 override the planner when P(best) ≥ <input id="tau" type="number" min="0" max="1.01" step="0.05"></label>
+        <label><input id="escalate" type="checkbox"> ask System 2 when System 1 disagrees with the planner</label>
+        <label>System 2 effort <select id="effort"><option>low</option><option>medium</option><option>high</option></select></label>
+      </div>
+      <details><summary class="small">State as System 1 reads it</summary><pre id="statetext" class="mono small"></pre></details>
+      <div id="errors" class="small err"></div>
+    </div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

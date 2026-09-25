@@ -1,0 +1,1687 @@
+{
+ "summary": {
+  "list": {
+   "mean_frac_oracle": 0.5546,
+   "min": 0.1868,
+   "n": 40,
+   "wins_vs_greedy": 4,
+   "losses_vs_greedy": 32
+  },
+  "greedy": {
+   "mean_frac_oracle": 0.9257,
+   "min": 0.5037,
+   "n": 40,
+   "wins_vs_greedy": 0,
+   "losses_vs_greedy": 0
+  },
+  "lookahead": {
+   "mean_frac_oracle": 0.8311,
+   "min": 0.4146,
+   "n": 40,
+   "wins_vs_greedy": 9,
+   "losses_vs_greedy": 26
+  },
+  "oracle_over_bound": 0.6437,
+  "projection_bias_at_0pct": {
+   "mean_pct_of_max": 6.42,
+   "rms_pct_of_max": 19.18,
+   "n": 40
+  },
+  "projection_bias_at_25pct": {
+   "mean_pct_of_max": 2.71,
+   "rms_pct_of_max": 11.18,
+   "n": 40
+  },
+  "projection_bias_at_50pct": {
+   "mean_pct_of_max": 2.33,
+   "rms_pct_of_max": 7.94,
+   "n": 40
+  },
+  "projection_bias_at_75pct": {
+   "mean_pct_of_max": 0.59,
+   "rms_pct_of_max": 5.81,
+   "n": 39
+  }
+ },
+ "nights": [
+  {
+   "night": 0,
+   "spec": [
+    "random",
+    "clay",
+    "2026-12-31",
+    596412,
+    66517
+   ],
+   "program": "random clay 2026-12-31 #596412",
+   "regime": "median",
+   "max": 54.0,
+   "oracle": 28.766,
+   "upper_bound": 41.413,
+   "policies": {
+    "list": {
+     "score": 8.924,
+     "frac_oracle": 0.3102,
+     "done": 2,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 26.129,
+     "frac_oracle": 0.9083,
+     "done": 4,
+     "seconds": 0.4
+    },
+    "lookahead": {
+     "score": 15.383,
+     "frac_oracle": 0.5348,
+     "done": 2,
+     "seconds": 5.0
+    }
+   },
+   "projection": {
+    "0": 0.1139047330353981,
+    "25": 0.11387237885052795,
+    "50": 0.10871461983548336,
+    "75": 0.10891171913339791
+   }
+  },
+  {
+   "night": 1,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-08-08",
+    743208,
+    674190
+   ],
+   "program": "random keck1 2026-08-08 #743208",
+   "regime": "median",
+   "max": 56.0,
+   "oracle": 17.459,
+   "upper_bound": 38.357,
+   "policies": {
+    "list": {
+     "score": 9.136,
+     "frac_oracle": 0.5233,
+     "done": 1,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 17.348,
+     "frac_oracle": 0.9936,
+     "done": 2,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 10.27,
+     "frac_oracle": 0.5883,
+     "done": 1,
+     "seconds": 3.9
+    }
+   },
+   "projection": {
+    "0": 0.19983674238913235,
+    "25": 0.08075783964404362,
+    "50": 0.12481884211255474,
+    "75": 0.007811658238275359
+   }
+  },
+  {
+   "night": 2,
+   "spec": [
+    "random",
+    "clay",
+    "2026-06-17",
+    825493,
+    755787
+   ],
+   "program": "random clay 2026-06-17 #825493",
+   "regime": "poor",
+   "max": 37.0,
+   "oracle": 4.47,
+   "upper_bound": 22.262,
+   "policies": {
+    "list": {
+     "score": 4.449,
+     "frac_oracle": 0.9953,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 4.45,
+     "frac_oracle": 0.9955,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 4.467,
+     "frac_oracle": 0.9994,
+     "done": 1,
+     "seconds": 6.9
+    }
+   },
+   "projection": {
+    "0": 0.13107887697508158,
+    "25": -0.00214096801983455,
+    "50": -0.0006279017886371089,
+    "75": -0.0027972918767656322
+   }
+  },
+  {
+   "night": 3,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-11-17",
+    112569,
+    285367
+   ],
+   "program": "random keck1 2026-11-17 #112569",
+   "regime": "good",
+   "max": 37.0,
+   "oracle": 22.358,
+   "upper_bound": 37.0,
+   "policies": {
+    "list": {
+     "score": 5.575,
+     "frac_oracle": 0.2494,
+     "done": 2,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 22.233,
+     "frac_oracle": 0.9944,
+     "done": 4,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 20.931,
+     "frac_oracle": 0.9362,
+     "done": 5,
+     "seconds": 4.1
+    }
+   },
+   "projection": {
+    "0": -0.01938091644718999,
+    "25": -0.24211795877468034,
+    "50": -0.11760715608965984,
+    "75": 0.051961829090166306
+   }
+  },
+  {
+   "night": 4,
+   "spec": [
+    "random",
+    "clay",
+    "2026-03-21",
+    301625,
+    285092
+   ],
+   "program": "random clay 2026-03-21 #301625",
+   "regime": "median",
+   "max": 57.0,
+   "oracle": 4.0,
+   "upper_bound": 10.398,
+   "policies": {
+    "list": {
+     "score": 2.002,
+     "frac_oracle": 0.5005,
+     "done": 1,
+     "seconds": 0.0
+    },
+    "greedy": {
+     "score": 2.015,
+     "frac_oracle": 0.5037,
+     "done": 0,
+     "seconds": 0.0
+    },
+    "lookahead": {
+     "score": 2.015,
+     "frac_oracle": 0.5037,
+     "done": 0,
+     "seconds": 0.0
+    }
+   },
+   "projection": {
+    "0": 0.7635006560552374,
+    "25": 0.006048847428490992,
+    "50": 0.006048847428490992,
+    "75": 0.006048847428490992
+   }
+  },
+  {
+   "night": 5,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-07-10",
+    848382,
+    883668
+   ],
+   "program": "random keck1 2026-07-10 #848382",
+   "regime": "median",
+   "max": 38.0,
+   "oracle": 25.193,
+   "upper_bound": 37.31,
+   "policies": {
+    "list": {
+     "score": 8.964,
+     "frac_oracle": 0.3558,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 20.305,
+     "frac_oracle": 0.806,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 21.316,
+     "frac_oracle": 0.8461,
+     "done": 4,
+     "seconds": 7.7
+    }
+   },
+   "projection": {
+    "0": 0.018230515702925432,
+    "25": 0.0,
+    "50": 0.0,
+    "75": 0.0
+   }
+  },
+  {
+   "night": 6,
+   "spec": [
+    "random",
+    "clay",
+    "2026-10-24",
+    547533,
+    882033
+   ],
+   "program": "random clay 2026-10-24 #547533",
+   "regime": "poor",
+   "max": 53.0,
+   "oracle": 22.132,
+   "upper_bound": 35.406,
+   "policies": {
+    "list": {
+     "score": 11.509,
+     "frac_oracle": 0.52,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 21.474,
+     "frac_oracle": 0.9703,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 20.373,
+     "frac_oracle": 0.9205,
+     "done": 5,
+     "seconds": 17.7
+    }
+   },
+   "projection": {
+    "0": -0.035128661603899984,
+    "25": -0.01875526199654131,
+    "50": -0.014218070631002352,
+    "75": 0.0015744926598282808
+   }
+  },
+  {
+   "night": 7,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-03-25",
+    983009,
+    225774
+   ],
+   "program": "random keck1 2026-03-25 #983009",
+   "regime": "median",
+   "max": 80.0,
+   "oracle": 39.26,
+   "upper_bound": 67.641,
+   "policies": {
+    "list": {
+     "score": 7.402,
+     "frac_oracle": 0.1885,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 34.897,
+     "frac_oracle": 0.8889,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 35.626,
+     "frac_oracle": 0.9074,
+     "done": 5,
+     "seconds": 7.5
+    }
+   },
+   "projection": {
+    "0": -0.04191373455007308,
+    "25": -0.13827244943915268,
+    "50": -0.08826158214884386,
+    "75": -4.026197365654127e-05
+   }
+  },
+  {
+   "night": 8,
+   "spec": [
+    "random",
+    "clay",
+    "2026-01-26",
+    84796,
+    13216
+   ],
+   "program": "random clay 2026-01-26 #84796",
+   "regime": "median",
+   "max": 47.0,
+   "oracle": 37.13,
+   "upper_bound": 43.771,
+   "policies": {
+    "list": {
+     "score": 18.007,
+     "frac_oracle": 0.485,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 36.904,
+     "frac_oracle": 0.9939,
+     "done": 6,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 36.646,
+     "frac_oracle": 0.987,
+     "done": 6,
+     "seconds": 4.9
+    }
+   },
+   "projection": {
+    "0": -0.03955913442483283,
+    "25": -0.03760974573432631,
+    "50": -0.0028320885054312086,
+    "75": 0.0010772958448267871
+   }
+  },
+  {
+   "night": 9,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-08-21",
+    363590,
+    32852
+   ],
+   "program": "random keck1 2026-08-21 #363590",
+   "regime": "median",
+   "max": 64.0,
+   "oracle": 42.799,
+   "upper_bound": 60.764,
+   "policies": {
+    "list": {
+     "score": 21.48,
+     "frac_oracle": 0.5019,
+     "done": 4,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 42.096,
+     "frac_oracle": 0.9836,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 36.579,
+     "frac_oracle": 0.8547,
+     "done": 5,
+     "seconds": 14.2
+    }
+   },
+   "projection": {
+    "0": -0.09665320273585842,
+    "25": -0.15186933942202274,
+    "50": 0.030734326530468148,
+    "75": 0.0010145377025226887
+   }
+  },
+  {
+   "night": 10,
+   "spec": [
+    "random",
+    "clay",
+    "2026-03-20",
+    621155,
+    614388
+   ],
+   "program": "random clay 2026-03-20 #621155",
+   "regime": "poor",
+   "max": 51.0,
+   "oracle": 22.695,
+   "upper_bound": 39.576,
+   "policies": {
+    "list": {
+     "score": 5.564,
+     "frac_oracle": 0.2452,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 22.589,
+     "frac_oracle": 0.9954,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 12.878,
+     "frac_oracle": 0.5674,
+     "done": 1,
+     "seconds": 8.5
+    }
+   },
+   "projection": {
+    "0": -0.0295445973877315,
+    "25": 0.016048075351782123,
+    "50": -0.00325621227617341,
+    "75": 0.001452736844017401
+   }
+  },
+  {
+   "night": 11,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-05-09",
+    165673,
+    490891
+   ],
+   "program": "random keck1 2026-05-09 #165673",
+   "regime": "poor",
+   "max": 65.0,
+   "oracle": 17.278,
+   "upper_bound": 47.978,
+   "policies": {
+    "list": {
+     "score": 17.037,
+     "frac_oracle": 0.9861,
+     "done": 2,
+     "seconds": 0.6
+    },
+    "greedy": {
+     "score": 10.542,
+     "frac_oracle": 0.6101,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 10.747,
+     "frac_oracle": 0.622,
+     "done": 1,
+     "seconds": 20.7
+    }
+   },
+   "projection": {
+    "0": 0.034013580957303335,
+    "25": 0.12007109554302602,
+    "50": 0.07313414679688661,
+    "75": 0.0017215436531274374
+   }
+  },
+  {
+   "night": 12,
+   "spec": [
+    "random",
+    "clay",
+    "2026-03-11",
+    904957,
+    772706
+   ],
+   "program": "random clay 2026-03-11 #904957",
+   "regime": "good",
+   "max": 38.0,
+   "oracle": 23.096,
+   "upper_bound": 27.788,
+   "policies": {
+    "list": {
+     "score": 4.878,
+     "frac_oracle": 0.2112,
+     "done": 2,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 21.629,
+     "frac_oracle": 0.9365,
+     "done": 4,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 21.427,
+     "frac_oracle": 0.9277,
+     "done": 4,
+     "seconds": 5.1
+    }
+   },
+   "projection": {
+    "0": 0.043646268999986255,
+    "25": 0.03749571353727177,
+    "50": 0.03835986465884959,
+    "75": 0.03831999106419578
+   }
+  },
+  {
+   "night": 13,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-11-22",
+    567723,
+    560781
+   ],
+   "program": "random keck1 2026-11-22 #567723",
+   "regime": "median",
+   "max": 55.0,
+   "oracle": 24.919,
+   "upper_bound": 40.516,
+   "policies": {
+    "list": {
+     "score": 13.343,
+     "frac_oracle": 0.5354,
+     "done": 2,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 24.894,
+     "frac_oracle": 0.999,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 24.511,
+     "frac_oracle": 0.9836,
+     "done": 5,
+     "seconds": 8.5
+    }
+   },
+   "projection": {
+    "0": -0.05894465471920269,
+    "25": -0.05396732281004798,
+    "50": -0.00023981255681232742,
+    "75": -0.057463100354054705
+   }
+  },
+  {
+   "night": 14,
+   "spec": [
+    "random",
+    "clay",
+    "2026-03-24",
+    842145,
+    239759
+   ],
+   "program": "random clay 2026-03-24 #842145",
+   "regime": "poor",
+   "max": 66.0,
+   "oracle": 16.839,
+   "upper_bound": 52.34,
+   "policies": {
+    "list": {
+     "score": 5.66,
+     "frac_oracle": 0.3361,
+     "done": 1,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 11.585,
+     "frac_oracle": 0.688,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 11.325,
+     "frac_oracle": 0.6726,
+     "done": 2,
+     "seconds": 11.5
+    }
+   },
+   "projection": {
+    "0": 0.507798711922816,
+    "25": 0.20800400333647048,
+    "50": 0.19395923434358592,
+    "75": 0.18900307594707078
+   }
+  },
+  {
+   "night": 15,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-09-02",
+    109909,
+    45179
+   ],
+   "program": "random keck1 2026-09-02 #109909",
+   "regime": "good",
+   "max": 45.0,
+   "oracle": 18.259,
+   "upper_bound": 33.302,
+   "policies": {
+    "list": {
+     "score": 6.143,
+     "frac_oracle": 0.3364,
+     "done": 2,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 17.585,
+     "frac_oracle": 0.9631,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 19.595,
+     "frac_oracle": 1.0732,
+     "done": 6,
+     "seconds": 14.6
+    }
+   },
+   "projection": {
+    "0": 0.001726925151055683,
+    "25": 0.009851584519906788,
+    "50": 0.010338569512366922,
+    "75": 0.005270628213744841
+   }
+  },
+  {
+   "night": 16,
+   "spec": [
+    "random",
+    "clay",
+    "2026-12-30",
+    382988,
+    892147
+   ],
+   "program": "random clay 2026-12-30 #382988",
+   "regime": "good",
+   "max": 43.0,
+   "oracle": 26.846,
+   "upper_bound": 40.778,
+   "policies": {
+    "list": {
+     "score": 6.328,
+     "frac_oracle": 0.2357,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 26.375,
+     "frac_oracle": 0.9824,
+     "done": 4,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 21.183,
+     "frac_oracle": 0.7891,
+     "done": 3,
+     "seconds": 5.7
+    }
+   },
+   "projection": {
+    "0": 0.006747094409966626,
+    "25": -0.0013456457972259041,
+    "50": 0.005363959014142338,
+    "75": 0.006774110744758083
+   }
+  },
+  {
+   "night": 17,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-09-11",
+    816081,
+    435233
+   ],
+   "program": "random keck1 2026-09-11 #816081",
+   "regime": "good",
+   "max": 65.0,
+   "oracle": 50.073,
+   "upper_bound": 64.35,
+   "policies": {
+    "list": {
+     "score": 36.206,
+     "frac_oracle": 0.7231,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 48.707,
+     "frac_oracle": 0.9727,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 46.838,
+     "frac_oracle": 0.9354,
+     "done": 8,
+     "seconds": 10.8
+    }
+   },
+   "projection": {
+    "0": -0.03555320392217086,
+    "25": -0.02795804976332411,
+    "50": -0.0494335742963042,
+    "75": -0.00021572080670772756
+   }
+  },
+  {
+   "night": 18,
+   "spec": [
+    "random",
+    "clay",
+    "2026-01-02",
+    519418,
+    445237
+   ],
+   "program": "random clay 2026-01-02 #519418",
+   "regime": "median",
+   "max": 27.0,
+   "oracle": 14.875,
+   "upper_bound": 21.326,
+   "policies": {
+    "list": {
+     "score": 8.505,
+     "frac_oracle": 0.5718,
+     "done": 1,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 14.875,
+     "frac_oracle": 1.0,
+     "done": 3,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 10.696,
+     "frac_oracle": 0.7191,
+     "done": 3,
+     "seconds": 5.3
+    }
+   },
+   "projection": {
+    "0": 0.12481126214760468,
+    "25": 0.13736785553446296,
+    "50": 0.008628839464657381,
+    "75": -0.20762119470179985
+   }
+  },
+  {
+   "night": 19,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-01-19",
+    863340,
+    121655
+   ],
+   "program": "random keck1 2026-01-19 #863340",
+   "regime": "poor",
+   "max": 59.0,
+   "oracle": 22.484,
+   "upper_bound": 50.611,
+   "policies": {
+    "list": {
+     "score": 5.295,
+     "frac_oracle": 0.2355,
+     "done": 1,
+     "seconds": 0.4
+    },
+    "greedy": {
+     "score": 22.222,
+     "frac_oracle": 0.9884,
+     "done": 6,
+     "seconds": 0.3
+    },
+    "lookahead": {
+     "score": 21.0,
+     "frac_oracle": 0.934,
+     "done": 5,
+     "seconds": 22.7
+    }
+   },
+   "projection": {
+    "0": 0.0010631093289265243,
+    "25": -0.024009700846222833,
+    "50": -0.029456372362089343,
+    "75": -0.0013264167704266244
+   }
+  },
+  {
+   "night": 20,
+   "spec": [
+    "random",
+    "clay",
+    "2026-08-08",
+    285254,
+    7789
+   ],
+   "program": "random clay 2026-08-08 #285254",
+   "regime": "good",
+   "max": 64.0,
+   "oracle": 13.028,
+   "upper_bound": 32.722,
+   "policies": {
+    "list": {
+     "score": 9.156,
+     "frac_oracle": 0.7028,
+     "done": 1,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 12.639,
+     "frac_oracle": 0.9701,
+     "done": 2,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 9.246,
+     "frac_oracle": 0.7097,
+     "done": 1,
+     "seconds": 3.6
+    }
+   },
+   "projection": {
+    "0": 0.1230655080901924,
+    "25": 0.11924431115444684,
+    "50": 0.126037005179148,
+    "75": 0.007097824611286302
+   }
+  },
+  {
+   "night": 21,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-01-19",
+    324418,
+    825351
+   ],
+   "program": "random keck1 2026-01-19 #324418",
+   "regime": "median",
+   "max": 46.0,
+   "oracle": 30.826,
+   "upper_bound": 43.673,
+   "policies": {
+    "list": {
+     "score": 16.981,
+     "frac_oracle": 0.5509,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 30.664,
+     "frac_oracle": 0.9948,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 23.078,
+     "frac_oracle": 0.7487,
+     "done": 4,
+     "seconds": 6.7
+    }
+   },
+   "projection": {
+    "0": 0.016028898456038058,
+    "25": 0.008237505013439146,
+    "50": -0.00843052856099739,
+    "75": -0.0023101083190721038
+   }
+  },
+  {
+   "night": 22,
+   "spec": [
+    "random",
+    "clay",
+    "2026-02-24",
+    163400,
+    528443
+   ],
+   "program": "random clay 2026-02-24 #163400",
+   "regime": "good",
+   "max": 58.0,
+   "oracle": 46.0,
+   "upper_bound": 51.614,
+   "policies": {
+    "list": {
+     "score": 28.778,
+     "frac_oracle": 0.6256,
+     "done": 5,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 44.517,
+     "frac_oracle": 0.9678,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 41.5,
+     "frac_oracle": 0.9022,
+     "done": 8,
+     "seconds": 12.0
+    }
+   },
+   "projection": {
+    "0": 0.004009002684837109,
+    "25": 0.025574360411940576,
+    "50": 0.001062942227900633,
+    "75": 0.0010771807203815047
+   }
+  },
+  {
+   "night": 23,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-11-03",
+    230693,
+    934692
+   ],
+   "program": "random keck1 2026-11-03 #230693",
+   "regime": "good",
+   "max": 52.0,
+   "oracle": 35.057,
+   "upper_bound": 51.16,
+   "policies": {
+    "list": {
+     "score": 21.376,
+     "frac_oracle": 0.6097,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 34.444,
+     "frac_oracle": 0.9825,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 31.352,
+     "frac_oracle": 0.8943,
+     "done": 5,
+     "seconds": 6.0
+    }
+   },
+   "projection": {
+    "0": 0.030415046198076112,
+    "25": 0.04325724150920989,
+    "50": -0.12224635028927236,
+    "75": -0.1339075774123845
+   }
+  },
+  {
+   "night": 24,
+   "spec": [
+    "random",
+    "clay",
+    "2026-06-05",
+    854598,
+    413404
+   ],
+   "program": "random clay 2026-06-05 #854598",
+   "regime": "poor",
+   "max": 69.0,
+   "oracle": 21.421,
+   "upper_bound": 34.394,
+   "policies": {
+    "list": {
+     "score": 14.426,
+     "frac_oracle": 0.6735,
+     "done": 2,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 21.096,
+     "frac_oracle": 0.9848,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 16.659,
+     "frac_oracle": 0.7777,
+     "done": 3,
+     "seconds": 12.5
+    }
+   },
+   "projection": {
+    "0": -0.11078506465301965,
+    "25": 0.014933106634214266,
+    "50": 0.0026978260696053453,
+    "75": 0.0033319409879648317
+   }
+  },
+  {
+   "night": 25,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-03-14",
+    37269,
+    67095
+   ],
+   "program": "random keck1 2026-03-14 #37269",
+   "regime": "median",
+   "max": 65.0,
+   "oracle": 31.364,
+   "upper_bound": 56.172,
+   "policies": {
+    "list": {
+     "score": 24.527,
+     "frac_oracle": 0.782,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 24.069,
+     "frac_oracle": 0.7674,
+     "done": 3,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 24.098,
+     "frac_oracle": 0.7683,
+     "done": 4,
+     "seconds": 11.7
+    }
+   },
+   "projection": {
+    "0": 0.3132743759265184,
+    "25": 0.25245209887452136,
+    "50": 0.15758451855275912,
+    "75": 0.032524806450549885
+   }
+  },
+  {
+   "night": 26,
+   "spec": [
+    "random",
+    "clay",
+    "2026-10-14",
+    694653,
+    492263
+   ],
+   "program": "random clay 2026-10-14 #694653",
+   "regime": "good",
+   "max": 43.0,
+   "oracle": 18.458,
+   "upper_bound": 32.588,
+   "policies": {
+    "list": {
+     "score": 18.279,
+     "frac_oracle": 0.9903,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 18.071,
+     "frac_oracle": 0.979,
+     "done": 2,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 16.951,
+     "frac_oracle": 0.9183,
+     "done": 2,
+     "seconds": 3.8
+    }
+   },
+   "projection": {
+    "0": 0.2762824033397016,
+    "25": 0.2809450887298212,
+    "50": 0.19440925869128287,
+    "75": 0.009803268285526167
+   }
+  },
+  {
+   "night": 27,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-11-11",
+    136366,
+    663896
+   ],
+   "program": "random keck1 2026-11-11 #136366",
+   "regime": "good",
+   "max": 59.0,
+   "oracle": 32.706,
+   "upper_bound": 53.767,
+   "policies": {
+    "list": {
+     "score": 15.071,
+     "frac_oracle": 0.4608,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 32.291,
+     "frac_oracle": 0.9873,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 32.478,
+     "frac_oracle": 0.993,
+     "done": 5,
+     "seconds": 13.7
+    }
+   },
+   "projection": {
+    "0": 0.06917187767778706,
+    "25": 0.03206326847925531,
+    "50": 0.0333589697826825,
+    "75": 0.030031437082792354
+   }
+  },
+  {
+   "night": 28,
+   "spec": [
+    "random",
+    "clay",
+    "2026-07-22",
+    49531,
+    905514
+   ],
+   "program": "random clay 2026-07-22 #49531",
+   "regime": "poor",
+   "max": 67.0,
+   "oracle": 19.69,
+   "upper_bound": 43.741,
+   "policies": {
+    "list": {
+     "score": 9.204,
+     "frac_oracle": 0.4675,
+     "done": 2,
+     "seconds": 0.4
+    },
+    "greedy": {
+     "score": 19.26,
+     "frac_oracle": 0.9782,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 11.965,
+     "frac_oracle": 0.6077,
+     "done": 3,
+     "seconds": 10.7
+    }
+   },
+   "projection": {
+    "0": 0.014497372274627525,
+    "25": -0.059006646132829396,
+    "50": -0.0314467528428949,
+    "75": 0.008544367274739995
+   }
+  },
+  {
+   "night": 29,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-07-16",
+    69301,
+    643888
+   ],
+   "program": "random keck1 2026-07-16 #69301",
+   "regime": "good",
+   "max": 33.0,
+   "oracle": 22.229,
+   "upper_bound": 31.234,
+   "policies": {
+    "list": {
+     "score": 8.943,
+     "frac_oracle": 0.4023,
+     "done": 2,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 20.603,
+     "frac_oracle": 0.9269,
+     "done": 4,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 20.56,
+     "frac_oracle": 0.9249,
+     "done": 4,
+     "seconds": 3.1
+    }
+   },
+   "projection": {
+    "0": 0.11177784952127834,
+    "25": -0.01391883771255855,
+    "50": 0.04858406148660066,
+    "75": -0.0006121068743970189
+   }
+  },
+  {
+   "night": 30,
+   "spec": [
+    "random",
+    "clay",
+    "2026-10-03",
+    647916,
+    799465
+   ],
+   "program": "random clay 2026-10-03 #647916",
+   "regime": "poor",
+   "max": 28.0,
+   "oracle": 11.1,
+   "upper_bound": 17.668,
+   "policies": {
+    "list": {
+     "score": 2.073,
+     "frac_oracle": 0.1868,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 9.469,
+     "frac_oracle": 0.853,
+     "done": 3,
+     "seconds": 0.3
+    },
+    "lookahead": {
+     "score": 9.536,
+     "frac_oracle": 0.8591,
+     "done": 3,
+     "seconds": 6.9
+    }
+   },
+   "projection": {
+    "0": 0.05440532894249239,
+    "25": 0.12718147758049433,
+    "50": 0.004959338769908696,
+    "75": 0.007284048083798059
+   }
+  },
+  {
+   "night": 31,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-01-21",
+    484525,
+    925337
+   ],
+   "program": "random keck1 2026-01-21 #484525",
+   "regime": "poor",
+   "max": 52.0,
+   "oracle": 8.558,
+   "upper_bound": 27.713,
+   "policies": {
+    "list": {
+     "score": 1.632,
+     "frac_oracle": 0.1907,
+     "done": 0,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 8.318,
+     "frac_oracle": 0.972,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "lookahead": {
+     "score": 5.508,
+     "frac_oracle": 0.6437,
+     "done": 1,
+     "seconds": 5.5
+    }
+   },
+   "projection": {
+    "0": 0.023625126880719067,
+    "25": 0.0019565937091008743,
+    "50": 0.002418279562362009,
+    "75": 0.0008315818552424239
+   }
+  },
+  {
+   "night": 32,
+   "spec": [
+    "random",
+    "clay",
+    "2026-08-16",
+    182226,
+    178353
+   ],
+   "program": "random clay 2026-08-16 #182226",
+   "regime": "good",
+   "max": 63.0,
+   "oracle": 31.824,
+   "upper_bound": 49.075,
+   "policies": {
+    "list": {
+     "score": 10.683,
+     "frac_oracle": 0.3357,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 20.742,
+     "frac_oracle": 0.6518,
+     "done": 5,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 13.192,
+     "frac_oracle": 0.4146,
+     "done": 4,
+     "seconds": 4.4
+    }
+   },
+   "projection": {
+    "0": 0.29101229207307144,
+    "25": 0.2910515090400816,
+    "50": 0.232887792333448,
+    "75": 0.11392153707348272
+   }
+  },
+  {
+   "night": 33,
+   "spec": [
+    "random",
+    "keck1",
+    "2026-08-24",
+    905904,
+    636300
+   ],
+   "program": "random keck1 2026-08-24 #905904",
+   "regime": "good",
+   "max": 49.0,
+   "oracle": 28.001,
+   "upper_bound": 41.0,
+   "policies": {
+    "list": {
+     "score": 11.404,
+     "frac_oracle": 0.4073,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 24.996,
+     "frac_oracle": 0.8927,
+     "done": 6,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 24.518,
+     "frac_oracle": 0.8756,
+     "done": 6,
+     "seconds": 5.7
+    }
+   },
+   "projection": {
+    "0": 0.03001707596947352,
+    "25": -0.1539163358091207,
+    "50": -0.0342376276149745,
+    "75": 0.0
+   }
+  },
+  {
+   "night": 34,
+   "spec": [
+    "demo",
+    "clay_mike_darktime",
+    null,
+    null,
+    11
+   ],
+   "program": "Magellan Clay / MIKE - mock dark-time metal-poor star night",
+   "regime": "median",
+   "max": 55.0,
+   "oracle": 55.0,
+   "upper_bound": 55.0,
+   "policies": {
+    "list": {
+     "score": 55.0,
+     "frac_oracle": 1.0,
+     "done": 12,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 55.0,
+     "frac_oracle": 1.0,
+     "done": 12,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 55.0,
+     "frac_oracle": 1.0,
+     "done": 12,
+     "seconds": 0.5
+    }
+   },
+   "projection": {
+    "0": 0.0,
+    "25": 0.0,
+    "50": 0.0
+   }
+  },
+  {
+   "night": 35,
+   "spec": [
+    "demo",
+    "keck1_lris_tonight",
+    null,
+    null,
+    11
+   ],
+   "program": "Keck I / LRIS - mock bright-time transient night",
+   "regime": "median",
+   "max": 65.0,
+   "oracle": 61.0,
+   "upper_bound": 61.0,
+   "policies": {
+    "list": {
+     "score": 61.0,
+     "frac_oracle": 1.0,
+     "done": 13,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 61.0,
+     "frac_oracle": 1.0,
+     "done": 13,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 61.0,
+     "frac_oracle": 1.0,
+     "done": 13,
+     "seconds": 2.2
+    }
+   },
+   "projection": {
+    "0": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "75": 0.0
+   }
+  },
+  {
+   "night": 36,
+   "spec": [
+    "demo",
+    "clay_mike_darktime",
+    null,
+    null,
+    12
+   ],
+   "program": "Magellan Clay / MIKE - mock dark-time metal-poor star night",
+   "regime": "median",
+   "max": 55.0,
+   "oracle": 55.0,
+   "upper_bound": 55.0,
+   "policies": {
+    "list": {
+     "score": 55.0,
+     "frac_oracle": 1.0,
+     "done": 12,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 55.0,
+     "frac_oracle": 1.0,
+     "done": 12,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 55.0,
+     "frac_oracle": 1.0,
+     "done": 12,
+     "seconds": 1.5
+    }
+   },
+   "projection": {
+    "0": 0.0,
+    "25": 0.0,
+    "50": 0.0,
+    "75": 0.0
+   }
+  },
+  {
+   "night": 37,
+   "spec": [
+    "demo",
+    "keck1_lris_tonight",
+    null,
+    null,
+    12
+   ],
+   "program": "Keck I / LRIS - mock bright-time transient night",
+   "regime": "median",
+   "max": 65.0,
+   "oracle": 61.0,
+   "upper_bound": 61.0,
+   "policies": {
+    "list": {
+     "score": 61.0,
+     "frac_oracle": 1.0,
+     "done": 13,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 59.427,
+     "frac_oracle": 0.9742,
+     "done": 12,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 61.0,
+     "frac_oracle": 1.0,
+     "done": 13,
+     "seconds": 1.6
+    }
+   },
+   "projection": {
+    "0": 0.02419592533278599,
+    "25": 0.02419592533278599,
+    "50": 0.02419592533278599,
+    "75": 0.0012733195116075317
+   }
+  },
+  {
+   "night": 38,
+   "spec": [
+    "demo",
+    "clay_mike_darktime",
+    null,
+    null,
+    13
+   ],
+   "program": "Magellan Clay / MIKE - mock dark-time metal-poor star night",
+   "regime": "poor",
+   "max": 55.0,
+   "oracle": 48.072,
+   "upper_bound": 55.0,
+   "policies": {
+    "list": {
+     "score": 47.0,
+     "frac_oracle": 0.9777,
+     "done": 10,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 47.0,
+     "frac_oracle": 0.9777,
+     "done": 10,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 47.0,
+     "frac_oracle": 0.9777,
+     "done": 10,
+     "seconds": 0.9
+    }
+   },
+   "projection": {
+    "0": 0.14545454545454545,
+    "25": 0.07272727272727272,
+    "50": 0.0,
+    "75": 0.0
+   }
+  },
+  {
+   "night": 39,
+   "spec": [
+    "demo",
+    "keck1_lris_tonight",
+    null,
+    null,
+    13
+   ],
+   "program": "Keck I / LRIS - mock bright-time transient night",
+   "regime": "poor",
+   "max": 65.0,
+   "oracle": 49.277,
+   "upper_bound": 61.0,
+   "policies": {
+    "list": {
+     "score": 38.078,
+     "frac_oracle": 0.7727,
+     "done": 7,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 49.0,
+     "frac_oracle": 0.9944,
+     "done": 10,
+     "seconds": 0.1
+    },
+    "lookahead": {
+     "score": 45.685,
+     "frac_oracle": 0.9271,
+     "done": 9,
+     "seconds": 3.4
+    }
+   },
+   "projection": {
+    "0": -0.43625487592667833,
+    "25": -0.013189542447734827,
+    "50": 0.004318678384838283,
+    "75": 0.0
+   }
+  }
+ ]
+}

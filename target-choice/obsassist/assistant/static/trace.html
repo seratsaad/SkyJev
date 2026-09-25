@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assistant trace</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="tracepage">
+<header id="top">
+  <div class="brand">Assistant trace</div>
+  <div id="proposal" class="mono small"></div>
+  <div class="models"><a href="/" target="_blank" class="small">assistant ↗</a> <a id="rawlink" href="/api/trace" target="_blank" class="small">raw JSON ↗</a></div>
+</header>
+<div id="filters" class="small">
+  <span class="muted">show:</span>
+  <label><input type="checkbox" value="observation"> observation</label>
+  <label><input type="checkbox" value="planner" checked> planner</label>
+  <label><input type="checkbox" value="system1" checked> System 1 (AnyJev)</label>
+  <label><input type="checkbox" value="system2" checked> System 2 (GPT)</label>
+  <label><input type="checkbox" value="tool" checked> tools</label>
+  <label><input type="checkbox" value="console" checked> console</label>
+  <label><input type="checkbox" value="recommendation" checked> recommendation</label>
+  <label title="Stop adding new rows while you read"><input type="checkbox" id="hold"> hold</label>
+  <span class="muted" id="tracepath"></span>
+</div>
+<main id="trace"></main>
+<script src="/static/trace.js"></script>
+</body>
+</html>

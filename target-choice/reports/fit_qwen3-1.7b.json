@@ -1,0 +1,95 @@
+{
+ "model": "Qwen/Qwen3-1.7B",
+ "n_train_rows": 1203,
+ "n_train_states": 318,
+ "fits": {
+  "regret": {
+   "n": 1203,
+   "layer": 20,
+   "kind": "head:lda",
+   "cv": {
+    "oof_nll": 0.8938985030580022,
+    "oof_acc": 0.6766417290108063
+   },
+   "seconds": 1234.6,
+   "class_counts": [
+    800,
+    158,
+    104,
+    132,
+    9
+   ]
+  },
+  "sky": {
+   "n": 318,
+   "layer": 20,
+   "kind": "head:lda",
+   "cv": {
+    "oof_nll": 0.03955620029220681,
+    "oof_acc": 0.9811320754716981
+   },
+   "seconds": 284.9,
+   "class_counts": [
+    249,
+    47,
+    22
+   ]
+  },
+  "dome_risk": {
+   "n": 318,
+   "layer": 20,
+   "kind": "head:ridge",
+   "cv": {
+    "oof_nll": 0.08629153314731647,
+    "oof_acc": 0.9811320754716981
+   },
+   "seconds": 235.2,
+   "class_counts": [
+    6,
+    312
+   ]
+  }
+ },
+ "fit_seconds": 1754.8,
+ "eval": {
+  "s1_regret": {
+   "mean_regret_pct": 0.766,
+   "within_0.5pct": 0.8,
+   "n": 120
+  },
+  "s1_pbest": {
+   "mean_regret_pct": 0.636,
+   "within_0.5pct": 0.833,
+   "n": 120
+  },
+  "greedy": {
+   "mean_regret_pct": 0.593,
+   "within_0.5pct": 0.842,
+   "n": 120
+  },
+  "random": {
+   "mean_regret_pct": 1.454,
+   "within_0.5pct": 0.583,
+   "n": 120
+  },
+  "p_best_ece": 0.0975,
+  "sky": {
+   "accuracy": 0.992,
+   "level": "L2",
+   "base_rate": 0.842
+  },
+  "dome_risk": {
+   "accuracy": 0.983,
+   "ece": 0.003,
+   "base_rate": 0.017,
+   "level": "L2"
+  },
+  "eval_seconds": 585.6,
+  "s1_L0_zero_labels": {
+   "mean_regret_pct": 0.854,
+   "within_0.5pct": 0.775,
+   "n": 120,
+   "greedy_same_states_pct": 0.593
+  }
+ }
+}

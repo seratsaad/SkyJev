@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obsassist"
+version = "0.1.0"
+description = "An observing assistant for optical telescopes: a realistic simulated console, an exposure time calculator for Keck and Magellan, a hindsight-optimal schedule oracle, and calibrated LLM decisions (AnyJev) with GPT deliberation."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "astropy>=6.0",
+    "pyyaml>=6.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+# System 1: AnyJev (typed, calibrated decisions) over a local Hugging Face model. PyPI only has
+# anyjev 0.0.2; the L2 heads this project uses are in the repository, pinned here.
+decide = [
+    "anyjev[hf] @ git+https://github.com/nokia-applied-research/AnyJev@a59a69eaa91e62dc9b42924f8491f76d1b1972ea",
+    "torch>=2.3",
+    "transformers>=4.53",
+]
+# System 2: OpenAI models (key in $OPENAI_API_KEY or OPENAI= in ~/.env)
+llm = ["openai>=1.60"]
+# training/evaluation controls
+learn = ["scikit-learn>=1.4"]
+dev = ["pytest>=8", "ruff"]
+all = ["obsassist[decide,llm,learn,dev]"]
+
+[project.scripts]
+obsassist = "obsassist.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["obsassist*"]
+
+[tool.setuptools.package-data]
+obsassist = ["programs/*.yaml", "console/static/*", "assistant/static/*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E731"]            # small named lambdas are fine
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# the ephemerides run offline: astropy falls back to mean polar motion for future dates (arcsec level)
+filterwarnings = ["ignore:Tried to get polar motions:astropy.utils.exceptions.AstropyWarning"]
