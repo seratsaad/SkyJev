@@ -1,0 +1,19 @@
+{
+ "file": "WFI.2026-03-11T06-07-56.354.fits",
+ "date_obs": "2026-03-11T06:07:56.354",
+ "filter": "BB#Rc/162_ESO844",
+ "exptime": 9.8498,
+ "airmass": 1.044,
+ "seeing_dimm": 0.48,
+ "shift_rows": 49.83261665731834,
+ "n_chains": 0,
+ "n_good": 0,
+ "median_fwhm_arcsec": null,
+ "fit": {
+  "best_step": null,
+  "opens_up": false
+ },
+ "best_step_scatter": null,
+ "decision": "retake",
+ "stars": []
+}

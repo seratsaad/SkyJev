@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+focus/data/
+focus/look.png
+note/*.aux
+note/*.bbl
+note/*.blg
+note/*.fdb_latexmk
+note/*.fls
+note/*.log
+note/*.out
