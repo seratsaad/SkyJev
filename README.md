@@ -1,4 +1,4 @@
-# observing-decisions
+# NightJev
 
 Code, results and manuscript for the research note *Which Observing Decisions Should a Language
 Model Make?* (Saad & Ting). The note tests whether large language models can make two decisions

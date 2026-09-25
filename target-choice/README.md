@@ -27,7 +27,7 @@ Every observing decision, and who makes it, is listed in [docs/decisions.md](doc
 ## Install (macOS or Linux, Python ≥ 3.10)
 
 ```bash
-git clone https://github.com/seratsaad/observing-decisions.git && cd observing-decisions/target-choice
+git clone https://github.com/seratsaad/NightJev.git && cd NightJev/target-choice
 python3 -m venv .venv && source .venv/bin/activate    # --system-site-packages reuses an installed torch
 pip install -e ".[all]"
 python -m pytest -q                                   # 244 tests, a minute or two, no network or GPU needed
