@@ -100,7 +100,45 @@ def focus():
     print(f"  the pre-written rule on the same points vs the full nine-step fit: {frac(rule, len(d))}")
 
 
+def queue_nights():
+    d = load("target-choice/reports/nights_queue.json")
+    ok = [n for n in d["nights"] if n["oracle"] > 0]  # a night where even the oracle scores 0 says nothing
+    print(f"\n== queue whole nights: {len(ok)} of {len(d['nights'])} nights with a non-zero oracle score")
+    rng = np.random.default_rng(0)
+    for p in ("list", "greedy", "queue"):
+        v = [n["policies"][p]["frac_oracle"] for n in ok]
+        lo, hi = boot_mean(v, rng)
+        print(f"  {p:8s} {np.mean(v):.3f} [{lo:.3f}, {hi:.3f}]")
+
+
+def queue_fit():
+    f = load("target-choice/reports/fit_qwen3-1.7b-queue.json")
+    e, fr = f["eval"], f["fits"]["regret"]
+    print(f"\n== queue heads: {fr['n']} candidates from {f['n_train_states']} states (layer {fr['layer']}); "
+          f"{e['greedy']['n']} held-out states")
+    for name, k in (("random", "random"), ("L0 (no labels)", "s1_L0_zero_labels"), ("L2, highest P(best)", "s1_pbest"),
+                    ("queue rule", "queue_rule"), ("greedy planner", "greedy")):
+        print(f"  {name:22s} regret {e[k]['mean_regret_pct']:.2f}%  within 0.5% {e[k]['within_0.5pct']:.1%}")
+
+
+def speed():
+    for mode in ("classical", "queue"):
+        d = load(f"target-choice/reports/speed_{mode}.json")
+        i = d["info"]
+        print(f"\n== speed, {mode}: {d['states_done']} states, {i['model']} on {i['device']} ({i['dtype']})")
+        for m, v in d["summary"].items():
+            line = f"  {m:11s} regret {v['mean_regret_pct']:.2f}%  within 0.5% {v['within_0.5pct']:.0%}"
+            if "s_per_decision_mean" in v:
+                line += f"  {v['s_per_decision_mean']:.3f} s mean, {v['s_per_decision_median']:.3f} s median"
+            if "mean_new_tokens" in v:
+                line += f"  {v['mean_new_tokens']:.0f} new tokens, {v['failures']} unparsed"
+            print(line)
+
+
 if __name__ == "__main__":
     nights()
     next_target()
+    queue_nights()
+    queue_fit()
+    speed()
     focus()

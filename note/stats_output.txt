@@ -1,0 +1,65 @@
+1
+== whole nights (n=40), fraction of the oracle score, 95% bootstrap
+  list       0.555 [0.471, 0.641]  worst 0.19
+  greedy     0.926 [0.886, 0.959]  worst 0.50
+  lookahead  0.831 [0.779, 0.880]  worst 0.41
+  greedy - lookahead 0.095 [0.054, 0.139]; lookahead wins/losses 9/26
+  oracle / upper bound 0.64
+== next-target choice, 3601 held-out states, 56161 training decisions
+  greedy   regret 0.66%  within 0.5% 84.7%
+  logreg   regret 0.68%  within 0.5% 84.1%
+  gbdt     regret 0.72%  within 0.5% 83.9%
+  random   regret 1.43%
+== AnyJev on Qwen/Qwen3-1.7B: heads fit on 1203 candidates from 318 states (layer 20, head:lda); scored on 120 held-out states
+  random                 regret 1.45%  within 0.5% 58.3%
+  L0 (no labels)         regret 0.85%  within 0.5% 77.5%
+  L2, lowest E[regret]   regret 0.77%  within 0.5% 80.0%
+  L2, highest P(best)    regret 0.64%  within 0.5% 83.3%
+  greedy planner         regret 0.59%  within 0.5% 84.2%
+  P(best) ECE 0.10
+  sky: accuracy 99.2% vs always-photometric 84.2%
+  dome within 30 min: accuracy 98.3% vs always-no 98.3%
+== queue whole nights: 39 of 40 nights with a non-zero oracle score
+  list     0.504 [0.444, 0.563]
+  greedy   0.909 [0.881, 0.937]
+  queue    0.825 [0.791, 0.858]
+== queue heads: 1203 candidates from 207 states (layer 16); 120 held-out states
+  random                 regret 2.19%  within 0.5% 34.2%
+  L0 (no labels)         regret 1.78%  within 0.5% 65.0%
+  L2, highest P(best)    regret 1.47%  within 0.5% 69.2%
+  queue rule             regret 1.47%  within 0.5% 67.5%
+  greedy planner         regret 1.39%  within 0.5% 73.3%
+== speed, classical: 60 states, Qwen/Qwen3-1.7B on Tesla V100-PCIE-16GB (float16)
+  jev_heads   regret 0.71%  within 0.5% 88%  0.079 s mean, 0.068 s median
+  jev_l0      regret 0.71%  within 0.5% 78%  0.108 s mean, 0.092 s median
+  jev_choice  regret 0.98%  within 0.5% 80%  0.165 s mean, 0.158 s median
+  gen_direct  regret 0.70%  within 0.5% 82%  0.406 s mean, 0.391 s median  12 new tokens, 1 unparsed
+  gen_think   regret 1.27%  within 0.5% 75%  32.484 s mean, 32.400 s median  1024 new tokens, 0 unparsed
+  greedy      regret 0.67%  within 0.5% 88%
+  queue_rule  regret 1.22%  within 0.5% 77%
+  random      regret 1.33%  within 0.5% 53%
+== speed, queue: 60 states, Qwen/Qwen3-1.7B on Tesla V100-PCIE-16GB (float16)
+  jev_heads   regret 1.24%  within 0.5% 72%  0.122 s mean, 0.126 s median
+  jev_l0      regret 1.82%  within 0.5% 65%  0.207 s mean, 0.228 s median
+  jev_choice  regret 1.42%  within 0.5% 75%  0.299 s mean, 0.295 s median
+  gen_direct  regret 1.60%  within 0.5% 67%  0.453 s mean, 0.448 s median  14 new tokens, 0 unparsed
+  gen_think   regret 1.86%  within 0.5% 58%  31.704 s mean, 31.798 s median  1024 new tokens, 0 unparsed
+  greedy      regret 1.28%  within 0.5% 75%
+  queue_rule  regret 1.30%  within 0.5% 70%
+  random      regret 1.95%  within 0.5% 35%
+== focus: which of nine images is sharpest (within one step of the fitted best focus)
+  gpt-4.1      one order 23/26   orders averaged 23/26 = 88%  [71%, 96%]
+  gpt-5.6-sol  one order 21/26   orders averaged 21/26 = 81%  [62%, 91%]
+  gpt-5.5      one order 20/26   orders averaged 20/26 = 77%  [58%, 89%]
+  gpt-4.1-mini one order 4/26   orders averaged 12/26 = 46%  [29%, 65%]
+  code         narrowest measured image 25/26 = 96%  [81%, 99%]
+== focus: accept / move toward step 1 / move toward last step / retake
+  gpt-4.1-mini: 84 cases from 30 runs; median 0.60 s
+    vs full nine-step fit (adopted after seeing answers): 75/84 = 89%  [81%, 94%]; always-majority 57%
+    vs rules written before any answer: 65/84 = 77%  [67%, 85%]; always-majority 63%
+    probability >= 0.9: 67/70 = 96%  [88%, 99%]
+  gpt-4.1: 84 cases from 30 runs; median 0.73 s
+    vs full nine-step fit (adopted after seeing answers): 71/84 = 85%  [75%, 91%]; always-majority 57%
+    vs rules written before any answer: 66/84 = 79%  [69%, 86%]; always-majority 63%
+    probability >= 0.9: 68/76 = 89%  [81%, 95%]
+  the pre-written rule on the same points vs the full nine-step fit: 60/84 = 71%  [61%, 80%]
