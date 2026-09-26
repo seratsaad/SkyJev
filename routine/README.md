@@ -1,0 +1,83 @@
+# Routine decisions
+
+## Logging and slit position angle
+
+Code does the computable part, then a Jev choice through AnyJev picks from a small fixed menu. A fitted
+L2 head gives the probabilities, and a gate picked on validation (0.98, also 0.95) decides whether
+SkyJev acts. The shared runner is `logging_eval.py`. It is `common.evaluate` extended to cover several
+questions per model, both gates, a code baseline and per-case probabilities.
+
+**Logging** (`logging.py`, `logging_data.py`). Code builds a fuzzy shortlist of queue targets from the
+words and word pairs of the message. Two questions follow:
+- `noul("Is this message about the queue target under review?")`, asked once for each candidate;
+- done / partial / skipped, asked once for each target the message is about.
+
+Code baselines are the fuzzy matcher and the replay's keyword rule. The messages are synthetic. Train
+uses template family A; val and test use family B, which has other phrasings, frames, night-log
+layout and catalogue prefixes, and shares no names with train. Real cases are the 48 LBT replay
+status cases (7 messages), and the 61 shortlisted candidates of those messages.
+
+**Slit PA** (`slit.py`, `slit_data.py`, code in `vendor_lbt_tools/`). There are 2000 synthetic MODS
+visits, with 2-4 PAs each. Losses come from `lbt_tools.optics.mods_slit_check`. The question has four
+fixed rows, `row 1` to `row 4`.
+- *easy*: the state shows the loss table. The label is the lowest mean blue loss.
+- *hard*: the state shows a readme-style rule in UT or hour angle, plus the start time and HA, and no
+  table. The label is the row the rule gives.
+
+Train and evaluation use disjoint nights. Real cases are the 15 replay slit cases; the hard version
+shows the program's own readme, and its reference is still the lowest-loss PA.
+
+To run on Pitzer (job scripts are in `logs/routine_ls/`):
+
+```bash
+N=2000 PROCS=16 SUFFIX=_x sbatch --export=ALL logs/routine_ls/slit_data.sbatch     # CPU, 1 min
+# the visits must end up in logs/routine_ls/slit_visits.jsonl (the script's default suffix is _smoke)
+MODEL=Qwen/Qwen3-4B sbatch --export=ALL -p gpu logs/routine_ls/ls_gpu.sbatch        # 8B: -p gpu-exp
+```
+
+The results are in `reports/{logging,slit}_*_<model>.json`.
+- 1.7B and 4B ran on a V100 16 GB; 8B ran on a V100S 32 GB.
+- All runs use float16. The hardware block was added from the job's `nvidia-smi` line.
+- The reports hold aggregate numbers only, and are checked against the private strings before they
+  are written.
+
+Test is synthetic family B; "real" means the LBT replay cases. The table shows L2 accuracy / coverage
+and accuracy when acting at the 0.98 gate:
+
+| decision | model | test acc | cov @0.98 | acc acting | real acc | real cov | real acc acting |
+|---|---|---|---|---|---|---|---|
+| log status | 1.7B | 0.71 | 0.01 | 0.88 | 0.85 | 0.10 | 1.00 |
+| log status | 4B | 0.84 | 0.54 | 0.96 | 0.88 | 0.63 | 0.97 |
+| log status | 8B | 0.92 | 0.87 | 0.96 | 0.90 | 0.98 | 0.89 |
+| log target | 1.7B | 0.84 | 0.48 | 0.97 | 0.39 | 0.38 | 0.61 |
+| log target | 4B | 0.88 | 0.00 | - | 0.67 | 0.66 | 0.88 |
+| log target | 8B | 0.96 | 0.97 | 0.97 | 0.84 | 0.98 | 0.85 |
+| slit easy | 1.7B | 0.91 | 0.78 | 0.97 | 0.93 | 0.87 | 1.00 |
+| slit easy | 4B | 0.98 | 0.99 | 0.98 | 1.00 | 1.00 | 1.00 |
+| slit easy | 8B | 0.99 | 0.98 | 0.99 | 1.00 | 1.00 | 1.00 |
+| slit hard | 1.7B | 0.62 | 0.00 | - | 0.27 | 0.00 | - |
+| slit hard | 4B | 0.64 | 0.01 | 1.00 | 0.40 | 0.00 | - |
+| slit hard | 8B | 0.69 | 0.01 | 0.60 | 0.47 | 0.00 | - |
+
+Code baselines:
+
+| task | test | real |
+|---|---|---|
+| status keyword rule | 0.59 | 0.98 |
+| target matcher | 0.99 | 0.97 |
+| slit argmin | 1.00 | 1.00 |
+| hard rule | 1.00 | n/a |
+
+The majority rates are:
+
+| task | test | real |
+|---|---|---|
+| status | 0.50 | 0.90 |
+| target | 0.65 | 0.69 |
+| slit easy | 0.36 | 0.47 |
+| slit hard | 0.36 | 0.47 |
+
+Limits:
+- The real sets are tiny, and 41 of the 48 status cases come from 4 night logs.
+- On the real cases the 0.98 gate is not calibrated: 8B acts on 98 % of status cases at 89 %.
+- 2 of the 3 real chat messages refer to targets without naming them. No name shortlist can find these.
