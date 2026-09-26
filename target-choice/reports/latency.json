@@ -143,6 +143,158 @@
   "s1_heads": "/fs/scratch/PAS2823/saadsm/SkyJev/target-choice/heads/qwen3-1.7b-queue.json"
  },
  "s2": {
-  "skipped": "not requested (--s2 off)"
+  "date": "2026-09-26T04:09:38",
+  "host": "p0232.ten.osc.edu",
+  "slurm_job": "54783743",
+  "units": "wall seconds per role call, including offline tool execution",
+  "models": {
+   "chat": {
+    "default": "gpt-5.6-luna",
+    "default_listed": true,
+    "used": "gpt-5.6-luna"
+   },
+   "deliberate": {
+    "default": "gpt-5.6-sol",
+    "default_listed": true,
+    "used": "gpt-5.6-sol"
+   }
+  },
+  "effort": "low (policy.Settings.s2_effort default)",
+  "prices_usd_per_1e6": {
+   "input": 15.0,
+   "output": 60.0,
+   "note": "conservative, for the spend guard"
+  },
+  "budget_usd": 0.7,
+  "hard_cap_usd": 0.75,
+  "estimated_spend_usd": 0.5808,
+  "ledger": {
+   "calls": 11,
+   "input_tokens": 30830,
+   "output_tokens": 1973
+  },
+  "skipped": [
+   "chat classical 1: budget",
+   "deliberate classical 1: budget",
+   "chat classical 2: budget",
+   "deliberate queue 1: budget",
+   "deliberate classical 2: budget"
+  ],
+  "deliberate": {
+   "n": 2,
+   "mean": 13.39,
+   "median": 13.39,
+   "p10": 13.038,
+   "p90": 13.742,
+   "model": [
+    "gpt-5.6-sol"
+   ],
+   "api_calls": 7,
+   "input_tokens": 24236,
+   "output_tokens": 1211,
+   "est_usd": 0.4362,
+   "states": {
+    "classical": 1,
+    "queue": 1
+   }
+  },
+  "chat": {
+   "n": 1,
+   "mean": 9.143,
+   "median": 9.143,
+   "p10": 9.143,
+   "p90": 9.143,
+   "model": [
+    "gpt-5.6-luna"
+   ],
+   "api_calls": 3,
+   "input_tokens": 6220,
+   "output_tokens": 550,
+   "est_usd": 0.1263,
+   "questions": [
+    "What if the seeing goes to 1.2 arcsec?"
+   ]
+  },
+  "narrate": {
+   "n": 1,
+   "mean": 3.877,
+   "median": 3.877,
+   "p10": 3.877,
+   "p90": 3.877,
+   "model": [
+    "gpt-5.6-luna"
+   ],
+   "api_calls": 1,
+   "input_tokens": 374,
+   "output_tokens": 212,
+   "est_usd": 0.0183
+  },
+  "calls": [
+   {
+    "role": "deliberate",
+    "mode": "classical",
+    "i": 0,
+    "seconds": 13.83,
+    "model": "gpt-5.6-sol",
+    "calls": 3,
+    "input_tokens": 8165,
+    "output_tokens": 549,
+    "est_usd": 0.15541,
+    "action": "observe",
+    "target": "T02-2222+68",
+    "t_exp": 900,
+    "n_exp": 6,
+    "confidence": 0.84,
+    "planner_pick": "T02-2222+68",
+    "s1_pick": "T03-0016+53",
+    "state": "replay"
+   },
+   {
+    "role": "chat",
+    "mode": "classical",
+    "i": 0,
+    "seconds": 9.143,
+    "model": "gpt-5.6-luna",
+    "calls": 3,
+    "input_tokens": 6220,
+    "output_tokens": 550,
+    "est_usd": 0.1263,
+    "question": "What if the seeing goes to 1.2 arcsec?",
+    "reply_chars": 1053
+   },
+   {
+    "role": "narrate",
+    "mode": "classical",
+    "i": 0,
+    "seconds": 3.877,
+    "model": "gpt-5.6-luna",
+    "calls": 1,
+    "input_tokens": 374,
+    "output_tokens": 212,
+    "est_usd": 0.01833,
+    "log_lines": 12,
+    "reply_chars": 324
+   },
+   {
+    "role": "deliberate",
+    "mode": "queue",
+    "i": 0,
+    "seconds": 12.95,
+    "model": "gpt-5.6-sol",
+    "calls": 4,
+    "input_tokens": 16071,
+    "output_tokens": 662,
+    "est_usd": 0.28079,
+    "action": "observe",
+    "target": "Q3-T04-0736-29",
+    "t_exp": 1200,
+    "n_exp": 4,
+    "confidence": 0.676,
+    "planner_pick": "Q4-T01-0904-31",
+    "s1_pick": "Q3-T04-0736-29",
+    "state": "fallback_wait"
+   }
+  ],
+  "s1_judgements": "Qwen/Qwen3-1.7B, cuda"
  }
 }
