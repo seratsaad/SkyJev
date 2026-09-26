@@ -56,6 +56,7 @@ def build_assistant(
     no_s2: bool,
     keck_commands: Optional[str] = None,
     trace: Optional[Trace] = None,
+    dtype: str = "bfloat16",
 ) -> Assistant:
     if manual:
         from obsassist.assistant.adapters.manual import ManualAdapter
@@ -69,7 +70,7 @@ def build_assistant(
     if not no_s1:
         from obsassist.assistant.system1 import System1
 
-        s1 = System1(model=model, heads=heads)
+        s1 = System1(model=model, heads=heads, dtype=dtype)
     s2 = None
     if not no_s2:
         from obsassist.assistant.system2 import System2
@@ -273,6 +274,7 @@ def main(argv=None):
     ap.add_argument("--no-s1", action="store_true", help="no local model: planner and System 2 only")
     ap.add_argument("--model", default="Qwen/Qwen3-1.7B")
     ap.add_argument("--heads", default=None, help="AnyJev artifacts JSON (L2 heads)")
+    ap.add_argument("--dtype", default="bfloat16", help="System 1 weights; float16 on GPUs without bfloat16 (V100)")
     ap.add_argument("--chat-model", default="gpt-5.6-luna")
     ap.add_argument("--deliberate-model", default="gpt-5.6-sol")
     ap.add_argument("--no-s2", action="store_true")
@@ -296,6 +298,7 @@ def main(argv=None):
         a.no_s2,
         a.keck_commands,
         trace,
+        dtype=a.dtype,
     )
     asst.settings.mode = a.mode
     uvicorn.run(create_app(asst, f"http://{a.host}:{a.port}"), host=a.host, port=a.port, log_level="warning")

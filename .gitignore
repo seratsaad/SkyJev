@@ -18,3 +18,4 @@ browser/.chrome-profile/
 browser/.venv/
 browser/results/*/*.json
 !browser/results/shipped/*.json
+demo/*.mp4
