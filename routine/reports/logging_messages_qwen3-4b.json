@@ -1,0 +1,137 @@
+{
+ "task": "logging_messages",
+ "model": "Qwen/Qwen3-4B",
+ "definition": "per message: target_set_exact = the candidates with P(yes) >= 0.5 are exactly the targets it is about (shortlist misses count as errors); entry_exact = that and every status right; the gate acts on a message only if every target and status decision clears its validation-picked threshold",
+ "test": {
+  "code": {
+   "n_messages": 117,
+   "target_set_exact": 0.9145,
+   "target_set_exact_ci95": [
+    0.8498,
+    0.9529
+   ],
+   "entry_exact": 0.2308,
+   "entry_exact_ci95": [
+    0.1637,
+    0.3149
+   ],
+   "acted": 117,
+   "coverage": 1.0,
+   "entry_exact_when_acting": 0.2308,
+   "entry_exact_when_acting_ci95": [
+    0.1637,
+    0.3149
+   ]
+  },
+  "L2_gate_0.98": {
+   "n_messages": 117,
+   "target_set_exact": 0.5556,
+   "target_set_exact_ci95": [
+    0.4652,
+    0.6424
+   ],
+   "entry_exact": 0.3761,
+   "entry_exact_ci95": [
+    0.2936,
+    0.4665
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "entry_exact_when_acting": null,
+   "entry_exact_when_acting_ci95": [
+    NaN,
+    NaN
+   ]
+  },
+  "L2_gate_0.95": {
+   "n_messages": 117,
+   "target_set_exact": 0.5556,
+   "target_set_exact_ci95": [
+    0.4652,
+    0.6424
+   ],
+   "entry_exact": 0.3761,
+   "entry_exact_ci95": [
+    0.2936,
+    0.4665
+   ],
+   "acted": 16,
+   "coverage": 0.1368,
+   "entry_exact_when_acting": 0.8125,
+   "entry_exact_when_acting_ci95": [
+    0.5699,
+    0.9341
+   ]
+  }
+ },
+ "real": {
+  "code": {
+   "n_messages": 7,
+   "target_set_exact": 0.5714,
+   "target_set_exact_ci95": [
+    0.2505,
+    0.8418
+   ],
+   "entry_exact": 0.5714,
+   "entry_exact_ci95": [
+    0.2505,
+    0.8418
+   ],
+   "acted": 7,
+   "coverage": 1.0,
+   "entry_exact_when_acting": 0.5714,
+   "entry_exact_when_acting_ci95": [
+    0.2505,
+    0.8418
+   ]
+  },
+  "L2_gate_0.98": {
+   "n_messages": 7,
+   "target_set_exact": 0.0,
+   "target_set_exact_ci95": [
+    0.0,
+    0.3543
+   ],
+   "entry_exact": 0.0,
+   "entry_exact_ci95": [
+    0.0,
+    0.3543
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "entry_exact_when_acting": null,
+   "entry_exact_when_acting_ci95": [
+    NaN,
+    NaN
+   ]
+  },
+  "L2_gate_0.95": {
+   "n_messages": 7,
+   "target_set_exact": 0.0,
+   "target_set_exact_ci95": [
+    0.0,
+    0.3543
+   ],
+   "entry_exact": 0.0,
+   "entry_exact_ci95": [
+    0.0,
+    0.3543
+   ],
+   "acted": 1,
+   "coverage": 0.1429,
+   "entry_exact_when_acting": 0.0,
+   "entry_exact_when_acting_ci95": [
+    0.0,
+    0.7935
+   ]
+  }
+ },
+ "hardware": {
+  "gpu_nvidia_smi": "Tesla V100-PCIE-16GB, 580.95.05, 16384 MiB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16",
+  "slurm_job": 54793496,
+  "note": "added after the run from the job's nvidia-smi line and the same env"
+ }
+}

@@ -1,0 +1,226 @@
+{
+ "task": "slit_easy",
+ "model": "Qwen/Qwen3-8B",
+ "dtype": "float16",
+ "options": [
+  "row 1",
+  "row 2",
+  "row 3",
+  "row 4"
+ ],
+ "question": "Which row of the table has the lowest blue slit loss for this visit?",
+ "n_train": 1251,
+ "train_label_counts": [
+  419,
+  474,
+  284,
+  74
+ ],
+ "head": {
+  "layer": 22,
+  "kind": "head:ridge",
+  "cv": {
+   "oof_nll": 0.07544844183338995,
+   "oof_acc": 0.9744204636290967
+  },
+  "fit_s": 122.7
+ },
+ "gates": [
+  0.98,
+  0.95
+ ],
+ "notes": "Two versions, each one fixed four-row question (\"row 1\" .. \"row 4\"; a visit offers 2-4 PAs, listed in\nascending PA, and the rows it does not have are absent from the state):",
+ "threshold": {
+  "0.98": 0.6623,
+  "0.95": 0.3856
+ },
+ "val": {
+  "gate_0.98": {
+   "n": 343,
+   "accuracy": 0.9708,
+   "accuracy_ci95": [
+    0.9472,
+    0.9841
+   ],
+   "acted": 335,
+   "coverage": 0.9767,
+   "accuracy_when_acting": 0.9821,
+   "accuracy_when_acting_ci95": [
+    0.9615,
+    0.9918
+   ],
+   "always_majority": 0.3673,
+   "ece": 0.012
+  },
+  "gate_0.95": {
+   "n": 343,
+   "accuracy": 0.9708,
+   "accuracy_ci95": [
+    0.9472,
+    0.9841
+   ],
+   "acted": 342,
+   "coverage": 0.9971,
+   "accuracy_when_acting": 0.9708,
+   "accuracy_when_acting_ci95": [
+    0.947,
+    0.984
+   ],
+   "always_majority": 0.3673,
+   "ece": 0.012
+  }
+ },
+ "test": {
+  "L2": {
+   "gate_0.98": {
+    "n": 347,
+    "accuracy": 0.9885,
+    "accuracy_ci95": [
+     0.9707,
+     0.9955
+    ],
+    "acted": 341,
+    "coverage": 0.9827,
+    "accuracy_when_acting": 0.9912,
+    "accuracy_when_acting_ci95": [
+     0.9745,
+     0.997
+    ],
+    "always_majority": 0.3631,
+    "ece": 0.0128
+   },
+   "gate_0.95": {
+    "n": 347,
+    "accuracy": 0.9885,
+    "accuracy_ci95": [
+     0.9707,
+     0.9955
+    ],
+    "acted": 346,
+    "coverage": 0.9971,
+    "accuracy_when_acting": 0.9913,
+    "accuracy_when_acting_ci95": [
+     0.9748,
+     0.997
+    ],
+    "always_majority": 0.3631,
+    "ece": 0.0128
+   }
+  },
+  "L2_s_per_decision_median": 0.0606,
+  "L0": {
+   "n": 347,
+   "accuracy": 0.9337,
+   "accuracy_ci95": [
+    0.9025,
+    0.9554
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.3631,
+   "ece": 0.0596
+  },
+  "L0_s_per_decision_median": 0.1792,
+  "code": {
+   "n": 347,
+   "accuracy": 1.0,
+   "accuracy_ci95": [
+    0.9891,
+    1.0
+   ]
+  }
+ },
+ "real": {
+  "L2": {
+   "gate_0.98": {
+    "n": 15,
+    "accuracy": 1.0,
+    "accuracy_ci95": [
+     0.7961,
+     1.0
+    ],
+    "acted": 15,
+    "coverage": 1.0,
+    "accuracy_when_acting": 1.0,
+    "accuracy_when_acting_ci95": [
+     0.7961,
+     1.0
+    ],
+    "always_majority": 0.4667,
+    "ece": 0.0021
+   },
+   "gate_0.95": {
+    "n": 15,
+    "accuracy": 1.0,
+    "accuracy_ci95": [
+     0.7961,
+     1.0
+    ],
+    "acted": 15,
+    "coverage": 1.0,
+    "accuracy_when_acting": 1.0,
+    "accuracy_when_acting_ci95": [
+     0.7961,
+     1.0
+    ],
+    "always_majority": 0.4667,
+    "ece": 0.0021
+   }
+  },
+  "L2_s_per_decision_median": 0.0609,
+  "L0": {
+   "n": 15,
+   "accuracy": 1.0,
+   "accuracy_ci95": [
+    0.7961,
+    1.0
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.4667,
+   "ece": 0.0002
+  },
+  "L0_s_per_decision_median": 0.1798,
+  "code": {
+   "n": 15,
+   "accuracy": 1.0,
+   "accuracy_ci95": [
+    0.7961,
+    1.0
+   ]
+  }
+ },
+ "data": {
+  "n_visits": 2000,
+  "code_s_per_visit_median": 0.108,
+  "fast_path_vs_mods_slit_check_max_diff": 0.0,
+  "test_n_pas": {
+   "4": 93,
+   "3": 181,
+   "2": 90
+  },
+  "ties_dropped": {
+   "train": 35,
+   "val": 7,
+   "test": 17
+  }
+ },
+ "hardware": {
+  "gpu_nvidia_smi": "Tesla V100S-PCIE-32GB, 580.95.05, 32768 MiB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16",
+  "slurm_job": 54793497,
+  "note": "added after the run from the job's nvidia-smi line and the same env"
+ }
+}

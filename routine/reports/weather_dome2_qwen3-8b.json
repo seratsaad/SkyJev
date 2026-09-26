@@ -1,0 +1,276 @@
+{
+ "task": "weather_dome2",
+ "model": "Qwen/Qwen3-8B",
+ "dtype": "float16",
+ "options": [
+  "observe: the dome stays usable for the next 60 min",
+  "do not observe: the dome is closed now or must close within 60 min"
+ ],
+ "n_train": 3000,
+ "head": {
+  "layer": 22,
+  "kind": "head:lda",
+  "cv": {
+   "oof_nll": 0.23498086260912818,
+   "oof_acc": 0.9146666666666666
+  },
+  "fit_s": 345.8
+ },
+ "gate_target": 0.98,
+ "notes": "simulated nights (obsassist.weather), horizon 60 min; real = LBT replay",
+ "hardware": {
+  "gpu": "Tesla V100S-PCIE-32GB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16"
+ },
+ "threshold": 0.9602,
+ "val": {
+  "n": 2196,
+  "accuracy": 0.9085,
+  "accuracy_ci95": [
+   0.8957,
+   0.9198
+  ],
+  "acted": 854,
+  "coverage": 0.3889,
+  "accuracy_when_acting": 0.9801,
+  "accuracy_when_acting_ci95": [
+   0.9684,
+   0.9875
+  ],
+  "always_majority": 0.6985,
+  "ece": 0.0136
+ },
+ "test": {
+  "L2": {
+   "n": 2286,
+   "accuracy": 0.8981,
+   "accuracy_ci95": [
+    0.885,
+    0.9098
+   ],
+   "acted": 837,
+   "coverage": 0.3661,
+   "accuracy_when_acting": 0.9845,
+   "accuracy_when_acting_ci95": [
+    0.9736,
+    0.9909
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.0176,
+   "s_per_decision_median": 0.077
+  },
+  "L0": {
+   "n": 2286,
+   "accuracy": 0.8823,
+   "accuracy_ci95": [
+    0.8685,
+    0.8949
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.0979,
+   "s_per_decision_median": 0.2151
+  }
+ },
+ "real": {
+  "L2": {
+   "n": 18,
+   "accuracy": 0.6111,
+   "accuracy_ci95": [
+    0.3862,
+    0.797
+   ],
+   "acted": 3,
+   "coverage": 0.1667,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.4385,
+    1.0
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.1632,
+   "s_per_decision_median": 0.0765
+  },
+  "L0": {
+   "n": 18,
+   "accuracy": 0.6111,
+   "accuracy_ci95": [
+    0.3862,
+    0.797
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.3861,
+   "s_per_decision_median": 0.2105
+  }
+ },
+ "test_natural": {
+  "L2": {
+   "n": 1260,
+   "accuracy": 0.969,
+   "accuracy_ci95": [
+    0.958,
+    0.9773
+   ],
+   "acted": 394,
+   "coverage": 0.3127,
+   "accuracy_when_acting": 0.9949,
+   "accuracy_when_acting_ci95": [
+    0.9817,
+    0.9986
+   ],
+   "always_majority": 0.9143,
+   "ece": 0.0486
+  }
+ },
+ "gate_0.95": {
+  "threshold": 0.8882,
+  "val": {
+   "n": 2196,
+   "accuracy": 0.9085,
+   "accuracy_ci95": [
+    0.8957,
+    0.9198
+   ],
+   "acted": 1788,
+   "coverage": 0.8142,
+   "accuracy_when_acting": 0.9502,
+   "accuracy_when_acting_ci95": [
+    0.9391,
+    0.9594
+   ],
+   "always_majority": 0.6985,
+   "ece": 0.0136
+  },
+  "test": {
+   "n": 2286,
+   "accuracy": 0.8981,
+   "accuracy_ci95": [
+    0.885,
+    0.9098
+   ],
+   "acted": 1776,
+   "coverage": 0.7769,
+   "accuracy_when_acting": 0.9493,
+   "accuracy_when_acting_ci95": [
+    0.9381,
+    0.9586
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.0176
+  },
+  "test_natural": {
+   "n": 1260,
+   "accuracy": 0.969,
+   "accuracy_ci95": [
+    0.958,
+    0.9773
+   ],
+   "acted": 1041,
+   "coverage": 0.8262,
+   "accuracy_when_acting": 0.9904,
+   "accuracy_when_acting_ci95": [
+    0.9824,
+    0.9948
+   ],
+   "always_majority": 0.9143,
+   "ece": 0.0486
+  },
+  "real": {
+   "n": 18,
+   "accuracy": 0.6111,
+   "accuracy_ci95": [
+    0.3862,
+    0.797
+   ],
+   "acted": 5,
+   "coverage": 0.2778,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.5655,
+    1.0
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.1632
+  }
+ },
+ "class_mix": {
+  "train": [
+   2159,
+   841
+  ],
+  "val": [
+   1534,
+   662
+  ],
+  "test": [
+   1558,
+   728
+  ],
+  "real": [
+   10,
+   8
+  ]
+ },
+ "class_mix_test_natural": [
+  1152,
+  108
+ ],
+ "rule": {
+  "val": {
+   "n": 2196,
+   "accuracy": 0.8875,
+   "accuracy_ci95": [
+    0.8736,
+    0.9001
+   ]
+  },
+  "test": {
+   "n": 2286,
+   "accuracy": 0.871,
+   "accuracy_ci95": [
+    0.8566,
+    0.8841
+   ]
+  },
+  "real": {
+   "n": 18,
+   "accuracy": 0.6667,
+   "accuracy_ci95": [
+    0.4375,
+    0.8372
+   ]
+  },
+  "test_natural": {
+   "n": 1260,
+   "accuracy": 0.9071,
+   "accuracy_ci95": [
+    0.8899,
+    0.922
+   ]
+  },
+  "real_lbt_tools_forecast_rule": {
+   "n": 18,
+   "accuracy": 0.7222,
+   "accuracy_ci95": [
+    0.4913,
+    0.875
+   ]
+  }
+ },
+ "horizon_min": 60
+}

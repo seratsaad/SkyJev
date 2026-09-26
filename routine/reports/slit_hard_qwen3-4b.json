@@ -1,0 +1,222 @@
+{
+ "task": "slit_hard",
+ "model": "Qwen/Qwen3-4B",
+ "dtype": "float16",
+ "options": [
+  "row 1",
+  "row 2",
+  "row 3",
+  "row 4"
+ ],
+ "question": "Following the readme, which row's acquisition script should be used for this visit?",
+ "n_train": 1286,
+ "train_label_counts": [
+  432,
+  481,
+  296,
+  77
+ ],
+ "head": {
+  "layer": 25,
+  "kind": "head:lda",
+  "cv": {
+   "oof_nll": 0.7587240741268114,
+   "oof_acc": 0.6625194401244168
+  },
+  "fit_s": 66.2
+ },
+ "gates": [
+  0.98,
+  0.95
+ ],
+ "notes": "",
+ "threshold": {
+  "0.98": 0.9901,
+  "0.95": 0.9901
+ },
+ "val": {
+  "gate_0.98": {
+   "n": 350,
+   "accuracy": 0.6343,
+   "accuracy_ci95": [
+    0.5826,
+    0.683
+   ],
+   "acted": 5,
+   "coverage": 0.0143,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.5655,
+    1.0
+   ],
+   "always_majority": 0.3686,
+   "ece": 0.0586
+  },
+  "gate_0.95": {
+   "n": 350,
+   "accuracy": 0.6343,
+   "accuracy_ci95": [
+    0.5826,
+    0.683
+   ],
+   "acted": 5,
+   "coverage": 0.0143,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.5655,
+    1.0
+   ],
+   "always_majority": 0.3686,
+   "ece": 0.0586
+  }
+ },
+ "test": {
+  "L2": {
+   "gate_0.98": {
+    "n": 364,
+    "accuracy": 0.6429,
+    "accuracy_ci95": [
+     0.5924,
+     0.6904
+    ],
+    "acted": 2,
+    "coverage": 0.0055,
+    "accuracy_when_acting": 1.0,
+    "accuracy_when_acting_ci95": [
+     0.3424,
+     1.0
+    ],
+    "always_majority": 0.3626,
+    "ece": 0.0625
+   },
+   "gate_0.95": {
+    "n": 364,
+    "accuracy": 0.6429,
+    "accuracy_ci95": [
+     0.5924,
+     0.6904
+    ],
+    "acted": 2,
+    "coverage": 0.0055,
+    "accuracy_when_acting": 1.0,
+    "accuracy_when_acting_ci95": [
+     0.3424,
+     1.0
+    ],
+    "always_majority": 0.3626,
+    "ece": 0.0625
+   }
+  },
+  "L2_s_per_decision_median": 0.0442,
+  "L0": {
+   "n": 364,
+   "accuracy": 0.6731,
+   "accuracy_ci95": [
+    0.6233,
+    0.7192
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.3626,
+   "ece": 0.289
+  },
+  "L0_s_per_decision_median": 0.1475,
+  "code": {
+   "n": 364,
+   "accuracy": 1.0,
+   "accuracy_ci95": [
+    0.9896,
+    1.0
+   ]
+  }
+ },
+ "real": {
+  "L2": {
+   "gate_0.98": {
+    "n": 15,
+    "accuracy": 0.4,
+    "accuracy_ci95": [
+     0.1982,
+     0.6425
+    ],
+    "acted": 0,
+    "coverage": 0.0,
+    "accuracy_when_acting": null,
+    "accuracy_when_acting_ci95": [
+     NaN,
+     NaN
+    ],
+    "always_majority": 0.4667,
+    "ece": 0.189
+   },
+   "gate_0.95": {
+    "n": 15,
+    "accuracy": 0.4,
+    "accuracy_ci95": [
+     0.1982,
+     0.6425
+    ],
+    "acted": 0,
+    "coverage": 0.0,
+    "accuracy_when_acting": null,
+    "accuracy_when_acting_ci95": [
+     NaN,
+     NaN
+    ],
+    "always_majority": 0.4667,
+    "ece": 0.189
+   }
+  },
+  "L2_s_per_decision_median": 0.0786,
+  "L0": {
+   "n": 15,
+   "accuracy": 0.1333,
+   "accuracy_ci95": [
+    0.0374,
+    0.3788
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.4667,
+   "ece": 0.8033
+  },
+  "L0_s_per_decision_median": 0.165
+ },
+ "data": {
+  "n_visits": 2000,
+  "code_s_per_visit_median": 0.108,
+  "fast_path_vs_mods_slit_check_max_diff": 0.0,
+  "test_n_pas": {
+   "4": 93,
+   "3": 181,
+   "2": 90
+  },
+  "test_rule_segments": {
+   "4": 29,
+   "3": 71,
+   "1": 130,
+   "2": 131,
+   "5": 3
+  },
+  "test_rule_pick_equals_argmin": 0.989,
+  "real_reference": "lowest mean blue loss (the replay reference); the readme text is the program's own"
+ },
+ "hardware": {
+  "gpu_nvidia_smi": "Tesla V100-PCIE-16GB, 580.95.05, 16384 MiB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16",
+  "slurm_job": 54793496,
+  "note": "added after the run from the job's nvidia-smi line and the same env"
+ }
+}

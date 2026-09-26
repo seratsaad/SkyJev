@@ -1,0 +1,354 @@
+{
+ "task": "weather_dome",
+ "model": "Qwen/Qwen3-1.7B",
+ "dtype": "float16",
+ "options": [
+  "observe: the dome is open or can open, and stays usable for the next 60 min",
+  "wait: closed now or must close soon, but reopens later tonight",
+  "close: must close (or stay closed) for the rest of the night"
+ ],
+ "n_train": 3000,
+ "head": {
+  "layer": 20,
+  "kind": "head:ridge",
+  "cv": {
+   "oof_nll": 0.33692937765440034,
+   "oof_acc": 0.8936666666666667
+  },
+  "fit_s": 121.0
+ },
+ "gate_target": 0.98,
+ "notes": "simulated nights (obsassist.weather), horizon 60 min; real = LBT replay",
+ "hardware": {
+  "gpu": "Tesla V100-PCIE-16GB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16"
+ },
+ "threshold": 0.9696,
+ "val": {
+  "n": 2196,
+  "accuracy": 0.883,
+  "accuracy_ci95": [
+   0.8689,
+   0.8958
+  ],
+  "acted": 227,
+  "coverage": 0.1034,
+  "accuracy_when_acting": 0.9824,
+  "accuracy_when_acting_ci95": [
+   0.9556,
+   0.9931
+  ],
+  "always_majority": 0.6985,
+  "ece": 0.0268
+ },
+ "test": {
+  "L2": {
+   "n": 2286,
+   "accuracy": 0.8832,
+   "accuracy_ci95": [
+    0.8694,
+    0.8957
+   ],
+   "acted": 242,
+   "coverage": 0.1059,
+   "accuracy_when_acting": 0.9752,
+   "accuracy_when_acting_ci95": [
+    0.947,
+    0.9886
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.0217,
+   "s_per_decision_median": 0.0306
+  },
+  "L0": {
+   "n": 2286,
+   "accuracy": 0.8626,
+   "accuracy_ci95": [
+    0.8479,
+    0.8761
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.1252,
+   "s_per_decision_median": 0.0878
+  }
+ },
+ "real": {
+  "L2": {
+   "n": 18,
+   "accuracy": 0.5556,
+   "accuracy_ci95": [
+    0.3372,
+    0.7544
+   ],
+   "acted": 9,
+   "coverage": 0.5,
+   "accuracy_when_acting": 0.3333,
+   "accuracy_when_acting_ci95": [
+    0.1206,
+    0.6458
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.4229,
+   "s_per_decision_median": 0.0309
+  },
+  "L0": {
+   "n": 18,
+   "accuracy": 0.4444,
+   "accuracy_ci95": [
+    0.2456,
+    0.6628
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.4778,
+   "s_per_decision_median": 0.0877
+  }
+ },
+ "test_natural": {
+  "L2": {
+   "n": 1260,
+   "accuracy": 0.9651,
+   "accuracy_ci95": [
+    0.9534,
+    0.9739
+   ],
+   "acted": 141,
+   "coverage": 0.1119,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.9735,
+    1.0
+   ],
+   "always_majority": 0.9143,
+   "ece": 0.0476
+  }
+ },
+ "gate_0.95": {
+  "threshold": 0.9288,
+  "val": {
+   "n": 2196,
+   "accuracy": 0.883,
+   "accuracy_ci95": [
+    0.8689,
+    0.8958
+   ],
+   "acted": 1371,
+   "coverage": 0.6243,
+   "accuracy_when_acting": 0.9504,
+   "accuracy_when_acting_ci95": [
+    0.9376,
+    0.9607
+   ],
+   "always_majority": 0.6985,
+   "ece": 0.0268
+  },
+  "test": {
+   "n": 2286,
+   "accuracy": 0.8832,
+   "accuracy_ci95": [
+    0.8694,
+    0.8957
+   ],
+   "acted": 1302,
+   "coverage": 0.5696,
+   "accuracy_when_acting": 0.9555,
+   "accuracy_when_acting_ci95": [
+    0.9428,
+    0.9654
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.0217
+  },
+  "test_natural": {
+   "n": 1260,
+   "accuracy": 0.9651,
+   "accuracy_ci95": [
+    0.9534,
+    0.9739
+   ],
+   "acted": 828,
+   "coverage": 0.6571,
+   "accuracy_when_acting": 0.9903,
+   "accuracy_when_acting_ci95": [
+    0.9811,
+    0.9951
+   ],
+   "always_majority": 0.9143,
+   "ece": 0.0476
+  },
+  "real": {
+   "n": 18,
+   "accuracy": 0.5556,
+   "accuracy_ci95": [
+    0.3372,
+    0.7544
+   ],
+   "acted": 14,
+   "coverage": 0.7778,
+   "accuracy_when_acting": 0.5714,
+   "accuracy_when_acting_ci95": [
+    0.3259,
+    0.7862
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.4229
+  }
+ },
+ "guarded": {
+  "gate_0.98": {
+   "test": {
+    "n": 2286,
+    "passes_guard": 1890,
+    "acted": 177,
+    "coverage": 0.0774,
+    "accuracy_when_acting": 0.9887,
+    "accuracy_when_acting_ci95": [
+     0.9597,
+     0.9969
+    ]
+   },
+   "test_natural": {
+    "n": 1260,
+    "passes_guard": 1053,
+    "acted": 97,
+    "coverage": 0.077,
+    "accuracy_when_acting": 1.0,
+    "accuracy_when_acting_ci95": [
+     0.9619,
+     1.0
+    ]
+   },
+   "real": {
+    "n": 18,
+    "passes_guard": 0,
+    "acted": 0,
+    "coverage": 0.0,
+    "accuracy_when_acting": null,
+    "accuracy_when_acting_ci95": [
+     NaN,
+     NaN
+    ]
+   }
+  },
+  "gate_0.95": {
+   "test": {
+    "n": 2286,
+    "passes_guard": 1890,
+    "acted": 1052,
+    "coverage": 0.4602,
+    "accuracy_when_acting": 0.962,
+    "accuracy_when_acting_ci95": [
+     0.9486,
+     0.972
+    ]
+   },
+   "test_natural": {
+    "n": 1260,
+    "passes_guard": 1053,
+    "acted": 679,
+    "coverage": 0.5389,
+    "accuracy_when_acting": 0.9912,
+    "accuracy_when_acting_ci95": [
+     0.9809,
+     0.9959
+    ]
+   },
+   "real": {
+    "n": 18,
+    "passes_guard": 0,
+    "acted": 0,
+    "coverage": 0.0,
+    "accuracy_when_acting": null,
+    "accuracy_when_acting_ci95": [
+     NaN,
+     NaN
+    ]
+   }
+  }
+ },
+ "class_mix": {
+  "train": [
+   2159,
+   731,
+   110
+  ],
+  "val": [
+   1534,
+   588,
+   74
+  ],
+  "test": [
+   1558,
+   690,
+   38
+  ],
+  "real": [
+   10,
+   5,
+   3
+  ]
+ },
+ "class_mix_test_natural": [
+  1152,
+  98,
+  10
+ ],
+ "rule": {
+  "val": {
+   "n": 2196,
+   "accuracy": 0.8607,
+   "accuracy_ci95": [
+    0.8455,
+    0.8745
+   ]
+  },
+  "test": {
+   "n": 2286,
+   "accuracy": 0.8513,
+   "accuracy_ci95": [
+    0.8361,
+    0.8653
+   ]
+  },
+  "real": {
+   "n": 18,
+   "accuracy": 0.6667,
+   "accuracy_ci95": [
+    0.4375,
+    0.8372
+   ]
+  },
+  "test_natural": {
+   "n": 1260,
+   "accuracy": 0.9008,
+   "accuracy_ci95": [
+    0.883,
+    0.9161
+   ]
+  },
+  "real_lbt_tools_forecast_rule": {
+   "n": 18,
+   "accuracy": 0.5556,
+   "accuracy_ci95": [
+    0.3372,
+    0.7544
+   ]
+  }
+ },
+ "horizon_min": 60
+}

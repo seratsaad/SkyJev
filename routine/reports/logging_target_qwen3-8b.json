@@ -1,0 +1,269 @@
+{
+ "task": "logging_target",
+ "model": "Qwen/Qwen3-8B",
+ "dtype": "float16",
+ "options": [
+  "Yes",
+  "No"
+ ],
+ "question": "Is this message about the queue target under review?",
+ "n_train": 2421,
+ "train_label_counts": [
+  1185,
+  1236
+ ],
+ "head": {
+  "layer": 25,
+  "kind": "head:ridge",
+  "cv": {
+   "oof_nll": 0.027209539180182617,
+   "oof_acc": 0.9904997934737712
+  },
+  "fit_s": 220.4
+ },
+ "gates": [
+  0.98,
+  0.95
+ ],
+ "notes": "synthetic train (family A), val/test (family B); real = LBT replay",
+ "threshold": {
+  "0.98": 0.6801,
+  "0.95": 0.5038
+ },
+ "val": {
+  "gate_0.98": {
+   "n": 747,
+   "accuracy": 0.9692,
+   "accuracy_ci95": [
+    0.9542,
+    0.9794
+   ],
+   "acted": 726,
+   "coverage": 0.9719,
+   "accuracy_when_acting": 0.9807,
+   "accuracy_when_acting_ci95": [
+    0.9679,
+    0.9885
+   ],
+   "always_majority": 0.5797,
+   "ece": 0.0137
+  },
+  "gate_0.95": {
+   "n": 747,
+   "accuracy": 0.9692,
+   "accuracy_ci95": [
+    0.9542,
+    0.9794
+   ],
+   "acted": 746,
+   "coverage": 0.9987,
+   "accuracy_when_acting": 0.9705,
+   "accuracy_when_acting_ci95": [
+    0.9558,
+    0.9804
+   ],
+   "always_majority": 0.5797,
+   "ece": 0.0137
+  }
+ },
+ "test": {
+  "L2": {
+   "gate_0.98": {
+    "n": 1007,
+    "accuracy": 0.9623,
+    "accuracy_ci95": [
+     0.9486,
+     0.9724
+    ],
+    "acted": 979,
+    "coverage": 0.9722,
+    "accuracy_when_acting": 0.9724,
+    "accuracy_when_acting_ci95": [
+     0.9602,
+     0.981
+    ],
+    "always_majority": 0.6504,
+    "ece": 0.0131
+   },
+   "gate_0.95": {
+    "n": 1007,
+    "accuracy": 0.9623,
+    "accuracy_ci95": [
+     0.9486,
+     0.9724
+    ],
+    "acted": 1006,
+    "coverage": 0.999,
+    "accuracy_when_acting": 0.9622,
+    "accuracy_when_acting_ci95": [
+     0.9486,
+     0.9724
+    ],
+    "always_majority": 0.6504,
+    "ece": 0.0131
+   }
+  },
+  "L2_s_per_decision_median": 0.067,
+  "L0": {
+   "n": 1007,
+   "accuracy": 0.6802,
+   "accuracy_ci95": [
+    0.6508,
+    0.7083
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.6504,
+   "ece": 0.3094
+  },
+  "L0_s_per_decision_median": 0.1832,
+  "code": {
+   "n": 1007,
+   "accuracy": 0.9911,
+   "accuracy_ci95": [
+    0.9831,
+    0.9953
+   ]
+  }
+ },
+ "real": {
+  "L2": {
+   "gate_0.98": {
+    "n": 61,
+    "accuracy": 0.8361,
+    "accuracy_ci95": [
+     0.7239,
+     0.9084
+    ],
+    "acted": 60,
+    "coverage": 0.9836,
+    "accuracy_when_acting": 0.85,
+    "accuracy_when_acting_ci95": [
+     0.7389,
+     0.919
+    ],
+    "always_majority": 0.6885,
+    "ece": 0.1274
+   },
+   "gate_0.95": {
+    "n": 61,
+    "accuracy": 0.8361,
+    "accuracy_ci95": [
+     0.7239,
+     0.9084
+    ],
+    "acted": 61,
+    "coverage": 1.0,
+    "accuracy_when_acting": 0.8361,
+    "accuracy_when_acting_ci95": [
+     0.7239,
+     0.9084
+    ],
+    "always_majority": 0.6885,
+    "ece": 0.1274
+   }
+  },
+  "L2_s_per_decision_median": 0.1502,
+  "L0": {
+   "n": 61,
+   "accuracy": 0.6885,
+   "accuracy_ci95": [
+    0.5641,
+    0.7906
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.6885,
+   "ece": 0.2938
+  },
+  "L0_s_per_decision_median": 0.3754,
+  "code": {
+   "n": 61,
+   "accuracy": 0.9672,
+   "accuracy_ci95": [
+    0.8881,
+    0.991
+   ]
+  }
+ },
+ "data": {
+  "train": {
+   "messages": {
+    "chat": 101,
+    "log": 119
+   },
+   "status_cases": 1189,
+   "status_labels": {
+    "done": 341,
+    "skipped": 606,
+    "partial": 242
+   },
+   "target_cases": 2421,
+   "target_yes": 1185,
+   "shortlist_recall": 0.9984
+  },
+  "val": {
+   "messages": {
+    "chat": 34,
+    "log": 45
+   },
+   "status_cases": 434,
+   "status_labels": {
+    "skipped": 214,
+    "done": 135,
+    "partial": 85
+   },
+   "target_cases": 747,
+   "target_yes": 433,
+   "shortlist_recall": 0.9988
+  },
+  "test": {
+   "messages": {
+    "log": 69,
+    "chat": 48
+   },
+   "status_cases": 656,
+   "status_labels": {
+    "skipped": 329,
+    "done": 197,
+    "partial": 130
+   },
+   "target_cases": 1007,
+   "target_yes": 655,
+   "shortlist_recall": 0.9992
+  },
+  "real": {
+   "messages_by_source": {
+    "observer night log": 4,
+    "observer chat message": 3
+   },
+   "nights_with_queue_page": 4,
+   "status_cases": 48,
+   "status_labels": {
+    "skipped": 43,
+    "done": 5
+   },
+   "target_cases": 61,
+   "target_yes": 42,
+   "shortlist_recall": 0.7143
+  }
+ },
+ "hardware": {
+  "gpu_nvidia_smi": "Tesla V100S-PCIE-32GB, 580.95.05, 32768 MiB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16",
+  "slurm_job": 54793497,
+  "note": "added after the run from the job's nvidia-smi line and the same env"
+ }
+}

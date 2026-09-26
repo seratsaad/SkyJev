@@ -81,3 +81,46 @@ Limits:
 - The real sets are tiny, and 41 of the 48 status cases come from 4 night logs.
 - On the real cases the 0.98 gate is not calibrated: 8B acts on 98 % of status cases at 89 %.
 - 2 of the 3 real chat messages refer to targets without naming them. No name shortlist can find these.
+
+## Focus action and next-target check
+
+Code measures the star widths (focus) or builds the candidate list (next target); a Jev choice with a
+fitted L2 head picks; the gate threshold is chosen on validation for 98% accuracy when acting.
+Scripts: `focus.py`, `target.py`. Reports: `reports/focus_*.json`, `reports/target_*.json`.
+
+**Focus action** (accept / move toward first step / move toward last step / retake). Training on
+synthetic focus curves; real test on the 84 archival ESO/MPG 2.2 m WFI cases (key 2 = full nine-step
+fit, adopted after an earlier model's answers were seen; key 1 = rule written beforehand).
+
+| model | real, key 2: accuracy | coverage | accuracy when acting (95% CI) | s/decision |
+|---|---:|---:|---:|---:|
+| Qwen3-1.7B | 89.3% | 76% | 100% (94.3-100), 64/64 | 0.03 |
+| Qwen3-4B | 89.3% | 75% | 93.7% (84.8-97.5), 59/63 | 0.04 |
+| Qwen3-8B | 91.7% | 68% | 96.5% (88.1-99.0), 55/57 | 0.05 |
+
+Against key 1 the same models reach 77-81% when acting. The zero-label (L0) baseline is 13-52%.
+Confident errors are boundary windows (best focus at a window edge).
+
+**Next-target check** (simulated classical and queue nights, per-candidate regret heads, Qwen3-4B
+and 8B). The gate does not reach high accuracy: on held-out states it acts on at most about 1% of
+classical states and on no queue states at the validation-chosen threshold, and without a gate the
+pick has a higher mean regret than the planner (0.83-0.85% against 0.71% classical, 1.59-1.64%
+against 1.35% queue). The planner stays the default for the next target.
+
+## Weather decisions
+
+Code turns telemetry into margins to the site limits and trends over 30 min; a Jev choice picks.
+Labels come from the simulator's future truth (horizon 60 min), with whole nights held out; the real
+test is the 18 anonymized weather cases replayed from the LBT nights (4 for the sky class). Script:
+`weather.py`. Reports: `reports/weather_*.json` (`dome` = observe / wait / close, `dome2` =
+observe / not observe, `sky` = photometric / thin cirrus / thick cloud).
+
+| task | model | simulated test: accuracy | coverage | accuracy when acting (95% CI) | real LBT |
+|---|---|---:|---:|---:|---|
+| sky class | Qwen3-4B | 95.4% | 93% | 98.3% (97.5-98.8) | 4 cases, not usable |
+| dome, 2 options | Qwen3-8B | 89.8% | 37% | 98.5% (97.4-99.1) | acts on 3 of 18, all right |
+| dome, 3 options | Qwen3-4B | 88.3% | 22% | 96.8% (94.8-98.0) | acts on 1 of 18, wrong |
+
+Simulated always-majority rates are 71% (sky) and 68% (dome). The simulator's weather does not carry
+over well to the real LBT cases (Mt Graham limits and the few real cases), so real-night use needs
+labelled real weather data and a shadow run first.

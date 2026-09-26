@@ -1,0 +1,282 @@
+{
+ "task": "weather_dome",
+ "model": "Qwen/Qwen3-4B",
+ "dtype": "float16",
+ "options": [
+  "observe: the dome is open or can open, and stays usable for the next 60 min",
+  "wait: closed now or must close soon, but reopens later tonight",
+  "close: must close (or stay closed) for the rest of the night"
+ ],
+ "n_train": 3000,
+ "head": {
+  "layer": 22,
+  "kind": "head:ridge",
+  "cv": {
+   "oof_nll": 0.3322540736665063,
+   "oof_acc": 0.8953333333333333
+  },
+  "fit_s": 225.7
+ },
+ "gate_target": 0.98,
+ "notes": "simulated nights (obsassist.weather), horizon 60 min; real = LBT replay",
+ "hardware": {
+  "gpu": "Tesla V100-PCIE-16GB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16"
+ },
+ "threshold": 0.9658,
+ "val": {
+  "n": 2196,
+  "accuracy": 0.8925,
+  "accuracy_ci95": [
+   0.8789,
+   0.9048
+  ],
+  "acted": 513,
+  "coverage": 0.2336,
+  "accuracy_when_acting": 0.9805,
+  "accuracy_when_acting_ci95": [
+   0.9645,
+   0.9894
+  ],
+  "always_majority": 0.6985,
+  "ece": 0.0166
+ },
+ "test": {
+  "L2": {
+   "n": 2286,
+   "accuracy": 0.8828,
+   "accuracy_ci95": [
+    0.8689,
+    0.8953
+   ],
+   "acted": 492,
+   "coverage": 0.2152,
+   "accuracy_when_acting": 0.9675,
+   "accuracy_when_acting_ci95": [
+    0.9478,
+    0.9799
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.012,
+   "s_per_decision_median": 0.0457
+  },
+  "L0": {
+   "n": 2286,
+   "accuracy": 0.6951,
+   "accuracy_ci95": [
+    0.6759,
+    0.7136
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.2905,
+   "s_per_decision_median": 0.1267
+  }
+ },
+ "real": {
+  "L2": {
+   "n": 18,
+   "accuracy": 0.5,
+   "accuracy_ci95": [
+    0.2903,
+    0.7097
+   ],
+   "acted": 1,
+   "coverage": 0.0556,
+   "accuracy_when_acting": 0.0,
+   "accuracy_when_acting_ci95": [
+    0.0,
+    0.7935
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.3516,
+   "s_per_decision_median": 0.0451
+  },
+  "L0": {
+   "n": 18,
+   "accuracy": 0.5,
+   "accuracy_ci95": [
+    0.2903,
+    0.7097
+   ],
+   "acted": 0,
+   "coverage": 0.0,
+   "accuracy_when_acting": null,
+   "accuracy_when_acting_ci95": [
+    NaN,
+    NaN
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.4925,
+   "s_per_decision_median": 0.1253
+  }
+ },
+ "test_natural": {
+  "L2": {
+   "n": 1260,
+   "accuracy": 0.9587,
+   "accuracy_ci95": [
+    0.9463,
+    0.9684
+   ],
+   "acted": 300,
+   "coverage": 0.2381,
+   "accuracy_when_acting": 0.9933,
+   "accuracy_when_acting_ci95": [
+    0.976,
+    0.9982
+   ],
+   "always_majority": 0.9143,
+   "ece": 0.0517
+  }
+ },
+ "gate_0.95": {
+  "threshold": 0.9269,
+  "val": {
+   "n": 2196,
+   "accuracy": 0.8925,
+   "accuracy_ci95": [
+    0.8789,
+    0.9048
+   ],
+   "acted": 1352,
+   "coverage": 0.6157,
+   "accuracy_when_acting": 0.9504,
+   "accuracy_when_acting_ci95": [
+    0.9375,
+    0.9608
+   ],
+   "always_majority": 0.6985,
+   "ece": 0.0166
+  },
+  "test": {
+   "n": 2286,
+   "accuracy": 0.8828,
+   "accuracy_ci95": [
+    0.8689,
+    0.8953
+   ],
+   "acted": 1249,
+   "coverage": 0.5464,
+   "accuracy_when_acting": 0.9424,
+   "accuracy_when_acting_ci95": [
+    0.928,
+    0.954
+   ],
+   "always_majority": 0.6815,
+   "ece": 0.012
+  },
+  "test_natural": {
+   "n": 1260,
+   "accuracy": 0.9587,
+   "accuracy_ci95": [
+    0.9463,
+    0.9684
+   ],
+   "acted": 788,
+   "coverage": 0.6254,
+   "accuracy_when_acting": 0.9886,
+   "accuracy_when_acting_ci95": [
+    0.9784,
+    0.994
+   ],
+   "always_majority": 0.9143,
+   "ece": 0.0517
+  },
+  "real": {
+   "n": 18,
+   "accuracy": 0.5,
+   "accuracy_ci95": [
+    0.2903,
+    0.7097
+   ],
+   "acted": 6,
+   "coverage": 0.3333,
+   "accuracy_when_acting": 0.3333,
+   "accuracy_when_acting_ci95": [
+    0.0968,
+    0.7
+   ],
+   "always_majority": 0.5556,
+   "ece": 0.3516
+  }
+ },
+ "class_mix": {
+  "train": [
+   2159,
+   731,
+   110
+  ],
+  "val": [
+   1534,
+   588,
+   74
+  ],
+  "test": [
+   1558,
+   690,
+   38
+  ],
+  "real": [
+   10,
+   5,
+   3
+  ]
+ },
+ "class_mix_test_natural": [
+  1152,
+  98,
+  10
+ ],
+ "rule": {
+  "val": {
+   "n": 2196,
+   "accuracy": 0.8607,
+   "accuracy_ci95": [
+    0.8455,
+    0.8745
+   ]
+  },
+  "test": {
+   "n": 2286,
+   "accuracy": 0.8513,
+   "accuracy_ci95": [
+    0.8361,
+    0.8653
+   ]
+  },
+  "real": {
+   "n": 18,
+   "accuracy": 0.6667,
+   "accuracy_ci95": [
+    0.4375,
+    0.8372
+   ]
+  },
+  "test_natural": {
+   "n": 1260,
+   "accuracy": 0.9008,
+   "accuracy_ci95": [
+    0.883,
+    0.9161
+   ]
+  },
+  "real_lbt_tools_forecast_rule": {
+   "n": 18,
+   "accuracy": 0.5556,
+   "accuracy_ci95": [
+    0.3372,
+    0.7544
+   ]
+  }
+ },
+ "horizon_min": 60
+}
