@@ -1,0 +1,226 @@
+{
+ "description": "Wall time from human prompt to last assistant message before the next human prompt, LBT observing-assistant sessions. Aggregates only.",
+ "n_transcript_files": 2,
+ "n_human_prompts_all_dates": 184,
+ "n_requests": 156,
+ "night_date_range_requested": [
+  "2026-09-09",
+  "2026-09-16"
+ ],
+ "night_date_range_seen": [
+  "2026-09-09",
+  "2026-09-15"
+ ],
+ "requests_per_night": {
+  "2026-09-09": 40,
+  "2026-09-11": 11,
+  "2026-09-12": 82,
+  "2026-09-13": 3,
+  "2026-09-15": 20
+ },
+ "n_requests_18h_to_07h_mst": 107,
+ "queued_wait_s_median": 0.0,
+ "n_queued_over_5s": 2,
+ "overall": {
+  "n_requests": 156,
+  "wall_s_median": 57.7,
+  "wall_s_p10": 12.8,
+  "wall_s_p90": 341.3,
+  "tool_calls_median": 2.0,
+  "models_seen": {
+   "claude-fable-5-1": 35,
+   "claude-opus-5": 122
+  },
+  "n_no_tool_calls": 39,
+  "n_interrupted": 1,
+  "n_with_midturn_user_input": 19,
+  "n_with_single_tool_wait_over_60s": 20,
+  "top_tools": {
+   "Bash": 248,
+   "computer": 48,
+   "add_night_note": 36,
+   "weather": 35,
+   "javascript_tool": 35,
+   "Write": 29,
+   "get_readme": 29,
+   "fetch_queue": 23
+  }
+ },
+ "categories": {
+  "full_night_plan": {
+   "n_requests": 5,
+   "wall_s_median": 225.1,
+   "wall_s_p10": 133.4,
+   "wall_s_p90": 770.4,
+   "tool_calls_median": 15.0,
+   "models_seen": {
+    "claude-opus-5": 5
+   },
+   "n_no_tool_calls": 0,
+   "n_interrupted": 0,
+   "n_with_midturn_user_input": 1,
+   "n_with_single_tool_wait_over_60s": 2,
+   "top_tools": {
+    "Bash": 21,
+    "get_readme": 20,
+    "plan_tonight": 11,
+    "computer": 11,
+    "weather": 6,
+    "mods_slit_losses": 4,
+    "ToolSearch": 3,
+    "lbto_schedule": 3
+   }
+  },
+  "what_next_or_replan": {
+   "n_requests": 6,
+   "wall_s_median": 125.6,
+   "wall_s_p10": 46.3,
+   "wall_s_p90": 533.9,
+   "tool_calls_median": 4.5,
+   "models_seen": {
+    "claude-fable-5-1": 1,
+    "claude-opus-5": 5
+   },
+   "n_no_tool_calls": 0,
+   "n_interrupted": 1,
+   "n_with_midturn_user_input": 2,
+   "n_with_single_tool_wait_over_60s": 1,
+   "top_tools": {
+    "Bash": 15,
+    "weather": 7,
+    "Write": 4,
+    "add_night_note": 3,
+    "navigate": 3,
+    "computer": 2,
+    "javascript_tool": 2,
+    "report_instrument": 2
+   }
+  },
+  "position_or_angle_check": {
+   "n_requests": 12,
+   "wall_s_median": 106.4,
+   "wall_s_p10": 31.3,
+   "wall_s_p90": 469.9,
+   "tool_calls_median": 2.5,
+   "models_seen": {
+    "claude-fable-5-1": 3,
+    "claude-opus-5": 9
+   },
+   "n_no_tool_calls": 2,
+   "n_interrupted": 0,
+   "n_with_midturn_user_input": 4,
+   "n_with_single_tool_wait_over_60s": 1,
+   "top_tools": {
+    "Bash": 18,
+    "mods_slit_losses": 10,
+    "vizier_query": 8,
+    "simbad_adql": 5,
+    "add_night_note": 4,
+    "Write": 3,
+    "Edit": 3,
+    "ToolSearch": 2
+   }
+  },
+  "readme_reading": {
+   "n_requests": 6,
+   "wall_s_median": 202.4,
+   "wall_s_p10": 45.8,
+   "wall_s_p90": 551.6,
+   "tool_calls_median": 5.0,
+   "models_seen": {
+    "claude-fable-5-1": 1,
+    "claude-opus-5": 5
+   },
+   "n_no_tool_calls": 0,
+   "n_interrupted": 0,
+   "n_with_midturn_user_input": 3,
+   "n_with_single_tool_wait_over_60s": 2,
+   "top_tools": {
+    "Bash": 26,
+    "get_readme": 7,
+    "javascript_tool": 4,
+    "ToolSearch": 3,
+    "Write": 2,
+    "add_night_note": 2,
+    "Read": 1,
+    "exclude_targets": 1
+   }
+  },
+  "conditions_or_weather": {
+   "n_requests": 42,
+   "wall_s_median": 72.0,
+   "wall_s_p10": 23.6,
+   "wall_s_p90": 237.6,
+   "tool_calls_median": 5.0,
+   "models_seen": {
+    "claude-fable-5-1": 11,
+    "claude-opus-5": 31
+   },
+   "n_no_tool_calls": 7,
+   "n_interrupted": 0,
+   "n_with_midturn_user_input": 4,
+   "n_with_single_tool_wait_over_60s": 1,
+   "top_tools": {
+    "Bash": 70,
+    "computer": 29,
+    "javascript_tool": 23,
+    "weather": 21,
+    "add_night_note": 18,
+    "set_conditions": 12,
+    "fetch_queue": 11,
+    "navigate": 10
+   }
+  },
+  "logging": {
+   "n_requests": 15,
+   "wall_s_median": 68.1,
+   "wall_s_p10": 13.9,
+   "wall_s_p90": 215.6,
+   "tool_calls_median": 3.0,
+   "models_seen": {
+    "claude-fable-5-1": 2,
+    "claude-opus-5": 14
+   },
+   "n_no_tool_calls": 2,
+   "n_interrupted": 0,
+   "n_with_midturn_user_input": 2,
+   "n_with_single_tool_wait_over_60s": 1,
+   "top_tools": {
+    "Bash": 25,
+    "add_night_note": 9,
+    "Edit": 3,
+    "Read": 3,
+    "Write": 2,
+    "ToolSearch": 2,
+    "set_current_instrument": 1,
+    "fetch_queue": 1
+   }
+  },
+  "other": {
+   "n_requests": 70,
+   "wall_s_median": 42.6,
+   "wall_s_p10": 10.6,
+   "wall_s_p90": 224.2,
+   "tool_calls_median": 1.0,
+   "models_seen": {
+    "claude-fable-5-1": 17,
+    "claude-opus-5": 53
+   },
+   "n_no_tool_calls": 28,
+   "n_interrupted": 0,
+   "n_with_midturn_user_input": 3,
+   "n_with_single_tool_wait_over_60s": 12,
+   "top_tools": {
+    "Bash": 73,
+    "Write": 9,
+    "computer": 6,
+    "fetch_queue": 5,
+    "Edit": 5,
+    "javascript_tool": 5,
+    "navigate": 3,
+    "lbto_schedule": 2
+   }
+  }
+ },
+ "classification_rule": "first match in order: what_next_or_replan (what_next tool or failure/switch words) > full_night_plan (plan_tonight) > position_or_angle_check (target_visibility, mods_slit_losses, astrodata tools, or position/angle words) > readme_reading (get_readme or 'readme') > conditions_or_weather (weather, get_conditions, set_conditions, or seeing/cloud/humidity/wind/dome words) > logging (mark_observed, add_night_note, observed_log, or log words) > other"
+}

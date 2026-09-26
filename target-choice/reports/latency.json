@@ -1,0 +1,148 @@
+{
+ "date": "2026-09-26T03:48:40",
+ "hardware": {
+  "gpu": "Tesla V100-PCIE-16GB",
+  "cpu": "Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz",
+  "cpus_allocated": 8,
+  "host": "p0232.ten.osc.edu",
+  "slurm_job": "54782436",
+  "torch": "2.14.0+cu126",
+  "cuda": "12.6",
+  "transformers": "5.17.0",
+  "python": "3.11.16"
+ },
+ "settings": {
+  "n": 40,
+  "modes": "classical,queue",
+  "planner_reps": 5,
+  "model": "Qwen/Qwen3-1.7B",
+  "device": "cuda",
+  "dtype": "float16",
+  "no_s1": false,
+  "s2": false
+ },
+ "units": "seconds per call (planner: per-state median of planner_reps repeats)",
+ "classical": {
+  "test": "data/decisions/test_decisions.jsonl",
+  "n_states": 40,
+  "planner": {
+   "n": 40,
+   "mean": 0.00413,
+   "median": 0.00389,
+   "p10": 0.0032,
+   "p90": 0.00513,
+   "reps_per_state": 5,
+   "state_rebuild": {
+    "replay": 22,
+    "fallback_wait": 18
+   },
+   "replayed_feasible_set_matches_row": 34
+  },
+  "candidates_per_state": {
+   "judged_by_s1": {
+    "n": 40,
+    "mean": 3.7,
+    "median": 3.0,
+    "p10": 2.0,
+    "p90": 6.0
+   },
+   "feasible": {
+    "n": 40,
+    "mean": 3.875,
+    "median": 3.5,
+    "p10": 2.0,
+    "p90": 6.0
+   },
+   "program_targets": {
+    "n": 40,
+    "mean": 10.9,
+    "median": 10.0,
+    "p10": 8.9,
+    "p90": 14.0
+   }
+  },
+  "s1_judge_candidates": {
+   "n": 40,
+   "mean": 0.08381,
+   "median": 0.06783,
+   "p10": 0.04006,
+   "p90": 0.14381
+  },
+  "s1_state_questions": {
+   "n": 40,
+   "mean": 0.06163,
+   "median": 0.06017,
+   "p10": 0.05634,
+   "p90": 0.06376
+  },
+  "s1_levels": {
+   "regret": "L2",
+   "sky": "L2",
+   "dome_risk": "L2"
+  },
+  "s1_heads": "/fs/scratch/PAS2823/saadsm/SkyJev/target-choice/heads/qwen3-1.7b.json"
+ },
+ "queue": {
+  "test": "data/decisions/queue_test.jsonl",
+  "n_states": 40,
+  "planner": {
+   "n": 40,
+   "mean": 0.00732,
+   "median": 0.00734,
+   "p10": 0.00579,
+   "p90": 0.00909,
+   "reps_per_state": 5,
+   "state_rebuild": {
+    "fallback_wait": 17,
+    "replay": 23
+   },
+   "replayed_feasible_set_matches_row": 29
+  },
+  "candidates_per_state": {
+   "judged_by_s1": {
+    "n": 40,
+    "mean": 5.725,
+    "median": 6.0,
+    "p10": 2.9,
+    "p90": 8.0
+   },
+   "feasible": {
+    "n": 40,
+    "mean": 7.1,
+    "median": 6.5,
+    "p10": 2.9,
+    "p90": 11.0
+   },
+   "program_targets": {
+    "n": 40,
+    "mean": 20.65,
+    "median": 21.0,
+    "p10": 17.0,
+    "p90": 24.0
+   }
+  },
+  "s1_judge_candidates": {
+   "n": 40,
+   "mean": 0.1194,
+   "median": 0.12648,
+   "p10": 0.04644,
+   "p90": 0.17381
+  },
+  "s1_state_questions": {
+   "n": 40,
+   "mean": 0.0645,
+   "median": 0.06588,
+   "p10": 0.05887,
+   "p90": 0.06809
+  },
+  "s1_levels": {
+   "regret": "L2",
+   "sky": "L2",
+   "dome_risk": "L2"
+  },
+  "s1_heads": "/fs/scratch/PAS2823/saadsm/SkyJev/target-choice/heads/qwen3-1.7b-queue.json"
+ },
+ "s2": {
+  "skipped": "not requested (--s2 off)"
+ }
+}
