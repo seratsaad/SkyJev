@@ -1,0 +1,412 @@
+{
+ "description": "Jev replay of routine LBT observing-assistant decisions (OSU partner queue, nights 2026 Sep 9-15). Zero-label AnyJev L0 choices over code-built menus, compared with what was decided on the nights. Aggregate numbers only.",
+ "run_utc": "2026-09-26T08:43:58Z",
+ "model": "Qwen/Qwen3-1.7B",
+ "dtype": "float16",
+ "device": "cuda",
+ "gpu": "Tesla V100-PCIE-16GB, 580.95.05, 16384 MiB",
+ "torch": "2.14.0+cu126",
+ "transformers": "5.17.0",
+ "anyjev": "0.1.0",
+ "python": "3.11.16",
+ "host": "p0232",
+ "decider": {
+  "level": "L0",
+  "prior": "batch (AnyJev default)",
+  "permutations": "all cyclic shifts (AnyJev default)",
+  "shared_prefix": "auto",
+  "batch_size": 8
+ },
+ "model_load_s": 9.6,
+ "tasks": {
+  "logging": {
+   "label": "log an observation",
+   "where": "LBT records (replay)",
+   "n_cases": 48,
+   "questions": {
+    "status": {
+     "jev": {
+      "agree": 40,
+      "n": 48,
+      "pct": 83.3,
+      "wilson95": [
+       0.704,
+       0.913
+      ]
+     },
+     "code": {
+      "agree": 47,
+      "n": 48,
+      "pct": 97.9,
+      "wilson95": [
+       0.891,
+       0.996
+      ]
+     },
+     "n_options": {
+      "n": 48,
+      "mean": 3.0,
+      "median": 3.0,
+      "p10": 3.0,
+      "p90": 3.0
+     },
+     "reference_counts": {
+      "skipped": 43,
+      "done": 5
+     },
+     "majority_class_pct": 89.6,
+     "jev_pick_counts": {
+      "skipped": 44,
+      "partial": 4
+     }
+    }
+   },
+   "jev_seconds_per_decision": {
+    "n": 48,
+    "mean": 0.1057,
+    "median": 0.1038,
+    "p10": 0.0489,
+    "p90": 0.1447
+   },
+   "code_seconds_to_build_menu": {
+    "n": 48,
+    "mean": 0.0,
+    "median": 0.0,
+    "p10": 0.0,
+    "p90": 0.0001
+   },
+   "claude_wall_s_matched_requests": {
+    "n_requests": 6,
+    "median": 211.6,
+    "p10": 48.3,
+    "p90": 551.7
+   },
+   "claude_wall_s_category": {
+    "category": "logging",
+    "n_requests": 15,
+    "wall_s_median": 68.1,
+    "wall_s_p10": 13.9,
+    "wall_s_p90": 215.6
+   },
+   "reference": "Status the assistant recorded for the target: its mark_observed call arguments (one case) or, for the rest, its night-note / plan record of the night outcome after reading the same observer message or night log. One case per (message, target named in it).",
+   "code_baseline": "keyword rule on the line that names the target (skip words, then done words, then partial words; nothing said = skipped)",
+   "dropped": [
+    {
+     "what": "chat message, night Sep 12: one PEPSI target",
+     "why": "assistant recorded its status as still to be confirmed"
+    },
+    {
+     "what": "chat message, night Sep 12: one program's targets",
+     "why": "the assistant's record names the program, not which targets"
+    },
+    {
+     "what": "night Sep 9 closure message",
+     "why": "the observer status arrived as an image; the text names no target"
+    },
+    {
+     "what": "night Sep 10 outcome",
+     "why": "the source log was a PDF read outside the transcript text; no observer text to replay"
+    },
+    {
+     "what": "night Sep 15 targets",
+     "why": "the observer status arrived as screenshots; no text message and no logging record"
+    }
+   ]
+  },
+  "weather": {
+   "label": "weather call",
+   "where": "LBT records (replay)",
+   "n_cases": 22,
+   "questions": {
+    "dome": {
+     "jev": {
+      "agree": 9,
+      "n": 18,
+      "pct": 50.0,
+      "wilson95": [
+       0.29,
+       0.71
+      ]
+     },
+     "code": {
+      "agree": 10,
+      "n": 18,
+      "pct": 55.6,
+      "wilson95": [
+       0.337,
+       0.754
+      ]
+     },
+     "n_options": {
+      "n": 18,
+      "mean": 3.0,
+      "median": 3.0,
+      "p10": 3.0,
+      "p90": 3.0
+     },
+     "reference_counts": {
+      "wait": 5,
+      "observe": 10,
+      "close": 3
+     },
+     "majority_class_pct": 55.6,
+     "jev_pick_counts": {
+      "wait": 8,
+      "observe": 8,
+      "close": 2
+     }
+    },
+    "sky": {
+     "jev": {
+      "agree": 1,
+      "n": 4,
+      "pct": 25.0,
+      "wilson95": [
+       0.046,
+       0.699
+      ]
+     },
+     "code": {
+      "agree": 3,
+      "n": 4,
+      "pct": 75.0,
+      "wilson95": [
+       0.301,
+       0.954
+      ]
+     },
+     "n_options": {
+      "n": 4,
+      "mean": 3.0,
+      "median": 3.0,
+      "p10": 3.0,
+      "p90": 3.0
+     },
+     "reference_counts": {
+      "cloudy": 1,
+      "thin cirrus": 3
+     },
+     "majority_class_pct": 75.0,
+     "jev_pick_counts": {
+      "cloudy": 4
+     }
+    }
+   },
+   "jev_seconds_per_decision": {
+    "n": 22,
+    "mean": 0.0925,
+    "median": 0.0941,
+    "p10": 0.0872,
+    "p90": 0.0971
+   },
+   "code_seconds_to_build_menu": {
+    "n": 22,
+    "mean": 0.2472,
+    "median": 0.0003,
+    "p10": 0.0002,
+    "p90": 0.9663
+   },
+   "claude_wall_s_matched_requests": {
+    "n_requests": 18,
+    "median": 124.1,
+    "p10": 57.2,
+    "p90": 517.7
+   },
+   "claude_wall_s_category": {
+    "category": "conditions_or_weather",
+    "n_requests": 42,
+    "wall_s_median": 72.0,
+    "wall_s_p10": 23.6,
+    "wall_s_p90": 237.6,
+    "pool": {
+     "conditions_or_weather_requests": 42,
+     "in_17h_06h_window": 27,
+     "daytime_dropped": 15
+    }
+   },
+   "reference": "What happened next with the dome: observe = open or opened next with no closure in between; wait = closed (or closed now) and reopened later that night; close = closed for the rest of the night. Read from set_conditions calls, night notes and the OSURC night logs. Sky class: the sky value of the assistant's set_conditions call in the same request.",
+   "code_baseline": "rule on the lbt_tools weather limits: bad now if RH >= 90 %, precipitation in the NWS row or CSC cloud >= 70 %; then wait if a later hour before twilight has RH < 85 %, no precipitation and cloud <= 30 %, else close; sky class from the CSC cloud of the hour",
+   "dropped": [
+    {
+     "what": "one request",
+     "why": "the message itself states the decision (instrument and program for a cloudy sky)"
+    },
+    {
+     "what": "one request",
+     "why": "duplicate of the previous request, same state, no new data"
+    },
+    {
+     "what": "one request",
+     "why": "the message itself states the decision (opening now)"
+    },
+    {
+     "what": "one request",
+     "why": "instrument choice question, no dome decision"
+    },
+    {
+     "what": "one request",
+     "why": "ambiguous: closed, humidity back down, 'reopening possible', opened 15 min later"
+    },
+    {
+     "what": "one request",
+     "why": "duplicate of the previous request during opening"
+    },
+    {
+     "what": "one request",
+     "why": "optics clarification, no conditions report"
+    },
+    {
+     "what": "one request",
+     "why": "instrument choice question, no dome decision"
+    },
+    {
+     "what": "one request",
+     "why": "duplicate of the previous request (a limit reminder)"
+    },
+    {
+     "what": "one request",
+     "why": "two requests in the same minute: one instrument question, one duplicate seeing check"
+    }
+   ]
+  },
+  "next": {
+   "label": "next queue target",
+   "where": "LBT records (replay)",
+   "n_cases": 12,
+   "questions": {
+    "next_target": {
+     "jev": {
+      "agree": 2,
+      "n": 12,
+      "pct": 16.7,
+      "wilson95": [
+       0.047,
+       0.448
+      ]
+     },
+     "code": {
+      "agree": 2,
+      "n": 12,
+      "pct": 16.7,
+      "wilson95": [
+       0.047,
+       0.448
+      ]
+     },
+     "n_options": {
+      "n": 12,
+      "mean": 13.1667,
+      "median": 6.5,
+      "p10": 2.2,
+      "p90": 25.9
+     },
+     "code_no_pick": 2,
+     "jev_rank_of_reference_median": 4.0
+    }
+   },
+   "jev_seconds_per_decision": {
+    "n": 12,
+    "mean": 0.7616,
+    "median": 0.121,
+    "p10": 0.0642,
+    "p90": 1.7853
+   },
+   "code_seconds_to_build_menu": {
+    "n": 12,
+    "mean": 5.9442,
+    "median": 7.8342,
+    "p10": 1.3876,
+    "p90": 8.5684
+   },
+   "claude_wall_s_matched_requests": {
+    "n_requests": 0,
+    "median": null,
+    "p10": null,
+    "p90": null
+   },
+   "claude_wall_s_category": {
+    "category": "what_next_or_replan",
+    "n_requests": 6,
+    "wall_s_median": 125.6,
+    "wall_s_p10": 46.3,
+    "wall_s_p90": 533.9
+   },
+   "reference": "The target the telescope went to next (science, or a preset without science for two cases), from the night notes, the observed log, the plans and the OSURC logs quoted in the transcripts.",
+   "code_baseline": "lbt_tools planner: greedy_schedule from the decision time on the configured instrument, first target",
+   "dropped": [
+    {
+     "what": "night Sep 15 after about 20:20",
+     "why": "no record of which target followed; the observer's updates were screenshots and the session went quiet until 23:08"
+    },
+    {
+     "what": "night Sep 10 first block (instrument tests)",
+     "why": "engineering tests, not a queue target"
+    }
+   ]
+  },
+  "slit": {
+   "label": "slit position angle",
+   "where": "LBT records (replay)",
+   "n_cases": 15,
+   "questions": {
+    "slit_pa": {
+     "jev": {
+      "agree": 10,
+      "n": 15,
+      "pct": 66.7,
+      "wilson95": [
+       0.417,
+       0.848
+      ]
+     },
+     "code": {
+      "agree": 15,
+      "n": 15,
+      "pct": 100.0,
+      "wilson95": [
+       0.796,
+       1.0
+      ]
+     },
+     "n_options": {
+      "n": 15,
+      "mean": 3.0,
+      "median": 3.0,
+      "p10": 3.0,
+      "p90": 3.0
+     }
+    }
+   },
+   "jev_seconds_per_decision": {
+    "n": 15,
+    "mean": 0.0882,
+    "median": 0.0918,
+    "p10": 0.0809,
+    "p90": 0.092
+   },
+   "code_seconds_to_build_menu": {
+    "n": 15,
+    "mean": 0.2046,
+    "median": 0.1416,
+    "p10": 0.1412,
+    "p90": 0.1421
+   },
+   "claude_wall_s_matched_requests": {
+    "n_requests": 3,
+    "median": 329.6,
+    "p10": 246.0,
+    "p90": 1773.9
+   },
+   "claude_wall_s_category": {
+    "category": "position_or_angle_check",
+    "n_requests": 12,
+    "wall_s_median": 106.4,
+    "wall_s_p10": 31.3,
+    "wall_s_p90": 469.9
+   },
+   "reference": "Acquisition-script PA with the lowest mean blue (0.35-0.45 um) slit loss over the visit, computed with lbt_tools.optics.mods_slit_check (the mods_slit_losses tool); the Jev sees the same losses.",
+   "code_baseline": "argmin of the computed loss (the reference itself, 100 % by construction)",
+   "dropped": []
+  }
+ }
+}
