@@ -1,0 +1,1428 @@
+{
+ "summary": {
+  "list": {
+   "mean_frac_oracle": 0.4913,
+   "min": 0.0,
+   "n": 40,
+   "wins_vs_greedy": 0,
+   "losses_vs_greedy": 39
+  },
+  "greedy": {
+   "mean_frac_oracle": 0.8865,
+   "min": 0.0,
+   "n": 40,
+   "wins_vs_greedy": 0,
+   "losses_vs_greedy": 0
+  },
+  "queue": {
+   "mean_frac_oracle": 0.8046,
+   "min": 0.0,
+   "n": 40,
+   "wins_vs_greedy": 5,
+   "losses_vs_greedy": 26
+  },
+  "oracle_over_bound": 0.5445
+ },
+ "nights": [
+  {
+   "night": 0,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-12-31",
+    596412,
+    66517
+   ],
+   "program": "random queue clay 2026-12-31 #596412",
+   "regime": "median",
+   "max": 132.0,
+   "oracle": 52.0,
+   "upper_bound": 96.434,
+   "policies": {
+    "list": {
+     "score": 32.0,
+     "frac_oracle": 0.6154,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 44.0,
+     "frac_oracle": 0.8462,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 48.0,
+     "frac_oracle": 0.9231,
+     "done": 6,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 1,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-08-08",
+    743208,
+    674190
+   ],
+   "program": "random queue keck1 2026-08-08 #743208",
+   "regime": "median",
+   "max": 72.0,
+   "oracle": 28.0,
+   "upper_bound": 54.023,
+   "policies": {
+    "list": {
+     "score": 10.0,
+     "frac_oracle": 0.3571,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 22.0,
+     "frac_oracle": 0.7857,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 20.0,
+     "frac_oracle": 0.7143,
+     "done": 4,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 2,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-06-17",
+    825493,
+    755787
+   ],
+   "program": "random queue clay 2026-06-17 #825493",
+   "regime": "poor",
+   "max": 80.0,
+   "oracle": 24.0,
+   "upper_bound": 49.804,
+   "policies": {
+    "list": {
+     "score": 16.0,
+     "frac_oracle": 0.6667,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 20.0,
+     "frac_oracle": 0.8333,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 20.0,
+     "frac_oracle": 0.8333,
+     "done": 5,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 3,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-11-17",
+    112569,
+    285367
+   ],
+   "program": "random queue keck1 2026-11-17 #112569",
+   "regime": "good",
+   "max": 104.0,
+   "oracle": 28.0,
+   "upper_bound": 89.289,
+   "policies": {
+    "list": {
+     "score": 4.0,
+     "frac_oracle": 0.1429,
+     "done": 1,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 20.0,
+     "frac_oracle": 0.7143,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 24.0,
+     "frac_oracle": 0.8571,
+     "done": 3,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 4,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-03-21",
+    301625,
+    285092
+   ],
+   "program": "random queue clay 2026-03-21 #301625",
+   "regime": "median",
+   "max": 70.0,
+   "oracle": 0.0,
+   "upper_bound": 2.12,
+   "policies": {
+    "list": {
+     "score": 0.0,
+     "frac_oracle": 0.0,
+     "done": 0,
+     "seconds": 0.0
+    },
+    "greedy": {
+     "score": 0.0,
+     "frac_oracle": 0.0,
+     "done": 0,
+     "seconds": 0.0
+    },
+    "queue": {
+     "score": 0.0,
+     "frac_oracle": 0.0,
+     "done": 0,
+     "seconds": 0.0
+    }
+   }
+  },
+  {
+   "night": 5,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-07-10",
+    848382,
+    883668
+   ],
+   "program": "random queue keck1 2026-07-10 #848382",
+   "regime": "median",
+   "max": 90.0,
+   "oracle": 52.0,
+   "upper_bound": 80.0,
+   "policies": {
+    "list": {
+     "score": 24.0,
+     "frac_oracle": 0.4615,
+     "done": 5,
+     "seconds": 0.1
+    },
+    "greedy": {
+     "score": 50.0,
+     "frac_oracle": 0.9615,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 52.0,
+     "frac_oracle": 1.0,
+     "done": 8,
+     "seconds": 0.1
+    }
+   }
+  },
+  {
+   "night": 6,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-10-24",
+    547533,
+    882033
+   ],
+   "program": "random queue clay 2026-10-24 #547533",
+   "regime": "poor",
+   "max": 56.0,
+   "oracle": 28.0,
+   "upper_bound": 48.67,
+   "policies": {
+    "list": {
+     "score": 18.0,
+     "frac_oracle": 0.6429,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 26.0,
+     "frac_oracle": 0.9286,
+     "done": 8,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 20.0,
+     "frac_oracle": 0.7143,
+     "done": 5,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 7,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-03-25",
+    983009,
+    225774
+   ],
+   "program": "random queue keck1 2026-03-25 #983009",
+   "regime": "median",
+   "max": 136.0,
+   "oracle": 64.0,
+   "upper_bound": 109.251,
+   "policies": {
+    "list": {
+     "score": 36.0,
+     "frac_oracle": 0.5625,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 56.0,
+     "frac_oracle": 0.875,
+     "done": 8,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 48.0,
+     "frac_oracle": 0.75,
+     "done": 6,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 8,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-01-26",
+    84796,
+    13216
+   ],
+   "program": "random queue clay 2026-01-26 #84796",
+   "regime": "median",
+   "max": 130.0,
+   "oracle": 80.0,
+   "upper_bound": 104.831,
+   "policies": {
+    "list": {
+     "score": 16.0,
+     "frac_oracle": 0.2,
+     "done": 4,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 76.0,
+     "frac_oracle": 0.95,
+     "done": 11,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 68.0,
+     "frac_oracle": 0.85,
+     "done": 9,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 9,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-08-21",
+    363590,
+    32852
+   ],
+   "program": "random queue keck1 2026-08-21 #363590",
+   "regime": "median",
+   "max": 100.0,
+   "oracle": 42.0,
+   "upper_bound": 75.391,
+   "policies": {
+    "list": {
+     "score": 28.0,
+     "frac_oracle": 0.6667,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 36.0,
+     "frac_oracle": 0.8571,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 32.0,
+     "frac_oracle": 0.7619,
+     "done": 4,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 10,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-03-20",
+    621155,
+    614388
+   ],
+   "program": "random queue clay 2026-03-20 #621155",
+   "regime": "poor",
+   "max": 152.0,
+   "oracle": 72.0,
+   "upper_bound": 123.227,
+   "policies": {
+    "list": {
+     "score": 16.0,
+     "frac_oracle": 0.2222,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 68.0,
+     "frac_oracle": 0.9444,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 60.0,
+     "frac_oracle": 0.8333,
+     "done": 8,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 11,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-05-09",
+    165673,
+    490891
+   ],
+   "program": "random queue keck1 2026-05-09 #165673",
+   "regime": "poor",
+   "max": 72.0,
+   "oracle": 20.0,
+   "upper_bound": 44.13,
+   "policies": {
+    "list": {
+     "score": 12.0,
+     "frac_oracle": 0.6,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 16.0,
+     "frac_oracle": 0.8,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 16.0,
+     "frac_oracle": 0.8,
+     "done": 4,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 12,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-03-11",
+    904957,
+    772706
+   ],
+   "program": "random queue clay 2026-03-11 #904957",
+   "regime": "good",
+   "max": 102.0,
+   "oracle": 66.0,
+   "upper_bound": 85.164,
+   "policies": {
+    "list": {
+     "score": 26.0,
+     "frac_oracle": 0.3939,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 64.0,
+     "frac_oracle": 0.9697,
+     "done": 11,
+     "seconds": 0.1
+    },
+    "queue": {
+     "score": 58.0,
+     "frac_oracle": 0.8788,
+     "done": 10,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 13,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-11-22",
+    567723,
+    560781
+   ],
+   "program": "random queue keck1 2026-11-22 #567723",
+   "regime": "median",
+   "max": 104.0,
+   "oracle": 16.0,
+   "upper_bound": 43.896,
+   "policies": {
+    "list": {
+     "score": 0.0,
+     "frac_oracle": 0.0,
+     "done": 0,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 16.0,
+     "frac_oracle": 1.0,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 16.0,
+     "frac_oracle": 1.0,
+     "done": 3,
+     "seconds": 0.9
+    }
+   }
+  },
+  {
+   "night": 14,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-03-24",
+    842145,
+    239759
+   ],
+   "program": "random queue clay 2026-03-24 #842145",
+   "regime": "poor",
+   "max": 78.0,
+   "oracle": 20.0,
+   "upper_bound": 58.84,
+   "policies": {
+    "list": {
+     "score": 12.0,
+     "frac_oracle": 0.6,
+     "done": 3,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 16.0,
+     "frac_oracle": 0.8,
+     "done": 3,
+     "seconds": 0.3
+    },
+    "queue": {
+     "score": 16.0,
+     "frac_oracle": 0.8,
+     "done": 3,
+     "seconds": 0.3
+    }
+   }
+  },
+  {
+   "night": 15,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-09-02",
+    109909,
+    45179
+   ],
+   "program": "random queue keck1 2026-09-02 #109909",
+   "regime": "good",
+   "max": 68.0,
+   "oracle": 26.0,
+   "upper_bound": 48.897,
+   "policies": {
+    "list": {
+     "score": 8.0,
+     "frac_oracle": 0.3077,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 26.0,
+     "frac_oracle": 1.0,
+     "done": 6,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 22.0,
+     "frac_oracle": 0.8462,
+     "done": 5,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 16,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-12-30",
+    382988,
+    892147
+   ],
+   "program": "random queue clay 2026-12-30 #382988",
+   "regime": "good",
+   "max": 150.0,
+   "oracle": 92.0,
+   "upper_bound": 129.082,
+   "policies": {
+    "list": {
+     "score": 72.0,
+     "frac_oracle": 0.7826,
+     "done": 12,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 88.0,
+     "frac_oracle": 0.9565,
+     "done": 12,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 64.0,
+     "frac_oracle": 0.6957,
+     "done": 8,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 17,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-09-11",
+    816081,
+    435233
+   ],
+   "program": "random queue keck1 2026-09-11 #816081",
+   "regime": "good",
+   "max": 46.0,
+   "oracle": 36.0,
+   "upper_bound": 46.0,
+   "policies": {
+    "list": {
+     "score": 22.0,
+     "frac_oracle": 0.6111,
+     "done": 10,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 32.0,
+     "frac_oracle": 0.8889,
+     "done": 12,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 30.0,
+     "frac_oracle": 0.8333,
+     "done": 11,
+     "seconds": 0.1
+    }
+   }
+  },
+  {
+   "night": 18,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-01-02",
+    519418,
+    445237
+   ],
+   "program": "random queue clay 2026-01-02 #519418",
+   "regime": "median",
+   "max": 102.0,
+   "oracle": 54.0,
+   "upper_bound": 75.525,
+   "policies": {
+    "list": {
+     "score": 24.0,
+     "frac_oracle": 0.4444,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 54.0,
+     "frac_oracle": 1.0,
+     "done": 8,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 44.0,
+     "frac_oracle": 0.8148,
+     "done": 6,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 19,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-01-19",
+    863340,
+    121655
+   ],
+   "program": "random queue keck1 2026-01-19 #863340",
+   "regime": "poor",
+   "max": 124.0,
+   "oracle": 32.0,
+   "upper_bound": 109.761,
+   "policies": {
+    "list": {
+     "score": 10.0,
+     "frac_oracle": 0.3125,
+     "done": 2,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 24.0,
+     "frac_oracle": 0.75,
+     "done": 3,
+     "seconds": 0.3
+    },
+    "queue": {
+     "score": 24.0,
+     "frac_oracle": 0.75,
+     "done": 3,
+     "seconds": 0.3
+    }
+   }
+  },
+  {
+   "night": 20,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-08-08",
+    285254,
+    7789
+   ],
+   "program": "random queue clay 2026-08-08 #285254",
+   "regime": "good",
+   "max": 84.0,
+   "oracle": 12.0,
+   "upper_bound": 43.079,
+   "policies": {
+    "list": {
+     "score": 4.0,
+     "frac_oracle": 0.3333,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 8.0,
+     "frac_oracle": 0.6667,
+     "done": 1,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 8.0,
+     "frac_oracle": 0.6667,
+     "done": 1,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 21,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-01-19",
+    324418,
+    825351
+   ],
+   "program": "random queue keck1 2026-01-19 #324418",
+   "regime": "median",
+   "max": 58.0,
+   "oracle": 36.0,
+   "upper_bound": 56.824,
+   "policies": {
+    "list": {
+     "score": 28.0,
+     "frac_oracle": 0.7778,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 30.0,
+     "frac_oracle": 0.8333,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 34.0,
+     "frac_oracle": 0.9444,
+     "done": 9,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 22,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-02-24",
+    163400,
+    528443
+   ],
+   "program": "random queue clay 2026-02-24 #163400",
+   "regime": "good",
+   "max": 66.0,
+   "oracle": 50.0,
+   "upper_bound": 55.466,
+   "policies": {
+    "list": {
+     "score": 36.0,
+     "frac_oracle": 0.72,
+     "done": 10,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 48.0,
+     "frac_oracle": 0.96,
+     "done": 12,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 46.0,
+     "frac_oracle": 0.92,
+     "done": 11,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 23,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-11-03",
+    230693,
+    934692
+   ],
+   "program": "random queue keck1 2026-11-03 #230693",
+   "regime": "good",
+   "max": 94.0,
+   "oracle": 58.0,
+   "upper_bound": 94.0,
+   "policies": {
+    "list": {
+     "score": 34.0,
+     "frac_oracle": 0.5862,
+     "done": 10,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 46.0,
+     "frac_oracle": 0.7931,
+     "done": 12,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 50.0,
+     "frac_oracle": 0.8621,
+     "done": 11,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 24,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-06-05",
+    854598,
+    413404
+   ],
+   "program": "random queue clay 2026-06-05 #854598",
+   "regime": "poor",
+   "max": 70.0,
+   "oracle": 24.0,
+   "upper_bound": 49.576,
+   "policies": {
+    "list": {
+     "score": 12.0,
+     "frac_oracle": 0.5,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 24.0,
+     "frac_oracle": 1.0,
+     "done": 7,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 20.0,
+     "frac_oracle": 0.8333,
+     "done": 5,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 25,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-03-14",
+    37269,
+    67095
+   ],
+   "program": "random queue keck1 2026-03-14 #37269",
+   "regime": "median",
+   "max": 124.0,
+   "oracle": 72.0,
+   "upper_bound": 114.566,
+   "policies": {
+    "list": {
+     "score": 50.0,
+     "frac_oracle": 0.6944,
+     "done": 8,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 72.0,
+     "frac_oracle": 1.0,
+     "done": 10,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 64.0,
+     "frac_oracle": 0.8889,
+     "done": 8,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 26,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-10-14",
+    694653,
+    492263
+   ],
+   "program": "random queue clay 2026-10-14 #694653",
+   "regime": "good",
+   "max": 114.0,
+   "oracle": 58.0,
+   "upper_bound": 93.226,
+   "policies": {
+    "list": {
+     "score": 38.0,
+     "frac_oracle": 0.6552,
+     "done": 7,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 58.0,
+     "frac_oracle": 1.0,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 52.0,
+     "frac_oracle": 0.8966,
+     "done": 7,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 27,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-11-11",
+    136366,
+    663896
+   ],
+   "program": "random queue keck1 2026-11-11 #136366",
+   "regime": "good",
+   "max": 68.0,
+   "oracle": 36.0,
+   "upper_bound": 62.059,
+   "policies": {
+    "list": {
+     "score": 18.0,
+     "frac_oracle": 0.5,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 32.0,
+     "frac_oracle": 0.8889,
+     "done": 9,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 32.0,
+     "frac_oracle": 0.8889,
+     "done": 8,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 28,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-07-22",
+    49531,
+    905514
+   ],
+   "program": "random queue clay 2026-07-22 #49531",
+   "regime": "poor",
+   "max": 94.0,
+   "oracle": 32.0,
+   "upper_bound": 73.649,
+   "policies": {
+    "list": {
+     "score": 22.0,
+     "frac_oracle": 0.6875,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 32.0,
+     "frac_oracle": 1.0,
+     "done": 7,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 30.0,
+     "frac_oracle": 0.9375,
+     "done": 6,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 29,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-07-16",
+    69301,
+    643888
+   ],
+   "program": "random queue keck1 2026-07-16 #69301",
+   "regime": "good",
+   "max": 100.0,
+   "oracle": 52.0,
+   "upper_bound": 81.765,
+   "policies": {
+    "list": {
+     "score": 24.0,
+     "frac_oracle": 0.4615,
+     "done": 4,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 52.0,
+     "frac_oracle": 1.0,
+     "done": 10,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 40.0,
+     "frac_oracle": 0.7692,
+     "done": 6,
+     "seconds": 0.3
+    }
+   }
+  },
+  {
+   "night": 30,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-10-03",
+    647916,
+    799465
+   ],
+   "program": "random queue clay 2026-10-03 #647916",
+   "regime": "poor",
+   "max": 86.0,
+   "oracle": 28.0,
+   "upper_bound": 66.932,
+   "policies": {
+    "list": {
+     "score": 20.0,
+     "frac_oracle": 0.7143,
+     "done": 3,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 28.0,
+     "frac_oracle": 1.0,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 24.0,
+     "frac_oracle": 0.8571,
+     "done": 3,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 31,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-01-21",
+    484525,
+    925337
+   ],
+   "program": "random queue keck1 2026-01-21 #484525",
+   "regime": "poor",
+   "max": 62.0,
+   "oracle": 10.0,
+   "upper_bound": 37.323,
+   "policies": {
+    "list": {
+     "score": 4.0,
+     "frac_oracle": 0.4,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 10.0,
+     "frac_oracle": 1.0,
+     "done": 2,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 8.0,
+     "frac_oracle": 0.8,
+     "done": 1,
+     "seconds": 0.3
+    }
+   }
+  },
+  {
+   "night": 32,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-08-16",
+    182226,
+    178353
+   ],
+   "program": "random queue clay 2026-08-16 #182226",
+   "regime": "good",
+   "max": 68.0,
+   "oracle": 42.0,
+   "upper_bound": 57.759,
+   "policies": {
+    "list": {
+     "score": 18.0,
+     "frac_oracle": 0.4286,
+     "done": 5,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 40.0,
+     "frac_oracle": 0.9524,
+     "done": 7,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 36.0,
+     "frac_oracle": 0.8571,
+     "done": 6,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 33,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-08-24",
+    905904,
+    636300
+   ],
+   "program": "random queue keck1 2026-08-24 #905904",
+   "regime": "good",
+   "max": 144.0,
+   "oracle": 68.0,
+   "upper_bound": 132.339,
+   "policies": {
+    "list": {
+     "score": 48.0,
+     "frac_oracle": 0.7059,
+     "done": 7,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 60.0,
+     "frac_oracle": 0.8824,
+     "done": 8,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 32.0,
+     "frac_oracle": 0.4706,
+     "done": 4,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 34,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-01-14",
+    355705,
+    348503
+   ],
+   "program": "random queue clay 2026-01-14 #355705",
+   "regime": "median",
+   "max": 106.0,
+   "oracle": 62.0,
+   "upper_bound": 94.161,
+   "policies": {
+    "list": {
+     "score": 44.0,
+     "frac_oracle": 0.7097,
+     "done": 10,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 62.0,
+     "frac_oracle": 1.0,
+     "done": 13,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 60.0,
+     "frac_oracle": 0.9677,
+     "done": 12,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 35,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-07-29",
+    696629,
+    104597
+   ],
+   "program": "random queue keck1 2026-07-29 #696629",
+   "regime": "median",
+   "max": 120.0,
+   "oracle": 36.0,
+   "upper_bound": 63.826,
+   "policies": {
+    "list": {
+     "score": 16.0,
+     "frac_oracle": 0.4444,
+     "done": 3,
+     "seconds": 0.7
+    },
+    "greedy": {
+     "score": 32.0,
+     "frac_oracle": 0.8889,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 32.0,
+     "frac_oracle": 0.8889,
+     "done": 4,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 36,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-06-27",
+    173701,
+    115785
+   ],
+   "program": "random queue clay 2026-06-27 #173701",
+   "regime": "poor",
+   "max": 50.0,
+   "oracle": 14.0,
+   "upper_bound": 30.042,
+   "policies": {
+    "list": {
+     "score": 4.0,
+     "frac_oracle": 0.2857,
+     "done": 2,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 12.0,
+     "frac_oracle": 0.8571,
+     "done": 4,
+     "seconds": 0.3
+    },
+    "queue": {
+     "score": 8.0,
+     "frac_oracle": 0.5714,
+     "done": 3,
+     "seconds": 0.3
+    }
+   }
+  },
+  {
+   "night": 37,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-05-14",
+    66880,
+    768470
+   ],
+   "program": "random queue keck1 2026-05-14 #66880",
+   "regime": "good",
+   "max": 50.0,
+   "oracle": 32.0,
+   "upper_bound": 48.0,
+   "policies": {
+    "list": {
+     "score": 22.0,
+     "frac_oracle": 0.6875,
+     "done": 9,
+     "seconds": 0.3
+    },
+    "greedy": {
+     "score": 28.0,
+     "frac_oracle": 0.875,
+     "done": 11,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 26.0,
+     "frac_oracle": 0.8125,
+     "done": 10,
+     "seconds": 0.1
+    }
+   }
+  },
+  {
+   "night": 38,
+   "spec": [
+    "queue",
+    "clay",
+    "2026-11-23",
+    797424,
+    915437
+   ],
+   "program": "random queue clay 2026-11-23 #797424",
+   "regime": "poor",
+   "max": 140.0,
+   "oracle": 76.0,
+   "upper_bound": 114.165,
+   "policies": {
+    "list": {
+     "score": 28.0,
+     "frac_oracle": 0.3684,
+     "done": 5,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 76.0,
+     "frac_oracle": 1.0,
+     "done": 11,
+     "seconds": 0.2
+    },
+    "queue": {
+     "score": 68.0,
+     "frac_oracle": 0.8947,
+     "done": 9,
+     "seconds": 0.2
+    }
+   }
+  },
+  {
+   "night": 39,
+   "spec": [
+    "queue",
+    "keck1",
+    "2026-03-20",
+    863938,
+    547365
+   ],
+   "program": "random queue keck1 2026-03-20 #863938",
+   "regime": "poor",
+   "max": 82.0,
+   "oracle": 30.0,
+   "upper_bound": 62.482,
+   "policies": {
+    "list": {
+     "score": 12.0,
+     "frac_oracle": 0.4,
+     "done": 4,
+     "seconds": 0.2
+    },
+    "greedy": {
+     "score": 30.0,
+     "frac_oracle": 1.0,
+     "done": 6,
+     "seconds": 0.4
+    },
+    "queue": {
+     "score": 24.0,
+     "frac_oracle": 0.8,
+     "done": 4,
+     "seconds": 0.5
+    }
+   }
+  }
+ ]
+}

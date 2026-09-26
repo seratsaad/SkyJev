@@ -66,7 +66,9 @@ class CandidateJudgement:
 
 class System1:
     """AnyJev over a local Hugging Face causal LM (default Qwen3-1.7B, on MPS or CUDA when present).
-    `loaded_backend` shares the weights of another System1 (e.g. to compare with and without heads)."""
+    `loaded_backend` shares the weights of another System1 (e.g. to compare with and without heads).
+    `device` (default: MPS, else CUDA, else CPU) and `dtype` go to the backend; use float16 on GPUs
+    without bfloat16 (V100)."""
 
     def __init__(
         self,
@@ -75,10 +77,14 @@ class System1:
         prior: str = "content_free",
         batch_size: int = 16,
         loaded_backend=None,
+        device: Optional[str] = None,
+        dtype: str = "bfloat16",
     ):
         self.model_name = model
         self.backend = (
-            loaded_backend if loaded_backend is not None else make_local_backend(model, batch_size=batch_size)
+            loaded_backend
+            if loaded_backend is not None
+            else make_local_backend(model, device=device, dtype=dtype, batch_size=batch_size)
         )
         self.decider = Decider(self.backend, level="auto", prior=prior, system=SYSTEM_PROMPT)
         self.heads_path = heads

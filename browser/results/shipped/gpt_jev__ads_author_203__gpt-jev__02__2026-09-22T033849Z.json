@@ -1,0 +1,2204 @@
+{
+ "task_id": "ads_author_203",
+ "category": "multistep",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 2,
+ "started_at": "2026-09-22T03:38:49+00:00",
+ "goal": "In the NASA Astrophysics Data System, search for papers by the author Vera Rubin and open the list of search results.",
+ "start_url": "https://ui.adsabs.harvard.edu/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "done",
+ "error": null,
+ "setup_seconds": 0.693,
+ "stale_loop_limit": 8,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=author%3A%22Vera%20Rubin%22&sort=date%20desc%2C%20bibcode%20desc&p_=0"
+   },
+   {
+    "passed": true,
+    "detail": "match='Rubin'"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=author%3A%22Vera%20Rubin%22&sort=date%20desc%2C%20bibcode%20desc&p_=0",
+ "duration_seconds": 10.741,
+ "wall_seconds": 11.503,
+ "steps": 6,
+ "model_calls": 15,
+ "chooser_calls": 14,
+ "text_helper_calls": 1,
+ "chooser_tokens": 55574,
+ "text_tokens": 479,
+ "chooser_latency_ms_median": 682.5,
+ "protocol_calls": 88,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 68,
+  "Input.dispatchMouseEvent": 12,
+  "Input.dispatchKeyEvent": 2,
+  "Input.insertText": 1
+ },
+ "stale_retries": 7,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 5,
+  "url": "https://ui.adsabs.harvard.edu/abs/2013AJ....146...92H/abstract"
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=author%3A%22Vera%20Rubin%22&sort=date%20desc%2C%20bibcode%20desc&p_=0",
+  "title": "author:\"Vera Rubin\" - Astrophysics Data System",
+  "omitted_actions": 0,
+  "n_actions": 74
+ },
+ "failure_type": null,
+ "history": [
+  {
+   "step": 1,
+   "action": "Author",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 725,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://ui.adsabs.harvard.edu/",
+   "usage": {
+    "prompt_tokens": 2616,
+    "completion_tokens": 13,
+    "total_tokens": 2629,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1509,
+   "elapsed_ms": 1532
+  },
+  {
+   "step": 2,
+   "action": "Start typing a query here to begin an ADS Search",
+   "kind": "fill",
+   "choice": "e16",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 770,
+   "text": "author:\"Vera Rubin\"",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 455,
+   "operation": "TYPE_TEXT",
+   "target": "16",
+   "page_changed": true,
+   "url": "https://ui.adsabs.harvard.edu/",
+   "usage": {
+    "prompt_tokens": 2712,
+    "completion_tokens": 14,
+    "total_tokens": 2726,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2799,
+   "elapsed_ms": 2824
+  },
+  {
+   "step": 3,
+   "action": "submit",
+   "kind": "click",
+   "choice": "e19",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 597,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "18",
+   "page_changed": true,
+   "url": "https://ui.adsabs.harvard.edu/",
+   "usage": {
+    "prompt_tokens": 2758,
+    "completion_tokens": 18,
+    "total_tokens": 2776,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 3471,
+   "elapsed_ms": 3505
+  },
+  {
+   "step": 4,
+   "action": "submit",
+   "kind": "click",
+   "choice": "e19",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 724,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "18",
+   "page_changed": true,
+   "url": "https://ui.adsabs.harvard.edu/",
+   "usage": {
+    "prompt_tokens": 2765,
+    "completion_tokens": 13,
+    "total_tokens": 2778,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 4290,
+   "elapsed_ms": 4316
+  },
+  {
+   "step": 5,
+   "action": "Star Formation in Two Luminous Spiral Galaxies",
+   "kind": "click",
+   "choice": "e47",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 648,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "46",
+   "page_changed": true,
+   "url": "https://ui.adsabs.harvard.edu/abs/2013AJ....146...92H/abstract",
+   "usage": {
+    "prompt_tokens": 5645,
+    "completion_tokens": 18,
+    "total_tokens": 5663,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7217,
+   "elapsed_ms": 7250
+  },
+  {
+   "step": 6,
+   "action": "submit",
+   "kind": "click",
+   "choice": "e16",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 670,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "15",
+   "page_changed": true,
+   "url": "https://ui.adsabs.harvard.edu/abs/2013AJ....146...92H/abstract",
+   "usage": {
+    "prompt_tokens": 3315,
+    "completion_tokens": 18,
+    "total_tokens": 3333,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8748,
+   "elapsed_ms": 8770
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e11",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 1.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2818,
+    "completion_tokens": 13,
+    "total_tokens": 2831,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 716,
+   "fingerprint": "7fbb9d22ffff05ad5002e29e6821e064d544eb21ea2a1ea2ddca27e3f0720466",
+   "elapsed_ms": 737
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2616,
+    "completion_tokens": 13,
+    "total_tokens": 2629,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 725,
+   "fingerprint": "74b826c2527ec91df738b22e6bd41f0f59df1d638ff7045db7106b4103abcb8a",
+   "elapsed_ms": 1476
+  },
+  {
+   "choice": "e16",
+   "operation": "TYPE_TEXT",
+   "target": "16",
+   "confidence": 1.0,
+   "probabilities": {
+    "e16": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2712,
+    "completion_tokens": 14,
+    "total_tokens": 2726,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 770,
+   "fingerprint": "3df9f6ff9fed795a0386826d9da88f8591048031366eb3538d48cea3e4beac4f",
+   "elapsed_ms": 2305
+  },
+  {
+   "choice": "e19",
+   "operation": "CLICK",
+   "target": "18",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 1.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2758,
+    "completion_tokens": 18,
+    "total_tokens": 2776,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 597,
+   "fingerprint": "846792c6ebea0f5cfe657393c3a69e6897923baf48e3e9fd4a68dcacf8c54702",
+   "elapsed_ms": 3425
+  },
+  {
+   "choice": "e19",
+   "operation": "CLICK",
+   "target": "18",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 1.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2765,
+    "completion_tokens": 13,
+    "total_tokens": 2778,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 724,
+   "fingerprint": "5f84d1872b729a204b20984598538b272767344027387e0b27b3041d01b54f54",
+   "elapsed_ms": 4245
+  },
+  {
+   "choice": "wait",
+   "operation": "WAIT",
+   "target": null,
+   "confidence": 0.9,
+   "probabilities": {
+    "wait": 1.0
+   },
+   "operation_probabilities": {
+    "WAIT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2804,
+    "completion_tokens": 15,
+    "total_tokens": 2819,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 549,
+   "fingerprint": "e9ea21b372c9fec010b5f069bfb60d36b187861daf94569195324ba9a221788a",
+   "elapsed_ms": 4871
+  },
+  {
+   "choice": "e45",
+   "operation": "CLICK",
+   "target": "44",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 1.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4970,
+    "completion_tokens": 15,
+    "total_tokens": 4985,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 704,
+   "fingerprint": "3797de463928f9d3cae35219eafe4ca8dc16b2ebeb4ffc4015f963e827314158",
+   "elapsed_ms": 5622
+  },
+  {
+   "choice": "e46",
+   "operation": "CLICK",
+   "target": "45",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 1.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5117,
+    "completion_tokens": 20,
+    "total_tokens": 5137,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 849,
+   "fingerprint": "e54ebb115f9c5016fc45b7e286de6fd8f6f22975897a42bbbf78e3ee20282da8",
+   "elapsed_ms": 6508
+  },
+  {
+   "choice": "e47",
+   "operation": "CLICK",
+   "target": "46",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 1.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e67": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5645,
+    "completion_tokens": 18,
+    "total_tokens": 5663,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 648,
+   "fingerprint": "be1028b0b247988f54fe64b1ab50069e8bdf49bbc6d80b85613c6c398ff4139c",
+   "elapsed_ms": 7192
+  },
+  {
+   "choice": "e8",
+   "operation": "CLICK",
+   "target": "8",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 1.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e67": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5608,
+    "completion_tokens": 18,
+    "total_tokens": 5626,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 695,
+   "fingerprint": "2db158180a31918052ecc0f858209d04395db8f7e3b57cef47db43d0e4af9b63",
+   "elapsed_ms": 7954
+  },
+  {
+   "choice": "e16",
+   "operation": "CLICK",
+   "target": "15",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 1.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3315,
+    "completion_tokens": 18,
+    "total_tokens": 3333,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 670,
+   "fingerprint": "5e068961cc40f58886b5a289792a5d98097fdc3e73d95c08d324a402e5b03f80",
+   "elapsed_ms": 8642
+  },
+  {
+   "choice": "e16",
+   "operation": "CLICK",
+   "target": "15",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 1.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3503,
+    "completion_tokens": 13,
+    "total_tokens": 3516,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 603,
+   "fingerprint": "af4f24893642167f982588cdaed3129add64f7e7e829548bd46e01026e6aaace",
+   "elapsed_ms": 9379
+  },
+  {
+   "choice": "DONE",
+   "operation": "DONE",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "DONE": 1.0
+   },
+   "operation_probabilities": {
+    "DONE": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5025,
+    "completion_tokens": 13,
+    "total_tokens": 5038,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 630,
+   "fingerprint": "af181c0cb811faed6f7c2b90efeaf7766b727929027bf543fc89cd20886c0dea",
+   "elapsed_ms": 10035
+  },
+  {
+   "choice": "DONE",
+   "operation": "DONE",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "DONE": 1.0
+   },
+   "operation_probabilities": {
+    "DONE": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5700,
+    "completion_tokens": 17,
+    "total_tokens": 5717,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 647,
+   "fingerprint": "024449a0389cccb95288284144c9e7f0e1a14293aa914664c5ed0cbd1983caf6",
+   "elapsed_ms": 10722
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 455,
+   "usage": {
+    "prompt_tokens": 468,
+    "completion_tokens": 11,
+    "total_tokens": 479,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Start typing a query here to begin an ADS Search",
+   "value": "author:\"Vera Rubin\""
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Astrophysics Data System Home Page \n                 ads",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "2",
+    "label": "Scix logo \n                    SciX Transition Resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "3",
+    "label": "Feedback",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "4",
+    "label": "orcid symbol   ORCID",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "5",
+    "label": "About",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Sign Up",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "Log In",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Classic\n         Form",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Modern\n         Form",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Paper\n         Form",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "11",
+    "label": "Author",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "12",
+    "label": "First Author",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "13",
+    "label": "Abstract",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "All Search Terms",
+    "expanded": "false",
+    "index": "14",
+    "label": "All Search Terms",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "15",
+    "label": "Start typing a query here to begin an ADS Search",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "16",
+    "label": "submit",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Recommendations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Search examples",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "19",
+    "label": "author:\"Wizinowich, Peter\"",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "20",
+    "label": "first_author:\"Filippenko, Alex\"",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "21",
+    "label": "abs:\"dark energy\"",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "22",
+    "label": "year:2000",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "23",
+    "label": "year:2000-2005",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "24",
+    "label": "full:\"super Earth\"",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "25",
+    "label": "bibstem:ApJ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "26",
+    "label": "citations(abstract:JWST)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "27",
+    "label": "property:refereed",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "28",
+    "label": "collection:astronomy",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "29",
+    "label": "=body:\"intracluster medium\"",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "30",
+    "label": "inst:CfA",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "31",
+    "label": "author_count:[1 TO 10]",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "32",
+    "label": "doctype:software",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "33",
+    "label": "entdate:[NOW-7DAYS TO NOW]",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "34",
+    "label": "property:\"eprint_openaccess\u201d",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "35",
+    "label": "View page in SciX",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Astrophysics Data System Home Page \n                 ads",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "2",
+    "label": "Scix logo \n                    SciX Transition Resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "3",
+    "label": "Feedback",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "4",
+    "label": "orcid symbol   ORCID",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "5",
+    "label": "About",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Sign Up",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "Log In",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Start New Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "9",
+    "label": "Author",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "10",
+    "label": "First Author",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "11",
+    "label": "Abstract",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "All Search Terms",
+    "expanded": "false",
+    "index": "12",
+    "label": "All Search Terms",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "author:\"Vera Rubin\"",
+    "index": "13",
+    "label": "Start typing a query here to begin an ADS Search",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "14",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "15",
+    "label": "submit",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "fq_database|operand|database:astronomy",
+    "index": "16",
+    "label": "fq_database|operand|database:astronomy",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "fq_database|operand|database:physics",
+    "index": "17",
+    "label": "fq_database|operand|database:physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "18",
+    "label": "Change sort direction to ascending",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "19",
+    "label": "Date",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "20",
+    "label": "Explore",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "21",
+    "label": "Export",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "22",
+    "label": "Authors",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "23",
+    "label": "Rubin, V 276",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "24",
+    "label": "Ford, W 81",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "25",
+    "label": "Thonnard, N 28",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "26",
+    "label": "Hunter, D 16",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "27",
+    "label": "Peterson, C 14",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "28",
+    "label": "more",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "29",
+    "label": "Collections",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "30",
+    "label": "astronomy 260",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "31",
+    "label": "physics 25",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "32",
+    "label": "general 11",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "33",
+    "label": "earthscience 4",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "34",
+    "label": "Refereed",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "35",
+    "label": "non-refereed 140",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "36",
+    "label": "refereed 136",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "37",
+    "label": "Institutions",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "38",
+    "label": "select all on this page",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "39",
+    "label": "Show highlights",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "40",
+    "label": "Show abstracts",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "41",
+    "label": "Hide Sidebars",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "42",
+    "label": "Go To Bottom",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2013AJ....146...92H",
+    "checked": "false",
+    "index": "43",
+    "label": "select item 1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "44",
+    "label": "bibcode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "45",
+    "label": "20 citations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "Star Formation in Two Luminous Spiral Galaxies",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "47",
+    "label": "and 4 more",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2013AAS...22114605A",
+    "checked": "false",
+    "index": "48",
+    "label": "select item 2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "49",
+    "label": "bibcode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "50",
+    "label": "Star Formation in the Extreme Outer Disks of Giant Spiral Galaxies",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2011BAAS...43..019C",
+    "checked": "false",
+    "index": "51",
+    "label": "select item 3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "52",
+    "label": "bibcode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "53",
+    "label": "Obituary: Martin F. McCarthy, S.J. (1923-2010)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2011ARA&A..49....1R",
+    "checked": "false",
+    "index": "54",
+    "label": "select item 4",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "55",
+    "label": "bibcode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "56",
+    "label": "4 citations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "57",
+    "label": "An Interesting Voyage",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2011noao.prop..116J",
+    "checked": "false",
+    "index": "58",
+    "label": "select item 5",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "59",
+    "label": "bibcode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "60",
+    "label": "The Stellar Kinematics of Dwarf Irregular Galaxy DDO 125: Is this a galaxy without dark matter?",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "61",
+    "label": "and 1 more",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "62",
+    "label": "Years",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "63",
+    "label": "Citations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "64",
+    "label": "Reads",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "1951",
+    "index": "65",
+    "label": "limit papers start year",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "2013",
+    "index": "66",
+    "label": "limit papers end year",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "67",
+    "label": "Apply",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "68",
+    "label": "download data in csv",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "69",
+    "label": "View page in SciX",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 14 observations; the full traces stay on the machine that made the runs"
+}

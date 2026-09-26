@@ -1,0 +1,60 @@
+{
+ "task_id": "simbad_vega_101",
+ "category": "search",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 1,
+ "started_at": "2026-09-22T16:46:02+00:00",
+ "goal": "Using the SIMBAD basic search, search for the star Vega and open its result page.",
+ "start_url": "https://simbad.cds.unistra.fr/simbad/",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 21.326,
+ "goal_sent": "Start at https://simbad.cds.unistra.fr/simbad/ . Using the SIMBAD basic search, search for the star Vega and open its result page. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 3,
+ "urls": [
+  "https://simbad.cds.unistra.fr/simbad/",
+  "https://simbad.cds.unistra.fr/simbad/",
+  "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega&submit=SIMBAD+search"
+ ],
+ "actions": [
+  "navigate",
+  "input",
+  "click",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The star 'Vega' was searched using SIMBAD's basic search on https://simbad.cds.unistra.fr/simbad/. The resulting detailed information page for Vega (alf Lyr) was successfully opened within the website interface without typing any direct URL. This fulfills the user's request.",
+ "tokens": 46541,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "BCC21D0821930BC593E037A8AC824F64",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "match='* alf Lyr'"
+   },
+   {
+    "passed": true,
+    "detail": "url=https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega&submit=SIMBAD+search"
+   }
+  ],
+  "settle_seconds": 0.03
+ },
+ "final_url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega&submit=SIMBAD+search",
+ "model_calls": 3,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega&submit=SIMBAD+search"
+ },
+ "failure_type": null
+}

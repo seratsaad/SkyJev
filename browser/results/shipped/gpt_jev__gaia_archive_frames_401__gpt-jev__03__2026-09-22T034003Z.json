@@ -1,0 +1,520 @@
+{
+ "task_id": "gaia_archive_frames_401",
+ "category": "adversarial",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 3,
+ "started_at": "2026-09-22T03:40:03+00:00",
+ "goal": "In the Gaia archive search interface, enter the target name M45 in the name field and run the cone search so that a result table appears.",
+ "start_url": "https://gea.esac.esa.int/archive/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "blocked",
+ "error": null,
+ "setup_seconds": 0.784,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": "no match in 1525 chars incl. frames",
+  "settle_seconds": 12.16
+ },
+ "final_url": "https://gea.esac.esa.int/archive/",
+ "duration_seconds": 2.022,
+ "wall_seconds": 15.009,
+ "steps": 3,
+ "model_calls": 3,
+ "chooser_calls": 3,
+ "text_helper_calls": 0,
+ "chooser_tokens": 4618,
+ "text_tokens": 0,
+ "chooser_latency_ms_median": 641,
+ "protocol_calls": 52,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 41,
+  "Input.dispatchMouseEvent": 6
+ },
+ "stale_retries": -1,
+ "transient": {
+  "applicable": false,
+  "reached": null,
+  "at": null
+ },
+ "env_probe": {
+  "iframes": 5,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://gea.esac.esa.int/archive/",
+  "title": "Gaia Archive",
+  "omitted_actions": 0,
+  "n_actions": 13
+ },
+ "failure_type": "iframe",
+ "history": [
+  {
+   "step": 1,
+   "action": "Gaia DR3",
+   "kind": "click",
+   "choice": "e8",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 668,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "8",
+   "page_changed": false,
+   "url": "https://gea.esac.esa.int/archive/",
+   "usage": {
+    "prompt_tokens": 1499,
+    "completion_tokens": 15,
+    "total_tokens": 1514,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 735,
+   "elapsed_ms": 747
+  },
+  {
+   "step": 2,
+   "action": "Gaia DR3",
+   "kind": "click",
+   "choice": "e8",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 548,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "8",
+   "page_changed": false,
+   "url": "https://gea.esac.esa.int/archive/",
+   "usage": {
+    "prompt_tokens": 1524,
+    "completion_tokens": 15,
+    "total_tokens": 1539,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1333,
+   "elapsed_ms": 1347
+  },
+  {
+   "step": 3,
+   "action": "Gaia DR3",
+   "kind": "click",
+   "choice": "e8",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 641,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "8",
+   "page_changed": false,
+   "url": "https://gea.esac.esa.int/archive/",
+   "usage": {
+    "prompt_tokens": 1550,
+    "completion_tokens": 15,
+    "total_tokens": 1565,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2011,
+   "elapsed_ms": 2022
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e8",
+   "operation": "CLICK",
+   "target": "8",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 1.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1499,
+    "completion_tokens": 15,
+    "total_tokens": 1514,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 668,
+   "fingerprint": "aa90803d1aa9f8735c6a801fa08254dd810a22ca38b5342912f85fdafad8cd8d",
+   "elapsed_ms": 684
+  },
+  {
+   "choice": "e8",
+   "operation": "CLICK",
+   "target": "8",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 1.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1524,
+    "completion_tokens": 15,
+    "total_tokens": 1539,
+    "prompt_tokens_details": {
+     "cached_tokens": 1280,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 548,
+   "fingerprint": "aa90803d1aa9f8735c6a801fa08254dd810a22ca38b5342912f85fdafad8cd8d",
+   "elapsed_ms": 1299
+  },
+  {
+   "choice": "e8",
+   "operation": "CLICK",
+   "target": "8",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 1.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1550,
+    "completion_tokens": 15,
+    "total_tokens": 1565,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 641,
+   "fingerprint": "aa90803d1aa9f8735c6a801fa08254dd810a22ca38b5342912f85fdafad8cd8d",
+   "elapsed_ms": 1990
+  }
+ ],
+ "text_calls": [],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "\u2192  \u00a0European Space Agency",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "About ESAC",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "TERMS AND CONDITIONS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "PRIVACY POLICY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "COOKIE POLICY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "COPYRIGHT @ EUROPEAN SPACE AGENCY ALL RIGHTS RESERVED",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "v3.14.1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Gaia DR3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Gaia FPR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Download",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Software Tools",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Auxiliary Data",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "\u2192  \u00a0European Space Agency",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "About ESAC",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "TERMS AND CONDITIONS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "PRIVACY POLICY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "COOKIE POLICY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "COPYRIGHT @ EUROPEAN SPACE AGENCY ALL RIGHTS RESERVED",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "v3.14.1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Gaia DR3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Gaia FPR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Download",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Software Tools",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Auxiliary Data",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 3 observations; the full traces stay on the machine that made the runs"
+}

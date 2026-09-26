@@ -1,0 +1,134 @@
+[
+ {
+  "task": "gaia_archive_frames_401",
+  "category": "adversarial",
+  "gold": "n/a",
+  "start": "fail",
+  "start_settle": 12.14,
+  "verdict": "ok"
+ },
+ {
+  "task": "aladin_canvas_402",
+  "category": "adversarial",
+  "gold": "n/a",
+  "start": "fail",
+  "start_settle": 12.14,
+  "verdict": "ok"
+ },
+ {
+  "task": "eso_etc_403",
+  "category": "adversarial",
+  "gold": "n/a",
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "simbad_vega_101",
+  "category": "search",
+  "gold": "PASS",
+  "gold_settle": 0.01,
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "vizier_hipparcos_102",
+  "category": "search",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.12,
+  "verdict": "ok"
+ },
+ {
+  "task": "arxiv_author_103",
+  "category": "search",
+  "gold": "PASS",
+  "gold_settle": 0.02,
+  "start": "fail",
+  "start_settle": 12.12,
+  "verdict": "ok"
+ },
+ {
+  "task": "eso_portal_target_301",
+  "category": "interactive",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.15,
+  "verdict": "ok"
+ },
+ {
+  "task": "eso_rawform_302",
+  "category": "interactive",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "exoplanet_archive_303",
+  "category": "interactive",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.12,
+  "verdict": "ok"
+ },
+ {
+  "task": "simbad_m87_biblio_201",
+  "category": "multistep",
+  "gold": "PASS",
+  "gold_settle": 0.33,
+  "start": "fail",
+  "start_settle": 12.08,
+  "verdict": "ok"
+ },
+ {
+  "task": "ned_ngc4993_202",
+  "category": "multistep",
+  "gold": "PASS",
+  "gold_settle": 9.09,
+  "start": "fail",
+  "start_settle": 12.09,
+  "verdict": "ok"
+ },
+ {
+  "task": "ads_author_203",
+  "category": "multistep",
+  "gold": "PASS",
+  "gold_settle": 14.17,
+  "start": "fail",
+  "start_settle": 30.22,
+  "verdict": "ok"
+ },
+ {
+  "task": "arxiv_lookup_001",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.09,
+  "verdict": "ok"
+ },
+ {
+  "task": "simbad_betelgeuse_002",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.01,
+  "start": "fail",
+  "start_settle": 12.1,
+  "verdict": "ok"
+ },
+ {
+  "task": "eso_fors2_003",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.08,
+  "verdict": "ok"
+ }
+]

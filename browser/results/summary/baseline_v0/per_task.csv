@@ -1,0 +1,34 @@
+task_id,category,agent,runs,successes,success_rate,median_seconds,median_steps,failures
+arxiv_lookup_001,lookup,gpt-jev,3,0,0.0,7.135,2.0,unexecutable_target
+arxiv_lookup_001,lookup,browser-use,2,2,1.0,28.483,4.0,
+arxiv_lookup_001,lookup,browser-use (free),1,1,1.0,28.229,5.0,
+eso_fors2_003,lookup,gpt-jev,3,0,0.0,2.184,3.0,popup_tab
+eso_fors2_003,lookup,browser-use,2,2,1.0,58.382,5.0,
+eso_fors2_003,lookup,browser-use (free),1,1,1.0,23.968,3.0,
+simbad_betelgeuse_002,lookup,gpt-jev,3,0,0.0,7.038,4.0,abandoned_success
+simbad_betelgeuse_002,lookup,browser-use,2,2,1.0,33.1235,4.0,
+simbad_betelgeuse_002,lookup,browser-use (free),1,1,1.0,19.7,3.0,
+arxiv_author_103,search,gpt-jev,3,3,1.0,4.03,5.0,
+arxiv_author_103,search,browser-use,2,2,1.0,52.2845,7.5,
+simbad_vega_101,search,gpt-jev,3,0,0.0,8.458,6.0,abandoned_success
+simbad_vega_101,search,browser-use,2,1,0.5,101.3295,1.5,unverifiable
+vizier_hipparcos_102,search,gpt-jev,3,3,1.0,120.306,22.0,
+vizier_hipparcos_102,search,browser-use,2,2,1.0,163.1655,20.0,
+ads_author_203,multistep,gpt-jev,3,3,1.0,9.223,6.0,
+ads_author_203,multistep,browser-use,2,1,0.5,63.437,9.5,false_done
+ned_ngc4993_202,multistep,gpt-jev,3,2,0.6666666666666666,11.714,11.0,error
+ned_ngc4993_202,multistep,browser-use,2,2,1.0,71.009,7.5,
+simbad_m87_biblio_201,multistep,gpt-jev,3,0,0.0,17.49,17.0,"false_done,no_progress,stale_page"
+simbad_m87_biblio_201,multistep,browser-use,2,1,0.5,138.213,15.0,false_done
+eso_portal_target_301,interactive,gpt-jev,3,0,0.0,6.271,0.0,unexecutable_target
+eso_portal_target_301,interactive,browser-use,2,0,0.0,233.8665,24.5,false_done
+eso_rawform_302,interactive,gpt-jev,3,3,1.0,4.897,2.0,
+eso_rawform_302,interactive,browser-use,2,2,1.0,37.021,5.5,
+exoplanet_archive_303,interactive,gpt-jev,3,0,0.0,2.375,2.0,browser_timeout
+exoplanet_archive_303,interactive,browser-use,2,0,0.0,183.65699999999998,26.0,"agent_reported_failure,unverifiable"
+aladin_canvas_402,adversarial,gpt-jev,3,0,0.0,25.942,36.0,canvas
+aladin_canvas_402,adversarial,browser-use,2,0,0.0,47.0295,7.0,false_done
+eso_etc_403,adversarial,gpt-jev,3,0,0.0,2.02,3.0,"no_progress,unexecutable_target"
+eso_etc_403,adversarial,browser-use,2,0,0.0,78.655,11.5,false_done
+gaia_archive_frames_401,adversarial,gpt-jev,3,0,0.0,2.022,3.0,iframe
+gaia_archive_frames_401,adversarial,browser-use,2,2,1.0,83.0435,10.0,

@@ -1,0 +1,36 @@
+{
+ "task_id": "simbad_vega_101",
+ "category": "search",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 2,
+ "started_at": "2026-09-22T17:11:09+00:00",
+ "goal": "Using the SIMBAD basic search, search for the star Vega and open its result page.",
+ "start_url": "https://simbad.cds.unistra.fr/simbad/",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "timeout",
+ "error": null,
+ "duration_seconds": 181.333,
+ "goal_sent": "Start at https://simbad.cds.unistra.fr/simbad/ . Using the SIMBAD basic search, search for the star Vega and open its result page. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 0,
+ "urls": [],
+ "actions": [],
+ "agent_claimed_done": false,
+ "agent_claimed_success": false,
+ "verified_tab": null,
+ "unverifiable": true,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": "no open tab matches the agent's last URL None"
+ },
+ "final_url": null,
+ "model_calls": 0,
+ "transient": {
+  "applicable": false,
+  "reached": null,
+  "at": null
+ },
+ "failure_type": "unverifiable"
+}

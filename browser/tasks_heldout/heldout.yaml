@@ -1,0 +1,212 @@
+# Held-out tasks, written 2026-09-23 BEFORE any JEV_PLUS fix was built or tuned.
+# Same five categories and mostly the same sites as tasks/, different objects, plus two sites the
+# development set never touches (JPL SBDB, the arXiv listings). Do not run an agent on these until
+# the fixes are frozen; see IMPROVING_JEV.md. Verifier validation (no agent, no model) is allowed.
+
+- id: ho_simbad_sirius_001
+  category: lookup
+  difficulty: low
+  goal: >
+    Open the SIMBAD main record page for the star Sirius.
+  start_url: https://simbad.cds.unistra.fr/simbad/
+  gold_url: https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Sirius
+  goal_url: '(?i)simbad/sim-(basic|id)\?.*Ident=(Sirius|[^&]*alf(\+|%20|\s)*CMa)'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "\\*\\s*alf\\s*CMa"}
+      - {type: page_regex, value: "06 45 0"}
+  timeout_seconds: 90
+
+- id: ho_arxiv_lookup_002
+  category: lookup
+  difficulty: low
+  goal: >
+    Open the arXiv abstract page for the paper with identifier 1807.06209.
+  start_url: https://arxiv.org/
+  gold_url: https://arxiv.org/abs/1807.06209
+  goal_url: 'arxiv\.org/abs/1807\.06209'
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "arxiv\\.org/abs/1807\\.06209"}
+      - {type: page_contains, value: "arXiv:1807.06209"}
+  timeout_seconds: 90
+
+- id: ho_eso_uves_003
+  category: lookup
+  difficulty: low
+  goal: >
+    Open the ESO instrument overview page for UVES at the Very Large Telescope.
+  start_url: https://www.eso.org/sci/facilities/paranal/instruments.html
+  gold_url: https://www.eso.org/sci/facilities/paranal/instruments/uves.html
+  goal_url: 'eso\.org/sci/facilities/paranal/instruments/uves'
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "eso\\.org/sci/facilities/paranal/instruments/uves"}
+      - {type: page_regex, value: "UVES"}
+  timeout_seconds: 90
+
+- id: ho_arxiv_listing_004
+  category: lookup
+  difficulty: low
+  goal: >
+    On arXiv, open the list of new submissions in Astrophysics of Galaxies (astro-ph.GA).
+  start_url: https://arxiv.org/
+  gold_url: https://arxiv.org/list/astro-ph.GA/new
+  goal_url: '(?i)arxiv\.org/list/astro-ph\.GA/(new|recent|pastweek)'
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "(?i)arxiv\\.org/list/astro-ph\\.GA"}
+      - {type: page_regex, value: "(?i)Astrophysics of Galaxies"}
+  timeout_seconds: 90
+
+- id: ho_simbad_polaris_101
+  category: search
+  difficulty: low-medium
+  goal: >
+    Using the SIMBAD basic search, search for the star Polaris and open its result page.
+  start_url: https://simbad.cds.unistra.fr/simbad/
+  gold_url: https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Polaris
+  goal_url: '(?i)simbad/sim-(basic|id)\?.*Ident=(Polaris|[^&]*alf(\+|%20|\s)*UMi)'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "\\*\\s*alf\\s*UMi"}
+      - {type: url_not_equal, value: "https://simbad.cds.unistra.fr/simbad/"}
+  timeout_seconds: 90
+
+- id: ho_vizier_2mass_102
+  category: search
+  difficulty: low-medium
+  goal: >
+    In VizieR, search the catalogue collection for 2MASS and open the results list of matching catalogues.
+  start_url: https://vizier.cds.unistra.fr/viz-bin/VizieR
+  gold_url: https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-source=2MASS
+  goal_url: null
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)Keywords\\s+2MASS\\s+Tables"}
+      - {type: page_regex, value: "II/246"}
+  timeout_seconds: 180
+
+- id: ho_jpl_sbdb_ceres_103
+  category: search
+  difficulty: low-medium
+  goal: >
+    In the JPL Small-Body Database lookup, search for the dwarf planet Ceres and show its record.
+  start_url: https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html
+  gold_url: https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=Ceres
+  goal_url: '(?i)sbdb_lookup\.html#/\?sstr=(1|ceres|1%20ceres)'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)1\\s+Ceres"}
+      - {type: page_regex, value: "(?i)orbital elements|semi-major axis"}
+  timeout_seconds: 150
+  verify_timeout_seconds: 20
+
+- id: ho_simbad_ngc1300_biblio_201
+  category: multistep
+  difficulty: medium
+  goal: >
+    Find the SIMBAD record for the galaxy NGC 1300 and then open the page listing its bibliographic references.
+  start_url: https://simbad.cds.unistra.fr/simbad/
+  gold_url: https://simbad.cds.unistra.fr/simbad/sim-id-refs?Ident=NGC+1300
+  goal_url: null  # M31 was the first choice; its reference page (tens of thousands) times out on read
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "refs|bibcode|sim-id-refs"}
+      - {type: page_regex, value: "(?i)reference"}
+  timeout_seconds: 150
+
+- id: ho_ned_m51_202
+  category: multistep
+  difficulty: medium
+  goal: >
+    Look up the galaxy NGC 5194 in the NASA/IPAC Extragalactic Database and open the page that shows
+    its redshift.
+  start_url: https://ned.ipac.caltech.edu/
+  gold_url: https://ned.ipac.caltech.edu/byname?objname=NGC+5194
+  goal_url: '(?i)ned\.ipac\.caltech\.edu/byname\?objname=(NGC|MESSIER|M)(\+|%20|\s)?(5194|051|51)'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)NGC\\s*5194|MESSIER\\s*051"}
+      - {type: page_regex, value: "0\\.0015"}
+  timeout_seconds: 180
+
+- id: ho_ads_author_203
+  category: multistep
+  difficulty: medium
+  goal: >
+    In the NASA Astrophysics Data System, search for papers by the author Cecilia Payne-Gaposchkin and
+    open the list of search results.
+  start_url: https://ui.adsabs.harvard.edu/
+  gold_url: https://ui.adsabs.harvard.edu/search/q=author%3A%22Payne-Gaposchkin%2C%20C%22
+  goal_url: null
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "adsabs\\.harvard\\.edu/(search|abs)"}
+      - {type: page_regex, value: "(?i)payne"}
+  timeout_seconds: 180
+  verify_timeout_seconds: 30
+
+- id: ho_eso_rawform_302
+  category: interactive
+  difficulty: medium-high
+  goal: >
+    In the ESO raw data archive query form, search for raw observations of the target HD 163296 and
+    show the result table.
+  start_url: https://archive.eso.org/eso/eso_archive_main.html
+  gold_url: https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query?target=HD+163296&wdbo=html
+  goal_url: null
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "wdb|query"}
+      - {type: page_regex, value: "(?i)HD\\s*163296|no data returned"}
+  timeout_seconds: 180
+
+- id: ho_exoplanet_51peg_303
+  category: interactive
+  difficulty: medium-high
+  goal: >
+    In the NASA Exoplanet Archive, open the overview page for the planet 51 Peg b.
+  start_url: https://exoplanetarchive.ipac.caltech.edu/
+  gold_url: https://exoplanetarchive.ipac.caltech.edu/overview/51%20Peg%20b
+  goal_url: '(?i)exoplanetarchive\.ipac\.caltech\.edu/overview/51(%20|\s|\+)?Peg'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)51\\s*Peg\\s*b"}
+      - {type: url_regex, value: "(?i)overview|51"}
+  timeout_seconds: 180
+
+- id: ho_aladin_m42_402
+  category: adversarial
+  difficulty: high
+  goal: >
+    In Aladin Lite, move the sky view so that it is centred on the Orion Nebula M42.
+  start_url: https://aladin.cds.unistra.fr/AladinLite/
+  gold_url: https://aladin.cds.unistra.fr/AladinLite/?target=M42&fov=2
+  # v2 (2026-09-23). v1 read window.aladin / window.A.aladin, which on the current app are undefined
+  # and the factory function, so it could never pass: 0/3 and 0/2 in the baseline measured nothing.
+  # v2 reads the view centre from the location box, which Aladin keeps in sync with the view. When a
+  # name was typed and resolved there, the box keeps the name and gains the class aladin-valid (checked:
+  # typing without Enter, or an unresolvable name, does not), so that counts too.
+  verifier:
+    type: js_expr
+    expression: >
+      (() => { const i = document.querySelector('input.aladin-input-text.search'); if (!i) return false;
+      const m = i.value.trim().match(/^(\d+)\s+(\d+)\s+([\d.]+)\s+([+-])(\d+)\s+(\d+)\s+([\d.]+)/);
+      if (!m) return /^(M\s*42|Messier\s*42|NGC\s*1976|Orion( nebula)?)$/i.test(i.value.trim()) && i.classList.contains('aladin-valid'); const ra = 15 * (+m[1] + m[2] / 60 + m[3] / 3600);
+      const dec = (m[4] === '-' ? -1 : 1) * (+m[5] + m[6] / 60 + m[7] / 3600);
+      return Math.abs(ra - (83.82)) < 1.5 && Math.abs(dec - (-5.39)) < 1.5; })()
+  timeout_seconds: 150
+  expected_limits: [canvas]

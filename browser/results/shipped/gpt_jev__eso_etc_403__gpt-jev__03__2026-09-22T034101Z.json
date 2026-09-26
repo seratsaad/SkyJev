@@ -1,0 +1,982 @@
+{
+ "task_id": "eso_etc_403",
+ "category": "adversarial",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 3,
+ "started_at": "2026-09-22T03:41:01+00:00",
+ "goal": "In the ESO exposure time calculator for FORS2, set the target magnitude to 20 and run the calculation so that a signal-to-noise result is displayed.",
+ "start_url": "https://etc.eso.org/observing/etc/fors",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "stale_loop",
+ "error": null,
+ "setup_seconds": 0.921,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": "no match for '(?i)signal.?to.?noise|S/N\\\\s*[:=]' in 14925 chars",
+  "settle_seconds": 12.16
+ },
+ "final_url": "https://www.eso.org/public/",
+ "duration_seconds": 7.064,
+ "wall_seconds": 20.204,
+ "steps": 2,
+ "model_calls": 10,
+ "chooser_calls": 10,
+ "text_helper_calls": 0,
+ "chooser_tokens": 21729,
+ "text_tokens": 0,
+ "chooser_latency_ms_median": 620.5,
+ "protocol_calls": 56,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 47,
+  "Input.dispatchMouseEvent": 4
+ },
+ "stale_retries": 8,
+ "transient": {
+  "applicable": false,
+  "reached": null,
+  "at": null
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://www.eso.org/public/",
+  "title": "ESO",
+  "omitted_actions": 0,
+  "n_actions": 31
+ },
+ "failure_type": "unexecutable_target",
+ "history": [
+  {
+   "step": 1,
+   "action": "Open the main ESO ETC page in a new browser tab",
+   "kind": "click",
+   "choice": "e1",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 866,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "1",
+   "page_changed": false,
+   "url": "https://etc.eso.org/",
+   "usage": {
+    "prompt_tokens": 836,
+    "completion_tokens": 13,
+    "total_tokens": 849,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 918,
+   "elapsed_ms": 930
+  },
+  {
+   "step": 2,
+   "action": "link",
+   "kind": "click",
+   "choice": "e5",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 569,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "5",
+   "page_changed": true,
+   "url": "https://www.eso.org/public/",
+   "usage": {
+    "prompt_tokens": 868,
+    "completion_tokens": 15,
+    "total_tokens": 883,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1523,
+   "elapsed_ms": 1918
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e1",
+   "operation": "CLICK",
+   "target": "1",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 1.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 836,
+    "completion_tokens": 13,
+    "total_tokens": 849,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 866,
+   "fingerprint": "e559668b403fec8333cc5fdfe6608bf7acfb8e40c2f4e8c2ce3f61b07664bdc8",
+   "elapsed_ms": 867
+  },
+  {
+   "choice": "e5",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 1.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 868,
+    "completion_tokens": 15,
+    "total_tokens": 883,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 569,
+   "fingerprint": "e559668b403fec8333cc5fdfe6608bf7acfb8e40c2f4e8c2ce3f61b07664bdc8",
+   "elapsed_ms": 1500
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1661,
+    "completion_tokens": 15,
+    "total_tokens": 1676,
+    "prompt_tokens_details": {
+     "cached_tokens": 1536,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 625,
+   "fingerprint": "b5cb7eec058e29122a5770fde3151ca138ebd1c329f60ccfa7acf573ba826f6a",
+   "elapsed_ms": 2549
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 20,
+    "total_tokens": 2619,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 825,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 3383
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 20,
+    "total_tokens": 2619,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 554,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 3959
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 20,
+    "total_tokens": 2619,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 540,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 4521
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 20,
+    "total_tokens": 2619,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 629,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 5162
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 15,
+    "total_tokens": 2614,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 555,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 5724
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 18,
+    "total_tokens": 2617,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 616,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 6362
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2599,
+    "completion_tokens": 15,
+    "total_tokens": 2614,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 664,
+   "fingerprint": "38bc518f19c2bd68c620d9aad9c090f53ae37873cdf76ba6927f483c1775d1f1",
+   "elapsed_ms": 7049
+  }
+ ],
+ "text_calls": [],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Open the main ESO ETC page in a new browser tab",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "v. 118.0.1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "API",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "Contact: https://support.eso.org/",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "European Organisation for Astronomical Research in the Southern Hemisphere",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "Science",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "User Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "4",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "5",
+    "label": "Search...",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "6",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "About",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Images",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Videos",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "News",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "ESOshop",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Telescopes & Instruments",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "Discoveries",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Events",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "Outreach",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Products",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Business@ESO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Career Opportunities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "European Organisation for Astronomical Research in the Southern Hemisphere \n                 European  Southern  Observatory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "The MOONS instrument at the VLT \n            \n             ann26007 \n                     Revealing hidden stars and galaxies: new MOONS instrument at the Very Large Telescope makes first observations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "21",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "22",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "Planet labels: not as easy as you think | ESO Chasing Starlight \n                         Video \n                     18 Sep 2026 \u2014 cs0031a \n                         Planet labels: not as easy as you think | ESO Chasing Starlight",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "A wheel fit for a giant \n                         Picture of the Week \n                     21 Sep 2026 \u2014 potw2638 \n                         A wheel fit for a giant",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "A starry night, in another galaxy \n                         Picture of the Week \n                     14 Sep 2026 \u2014 potw2637 \n                         A starry night, in another galaxy",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "26",
+    "label": "Accept All",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "27",
+    "label": "Accept Only Essential Cookies",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "28",
+    "label": "Cookie Settings and Policy",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 10 observations; the full traces stay on the machine that made the runs"
+}

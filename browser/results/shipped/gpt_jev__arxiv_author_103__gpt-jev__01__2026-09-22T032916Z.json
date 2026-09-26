@@ -1,0 +1,2770 @@
+{
+ "task_id": "arxiv_author_103",
+ "category": "search",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 1,
+ "started_at": "2026-09-22T03:29:16+00:00",
+ "goal": "Search arXiv for papers whose author is Yuan-Sen Ting and open the list of search results.",
+ "start_url": "https://arxiv.org/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "stale_loop",
+ "error": null,
+ "setup_seconds": 0.142,
+ "stale_loop_limit": 8,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "match='Ting'"
+   },
+   {
+    "passed": true,
+    "detail": "url=https://arxiv.org/search/advanced?advanced=1&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://arxiv.org/search/advanced?advanced=1&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first",
+ "duration_seconds": 18.85,
+ "wall_seconds": 19.049,
+ "steps": 5,
+ "model_calls": 14,
+ "chooser_calls": 13,
+ "text_helper_calls": 1,
+ "chooser_tokens": 58137,
+ "text_tokens": 577,
+ "chooser_latency_ms_median": 574,
+ "protocol_calls": 78,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 62,
+  "Input.dispatchMouseEvent": 8,
+  "Input.dispatchKeyEvent": 2,
+  "Input.insertText": 1
+ },
+ "stale_retries": 8,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://arxiv.org/search/advanced"
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://arxiv.org/search/advanced?advanced=1&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first",
+  "title": "Advanced Search | arXiv e-print repository",
+  "omitted_actions": 0,
+  "n_actions": 45
+ },
+ "failure_type": null,
+ "history": [
+  {
+   "step": 1,
+   "action": "Search",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 6604,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": true,
+   "url": "https://arxiv.org/",
+   "usage": {
+    "prompt_tokens": 7887,
+    "completion_tokens": 13,
+    "total_tokens": 7900,
+    "prompt_tokens_details": {
+     "cached_tokens": 7680,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6618,
+   "elapsed_ms": 6648
+  },
+  {
+   "step": 2,
+   "action": "Advanced search",
+   "kind": "click",
+   "choice": "e8",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 614,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "7",
+   "page_changed": true,
+   "url": "https://arxiv.org/search/advanced",
+   "usage": {
+    "prompt_tokens": 8085,
+    "completion_tokens": 18,
+    "total_tokens": 8103,
+    "prompt_tokens_details": {
+     "cached_tokens": 7936,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7282,
+   "elapsed_ms": 7812
+  },
+  {
+   "step": 3,
+   "action": "Field to search \u2192 Author(s)",
+   "kind": "select",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 661,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "SELECT",
+   "target": "11:1",
+   "page_changed": true,
+   "url": "https://arxiv.org/search/advanced",
+   "usage": {
+    "prompt_tokens": 4222,
+    "completion_tokens": 15,
+    "total_tokens": 4237,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8483,
+   "elapsed_ms": 8510
+  },
+  {
+   "step": 4,
+   "action": "Search term",
+   "kind": "fill",
+   "choice": "e10",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 734,
+   "text": "Yuan-Sen Ting",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 534,
+   "operation": "TYPE_TEXT",
+   "target": "10",
+   "page_changed": true,
+   "url": "https://arxiv.org/search/advanced",
+   "usage": {
+    "prompt_tokens": 4278,
+    "completion_tokens": 14,
+    "total_tokens": 4292,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 9810,
+   "elapsed_ms": 9835
+  },
+  {
+   "step": 5,
+   "action": "Search",
+   "kind": "click",
+   "choice": "e26",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 574,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "13",
+   "page_changed": true,
+   "url": "https://arxiv.org/search/advanced?advanced=1&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first",
+   "usage": {
+    "prompt_tokens": 4323,
+    "completion_tokens": 13,
+    "total_tokens": 4336,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 10427,
+   "elapsed_ms": 14007
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e120": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e125": 0.0,
+    "e126": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 7887,
+    "completion_tokens": 13,
+    "total_tokens": 7900,
+    "prompt_tokens_details": {
+     "cached_tokens": 7680,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 6604,
+   "fingerprint": "56a2e3698ff796c215c459e42632b2132338c89d48bf79cba3ad7c7244c9cb58",
+   "elapsed_ms": 6611
+  },
+  {
+   "choice": "e8",
+   "operation": "CLICK",
+   "target": "7",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e7": 0.0,
+    "e8": 1.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e120": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e125": 0.0,
+    "e126": 0.0,
+    "e127": 0.0,
+    "e128": 0.0,
+    "e129": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 8085,
+    "completion_tokens": 18,
+    "total_tokens": 8103,
+    "prompt_tokens_details": {
+     "cached_tokens": 7936,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 614,
+   "fingerprint": "aa750bfc8826baedffc55ae03230255d496db9df15560bd69a644d55d543173a",
+   "elapsed_ms": 7267
+  },
+  {
+   "choice": "e12",
+   "operation": "SELECT",
+   "target": "11:1",
+   "confidence": 1.0,
+   "probabilities": {
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0
+   },
+   "operation_probabilities": {
+    "SELECT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4222,
+    "completion_tokens": 15,
+    "total_tokens": 4237,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 661,
+   "fingerprint": "d703c20004f1f45dddc9b02b403f08005aab199044e427027692cedc2c8decf4",
+   "elapsed_ms": 8477
+  },
+  {
+   "choice": "e10",
+   "operation": "TYPE_TEXT",
+   "target": "10",
+   "confidence": 1.0,
+   "probabilities": {
+    "e10": 1.0,
+    "e53": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4278,
+    "completion_tokens": 14,
+    "total_tokens": 4292,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 734,
+   "fingerprint": "797110eef6c376a615079d822706e610ceff1b2dd6d2a91e7960bfb026ccad4c",
+   "elapsed_ms": 9250
+  },
+  {
+   "choice": "e26",
+   "operation": "CLICK",
+   "target": "13",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e11": 0.0,
+    "e25": 0.0,
+    "e26": 1.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e54": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4323,
+    "completion_tokens": 13,
+    "total_tokens": 4336,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 574,
+   "fingerprint": "14c1c66c75eaa09d888aa51e6d6875dc44a9f788cc44be6e5f886f569fd48831",
+   "elapsed_ms": 10413
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 571,
+   "fingerprint": "e35b6347a4e60b98522ccb9eb51721e076f1560097d09b7e26aceaf0c082abaf",
+   "elapsed_ms": 14601
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 542,
+   "fingerprint": "259e5568aa24f2617e85004675e975ef0c93b4f62bcee0ee9d39d26adbb147bf",
+   "elapsed_ms": 15199
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 18,
+    "total_tokens": 3663,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 492,
+   "fingerprint": "76dbc9d1ad2f969b0734696c8429c3b518b313e7700ddeb12aaef695cdd94b67",
+   "elapsed_ms": 15712
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 581,
+   "fingerprint": "76dbc9d1ad2f969b0734696c8429c3b518b313e7700ddeb12aaef695cdd94b67",
+   "elapsed_ms": 16335
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 715,
+   "fingerprint": "76dbc9d1ad2f969b0734696c8429c3b518b313e7700ddeb12aaef695cdd94b67",
+   "elapsed_ms": 17096
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 483,
+   "fingerprint": "76dbc9d1ad2f969b0734696c8429c3b518b313e7700ddeb12aaef695cdd94b67",
+   "elapsed_ms": 17621
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 558,
+   "fingerprint": "76dbc9d1ad2f969b0734696c8429c3b518b313e7700ddeb12aaef695cdd94b67",
+   "elapsed_ms": 18222
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3645,
+    "completion_tokens": 13,
+    "total_tokens": 3658,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 568,
+   "fingerprint": "76dbc9d1ad2f969b0734696c8429c3b518b313e7700ddeb12aaef695cdd94b67",
+   "elapsed_ms": 18823
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 534,
+   "usage": {
+    "prompt_tokens": 567,
+    "completion_tokens": 10,
+    "total_tokens": 577,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Search term",
+   "value": "Yuan-Sen Ting"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "archive home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "expanded": "false",
+    "index": "2",
+    "label": "Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Submit",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "Donate",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Log in",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Physics",
+    "index": "6",
+    "label": "Subject search and browse:",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "6:1",
+      "label": "Subject search and browse: \u2192 Mathematics",
+      "value": "grp_math"
+     },
+     {
+      "index": "6:2",
+      "label": "Subject search and browse: \u2192 Quantitative Biology",
+      "value": "grp_q-bio"
+     },
+     {
+      "index": "6:3",
+      "label": "Subject search and browse: \u2192 Computer Science",
+      "value": "grp_cs"
+     },
+     {
+      "index": "6:4",
+      "label": "Subject search and browse: \u2192 Quantitative Finance",
+      "value": "grp_q-fin"
+     },
+     {
+      "index": "6:5",
+      "label": "Subject search and browse: \u2192 Statistics",
+      "value": "grp_stat"
+     },
+     {
+      "index": "6:6",
+      "label": "Subject search and browse: \u2192 Electrical Engineering and Systems Science",
+      "value": "grp_eess"
+     },
+     {
+      "index": "6:7",
+      "label": "Subject search and browse: \u2192 Economics",
+      "value": "grp_econ"
+     }
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Search",
+    "index": "7",
+    "label": "Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Form Interface",
+    "index": "8",
+    "label": "Form Interface",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Catchup",
+    "index": "9",
+    "label": "Catchup",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "astro-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "astro-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "astro-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Astrophysics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "cond-mat",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "cond-mat",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "cond-mat",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "Condensed Matter",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "General Relativity and Quantum Cosmology",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "gr-qc",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "gr-qc",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "gr-qc",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "High Energy Physics - Experiment",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "hep-ex",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "39",
+    "label": "hep-ex",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "hep-ex",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "41",
+    "label": "High Energy Physics - Lattice",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "42",
+    "label": "hep-lat",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "43",
+    "label": "hep-lat",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "44",
+    "label": "hep-lat",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "45",
+    "label": "High Energy Physics - Phenomenology",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "hep-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "47",
+    "label": "hep-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "48",
+    "label": "hep-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "49",
+    "label": "High Energy Physics - Theory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "50",
+    "label": "hep-th",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "51",
+    "label": "hep-th",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "52",
+    "label": "hep-th",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "53",
+    "label": "Mathematical Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "54",
+    "label": "math-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "55",
+    "label": "math-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "56",
+    "label": "math-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "57",
+    "label": "Nonlinear Sciences",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "58",
+    "label": "nlin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "59",
+    "label": "nlin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "60",
+    "label": "nlin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "61",
+    "label": "Nonlinear Sciences",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "62",
+    "label": "Nonlinear Sciences",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "63",
+    "label": "Nonlinear Sciences",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "64",
+    "label": "Nonlinear Sciences",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "65",
+    "label": "Nonlinear Sciences",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "66",
+    "label": "Nuclear Experiment",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "67",
+    "label": "nucl-ex",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "68",
+    "label": "nucl-ex",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "69",
+    "label": "nucl-ex",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "70",
+    "label": "Nuclear Theory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "71",
+    "label": "nucl-th",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "72",
+    "label": "nucl-th",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "73",
+    "label": "nucl-th",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "74",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "75",
+    "label": "physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "76",
+    "label": "physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "77",
+    "label": "physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "78",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "79",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "80",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "81",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "82",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "83",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "84",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "85",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "86",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "87",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "88",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "89",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "90",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "91",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "92",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "93",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "94",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "95",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "96",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "97",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "98",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "99",
+    "label": "Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "100",
+    "label": "Quantum Physics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "101",
+    "label": "quant-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "102",
+    "label": "quant-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "103",
+    "label": "quant-ph",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "104",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "105",
+    "label": "math",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "106",
+    "label": "math",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "107",
+    "label": "math",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "108",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "109",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "110",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "111",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "112",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "113",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "114",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "115",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "116",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "117",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "118",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "119",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "120",
+    "label": "Mathematics",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Learn more",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "2",
+    "label": "Dismiss announcement",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "archive home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "expanded": "false",
+    "index": "4",
+    "label": "Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Submit",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Donate",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "Log in",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Search v0.5.6 released 2020-02-24",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "order: -announced_date_first; size: 50; include_cross_list: True; terms: AND author=Yuan-Sen Ting",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Refine query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "New search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Simple Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "50",
+    "index": "13",
+    "label": "results per page",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "13:1",
+      "label": "results per page \u2192 25",
+      "value": "25"
+     },
+     {
+      "index": "13:2",
+      "label": "results per page \u2192 100",
+      "value": "100"
+     },
+     {
+      "index": "13:3",
+      "label": "results per page \u2192 200",
+      "value": "200"
+     }
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Announcement date (newest first)",
+    "index": "14",
+    "label": "Sort results by",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "14:1",
+      "label": "Sort results by \u2192 Announcement date (oldest first)",
+      "value": "announced_date_first"
+     },
+     {
+      "index": "14:2",
+      "label": "Sort results by \u2192 Submission date (newest first)",
+      "value": "-submitted_date"
+     },
+     {
+      "index": "14:3",
+      "label": "Sort results by \u2192 Submission date (oldest first)",
+      "value": "submitted_date"
+     },
+     {
+      "index": "14:4",
+      "label": "Sort results by \u2192 Relevance",
+      "value": ""
+     }
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "15",
+    "label": "Go",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Next",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Goto page 1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Page 2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Page 3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Page 4",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "Page 5",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Page 6",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "arXiv:2609.17644",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "pdf",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "ps",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "other",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Vanessa Lama",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Sanjay Das",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Emily Herron",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "Yuan-Sen Ting",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Tijmen de Haan",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "Junqi Yin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "Tirthankar Ghosal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "Feiyi Wang",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "arXiv:2609.10664",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "pdf",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "ps",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "other",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 13 observations; the full traces stay on the machine that made the runs"
+}

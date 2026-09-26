@@ -26,6 +26,7 @@ decide = [
     "anyjev[hf] @ git+https://github.com/nokia-applied-research/AnyJev@a59a69eaa91e62dc9b42924f8491f76d1b1972ea",
     "torch>=2.3",
     "transformers>=4.53",
+    "accelerate>=1.0",  # transformers 5 needs it to place the model on a device
 ]
 # System 2: OpenAI models (key in $OPENAI_API_KEY or OPENAI= in ~/.env)
 llm = ["openai>=1.60"]

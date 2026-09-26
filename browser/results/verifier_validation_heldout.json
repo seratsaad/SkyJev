@@ -1,0 +1,118 @@
+[
+ {
+  "task": "ho_simbad_sirius_001",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.01,
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_arxiv_lookup_002",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.01,
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_eso_uves_003",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.13,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_arxiv_listing_004",
+  "category": "lookup",
+  "gold": "PASS",
+  "gold_settle": 0.04,
+  "start": "fail",
+  "start_settle": 12.12,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_simbad_polaris_101",
+  "category": "search",
+  "gold": "PASS",
+  "gold_settle": 0.01,
+  "start": "fail",
+  "start_settle": 12.15,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_vizier_2mass_102",
+  "category": "search",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_jpl_sbdb_ceres_103",
+  "category": "search",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 20.19,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_simbad_ngc1300_biblio_201",
+  "category": "multistep",
+  "gold": "PASS",
+  "gold_settle": 0.01,
+  "start": "fail",
+  "start_settle": 12.12,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_ned_m51_202",
+  "category": "multistep",
+  "gold": "PASS",
+  "gold_settle": 8.09,
+  "start": "fail",
+  "start_settle": 12.11,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_ads_author_203",
+  "category": "multistep",
+  "gold": "PASS",
+  "gold_settle": 11.13,
+  "start": "fail",
+  "start_settle": 30.31,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_eso_rawform_302",
+  "category": "interactive",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.14,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_exoplanet_51peg_303",
+  "category": "interactive",
+  "gold": "PASS",
+  "gold_settle": 0.0,
+  "start": "fail",
+  "start_settle": 12.13,
+  "verdict": "ok"
+ },
+ {
+  "task": "ho_aladin_m42_402",
+  "category": "adversarial",
+  "gold": "n/a",
+  "start": "fail",
+  "start_settle": 12.13,
+  "verdict": "ok"
+ }
+]

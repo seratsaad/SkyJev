@@ -272,3 +272,24 @@ def test_generator_programs_are_valid(tel, date, seed):
     # continuum colour follows the template (cool dwarfs are red, hot stars blue)
     for t in p.targets:
         assert t.source.sed == TEMPLATE_SED.get(t.template, "flat_fnu")
+
+
+def test_generator_classical_draw_is_unchanged_by_mode():
+    a = generate_program("clay", "2026-03-12", seed=1)
+    b = generate_program("clay", "2026-03-12", seed=1, mode="classical")
+    assert a.to_dict() == b.to_dict() and a.name == "random clay 2026-03-12 #1"
+    with pytest.raises(ValueError):
+        generate_program("clay", "2026-03-12", seed=1, mode="lottery")
+
+
+def test_generator_queue_programs():
+    p = generate_program("keck1", "2026-07-30", seed=2, mode="queue")
+    assert p.partial_credit == 0.0 and 16 <= len(p.targets) <= 24
+    for t in p.targets:
+        assert t.name.startswith("Q") and t.name.split("-")[0] == t.program
+        assert t.kind in ("science", "too")
+        assert t.priority == 1 if t.kind == "too" else 1 <= t.priority <= 3
+    ranks = {}
+    for t in p.targets:
+        if t.kind != "too":
+            assert ranks.setdefault(t.program, t.priority) == t.priority  # one rank per program

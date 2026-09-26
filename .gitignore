@@ -12,3 +12,9 @@ note/*.fdb_latexmk
 note/*.fls
 note/*.log
 note/*.out
+jev-ultrafast/
+browser/.env
+browser/.chrome-profile/
+browser/.venv/
+browser/results/*/*.json
+!browser/results/shipped/*.json

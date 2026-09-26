@@ -1,0 +1,49 @@
+# Category D -- scientific web applications. Expected difficulty: MEDIUM-HIGH.
+- id: eso_portal_target_301
+  category: interactive
+  difficulty: medium-high
+  goal: >
+    In the ESO Science Portal, search the archive for observations of the target NGC 1068 and show the
+    matching results.
+  start_url: https://archive.eso.org/scienceportal/home
+  gold_url: https://archive.eso.org/scienceportal/home?data_release_date=*:2026-09-21&pos=40.669625,-0.013294&r=0.016667&dp_type=CUBE,IMAGE,SPECTRUM,VISIBILITY
+  goal_url: null  # was 'scienceportal/.*pos=40.66'; checked 2026-09-23: a name search shows the results table while the URL stays /scienceportal/home
+  verifier:
+    type: any_of
+    items:
+      - {type: url_regex, value: "pos=|target="}
+      - {type: page_regex, value: "(?i)NGC\\s*1068"}
+  timeout_seconds: 180
+  notes: JS application with an embedded canvas sky view; results load asynchronously.
+
+- id: eso_rawform_302
+  category: interactive
+  difficulty: medium-high
+  goal: >
+    In the ESO raw data archive query form, search for raw observations of the target HD 100546 and
+    show the result table.
+  start_url: https://archive.eso.org/eso/eso_archive_main.html
+  gold_url: https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query?target=HD+100546&wdbo=html
+  goal_url: null  # not identifiable by URL: the ESO raw archive form submits by POST to eso_archive_main/query for every target
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "wdb|query"}
+      - {type: page_regex, value: "(?i)HD\\s*100546|no data returned"}
+  timeout_seconds: 180
+  notes: 231 elements, 72 of them unnamed. The dense-action-space stress test.
+
+- id: exoplanet_archive_303
+  category: interactive
+  difficulty: medium-high
+  goal: >
+    In the NASA Exoplanet Archive, open the overview page for the planet TRAPPIST-1 e.
+  start_url: https://exoplanetarchive.ipac.caltech.edu/
+  gold_url: https://exoplanetarchive.ipac.caltech.edu/overview/TRAPPIST-1%20e
+  goal_url: '(?i)exoplanetarchive\.ipac\.caltech\.edu/overview/TRAPPIST-1(%20|\s|\+)?e'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)TRAPPIST-1\\s*e"}
+      - {type: url_regex, value: "(?i)overview|trappist"}
+  timeout_seconds: 180

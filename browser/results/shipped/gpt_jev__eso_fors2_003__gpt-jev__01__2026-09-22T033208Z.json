@@ -1,0 +1,2106 @@
+{
+ "task_id": "eso_fors2_003",
+ "category": "lookup",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 1,
+ "started_at": "2026-09-22T03:32:08+00:00",
+ "goal": "Open the ESO instrument overview page for FORS2 at the Very Large Telescope.",
+ "start_url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "blocked",
+ "error": null,
+ "setup_seconds": 1.929,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": [
+   {
+    "passed": false,
+    "detail": "url=https://www.eso.org/sci/facilities/paranal/instruments.html"
+   },
+   {
+    "passed": true,
+    "detail": "match='FORS'"
+   }
+  ],
+  "settle_seconds": 12.09
+ },
+ "final_url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+ "duration_seconds": 2.035,
+ "wall_seconds": 16.114,
+ "steps": 3,
+ "model_calls": 3,
+ "chooser_calls": 3,
+ "text_helper_calls": 0,
+ "chooser_tokens": 16539,
+ "text_tokens": 0,
+ "chooser_latency_ms_median": 603,
+ "protocol_calls": 61,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 50,
+  "Input.dispatchMouseEvent": 6
+ },
+ "stale_retries": -1,
+ "transient": {
+  "applicable": true,
+  "reached": false,
+  "at": null
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+  "title": "ESO - Paranal Instrumentation",
+  "omitted_actions": 0,
+  "n_actions": 90
+ },
+ "failure_type": "no_progress",
+ "history": [
+  {
+   "step": 1,
+   "action": "FORS2",
+   "kind": "click",
+   "choice": "e64",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 700,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "63",
+   "page_changed": false,
+   "url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+   "usage": {
+    "prompt_tokens": 5474,
+    "completion_tokens": 13,
+    "total_tokens": 5487,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 753,
+   "elapsed_ms": 770
+  },
+  {
+   "step": 2,
+   "action": "FORS2",
+   "kind": "click",
+   "choice": "e64",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 603,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "63",
+   "page_changed": false,
+   "url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+   "usage": {
+    "prompt_tokens": 5498,
+    "completion_tokens": 18,
+    "total_tokens": 5516,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1413,
+   "elapsed_ms": 1427
+  },
+  {
+   "step": 3,
+   "action": "FORS2",
+   "kind": "click",
+   "choice": "e64",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 563,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "63",
+   "page_changed": false,
+   "url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+   "usage": {
+    "prompt_tokens": 5523,
+    "completion_tokens": 13,
+    "total_tokens": 5536,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2021,
+   "elapsed_ms": 2035
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e64",
+   "operation": "CLICK",
+   "target": "63",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 1.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5474,
+    "completion_tokens": 13,
+    "total_tokens": 5487,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 700,
+   "fingerprint": "f532784c73d5e7d9611e10d8a01c2c64d5a619b1cec2a55ccbc4b5e2a7f006bf",
+   "elapsed_ms": 703
+  },
+  {
+   "choice": "e64",
+   "operation": "CLICK",
+   "target": "63",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 1.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5498,
+    "completion_tokens": 18,
+    "total_tokens": 5516,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 603,
+   "fingerprint": "f532784c73d5e7d9611e10d8a01c2c64d5a619b1cec2a55ccbc4b5e2a7f006bf",
+   "elapsed_ms": 1379
+  },
+  {
+   "choice": "e64",
+   "operation": "CLICK",
+   "target": "63",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 1.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5523,
+    "completion_tokens": 13,
+    "total_tokens": 5536,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 563,
+   "fingerprint": "f532784c73d5e7d9611e10d8a01c2c64d5a619b1cec2a55ccbc4b5e2a7f006bf",
+   "elapsed_ms": 1995
+  }
+ ],
+ "text_calls": [],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "European Southern Observatory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "Austria",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Belgium",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "Czech Republic",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Denmark",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Finland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "France",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Germany",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Ireland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Italy",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Netherlands",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Poland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "Portugal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Spain",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "Sweden",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Switzerland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "UK",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Chile",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Public",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Science",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "User\u00a0Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Contact",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "Search",
+    "index": "23",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Go!",
+    "index": "24",
+    "label": "Go!",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Science Users Information",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Observing Facilities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Paranal Facilities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Paranal Instrumentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "22 Sep 2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "Paranal Facilities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Contact Information",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "Paranal Science Operations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "Quality Control",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "Call for Proposals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "Paranal Telescopes",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "Paranal Instrumentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "4MOST",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "CRIRES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "39",
+    "label": "ERIS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "ESPRESSO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "41",
+    "label": "FLAMES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "42",
+    "label": "FORS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "43",
+    "label": "HAWK-I",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "44",
+    "label": "KMOS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "45",
+    "label": "MUSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "SPHERE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "47",
+    "label": "UVES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "48",
+    "label": "X-SHOOTER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "49",
+    "label": "Visitor Focus",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "50",
+    "label": "VLTI GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "51",
+    "label": "VLTI MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "52",
+    "label": "VLTI PIONIER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "53",
+    "label": "VLTI Visitor Instrument",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "54",
+    "label": "OmegaCAM @ VST",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "55",
+    "label": "Mascot",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "56",
+    "label": "Decommissioned Instruments",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "57",
+    "label": "Paranal ASM Website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "58",
+    "label": "Paranal Site Information, Logistics, Safety",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "59",
+    "label": "Call for Proposals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "60",
+    "label": "Information on Paranal decommissioned instruments",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "61",
+    "label": "UT1 (Antu)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "62",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "63",
+    "label": "FORS2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "64",
+    "label": "KMOS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "65",
+    "label": "ESPRESSO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "66",
+    "label": "GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "67",
+    "label": "MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "68",
+    "label": "Visitor focus",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "69",
+    "label": "UT2 (Kueyen)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "70",
+    "label": "FLAMES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "71",
+    "label": "UVES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "72",
+    "label": "UT3 (Melipal)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "73",
+    "label": "SPHERE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "74",
+    "label": "XSHOOTER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "75",
+    "label": "CRIRES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "76",
+    "label": "UT4 (Yepun)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "77",
+    "label": "HAWK-I",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "78",
+    "label": "ERIS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "79",
+    "label": "MUSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "80",
+    "label": "AT1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "81",
+    "label": "GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "82",
+    "label": "MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "83",
+    "label": "PIONIER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "84",
+    "label": "Visitor focus",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "85",
+    "label": "AT2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "86",
+    "label": "AT3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "87",
+    "label": "AT4",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "European Southern Observatory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "Austria",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Belgium",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "Czech Republic",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Denmark",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Finland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "France",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Germany",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Ireland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Italy",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Netherlands",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Poland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "Portugal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Spain",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "Sweden",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Switzerland",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "UK",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Chile",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Public",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Science",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "User\u00a0Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Contact",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "Search",
+    "index": "23",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Go!",
+    "index": "24",
+    "label": "Go!",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Science Users Information",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Observing Facilities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Paranal Facilities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Paranal Instrumentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "22 Sep 2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "Paranal Facilities",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Contact Information",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "Paranal Science Operations",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "Quality Control",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "Call for Proposals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "Paranal Telescopes",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "Paranal Instrumentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "4MOST",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "CRIRES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "39",
+    "label": "ERIS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "ESPRESSO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "41",
+    "label": "FLAMES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "42",
+    "label": "FORS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "43",
+    "label": "HAWK-I",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "44",
+    "label": "KMOS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "45",
+    "label": "MUSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "SPHERE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "47",
+    "label": "UVES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "48",
+    "label": "X-SHOOTER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "49",
+    "label": "Visitor Focus",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "50",
+    "label": "VLTI GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "51",
+    "label": "VLTI MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "52",
+    "label": "VLTI PIONIER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "53",
+    "label": "VLTI Visitor Instrument",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "54",
+    "label": "OmegaCAM @ VST",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "55",
+    "label": "Mascot",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "56",
+    "label": "Decommissioned Instruments",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "57",
+    "label": "Paranal ASM Website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "58",
+    "label": "Paranal Site Information, Logistics, Safety",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "59",
+    "label": "Call for Proposals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "60",
+    "label": "Information on Paranal decommissioned instruments",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "61",
+    "label": "UT1 (Antu)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "62",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "63",
+    "label": "FORS2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "64",
+    "label": "KMOS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "65",
+    "label": "ESPRESSO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "66",
+    "label": "GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "67",
+    "label": "MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "68",
+    "label": "Visitor focus",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "69",
+    "label": "UT2 (Kueyen)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "70",
+    "label": "FLAMES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "71",
+    "label": "UVES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "72",
+    "label": "UT3 (Melipal)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "73",
+    "label": "SPHERE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "74",
+    "label": "XSHOOTER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "75",
+    "label": "CRIRES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "76",
+    "label": "UT4 (Yepun)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "77",
+    "label": "HAWK-I",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "78",
+    "label": "ERIS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "79",
+    "label": "MUSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "80",
+    "label": "AT1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "81",
+    "label": "GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "82",
+    "label": "MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "83",
+    "label": "PIONIER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "84",
+    "label": "Visitor focus",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "85",
+    "label": "AT2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "86",
+    "label": "AT3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "87",
+    "label": "AT4",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 3 observations; the full traces stay on the machine that made the runs"
+}

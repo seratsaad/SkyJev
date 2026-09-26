@@ -1,0 +1,3474 @@
+{
+ "task_id": "aladin_canvas_402",
+ "category": "adversarial",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 2,
+ "started_at": "2026-09-22T03:32:44+00:00",
+ "goal": "In Aladin Lite, move the sky view so that it is centred on the Andromeda galaxy M31.",
+ "start_url": "https://aladin.cds.unistra.fr/AladinLite/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "blocked",
+ "error": null,
+ "setup_seconds": 0.215,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": "js -> False",
+  "settle_seconds": 12.11
+ },
+ "final_url": "https://aladin.cds.unistra.fr/AladinLite/",
+ "duration_seconds": 25.607,
+ "wall_seconds": 37.98,
+ "steps": 34,
+ "model_calls": 39,
+ "chooser_calls": 38,
+ "text_helper_calls": 1,
+ "chooser_tokens": 80589,
+ "text_tokens": 319,
+ "chooser_latency_ms_median": 609.0,
+ "protocol_calls": 272,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 196,
+  "Input.dispatchMouseEvent": 68,
+  "Input.dispatchKeyEvent": 2,
+  "Input.insertText": 1
+ },
+ "stale_retries": 3,
+ "transient": {
+  "applicable": false,
+  "reached": null,
+  "at": null
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 2,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://aladin.cds.unistra.fr/AladinLite/",
+  "title": "Aladin Lite",
+  "omitted_actions": 0,
+  "n_actions": 24
+ },
+ "failure_type": "canvas",
+ "history": [
+  {
+   "step": 1,
+   "action": "Search for an object...",
+   "kind": "fill",
+   "choice": "e18",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 626,
+   "text": "M31",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 509,
+   "operation": "TYPE_TEXT",
+   "target": "16",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 1966,
+    "completion_tokens": 14,
+    "total_tokens": 1980,
+    "prompt_tokens_details": {
+     "cached_tokens": 1792,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 3050,
+   "elapsed_ms": 3072
+  },
+  {
+   "step": 2,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.95,
+   "latency_ms": 571,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 1963,
+    "completion_tokens": 15,
+    "total_tokens": 1978,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 3656,
+   "elapsed_ms": 3674
+  },
+  {
+   "step": 3,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 719,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 1980,
+    "completion_tokens": 18,
+    "total_tokens": 1998,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 5014,
+   "elapsed_ms": 5032
+  },
+  {
+   "step": 4,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 621,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2003,
+    "completion_tokens": 20,
+    "total_tokens": 2023,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 5664,
+   "elapsed_ms": 5682
+  },
+  {
+   "step": 5,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 704,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2026,
+    "completion_tokens": 15,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6398,
+   "elapsed_ms": 6416
+  },
+  {
+   "step": 6,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 546,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2049,
+    "completion_tokens": 15,
+    "total_tokens": 2064,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6972,
+   "elapsed_ms": 6990
+  },
+  {
+   "step": 7,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 595,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2072,
+    "completion_tokens": 15,
+    "total_tokens": 2087,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7596,
+   "elapsed_ms": 7615
+  },
+  {
+   "step": 8,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 671,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2095,
+    "completion_tokens": 15,
+    "total_tokens": 2110,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8300,
+   "elapsed_ms": 8318
+  },
+  {
+   "step": 9,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 595,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2118,
+    "completion_tokens": 15,
+    "total_tokens": 2133,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8930,
+   "elapsed_ms": 8950
+  },
+  {
+   "step": 10,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 553,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2141,
+    "completion_tokens": 15,
+    "total_tokens": 2156,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 9518,
+   "elapsed_ms": 9541
+  },
+  {
+   "step": 11,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 651,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2164,
+    "completion_tokens": 15,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 10212,
+   "elapsed_ms": 10236
+  },
+  {
+   "step": 12,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 728,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 10982,
+   "elapsed_ms": 11003
+  },
+  {
+   "step": 13,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 741,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 11767,
+   "elapsed_ms": 11782
+  },
+  {
+   "step": 14,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 688,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 12481,
+   "elapsed_ms": 12499
+  },
+  {
+   "step": 15,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 566,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 13073,
+   "elapsed_ms": 13089
+  },
+  {
+   "step": 16,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 564,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 13663,
+   "elapsed_ms": 13682
+  },
+  {
+   "step": 17,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 603,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 14297,
+   "elapsed_ms": 14318
+  },
+  {
+   "step": 18,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 570,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 14906,
+   "elapsed_ms": 14925
+  },
+  {
+   "step": 19,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 686,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 15626,
+   "elapsed_ms": 15648
+  },
+  {
+   "step": 20,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.95,
+   "latency_ms": 565,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 16223,
+   "elapsed_ms": 16240
+  },
+  {
+   "step": 21,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.95,
+   "latency_ms": 638,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 16886,
+   "elapsed_ms": 16905
+  },
+  {
+   "step": 22,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 593,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 17505,
+   "elapsed_ms": 17521
+  },
+  {
+   "step": 23,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 576,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 18107,
+   "elapsed_ms": 18124
+  },
+  {
+   "step": 24,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 636,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 18769,
+   "elapsed_ms": 18790
+  },
+  {
+   "step": 25,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 570,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 19369,
+   "elapsed_ms": 19390
+  },
+  {
+   "step": 26,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.95,
+   "latency_ms": 531,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 19931,
+   "elapsed_ms": 19948
+  },
+  {
+   "step": 27,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 818,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 20780,
+   "elapsed_ms": 20800
+  },
+  {
+   "step": 28,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 719,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 21535,
+   "elapsed_ms": 21557
+  },
+  {
+   "step": 29,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 552,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 22119,
+   "elapsed_ms": 22140
+  },
+  {
+   "step": 30,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 620,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 22772,
+   "elapsed_ms": 22790
+  },
+  {
+   "step": 31,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 551,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": true,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 23348,
+   "elapsed_ms": 23362
+  },
+  {
+   "step": 32,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 642,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": false,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 24012,
+   "elapsed_ms": 24031
+  },
+  {
+   "step": 33,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 572,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": false,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 24614,
+   "elapsed_ms": 24631
+  },
+  {
+   "step": 34,
+   "action": "button",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 947,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "17",
+   "page_changed": false,
+   "url": "https://aladin.cds.unistra.fr/AladinLite/",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 25587,
+   "elapsed_ms": 25607
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e17",
+   "operation": "TYPE_TEXT",
+   "target": "15",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e17": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1798,
+    "completion_tokens": 14,
+    "total_tokens": 1812,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 615,
+   "fingerprint": "8c9e8dee2a9a60a5a38281f6dab304f7da012d4db491a45248380d36051dc424",
+   "elapsed_ms": 620
+  },
+  {
+   "choice": "e18",
+   "operation": "TYPE_TEXT",
+   "target": "16",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e18": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1966,
+    "completion_tokens": 14,
+    "total_tokens": 1980,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 672,
+   "fingerprint": "8962aace4e87e10ac0f0e51f174951604438fcfb05b55e4e6e5395e5b4ac3350",
+   "elapsed_ms": 1304
+  },
+  {
+   "choice": "e18",
+   "operation": "TYPE_TEXT",
+   "target": "16",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e18": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2004,
+    "completion_tokens": 14,
+    "total_tokens": 2018,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 567,
+   "fingerprint": "48a063235050132afbea8b3b129b0d84fb03b43fa2b7ff9d06c544ca3fae3003",
+   "elapsed_ms": 1884
+  },
+  {
+   "choice": "e18",
+   "operation": "TYPE_TEXT",
+   "target": "16",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e18": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1966,
+    "completion_tokens": 14,
+    "total_tokens": 1980,
+    "prompt_tokens_details": {
+     "cached_tokens": 1792,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 626,
+   "fingerprint": "8962aace4e87e10ac0f0e51f174951604438fcfb05b55e4e6e5395e5b4ac3350",
+   "elapsed_ms": 2523
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.95,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1963,
+    "completion_tokens": 15,
+    "total_tokens": 1978,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 571,
+   "fingerprint": "4a1ba2838b2e5e265fcc46a093d596a1fb541e97175e5222090c46bef1007431",
+   "elapsed_ms": 3645
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1977,
+    "completion_tokens": 18,
+    "total_tokens": 1995,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 597,
+   "fingerprint": "0459e5a396dcd45c16a160b0d9279cf614c7b14c86dc22b4256b5124ca1fc242",
+   "elapsed_ms": 4275
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1980,
+    "completion_tokens": 18,
+    "total_tokens": 1998,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 719,
+   "fingerprint": "51886ec5e5b5c7cae56cfe50d411d811f562aac2507c305b1ece940de941f237",
+   "elapsed_ms": 5006
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2003,
+    "completion_tokens": 20,
+    "total_tokens": 2023,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 621,
+   "fingerprint": "5f323b2e6f18154ba848fee70615e769adfcac65792837db5fa84013648406cd",
+   "elapsed_ms": 5657
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2026,
+    "completion_tokens": 15,
+    "total_tokens": 2041,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 704,
+   "fingerprint": "b6efdce67ae2513de25a9ca5e3c30b53310934d148bf87a4aa9eb2bf2e643ba4",
+   "elapsed_ms": 6389
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2049,
+    "completion_tokens": 15,
+    "total_tokens": 2064,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 546,
+   "fingerprint": "840fb11522cf2fddc7ddbf2fb463fabe18a18fbec32713079ace869d89c55a30",
+   "elapsed_ms": 6966
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2072,
+    "completion_tokens": 15,
+    "total_tokens": 2087,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 595,
+   "fingerprint": "4025d0b6b131b3538ab119ecd222de2b5f6171da928d0c7efd4f945b437dc8f6",
+   "elapsed_ms": 7589
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2095,
+    "completion_tokens": 15,
+    "total_tokens": 2110,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 671,
+   "fingerprint": "2272373609c99a5f5fd1d5298754baef1ae8f8d89eda5679a5be3eb3ec3f6c22",
+   "elapsed_ms": 8290
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2118,
+    "completion_tokens": 15,
+    "total_tokens": 2133,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 595,
+   "fingerprint": "7eeef0ed46b3d9dde4fc3863a8a80023b73de36c0d41470c9d7f6be73d61aa85",
+   "elapsed_ms": 8922
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2141,
+    "completion_tokens": 15,
+    "total_tokens": 2156,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 553,
+   "fingerprint": "d0fb87e15e6ae414df85444853e25bda4074b207e01e79e89d745e3d9ac8db83",
+   "elapsed_ms": 9511
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2164,
+    "completion_tokens": 15,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 651,
+   "fingerprint": "b5ac9e5da7c9db54e434f7a44e0a60ff81699414e1a25e320f6d70fbb67b1329",
+   "elapsed_ms": 10201
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 728,
+   "fingerprint": "1e8c4d968843c06ed53865e39d076442a81c7a7db7cf0df2e220d3eb74c95f2e",
+   "elapsed_ms": 10974
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 741,
+   "fingerprint": "03d892cb91b16a4ea0dc30c270c459f55b5d10b5ba77432bb628c96bcad3ee0a",
+   "elapsed_ms": 11756
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 688,
+   "fingerprint": "0d668f30f95e1f7983bb2dc8f8684e95635c4094f0644f4117f23f2dfdfaf951",
+   "elapsed_ms": 12473
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 566,
+   "fingerprint": "99d1777633f23cb739bf22aba14531fbd0148038ac04672c65224888d0233a4e",
+   "elapsed_ms": 13068
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 564,
+   "fingerprint": "6fb3b9a60dfabbd90ff05f4c137bf5d08061b921837f56beb05cc771f4725754",
+   "elapsed_ms": 13656
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 603,
+   "fingerprint": "9498b767762ada27016297196ee735c6de49e80f7aef5ab4a70dc9face9e5c5c",
+   "elapsed_ms": 14287
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 570,
+   "fingerprint": "a1746d11a49da0c0296d4c41ebfabef6bf4720a437c78816f92c335fc0f416d1",
+   "elapsed_ms": 14897
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 686,
+   "fingerprint": "c5237519c06220a675f6c8d556f4a12c8b2a702098d2f7c8201eda81d025d78d",
+   "elapsed_ms": 15619
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.95,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 565,
+   "fingerprint": "9a5f79e7a03c00c461b479c24183507432f204673a4a75c6cb47a3df59ddc92d",
+   "elapsed_ms": 16217
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.95,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 638,
+   "fingerprint": "667e698930c72309dd625dc1431432b302338c85fceb32141781dfac428f0506",
+   "elapsed_ms": 16881
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 593,
+   "fingerprint": "f8d9abde37b0fc86ffde76231370092212b506a7e84341a0348de27cc1e6d3cd",
+   "elapsed_ms": 17500
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 576,
+   "fingerprint": "4b16df56511ccf1d3d776a710e2a1ed4ff43e4e7f679176926d09436c52b38b4",
+   "elapsed_ms": 18099
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 636,
+   "fingerprint": "412058777b19579c0aeeeca600381b22ebcf920c9c73a55b654e05a35a340f58",
+   "elapsed_ms": 18763
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 570,
+   "fingerprint": "3d13aa8b1e4a824c253aa90d9fea038294d36af7423bc7b650742b369d9909cb",
+   "elapsed_ms": 19363
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.95,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 531,
+   "fingerprint": "a876c0bc95289073b2d52cda81d1427862966f3f7259d2031d7be104f9563335",
+   "elapsed_ms": 19923
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 18,
+    "total_tokens": 2177,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 818,
+   "fingerprint": "3caae96db670d799722b67df74d15aacc38cd872a36c87a29b6421e0220a9659",
+   "elapsed_ms": 20770
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 719,
+   "fingerprint": "f3c4b15f7211181a64054a1ff562c1f4e81987c4b424dd033a91001e3db91e04",
+   "elapsed_ms": 21528
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 552,
+   "fingerprint": "661cb567c33813b5dcd2eb92693a31b29591422336e74ce441a3572afa52e7e2",
+   "elapsed_ms": 22112
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 620,
+   "fingerprint": "6957da832c7546c49ca3002ccbddea1902cee154eb51e301347fcd0feaf9150c",
+   "elapsed_ms": 22764
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 15,
+    "total_tokens": 2174,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 551,
+   "fingerprint": "80a9f8ebfa632a2e16fcfd735d08906770beeec9dbd7f695cbfbb2a84083418e",
+   "elapsed_ms": 23345
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 642,
+   "fingerprint": "c9fd60f6207647c3eaa1c0a8487ae96f241fb05258581ae65c2069c082b320ec",
+   "elapsed_ms": 24005
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 1.0,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 13,
+    "total_tokens": 2172,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 572,
+   "fingerprint": "c9fd60f6207647c3eaa1c0a8487ae96f241fb05258581ae65c2069c082b320ec",
+   "elapsed_ms": 24606
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "17",
+   "confidence": 0.9,
+   "probabilities": {
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2159,
+    "completion_tokens": 20,
+    "total_tokens": 2179,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 947,
+   "fingerprint": "c9fd60f6207647c3eaa1c0a8487ae96f241fb05258581ae65c2069c082b320ec",
+   "elapsed_ms": 25580
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 509,
+   "usage": {
+    "prompt_tokens": 312,
+    "completion_tokens": 7,
+    "total_tokens": 319,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Search for an object...",
+   "value": "M31"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "1",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "simbad",
+    "checked": "false",
+    "index": "2",
+    "label": "SIMBAD",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "gaia-dr3",
+    "checked": "false",
+    "index": "3",
+    "label": "Gaia DR3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2mass",
+    "checked": "false",
+    "index": "4",
+    "label": "2MASS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "5",
+    "label": "Upload CSV table",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Powered by Aladin Lite",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "7",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "8",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "9",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "10",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "11",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "12",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "ICRS",
+    "index": "13",
+    "label": "ICRS ICRSd GAL",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "13:1",
+      "label": "ICRS ICRSd GAL \u2192 ICRSd",
+      "value": "ICRSd"
+     },
+     {
+      "index": "13:2",
+      "label": "ICRS ICRSd GAL \u2192 GAL",
+      "value": "GAL"
+     }
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "14",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "00 47 33.13 -25 17 19.7",
+    "index": "15",
+    "label": "Search for an object...",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "16",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "17",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "18",
+    "label": "AIT",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "19",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "1",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "simbad",
+    "checked": "false",
+    "index": "2",
+    "label": "SIMBAD",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "gaia-dr3",
+    "checked": "false",
+    "index": "3",
+    "label": "Gaia DR3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2mass",
+    "checked": "false",
+    "index": "4",
+    "label": "2MASS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "5",
+    "label": "Upload CSV table",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Digitized Sky Survey - STScI/NASA, Colored & Healpixed by CDS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "Powered by Aladin Lite",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "8",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "9",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "10",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "11",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "12",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "13",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "ICRS",
+    "index": "14",
+    "label": "ICRS ICRSd GAL",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "14:1",
+      "label": "ICRS ICRSd GAL \u2192 ICRSd",
+      "value": "ICRSd"
+     },
+     {
+      "index": "14:2",
+      "label": "ICRS ICRSd GAL \u2192 GAL",
+      "value": "GAL"
+     }
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "15",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "M31",
+    "index": "16",
+    "label": "Search for an object...",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "17",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "18",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "19",
+    "label": "AIT",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "20",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 38 observations; the full traces stay on the machine that made the runs"
+}

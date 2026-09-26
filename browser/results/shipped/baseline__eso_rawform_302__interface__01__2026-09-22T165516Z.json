@@ -1,0 +1,64 @@
+{
+ "task_id": "eso_rawform_302",
+ "category": "interactive",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 1,
+ "started_at": "2026-09-22T16:55:16+00:00",
+ "goal": "In the ESO raw data archive query form, search for raw observations of the target HD 100546 and show the result table.",
+ "start_url": "https://archive.eso.org/eso/eso_archive_main.html",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 40.859,
+ "goal_sent": "Start at https://archive.eso.org/eso/eso_archive_main.html . In the ESO raw data archive query form, search for raw observations of the target HD 100546 and show the result table. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 5,
+ "urls": [
+  "https://archive.eso.org/eso/eso_archive_main.html",
+  "https://archive.eso.org/eso/eso_archive_main.html",
+  "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query",
+  "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query",
+  "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"
+ ],
+ "actions": [
+  "navigate",
+  "input",
+  "click",
+  "scroll",
+  "extract",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The search for raw observations of target HD 100546 on the ESO raw data archive has been completed successfully. The results page displays a detailed observational raw data query results table with about 200 records matching HD 100546. The table includes columns such as OBJECT, Target Ra, Dec, Program ID, Instrument, Category, Type, Mode, Dataset ID, and Release Date. Multiple instruments like FEROS, EMMI, SOFI, and TIMMI2 have observations listed. This fulfills your request to search and show the result table within the website's own interface.",
+ "tokens": 132472,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "E18F075EA4CAA4D586A37624B77569B2",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"
+   },
+   {
+    "passed": true,
+    "detail": "match='HD 100546'"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query",
+ "model_calls": 5,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"
+ },
+ "failure_type": null
+}

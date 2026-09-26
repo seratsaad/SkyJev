@@ -1,0 +1,67 @@
+{
+ "task_id": "arxiv_author_103",
+ "category": "search",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 2,
+ "started_at": "2026-09-22T17:17:08+00:00",
+ "goal": "Search arXiv for papers whose author is Yuan-Sen Ting and open the list of search results.",
+ "start_url": "https://arxiv.org/",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 28.217,
+ "goal_sent": "Start at https://arxiv.org/ . Search arXiv for papers whose author is Yuan-Sen Ting and open the list of search results. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 6,
+ "urls": [
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/search/advanced",
+  "https://arxiv.org/search/advanced",
+  "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first"
+ ],
+ "actions": [
+  "navigate",
+  "click",
+  "click",
+  "click",
+  "select_dropdown",
+  "input",
+  "click",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The author-specific search for 'Yuan-Sen Ting' on arXiv was successfully completed using the site's advanced search interface. The resulting list of papers authored by Yuan-Sen Ting is displayed with 275 total results, showing the first 50 on this page. The user request to perform this search and open the list of results within arXiv's own interface has been fulfilled.",
+ "tokens": 111047,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "F4566E5ECD3FB7A3760216E80FDDC044",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "match='Ting'"
+   },
+   {
+    "passed": true,
+    "detail": "url=https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=Yuan-Sen+Ting&terms-0-field=author&classification-physics_archives=all&classification-include_cross_list=include&date-filter_by=all_dates&date-year=&date-from_date=&date-to_date=&date-date_type=submitted_date&abstracts=show&size=50&order=-announced_date_first",
+ "model_calls": 6,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 3,
+  "url": "https://arxiv.org/search/advanced"
+ },
+ "failure_type": null
+}

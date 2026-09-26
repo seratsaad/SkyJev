@@ -7,6 +7,7 @@ that an observer makes during a night, the choice of the next target and the tel
 | Folder | Contents | Author |
 |---|---|---|
 | [`target-choice/`](target-choice/) | Simulated nights at Keck and Magellan, an exposure time calculator, a hindsight oracle, a greedy planner and the AnyJev/Qwen3 decision heads (the `obsassist` package, originally `astrojev`) | Yuan-Sen Ting |
+| [`browser/`](browser/) | A Jev browser agent against Browser Use on 15 astronomy website tasks (SIMBAD, VizieR, NED, ADS, ESO archives, an exposure time calculator), each with a deterministic verifier | Serat Saad |
 | [`focus/`](focus/) | LLM focus decisions on 30 archival through-focus sequences from the ESO/MPG 2.2 m Wide Field Imager | Serat Saad |
 | [`note/`](note/) | The manuscript (AASTeX 7) and `stats.py`, which prints every number in it from the saved results | both |
 
@@ -21,6 +22,8 @@ To regenerate the saved results themselves:
 * Target choice. See [target-choice/README.md](target-choice/README.md). `scripts/reproduce.sh`
   in that folder reruns the datasets, the AnyJev heads and the controls (about 1.5 h on an
   M-series Mac, no API key).
+* Browser agent. See [browser/README.md](browser/README.md). It needs a checkout of
+  jev-ultrafast at `SkyJev/jev-ultrafast`, Chrome, and OpenAI credit (about US$1 per arm).
 * Focus. See [focus/README.md](focus/README.md). `focus/download.sh` fetches the 30 public frames
   (about 240 MB) from the ESO archive. The model calls need `OPENAI_API_KEY` and cost about US$0.35.
 

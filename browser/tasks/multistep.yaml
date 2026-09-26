@@ -1,0 +1,53 @@
+# Category C -- multi-step research tasks. Expected difficulty: MEDIUM.
+- id: simbad_m87_biblio_201
+  category: multistep
+  difficulty: medium
+  goal: >
+    Find the SIMBAD record for the galaxy M87 and then open the page listing its bibliographic references.
+  start_url: https://simbad.cds.unistra.fr/simbad/
+  gold_url: https://simbad.cds.unistra.fr/simbad/sim-id-refs?Ident=M87
+  goal_url: null  # not identifiable by URL: SIMBAD reaches the bibliography by several query paths, not all naming the object
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "refs|bibcode|sim-id-refs"}
+      - {type: page_regex, value: "(?i)reference"}
+  timeout_seconds: 150
+  notes: Record page first, then the references link. Two navigations minimum.
+
+- id: ned_ngc4993_202
+  category: multistep
+  difficulty: medium
+  goal: >
+    Look up the galaxy NGC 4993 in the NASA/IPAC Extragalactic Database and open the page that shows
+    its redshift.
+  start_url: https://ned.ipac.caltech.edu/
+  gold_url: https://ned.ipac.caltech.edu/byname?objname=NGC+4993
+  goal_url: '(?i)ned\.ipac\.caltech\.edu/byname\?objname=NGC(\+|%20|\s)?4993'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)NGC\\s*4993"}
+      - {type: page_regex, value: "0\\.009"}
+  timeout_seconds: 180
+  notes: Known redshift z = 0.009680. NED is slow to first paint; expect WAIT actions.
+
+- id: ads_author_203
+  category: multistep
+  difficulty: medium
+  goal: >
+    In the NASA Astrophysics Data System, search for papers by the author Vera Rubin and open the
+    list of search results.
+  start_url: https://ui.adsabs.harvard.edu/
+  gold_url: https://ui.adsabs.harvard.edu/search/q=author%3A%22Rubin%2C%20Vera%22
+  goal_url: null  # not identifiable by URL: success can end on any abstract by the author, and a bibcode does not name the author
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "adsabs\\.harvard\\.edu/(search|abs)"}
+      - {type: page_regex, value: "(?i)rubin"}
+  timeout_seconds: 180
+  verify_timeout_seconds: 30
+  notes: >
+    Single-page React app. It exposes one element until it hydrates and takes about 17 s to render
+    results, so the verification window is longer. Both agents get the same window.

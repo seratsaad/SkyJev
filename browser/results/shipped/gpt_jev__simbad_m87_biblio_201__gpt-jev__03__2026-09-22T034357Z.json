@@ -1,0 +1,5190 @@
+{
+ "task_id": "simbad_m87_biblio_201",
+ "category": "multistep",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 3,
+ "started_at": "2026-09-22T03:43:57+00:00",
+ "goal": "Find the SIMBAD record for the galaxy M87 and then open the page listing its bibliographic references.",
+ "start_url": "https://simbad.cds.unistra.fr/simbad/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "ready",
+ "error": "ValueError: Chooser picked unoffered target 'None' for CLICK; no action executed.",
+ "setup_seconds": 0.819,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": [
+   {
+    "passed": false,
+    "detail": "url=https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search"
+   },
+   {
+    "passed": true,
+    "detail": "match='Reference'"
+   }
+  ],
+  "settle_seconds": 12.14
+ },
+ "final_url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+ "duration_seconds": 46.726,
+ "wall_seconds": 60.349,
+ "steps": 42,
+ "model_calls": 52,
+ "chooser_calls": 46,
+ "text_helper_calls": 6,
+ "chooser_tokens": 158929,
+ "text_tokens": 3007,
+ "chooser_latency_ms_median": 623.5,
+ "protocol_calls": 346,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 239,
+  "Input.dispatchMouseEvent": 84,
+  "Input.dispatchKeyEvent": 12,
+  "Input.insertText": 6
+ },
+ "stale_retries": 4,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 31,
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-ref?journal=M87&fromyear=1850&toyear=2026&authors=&words=&submit=submit+criteria&bibcode=&querymethod=bib&byear=&bjournal=&bvolume=&bpage="
+ },
+ "env_probe": {
+  "iframes": 1,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+  "title": "SIMBAD basic query result",
+  "omitted_actions": 0,
+  "n_actions": 29
+ },
+ "failure_type": "abandoned_success",
+ "history": [
+  {
+   "step": 1,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 869,
+   "text": "M87",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 495,
+   "operation": "TYPE_TEXT",
+   "target": "32",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2665,
+    "completion_tokens": 19,
+    "total_tokens": 2684,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1395,
+   "elapsed_ms": 1412
+  },
+  {
+   "step": 2,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 614,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=M87&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2697,
+    "completion_tokens": 18,
+    "total_tokens": 2715,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2040,
+   "elapsed_ms": 2472
+  },
+  {
+   "step": 3,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 754,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 4149,
+    "completion_tokens": 13,
+    "total_tokens": 4162,
+    "prompt_tokens_details": {
+     "cached_tokens": 3968,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 3848,
+   "elapsed_ms": 4040
+  },
+  {
+   "step": 4,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 886,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 3358,
+    "completion_tokens": 15,
+    "total_tokens": 3373,
+    "prompt_tokens_details": {
+     "cached_tokens": 3200,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 4945,
+   "elapsed_ms": 5282
+  },
+  {
+   "step": 5,
+   "action": "reference query",
+   "kind": "click",
+   "choice": "e14",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 618,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "14",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 2764,
+    "completion_tokens": 13,
+    "total_tokens": 2777,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 5919,
+   "elapsed_ms": 6096
+  },
+  {
+   "step": 6,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 0.95,
+   "latency_ms": 570,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3407,
+    "completion_tokens": 15,
+    "total_tokens": 3422,
+    "prompt_tokens_details": {
+     "cached_tokens": 3200,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6682,
+   "elapsed_ms": 6858
+  },
+  {
+   "step": 7,
+   "action": "submit id",
+   "kind": "click",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 608,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "24",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id",
+   "usage": {
+    "prompt_tokens": 3885,
+    "completion_tokens": 13,
+    "total_tokens": 3898,
+    "prompt_tokens_details": {
+     "cached_tokens": 3712,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7507,
+   "elapsed_ms": 7673
+  },
+  {
+   "step": 8,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 727,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2235,
+    "completion_tokens": 15,
+    "total_tokens": 2250,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8418,
+   "elapsed_ms": 8745
+  },
+  {
+   "step": 9,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 634,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2862,
+    "completion_tokens": 15,
+    "total_tokens": 2877,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 9389,
+   "elapsed_ms": 10366
+  },
+  {
+   "step": 10,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 595,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 2348,
+    "completion_tokens": 13,
+    "total_tokens": 2361,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 10977,
+   "elapsed_ms": 11182
+  },
+  {
+   "step": 11,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 624,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3531,
+    "completion_tokens": 15,
+    "total_tokens": 3546,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 11821,
+   "elapsed_ms": 11998
+  },
+  {
+   "step": 12,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e18",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 714,
+   "text": "M87",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 532,
+   "operation": "TYPE_TEXT",
+   "target": "18",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3984,
+    "completion_tokens": 19,
+    "total_tokens": 4003,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 13261,
+   "elapsed_ms": 13277
+  },
+  {
+   "step": 13,
+   "action": "submit id",
+   "kind": "click",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 581,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "24",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M87&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id",
+   "usage": {
+    "prompt_tokens": 3991,
+    "completion_tokens": 13,
+    "total_tokens": 4004,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 13872,
+   "elapsed_ms": 14468
+  },
+  {
+   "step": 14,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 680,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 4514,
+    "completion_tokens": 18,
+    "total_tokens": 4532,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 15886,
+   "elapsed_ms": 16074
+  },
+  {
+   "step": 15,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 569,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3530,
+    "completion_tokens": 13,
+    "total_tokens": 3543,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 16656,
+   "elapsed_ms": 16833
+  },
+  {
+   "step": 16,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e11",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 623,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "11",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 3984,
+    "completion_tokens": 13,
+    "total_tokens": 3997,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 17484,
+   "elapsed_ms": 17654
+  },
+  {
+   "step": 17,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 624,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3531,
+    "completion_tokens": 15,
+    "total_tokens": 3546,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 18301,
+   "elapsed_ms": 18520
+  },
+  {
+   "step": 18,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e11",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 537,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "11",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 3985,
+    "completion_tokens": 13,
+    "total_tokens": 3998,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 19080,
+   "elapsed_ms": 19255
+  },
+  {
+   "step": 19,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 595,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 3532,
+    "completion_tokens": 15,
+    "total_tokens": 3547,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 19860,
+   "elapsed_ms": 20258
+  },
+  {
+   "step": 20,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 688,
+   "text": "M87",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 500,
+   "operation": "TYPE_TEXT",
+   "target": "32",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2913,
+    "completion_tokens": 14,
+    "total_tokens": 2927,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 21473,
+   "elapsed_ms": 21496
+  },
+  {
+   "step": 21,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 559,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=M87&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2921,
+    "completion_tokens": 13,
+    "total_tokens": 2934,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 22069,
+   "elapsed_ms": 22592
+  },
+  {
+   "step": 22,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 568,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 4348,
+    "completion_tokens": 13,
+    "total_tokens": 4361,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 23829,
+   "elapsed_ms": 24045
+  },
+  {
+   "step": 23,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e19",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 728,
+   "text": "M87",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 774,
+   "operation": "TYPE_TEXT",
+   "target": "19",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 3532,
+    "completion_tokens": 14,
+    "total_tokens": 3546,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 25571,
+   "elapsed_ms": 25597
+  },
+  {
+   "step": 24,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 751,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3540,
+    "completion_tokens": 15,
+    "total_tokens": 3555,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 26371,
+   "elapsed_ms": 26552
+  },
+  {
+   "step": 25,
+   "action": "submit id",
+   "kind": "click",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 537,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "24",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id",
+   "usage": {
+    "prompt_tokens": 3986,
+    "completion_tokens": 13,
+    "total_tokens": 3999,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 27104,
+   "elapsed_ms": 27281
+  },
+  {
+   "step": 26,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 630,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 2311,
+    "completion_tokens": 20,
+    "total_tokens": 2331,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 27931,
+   "elapsed_ms": 28111
+  },
+  {
+   "step": 27,
+   "action": "submit id",
+   "kind": "click",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 535,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "24",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id",
+   "usage": {
+    "prompt_tokens": 3985,
+    "completion_tokens": 13,
+    "total_tokens": 3998,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 28663,
+   "elapsed_ms": 28854
+  },
+  {
+   "step": 28,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 668,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2310,
+    "completion_tokens": 13,
+    "total_tokens": 2323,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 29535,
+   "elapsed_ms": 29853
+  },
+  {
+   "step": 29,
+   "action": "reference query",
+   "kind": "click",
+   "choice": "e14",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 714,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "14",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 2912,
+    "completion_tokens": 15,
+    "total_tokens": 2927,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 30590,
+   "elapsed_ms": 30860
+  },
+  {
+   "step": 30,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e19",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 627,
+   "text": "M87",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 617,
+   "operation": "TYPE_TEXT",
+   "target": "19",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 3530,
+    "completion_tokens": 14,
+    "total_tokens": 3544,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 32138,
+   "elapsed_ms": 32158
+  },
+  {
+   "step": 31,
+   "action": "submit criteria",
+   "kind": "click",
+   "choice": "e31",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 795,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "26",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-ref?journal=M87&fromyear=1850&toyear=2026&authors=&words=&submit=submit+criteria&bibcode=&querymethod=bib&byear=&bjournal=&bvolume=&bpage=",
+   "usage": {
+    "prompt_tokens": 3537,
+    "completion_tokens": 13,
+    "total_tokens": 3550,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 32968,
+   "elapsed_ms": 33188
+  },
+  {
+   "step": 32,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 548,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2410,
+    "completion_tokens": 13,
+    "total_tokens": 2423,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 33755,
+   "elapsed_ms": 34257
+  },
+  {
+   "step": 33,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 587,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2910,
+    "completion_tokens": 18,
+    "total_tokens": 2928,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 34857,
+   "elapsed_ms": 35813
+  },
+  {
+   "step": 34,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 635,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 15,
+    "total_tokens": 2386,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 36477,
+   "elapsed_ms": 36788
+  },
+  {
+   "step": 35,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 595,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2910,
+    "completion_tokens": 13,
+    "total_tokens": 2923,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 37398,
+   "elapsed_ms": 38441
+  },
+  {
+   "step": 36,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 516,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 2372,
+    "completion_tokens": 18,
+    "total_tokens": 2390,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 38970,
+   "elapsed_ms": 39155
+  },
+  {
+   "step": 37,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 706,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3530,
+    "completion_tokens": 13,
+    "total_tokens": 3543,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 39875,
+   "elapsed_ms": 40059
+  },
+  {
+   "step": 38,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e18",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 577,
+   "text": "M87",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 477,
+   "operation": "TYPE_TEXT",
+   "target": "18",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3984,
+    "completion_tokens": 14,
+    "total_tokens": 3998,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 41143,
+   "elapsed_ms": 41163
+  },
+  {
+   "step": 39,
+   "action": "submit id",
+   "kind": "click",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 526,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "24",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M87&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id",
+   "usage": {
+    "prompt_tokens": 3991,
+    "completion_tokens": 13,
+    "total_tokens": 4004,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 41702,
+   "elapsed_ms": 42267
+  },
+  {
+   "step": 40,
+   "action": "Reference  query",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 679,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fref",
+   "usage": {
+    "prompt_tokens": 4515,
+    "completion_tokens": 18,
+    "total_tokens": 4533,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 43664,
+   "elapsed_ms": 43846
+  },
+  {
+   "step": 41,
+   "action": "Simbad",
+   "kind": "click",
+   "choice": "e3",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 530,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "3",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 3531,
+    "completion_tokens": 13,
+    "total_tokens": 3544,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 44392,
+   "elapsed_ms": 44889
+  },
+  {
+   "step": 42,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 856,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2913,
+    "completion_tokens": 13,
+    "total_tokens": 2926,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 45757,
+   "elapsed_ms": 46726
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e32",
+   "operation": "TYPE_TEXT",
+   "target": "32",
+   "confidence": 1.0,
+   "probabilities": {
+    "e32": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2665,
+    "completion_tokens": 19,
+    "total_tokens": 2684,
+    "prompt_tokens_details": {
+     "cached_tokens": 2432,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 869,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 871
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2697,
+    "completion_tokens": 18,
+    "total_tokens": 2715,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 614,
+   "fingerprint": "b7cd7ea6676e2e24e699e9ba3fbb15c1e469711f851ea81db79f7b596172ce68",
+   "elapsed_ms": 2029
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4276,
+    "completion_tokens": 18,
+    "total_tokens": 4294,
+    "prompt_tokens_details": {
+     "cached_tokens": 4096,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 547,
+   "fingerprint": "26b89aa452ede1c3b4862657b7be52b98dcbddc18a245d80910daf81f8c35399",
+   "elapsed_ms": 3051
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4149,
+    "completion_tokens": 13,
+    "total_tokens": 4162,
+    "prompt_tokens_details": {
+     "cached_tokens": 3968,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 754,
+   "fingerprint": "eb01051d02c1d17adca970efd4e88c793b71b58ed7f05049a26b2d4706214e8c",
+   "elapsed_ms": 3836
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3358,
+    "completion_tokens": 15,
+    "total_tokens": 3373,
+    "prompt_tokens_details": {
+     "cached_tokens": 3200,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 886,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 4931
+  },
+  {
+   "choice": "e14",
+   "operation": "CLICK",
+   "target": "14",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 1.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2764,
+    "completion_tokens": 13,
+    "total_tokens": 2777,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 618,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 5903
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 0.95,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3407,
+    "completion_tokens": 15,
+    "total_tokens": 3422,
+    "prompt_tokens_details": {
+     "cached_tokens": 3200,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 570,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 6671
+  },
+  {
+   "choice": "e32",
+   "operation": "CLICK",
+   "target": "24",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 1.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3885,
+    "completion_tokens": 13,
+    "total_tokens": 3898,
+    "prompt_tokens_details": {
+     "cached_tokens": 3712,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 608,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 7472
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2235,
+    "completion_tokens": 15,
+    "total_tokens": 2250,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 727,
+   "fingerprint": "1e5a26271840eec3daede1f9aaaa391349e188cc9cfbbd3c336898fcfb871e2d",
+   "elapsed_ms": 8402
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2862,
+    "completion_tokens": 15,
+    "total_tokens": 2877,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 634,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 9381
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2348,
+    "completion_tokens": 13,
+    "total_tokens": 2361,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 595,
+   "fingerprint": "5b99339e4bdac22d9f44bb724049d040eeb17c39d6f1206c05a72a6f192db08e",
+   "elapsed_ms": 10967
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3531,
+    "completion_tokens": 15,
+    "total_tokens": 3546,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 624,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 11811
+  },
+  {
+   "choice": "e18",
+   "operation": "TYPE_TEXT",
+   "target": "18",
+   "confidence": 1.0,
+   "probabilities": {
+    "e18": 1.0,
+    "e28": 0.0,
+    "e39": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3984,
+    "completion_tokens": 19,
+    "total_tokens": 4003,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 714,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 12716
+  },
+  {
+   "choice": "e32",
+   "operation": "CLICK",
+   "target": "24",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 1.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3991,
+    "completion_tokens": 13,
+    "total_tokens": 4004,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 581,
+   "fingerprint": "5bb720f3f995a394a84f742f66eeeaff01f789e685e58faa57a90a83db41a379",
+   "elapsed_ms": 13861
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4641,
+    "completion_tokens": 13,
+    "total_tokens": 4654,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 666,
+   "fingerprint": "b60c67e1b2865d53df02b203b93d23a7df91b991265972af39480995c3d93e3d",
+   "elapsed_ms": 15154
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4514,
+    "completion_tokens": 18,
+    "total_tokens": 4532,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 680,
+   "fingerprint": "a622d5d24a4c435732afb8fb749016002fb033ae2661339f56f4e343b36b07f3",
+   "elapsed_ms": 15864
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3530,
+    "completion_tokens": 13,
+    "total_tokens": 3543,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 569,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 16646
+  },
+  {
+   "choice": "e11",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 1.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3984,
+    "completion_tokens": 13,
+    "total_tokens": 3997,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 623,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 17463
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3531,
+    "completion_tokens": 15,
+    "total_tokens": 3546,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 624,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 18282
+  },
+  {
+   "choice": "e11",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 1.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3985,
+    "completion_tokens": 13,
+    "total_tokens": 3998,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 537,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 19062
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3532,
+    "completion_tokens": 15,
+    "total_tokens": 3547,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 595,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 19856
+  },
+  {
+   "choice": "e32",
+   "operation": "TYPE_TEXT",
+   "target": "32",
+   "confidence": 1.0,
+   "probabilities": {
+    "e32": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2913,
+    "completion_tokens": 14,
+    "total_tokens": 2927,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 688,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 20949
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2921,
+    "completion_tokens": 13,
+    "total_tokens": 2934,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 559,
+   "fingerprint": "b7cd7ea6676e2e24e699e9ba3fbb15c1e469711f851ea81db79f7b596172ce68",
+   "elapsed_ms": 22059
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4475,
+    "completion_tokens": 18,
+    "total_tokens": 4493,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 608,
+   "fingerprint": "26b89aa452ede1c3b4862657b7be52b98dcbddc18a245d80910daf81f8c35399",
+   "elapsed_ms": 23225
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4348,
+    "completion_tokens": 13,
+    "total_tokens": 4361,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 568,
+   "fingerprint": "eb01051d02c1d17adca970efd4e88c793b71b58ed7f05049a26b2d4706214e8c",
+   "elapsed_ms": 23824
+  },
+  {
+   "choice": "e19",
+   "operation": "TYPE_TEXT",
+   "target": "19",
+   "confidence": 1.0,
+   "probabilities": {
+    "e19": 1.0,
+    "e21": 0.0,
+    "e23": 0.0,
+    "e25": 0.0,
+    "e29": 0.0,
+    "e34": 0.0,
+    "e38": 0.0,
+    "e41": 0.0,
+    "e43": 0.0,
+    "e45": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3532,
+    "completion_tokens": 14,
+    "total_tokens": 3546,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 728,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 24775
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3540,
+    "completion_tokens": 15,
+    "total_tokens": 3555,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 751,
+   "fingerprint": "0607311f797d0efa846d1d0de23ac3d3dca36281807d7753b95ea41b58db80c4",
+   "elapsed_ms": 26351
+  },
+  {
+   "choice": "e32",
+   "operation": "CLICK",
+   "target": "24",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 1.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3986,
+    "completion_tokens": 13,
+    "total_tokens": 3999,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 537,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 27093
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2311,
+    "completion_tokens": 20,
+    "total_tokens": 2331,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 630,
+   "fingerprint": "a4172ebccb293dba79e3b5c24bd7dc142230b1e2c7c1bb93f99ed610cc2a7335",
+   "elapsed_ms": 27922
+  },
+  {
+   "choice": "e32",
+   "operation": "CLICK",
+   "target": "24",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 1.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3985,
+    "completion_tokens": 13,
+    "total_tokens": 3998,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 535,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 28652
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2310,
+    "completion_tokens": 13,
+    "total_tokens": 2323,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 668,
+   "fingerprint": "b77825000c0835c151f627bffa1612652e262551edaaf165e5874c14c21e024a",
+   "elapsed_ms": 29525
+  },
+  {
+   "choice": "e14",
+   "operation": "CLICK",
+   "target": "14",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 1.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2912,
+    "completion_tokens": 15,
+    "total_tokens": 2927,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 714,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 30571
+  },
+  {
+   "choice": "e19",
+   "operation": "TYPE_TEXT",
+   "target": "19",
+   "confidence": 1.0,
+   "probabilities": {
+    "e19": 1.0,
+    "e21": 0.0,
+    "e23": 0.0,
+    "e25": 0.0,
+    "e29": 0.0,
+    "e34": 0.0,
+    "e38": 0.0,
+    "e41": 0.0,
+    "e43": 0.0,
+    "e45": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3530,
+    "completion_tokens": 14,
+    "total_tokens": 3544,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 627,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 31491
+  },
+  {
+   "choice": "e31",
+   "operation": "CLICK",
+   "target": "26",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 1.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3537,
+    "completion_tokens": 13,
+    "total_tokens": 3550,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 795,
+   "fingerprint": "0607311f797d0efa846d1d0de23ac3d3dca36281807d7753b95ea41b58db80c4",
+   "elapsed_ms": 32957
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2410,
+    "completion_tokens": 13,
+    "total_tokens": 2423,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 548,
+   "fingerprint": "d767cca23006135f38f4ce2fc6d2dea369cb9af28dfbff847d6ef7e25e732830",
+   "elapsed_ms": 33745
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2910,
+    "completion_tokens": 18,
+    "total_tokens": 2928,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 587,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 34847
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2371,
+    "completion_tokens": 15,
+    "total_tokens": 2386,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 635,
+   "fingerprint": "016150daa4663b0897d16253e3d391446129f2306710e7cd01d844bdd923e932",
+   "elapsed_ms": 36453
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2910,
+    "completion_tokens": 13,
+    "total_tokens": 2923,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 595,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 37386
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2372,
+    "completion_tokens": 18,
+    "total_tokens": 2390,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 516,
+   "fingerprint": "13f7974d0c7535f8cae524438f809873eefcf1f770dd56016e5dd22e2c06df52",
+   "elapsed_ms": 38960
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3530,
+    "completion_tokens": 13,
+    "total_tokens": 3543,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 706,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 39865
+  },
+  {
+   "choice": "e18",
+   "operation": "TYPE_TEXT",
+   "target": "18",
+   "confidence": 1.0,
+   "probabilities": {
+    "e18": 1.0,
+    "e28": 0.0,
+    "e39": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3984,
+    "completion_tokens": 14,
+    "total_tokens": 3998,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 577,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 40641
+  },
+  {
+   "choice": "e32",
+   "operation": "CLICK",
+   "target": "24",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 1.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3991,
+    "completion_tokens": 13,
+    "total_tokens": 4004,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 526,
+   "fingerprint": "5bb720f3f995a394a84f742f66eeeaff01f789e685e58faa57a90a83db41a379",
+   "elapsed_ms": 41693
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4642,
+    "completion_tokens": 18,
+    "total_tokens": 4660,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 671,
+   "fingerprint": "b60c67e1b2865d53df02b203b93d23a7df91b991265972af39480995c3d93e3d",
+   "elapsed_ms": 42943
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4515,
+    "completion_tokens": 18,
+    "total_tokens": 4533,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 679,
+   "fingerprint": "a622d5d24a4c435732afb8fb749016002fb033ae2661339f56f4e343b36b07f3",
+   "elapsed_ms": 43652
+  },
+  {
+   "choice": "e3",
+   "operation": "CLICK",
+   "target": "3",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 1.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e42": 0.0,
+    "e44": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3531,
+    "completion_tokens": 13,
+    "total_tokens": 3544,
+    "prompt_tokens_details": {
+     "cached_tokens": 1920,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 530,
+   "fingerprint": "0ec6832bf676acadf3a5937469d953380b7ef16fb34900d90537e7425dc91ebe",
+   "elapsed_ms": 44381
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2913,
+    "completion_tokens": 13,
+    "total_tokens": 2926,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 856,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 45748
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 495,
+   "usage": {
+    "prompt_tokens": 409,
+    "completion_tokens": 7,
+    "total_tokens": 416,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "M87"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 532,
+   "usage": {
+    "prompt_tokens": 496,
+    "completion_tokens": 7,
+    "total_tokens": 503,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "M87"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 500,
+   "usage": {
+    "prompt_tokens": 486,
+    "completion_tokens": 7,
+    "total_tokens": 493,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "M87"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 774,
+   "usage": {
+    "prompt_tokens": 540,
+    "completion_tokens": 7,
+    "total_tokens": 547,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "M87"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 617,
+   "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 7,
+    "total_tokens": 544,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "M87"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 477,
+   "usage": {
+    "prompt_tokens": 497,
+    "completion_tokens": 7,
+    "total_tokens": 504,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "M87"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "1",
+    "label": "CDS website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "2",
+    "label": "CDS Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "3",
+    "label": "Simbad",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "4",
+    "label": "VizieR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "5",
+    "label": "Aladin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "6",
+    "label": "X-Match",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "7",
+    "label": "Other resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "8",
+    "label": "Help resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "What is SIMBAD ?",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "basic search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "by identifier",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "by coordinates",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "by criteria",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "reference query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "scripts",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "TAP queries",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Output options",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Object types",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Nomenclature & Dictionary",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Recommendations for Data Publication",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "User's guide",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Measurement description",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "List of journals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "User annotations documentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Query by urls",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Acknowledgment",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Presentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Image thumbnails",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Mobile version",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "SimWatch",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Releases history",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "32",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "SIMBAD search",
+    "index": "33",
+    "label": "SIMBAD search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "clear",
+    "index": "34",
+    "label": "clear",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "Install the Simbad basic search in your tool bar",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "1",
+    "label": "CDS website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "2",
+    "label": "CDS Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "3",
+    "label": "Simbad",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "4",
+    "label": "VizieR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "5",
+    "label": "Aladin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "6",
+    "label": "X-Match",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "7",
+    "label": "Other resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "8",
+    "label": "Help resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "What is SIMBAD ?",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "basic search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "by identifier",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "by coordinates",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "by criteria",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "reference query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "scripts",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "TAP queries",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Output options",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Object types",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Nomenclature & Dictionary",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Recommendations for Data Publication",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "User's guide",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Measurement description",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "List of journals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "User annotations documentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Query by urls",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Acknowledgment",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Presentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Image thumbnails",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Mobile version",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "SimWatch",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Releases history",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "32",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "SIMBAD search",
+    "index": "33",
+    "label": "SIMBAD search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "clear",
+    "index": "34",
+    "label": "clear",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "Install the Simbad basic search in your tool bar",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 46 observations; the full traces stay on the machine that made the runs"
+}

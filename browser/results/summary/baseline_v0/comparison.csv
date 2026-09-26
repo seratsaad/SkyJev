@@ -1,0 +1,16 @@
+category,task_id,gpt-jev_duration_seconds,browser-use_duration_seconds,browser-use (free)_duration_seconds,gpt-jev_success,browser-use_success,browser-use (free)_success
+lookup,arxiv_lookup_001,7.135,28.483,28.229,0.0,1.0,1.0
+lookup,eso_fors2_003,2.184,58.382,23.968,0.0,1.0,1.0
+lookup,simbad_betelgeuse_002,7.038,33.1235,19.7,0.0,1.0,1.0
+search,arxiv_author_103,4.03,52.2845,,1.0,1.0,
+search,simbad_vega_101,8.458,101.3295,,0.0,0.5,
+search,vizier_hipparcos_102,120.306,163.1655,,1.0,1.0,
+multistep,ads_author_203,9.223,63.437,,1.0,0.5,
+multistep,ned_ngc4993_202,11.714,71.009,,0.6666666666666666,1.0,
+multistep,simbad_m87_biblio_201,17.49,138.213,,0.0,0.5,
+interactive,eso_portal_target_301,6.271,233.8665,,0.0,0.0,
+interactive,eso_rawform_302,4.897,37.021,,1.0,1.0,
+interactive,exoplanet_archive_303,2.375,183.65699999999998,,0.0,0.0,
+adversarial,aladin_canvas_402,25.942,47.0295,,0.0,0.0,
+adversarial,eso_etc_403,2.02,78.655,,0.0,0.0,
+adversarial,gaia_archive_frames_401,2.022,83.0435,,0.0,1.0,

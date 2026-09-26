@@ -4,14 +4,16 @@
         --heads heads/qwen3-1.7b.json --model Qwen/Qwen3-1.7B --out reports/nights.json
 
 Nights: random programs (different seeds, dates, telescopes from the training set) plus the two
-demo programs under several weather seeds. For every night: the score of each policy, the
-pilot-oracle score (hindsight-optimal search) and the upper bound; reported as the fraction of
-the oracle and of the bound, with the number of targets finished. Decisions per night and
+demo programs under several weather seeds; with `--mode queue`, random queue programs only
+(`--policies list,greedy,queue`). For every night: the score of each policy, the pilot-oracle
+score (hindsight-optimal search) and the upper bound; reported as the fraction of the oracle and
+of the bound, with the number of targets finished. Decisions per night and
 wall-clock per decision are recorded (the LLM policies are slow; the planner is not).
 
 Policies:
   list      - go down the list in order
   greedy    - the planner's merit policy (what the console recommends without models)
+  queue     - the queue observer's rule: finishable blocks first, best priority, sets soonest
   lookahead - top candidates re-ranked by projecting the rest of the night under the forecast
   gbdt    - greedy candidates ranked by a gradient-boosted regret model on planner numbers (no LLM)
   anyjev  - candidates ranked by System 1 (AnyJev L2 heads on a local LLM)
@@ -28,6 +30,8 @@ from typing import Dict, List
 import numpy as np
 
 from obsassist.paths import DECISIONS, HEADS, REPORTS
+
+LIGHT = ("list", "greedy", "queue", "lookahead")  # model-free policies: one night per process
 
 
 class RankedPolicy:
@@ -122,15 +126,17 @@ def gpt_policy(model: str = "gpt-5.6-luna", effort: str = "low"):
     return RankedPolicy(f"gpt:{model}", score)
 
 
-def nights(n_random: int, seed0: int = 500000) -> List[tuple]:
+def nights(n_random: int, seed0: int = 500000, mode: str = "classical") -> List[tuple]:
+    """Random programs, plus the demo programs under three weather seeds (classical mode only)."""
     from obsassist.programs.generator import random_date
 
     rng = np.random.default_rng(seed0)
+    kind = "random" if mode == "classical" else mode
     out = []
     for k in range(n_random):
         tel = ("clay", "keck1")[k % 2]
-        out.append(("random", tel, random_date(rng), int(rng.integers(1_000_000)), int(rng.integers(1_000_000))))
-    for s in (11, 12, 13):
+        out.append((kind, tel, random_date(rng), int(rng.integers(1_000_000)), int(rng.integers(1_000_000))))
+    for s in (11, 12, 13) if mode == "classical" else ():
         out.append(("demo", "clay_mike_darktime", None, None, s))
         out.append(("demo", "keck1_lris_tonight", None, None, s))
     return out
@@ -142,18 +148,21 @@ def build_model(spec):
     from obsassist.targets import builtin_programs, load_program
 
     kind, a, date, pseed, wseed = spec
-    prog = generate_program(a, date, seed=pseed) if kind == "random" else load_program(builtin_programs()[a])
+    if kind == "demo":
+        prog = load_program(builtin_programs()[a])
+    else:
+        prog = generate_program(a, date, seed=pseed, mode="queue" if kind == "queue" else "classical")
     return NightModel(prog, seed=wseed)
 
 
 def _light_policy(name):
-    from obsassist.planning.planner import GreedyPolicy, ListOrderPolicy
+    from obsassist.planning.planner import GreedyPolicy, ListOrderPolicy, QueueRulePolicy
 
     if name == "lookahead":
         from obsassist.planning.lookahead import LookaheadPolicy
 
         return LookaheadPolicy()
-    return {"list": ListOrderPolicy, "greedy": GreedyPolicy}[name]()
+    return {"list": ListOrderPolicy, "greedy": GreedyPolicy, "queue": QueueRulePolicy}[name]()
 
 
 def _night_row(args, pols=None) -> dict:
@@ -229,6 +238,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--nights", type=int, default=20)
     ap.add_argument("--policies", default="list,greedy,gbdt")
+    ap.add_argument("--mode", choices=("classical", "queue"), default="classical", help="random programs of this kind")
     ap.add_argument("--train", default=str(DECISIONS / "train_decisions.jsonl"))
     ap.add_argument("--model", default="Qwen/Qwen3-1.7B")
     ap.add_argument("--heads", default=str(HEADS / "qwen3-1.7b.json"))
@@ -244,15 +254,15 @@ def main(argv=None):
     ap.add_argument("--out", default=str(REPORTS / "nights.json"))
     a = ap.parse_args(argv)
     names = a.policies.split(",")
-    pols = {n: _light_policy(n) for n in names if n in ("list", "greedy", "lookahead")}
+    pols = {n: _light_policy(n) for n in names if n in LIGHT}
     if "gbdt" in names:
         pols["gbdt"] = gbdt_policy(a.train)
     if "anyjev" in names:
         pols["anyjev"] = anyjev_policy(a.model, a.heads)
     if "gpt" in names:
         pols["gpt"] = gpt_policy(a.gpt_model)
-    specs = nights(a.nights)
-    light = set(names) <= {"list", "greedy", "lookahead"}
+    specs = nights(a.nights, mode=a.mode)
+    light = set(names) <= set(LIGHT)
     if light and a.workers > 1:  # model-free policies: one night per process
         from concurrent.futures import ProcessPoolExecutor
 

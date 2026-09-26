@@ -1,0 +1,62 @@
+{
+ "task_id": "arxiv_lookup_001",
+ "category": "lookup",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 1,
+ "started_at": "2026-09-22T21:52:20+00:00",
+ "goal": "Open the arXiv abstract page for the paper with identifier 2306.06308.",
+ "start_url": "https://arxiv.org/",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 31.526,
+ "goal_sent": "Start at https://arxiv.org/ . Open the arXiv abstract page for the paper with identifier 2306.06308. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 4,
+ "urls": [
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/abs/2306.06308"
+ ],
+ "actions": [
+  "navigate",
+  "click",
+  "input",
+  "send_keys",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The arXiv abstract page for paper identifier 2306.06308 has been successfully opened using the site's search interface, fulfilling the user request. The page shows the title 'The Early Data Release of the Dark Energy Spectroscopic Instrument' along with authors, submission date, and access links. No direct URL typing was used beyond initial navigation to arXiv.org homepage and subsequent search input as instructed.",
+ "tokens": 78551,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "CCE801B438C4F4A6D91B97809DAF0375",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://arxiv.org/abs/2306.06308"
+   },
+   {
+    "passed": true,
+    "detail": "'arXiv:2306.06308' found in 4293 chars"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://arxiv.org/abs/2306.06308",
+ "model_calls": 4,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 3,
+  "url": "https://arxiv.org/abs/2306.06308"
+ },
+ "failure_type": null
+}

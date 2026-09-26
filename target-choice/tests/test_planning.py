@@ -1,4 +1,4 @@
-"""The planner (candidates, exposure lengths, projection), the oracle's guarantees (pilot >= greedy,
+"""The planner (candidates, exposure lengths, projection, the queue rule), the oracle's guarantees (pilot >= greedy,
 the upper bound is a bound), the batch CLI and the catalog exports."""
 
 import json
@@ -10,7 +10,16 @@ from obsassist.astro.ephem import NightEphem, parse_dec, parse_ra
 from obsassist.planning import oracle as O
 from obsassist.planning.catalogs import keck_starlist, magellan_catalog
 from obsassist.planning.oracle import pilot, upper_bound
-from obsassist.planning.planner import GreedyPolicy, Nowcast, _exp_len, candidates, project, run_policy
+from obsassist.planning.planner import (
+    Candidate,
+    GreedyPolicy,
+    Nowcast,
+    QueueRulePolicy,
+    _exp_len,
+    candidates,
+    project,
+    run_policy,
+)
 from obsassist.programs.generator import generate_program
 from obsassist.sim.night import NightModel
 from obsassist.targets import builtin_programs, load_program
@@ -157,3 +166,54 @@ def test_catalog_exports():
     assert len(rows) == len(p.targets) and all(len(r.split()) == 16 for r in rows)
     sl = keck_starlist(load_program(builtin_programs()["keck1_lris_tonight"]))
     assert "2000.0" in sl and len(sl.splitlines()) == 15
+
+
+def _cand(i, priority, left, merit):
+    return Candidate(
+        i=i,
+        name=f"Q1-T{i:02d}",
+        priority=priority,
+        weight=1.0,
+        t_exp=600.0,
+        snr_now=0.0,
+        goal=10.0,
+        snr1=3.0,
+        n_needed=12,
+        time_needed_min=60.0,
+        overhead_min=5.0,
+        window_left_min=left,
+        airmass=1.2,
+        fwhm_pred=0.8,
+        efficiency=1.0,
+        urgency=0.5,
+        merit=merit,
+        feasible=True,
+    )
+
+
+def test_queue_rule_picks_best_priority_finishable_then_soonest_setting():
+    """Blocks that can finish (merit > 0) first, then the best priority, then the soonest setting;
+    the greedy pick (highest merit) differs."""
+    feas = [_cand(0, 1, 30.0, 0.0), _cand(1, 2, 200.0, 0.1), _cand(2, 2, 90.0, 0.05), _cand(3, 3, 20.0, 0.5)]
+    assert QueueRulePolicy().pick(feas)[0].i == 2
+    assert GreedyPolicy().pick(feas)[0].i == 3
+    # nothing can finish: best priority, soonest setting among all
+    assert QueueRulePolicy().pick([_cand(0, 2, 30.0, 0.0), _cand(4, 1, 50.0, 0.0), _cand(5, 1, 10.0, 0.0)])[0].i == 5
+
+
+def test_queue_rule_plays_a_queue_night():
+    m = NightModel(generate_program("clay", "2026-03-12", seed=1, mode="queue"), seed=1)
+    s, log = run_policy(m, QueueRulePolicy())
+    assert 0 <= m.score(s) <= m.max_score()
+    picks = [e["action"] for e in log if e["action"]["kind"] == "observe"]
+    assert picks and all(p["reason"].startswith("queue rule") for p in picks)
+
+
+def test_load_rows_is_independent_of_file_order(tmp_path):
+    from obsassist.learn.fit import load_rows
+
+    rows = [{"night": n, "t": t, "candidate": c} for n, t, c in [(2, 5.0, "a"), (1, 9.0, "b"), (1, 3.0, "c")]]
+    a, b = tmp_path / "a.jsonl", tmp_path / "b.jsonl"
+    a.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+    b.write_text("\n".join(json.dumps(r) for r in rows[::-1]) + "\n")
+    assert list(load_rows(str(a))) == list(load_rows(str(b))) == [(1, 3.0), (1, 9.0), (2, 5.0)]

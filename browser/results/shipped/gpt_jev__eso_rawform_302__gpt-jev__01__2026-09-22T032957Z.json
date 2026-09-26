@@ -1,0 +1,2662 @@
+{
+ "task_id": "eso_rawform_302",
+ "category": "interactive",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 1,
+ "started_at": "2026-09-22T03:29:57+00:00",
+ "goal": "In the ESO raw data archive query form, search for raw observations of the target HD 100546 and show the result table.",
+ "start_url": "https://archive.eso.org/eso/eso_archive_main.html",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "done",
+ "error": null,
+ "setup_seconds": 0.093,
+ "stale_loop_limit": 8,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"
+   },
+   {
+    "passed": true,
+    "detail": "match='HD 100546'"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query",
+ "duration_seconds": 4.897,
+ "wall_seconds": 5.048,
+ "steps": 2,
+ "model_calls": 6,
+ "chooser_calls": 5,
+ "text_helper_calls": 1,
+ "chooser_tokens": 69397,
+ "text_tokens": 916,
+ "chooser_latency_ms_median": 598,
+ "protocol_calls": 36,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 24,
+  "Input.dispatchMouseEvent": 4,
+  "Input.dispatchKeyEvent": 2,
+  "Input.insertText": 1
+ },
+ "stale_retries": 2,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query"
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query",
+  "title": "ESO Archive Raw Data",
+  "omitted_actions": 0,
+  "n_actions": 48
+ },
+ "failure_type": null,
+ "history": [
+  {
+   "step": 1,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e25",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 1104,
+   "text": "HD 100546",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 512,
+   "operation": "TYPE_TEXT",
+   "target": "20",
+   "page_changed": true,
+   "url": "https://archive.eso.org/eso/eso_archive_main.html",
+   "usage": {
+    "prompt_tokens": 30196,
+    "completion_tokens": 14,
+    "total_tokens": 30210,
+    "prompt_tokens_details": {
+     "cached_tokens": 29952,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1673,
+   "elapsed_ms": 1700
+  },
+  {
+   "step": 2,
+   "action": "Search",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 672,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "12",
+   "page_changed": true,
+   "url": "https://archive.eso.org/wdb/wdb/eso/eso_archive_main/query",
+   "usage": {
+    "prompt_tokens": 30235,
+    "completion_tokens": 18,
+    "total_tokens": 30253,
+    "prompt_tokens_details": {
+     "cached_tokens": 30080,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2395,
+   "elapsed_ms": 3136
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e25",
+   "operation": "TYPE_TEXT",
+   "target": "20",
+   "confidence": 1.0,
+   "probabilities": {
+    "e19": 0.0,
+    "e25": 1.0,
+    "e30": 0.0,
+    "e33": 0.0,
+    "e36": 0.0,
+    "e47": 0.0,
+    "e50": 0.0,
+    "e77": 0.0,
+    "e105": 0.0,
+    "e119": 0.0,
+    "e127": 0.0,
+    "e207": 0.0,
+    "e220": 0.0,
+    "e224": 0.0,
+    "e228": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 30196,
+    "completion_tokens": 14,
+    "total_tokens": 30210,
+    "prompt_tokens_details": {
+     "cached_tokens": 29952,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 1104,
+   "fingerprint": "be4e71cd361069fbfa9e38556ac8d3734b8b8f0ca2ebe0fc87a018a207673cff",
+   "elapsed_ms": 1113
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "12",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e26": 0.0,
+    "e29": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e51": 0.0,
+    "e76": 0.0,
+    "e78": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e120": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e125": 0.0,
+    "e126": 0.0,
+    "e128": 0.0,
+    "e129": 0.0,
+    "e130": 0.0,
+    "e131": 0.0,
+    "e132": 0.0,
+    "e133": 0.0,
+    "e134": 0.0,
+    "e135": 0.0,
+    "e136": 0.0,
+    "e137": 0.0,
+    "e138": 0.0,
+    "e139": 0.0,
+    "e140": 0.0,
+    "e141": 0.0,
+    "e142": 0.0,
+    "e143": 0.0,
+    "e144": 0.0,
+    "e145": 0.0,
+    "e146": 0.0,
+    "e147": 0.0,
+    "e148": 0.0,
+    "e149": 0.0,
+    "e150": 0.0,
+    "e151": 0.0,
+    "e152": 0.0,
+    "e153": 0.0,
+    "e154": 0.0,
+    "e155": 0.0,
+    "e156": 0.0,
+    "e157": 0.0,
+    "e158": 0.0,
+    "e159": 0.0,
+    "e160": 0.0,
+    "e161": 0.0,
+    "e162": 0.0,
+    "e163": 0.0,
+    "e164": 0.0,
+    "e165": 0.0,
+    "e166": 0.0,
+    "e167": 0.0,
+    "e168": 0.0,
+    "e169": 0.0,
+    "e170": 0.0,
+    "e171": 0.0,
+    "e172": 0.0,
+    "e173": 0.0,
+    "e174": 0.0,
+    "e175": 0.0,
+    "e176": 0.0,
+    "e177": 0.0,
+    "e178": 0.0,
+    "e179": 0.0,
+    "e180": 0.0,
+    "e181": 0.0,
+    "e182": 0.0,
+    "e183": 0.0,
+    "e184": 0.0,
+    "e185": 0.0,
+    "e186": 0.0,
+    "e187": 0.0,
+    "e188": 0.0,
+    "e189": 0.0,
+    "e190": 0.0,
+    "e191": 0.0,
+    "e192": 0.0,
+    "e193": 0.0,
+    "e194": 0.0,
+    "e195": 0.0,
+    "e196": 0.0,
+    "e197": 0.0,
+    "e198": 0.0,
+    "e199": 0.0,
+    "e200": 0.0,
+    "e208": 0.0,
+    "e209": 0.0,
+    "e210": 0.0,
+    "e221": 0.0,
+    "e222": 0.0,
+    "e223": 0.0,
+    "e225": 0.0,
+    "e226": 0.0,
+    "e227": 0.0,
+    "e229": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 30235,
+    "completion_tokens": 18,
+    "total_tokens": 30253,
+    "prompt_tokens_details": {
+     "cached_tokens": 30080,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 672,
+   "fingerprint": "8f3575043e4567eeb38a9bcc339b8b4df70f9ad6b51ed955ff2c3117d19db615",
+   "elapsed_ms": 2379
+  },
+  {
+   "choice": "DONE",
+   "operation": "DONE",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "DONE": 1.0
+   },
+   "operation_probabilities": {
+    "DONE": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1143,
+    "completion_tokens": 13,
+    "total_tokens": 1156,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 598,
+   "fingerprint": "bb6315670bf18bb7f78cb4cb7b3be3fed58537d8ea92fb45722053ed51bb9529",
+   "elapsed_ms": 3737
+  },
+  {
+   "choice": "DONE",
+   "operation": "DONE",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "DONE": 1.0
+   },
+   "operation_probabilities": {
+    "DONE": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3876,
+    "completion_tokens": 13,
+    "total_tokens": 3889,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 554,
+   "fingerprint": "7d93ce1eb1042550bfc00c38a7ad1991ec247ab545eed9ce56adbcdd82ba67e7",
+   "elapsed_ms": 4346
+  },
+  {
+   "choice": "DONE",
+   "operation": "DONE",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "DONE": 1.0
+   },
+   "operation_probabilities": {
+    "DONE": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3876,
+    "completion_tokens": 13,
+    "total_tokens": 3889,
+    "prompt_tokens_details": {
+     "cached_tokens": 3712,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 499,
+   "fingerprint": "24e1b420e80553a114f43ebc6649f102cd9ab9f30e3ca552447677f25980b2c9",
+   "elapsed_ms": 4885
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 512,
+   "usage": {
+    "prompt_tokens": 907,
+    "completion_tokens": 9,
+    "total_tokens": 916,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "HD 100546"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "ESO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "How to use?",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Instrument-specific Interfaces",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "ESO Archive Overview",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Archive FAQ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Archive Facility HOME",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "ESO HOME",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "help page",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "generic data products",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "advanced data products is available",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Read more...",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Search",
+    "index": "12",
+    "label": "Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Reset",
+    "index": "13",
+    "label": "Reset",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "html table",
+    "index": "14",
+    "label": "html table ascii fixed length/display ascii fixed length/download ascii csv/download votable/display votable/download",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "14:1",
+      "label": "html table ascii fixed length/display ascii fixed length/download ascii csv/download votable/display votable/download \u2192 ascii fixed length/display",
+      "value": "ascii/display"
+     },
+     {
+      "index": "14:2",
+      "label": "html table ascii fixed length/display ascii fixed length/download ascii csv/download votable/display votable/download \u2192 ascii fixed length/download",
+      "value": "ascii/download"
+     },
+     {
+      "index": "14:3",
+      "label": "html table ascii fixed length/display ascii fixed length/download ascii csv/download votable/display votable/download \u2192 ascii csv/download",
+      "value": "csv/download"
+     },
+     {
+      "index": "14:4",
+      "label": "html table ascii fixed length/display ascii fixed length/download ascii csv/download votable/display votable/download \u2192 votable/display",
+      "value": "votable/display"
+     },
+     {
+      "index": "14:5",
+      "label": "html table ascii fixed length/display ascii fixed length/download ascii csv/download votable/display votable/download \u2192 votable/download",
+      "value": "votable/download"
+     }
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "200",
+    "index": "15",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "All Fields",
+    "index": "16",
+    "label": "All Fields",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Syntax Help",
+    "index": "17",
+    "label": "Syntax Help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Target Name",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "true",
+    "index": "19",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "20",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Resolved by SIMBAD",
+    "index": "21",
+    "label": "Resolved by SIMBAD Resolved by NED OBJECT - FITS keyword",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "21:1",
+      "label": "Resolved by SIMBAD Resolved by NED OBJECT - FITS keyword \u2192 Resolved by NED",
+      "value": "ned"
+     },
+     {
+      "index": "21:2",
+      "label": "Resolved by SIMBAD Resolved by NED OBJECT - FITS keyword \u2192 OBJECT - FITS keyword",
+      "value": "none"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "RA",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "23",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "DEC",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "25",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Search Box",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "00 10 00",
+    "index": "27",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Input",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "RA(h) DEC(deg)",
+    "index": "29",
+    "label": "RA(h) DEC(deg) RA(deg) DEC(deg)",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "29:1",
+      "label": "RA(h) DEC(deg) RA(deg) DEC(deg) \u2192 RA(deg) DEC(deg)",
+      "value": "degrees"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "Output",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "true",
+    "index": "31",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Sexagesimal (h, deg)",
+    "index": "32",
+    "label": "Sexagesimal (h, deg) Decimal (deg, deg) Decimal (h, deg)",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "32:1",
+      "label": "Sexagesimal (h, deg) Decimal (deg, deg) Decimal (h, deg) \u2192 Decimal (deg, deg)",
+      "value": "DecimDeg"
+     },
+     {
+      "index": "32:2",
+      "label": "Sexagesimal (h, deg) Decimal (deg, deg) Decimal (h, deg) \u2192 Decimal (h, deg)",
+      "value": "DecimHour"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "List of Targets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "Night",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "35",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "36",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "Start",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "38",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "12 hrs [UT]",
+    "index": "39",
+    "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT]",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "39:1",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 00 hrs [UT]",
+      "value": "00"
+     },
+     {
+      "index": "39:2",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 01 hrs [UT]",
+      "value": "01"
+     },
+     {
+      "index": "39:3",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 02 hrs [UT]",
+      "value": "02"
+     },
+     {
+      "index": "39:4",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 03 hrs [UT]",
+      "value": "03"
+     },
+     {
+      "index": "39:5",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 04 hrs [UT]",
+      "value": "04"
+     },
+     {
+      "index": "39:6",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 05 hrs [UT]",
+      "value": "05"
+     },
+     {
+      "index": "39:7",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 06 hrs [UT]",
+      "value": "06"
+     },
+     {
+      "index": "39:8",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 07 hrs [UT]",
+      "value": "07"
+     },
+     {
+      "index": "39:9",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 08 hrs [UT]",
+      "value": "08"
+     },
+     {
+      "index": "39:10",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 09 hrs [UT]",
+      "value": "09"
+     },
+     {
+      "index": "39:11",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 10 hrs [UT]",
+      "value": "10"
+     },
+     {
+      "index": "39:12",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 11 hrs [UT]",
+      "value": "11"
+     },
+     {
+      "index": "39:13",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 13 hrs [UT]",
+      "value": "13"
+     },
+     {
+      "index": "39:14",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 14 hrs [UT]",
+      "value": "14"
+     },
+     {
+      "index": "39:15",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 15 hrs [UT]",
+      "value": "15"
+     },
+     {
+      "index": "39:16",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 16 hrs [UT]",
+      "value": "16"
+     },
+     {
+      "index": "39:17",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 17 hrs [UT]",
+      "value": "17"
+     },
+     {
+      "index": "39:18",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 18 hrs [UT]",
+      "value": "18"
+     },
+     {
+      "index": "39:19",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 19 hrs [UT]",
+      "value": "19"
+     },
+     {
+      "index": "39:20",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 20 hrs [UT]",
+      "value": "20"
+     },
+     {
+      "index": "39:21",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 21 hrs [UT]",
+      "value": "21"
+     },
+     {
+      "index": "39:22",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 22 hrs [UT]",
+      "value": "22"
+     },
+     {
+      "index": "39:23",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 23 hrs [UT]",
+      "value": "23"
+     },
+     {
+      "index": "39:24",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 24 hrs [UT]",
+      "value": "24"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "End",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "41",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "12 hrs [UT]",
+    "index": "42",
+    "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT]",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "42:1",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 00 hrs [UT]",
+      "value": "00"
+     },
+     {
+      "index": "42:2",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 01 hrs [UT]",
+      "value": "01"
+     },
+     {
+      "index": "42:3",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 02 hrs [UT]",
+      "value": "02"
+     },
+     {
+      "index": "42:4",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 03 hrs [UT]",
+      "value": "03"
+     },
+     {
+      "index": "42:5",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 04 hrs [UT]",
+      "value": "04"
+     },
+     {
+      "index": "42:6",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 05 hrs [UT]",
+      "value": "05"
+     },
+     {
+      "index": "42:7",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 06 hrs [UT]",
+      "value": "06"
+     },
+     {
+      "index": "42:8",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 07 hrs [UT]",
+      "value": "07"
+     },
+     {
+      "index": "42:9",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 08 hrs [UT]",
+      "value": "08"
+     },
+     {
+      "index": "42:10",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 09 hrs [UT]",
+      "value": "09"
+     },
+     {
+      "index": "42:11",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 10 hrs [UT]",
+      "value": "10"
+     },
+     {
+      "index": "42:12",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 11 hrs [UT]",
+      "value": "11"
+     },
+     {
+      "index": "42:13",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 13 hrs [UT]",
+      "value": "13"
+     },
+     {
+      "index": "42:14",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 14 hrs [UT]",
+      "value": "14"
+     },
+     {
+      "index": "42:15",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 15 hrs [UT]",
+      "value": "15"
+     },
+     {
+      "index": "42:16",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 16 hrs [UT]",
+      "value": "16"
+     },
+     {
+      "index": "42:17",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 17 hrs [UT]",
+      "value": "17"
+     },
+     {
+      "index": "42:18",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 18 hrs [UT]",
+      "value": "18"
+     },
+     {
+      "index": "42:19",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 19 hrs [UT]",
+      "value": "19"
+     },
+     {
+      "index": "42:20",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 20 hrs [UT]",
+      "value": "20"
+     },
+     {
+      "index": "42:21",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 21 hrs [UT]",
+      "value": "21"
+     },
+     {
+      "index": "42:22",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 22 hrs [UT]",
+      "value": "22"
+     },
+     {
+      "index": "42:23",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 23 hrs [UT]",
+      "value": "23"
+     },
+     {
+      "index": "42:24",
+      "label": "00 hrs [UT] 01 hrs [UT] 02 hrs [UT] 03 hrs [UT] 04 hrs [UT] 05 hrs [UT] 06 hrs [UT] 07 hrs [UT] 08 hrs [UT] 09 hrs [UT] 10 hrs [UT] 11 hrs [UT] 12 hrs [UT] 13 hrs [UT] 14 hrs [UT] 15 hrs [UT] 16 hrs [UT] 17 hrs [UT] 18 hrs [UT] 19 hrs [UT] 20 hrs [UT] 21 hrs [UT] 22 hrs [UT] 23 hrs [UT] 24 hrs [UT] \u2192 24 hrs [UT]",
+      "value": "24"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "43",
+    "label": "Program ID",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "true",
+    "index": "44",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "45",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "Program Type",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "47",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Any",
+    "index": "48",
+    "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "48:1",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 Normal",
+      "value": "0"
+     },
+     {
+      "index": "48:2",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 GTO",
+      "value": "1"
+     },
+     {
+      "index": "48:3",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 DDT",
+      "value": "2"
+     },
+     {
+      "index": "48:4",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 ToO",
+      "value": "3"
+     },
+     {
+      "index": "48:5",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 Large",
+      "value": "4"
+     },
+     {
+      "index": "48:6",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 Short",
+      "value": "5"
+     },
+     {
+      "index": "48:7",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 Calibration",
+      "value": "6"
+     },
+     {
+      "index": "48:8",
+      "label": "Any Normal GTO DDT ToO Large Short Calibration Monitoring \u2192 Monitoring",
+      "value": "7"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "49",
+    "label": "PI CoI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "50",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "51",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "52",
+    "label": "SV",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "53",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Any",
+    "index": "54",
+    "label": "Any Service Visitor",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "54:1",
+      "label": "Any Service Visitor \u2192 Service",
+      "value": "s"
+     },
+     {
+      "index": "54:2",
+      "label": "Any Service Visitor \u2192 Visitor",
+      "value": "v"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "55",
+    "label": "Title",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "56",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "57",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "MarkOptical",
+    "index": "58",
+    "label": "MarkOptical",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "MarkInfrared",
+    "index": "59",
+    "label": "MarkInfrared",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "ALL",
+    "index": "60",
+    "label": "ALL",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "NONE",
+    "index": "61",
+    "label": "NONE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "EFOSC;'IMA%'",
+    "checked": "false",
+    "index": "62",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "63",
+    "label": "EFOSC2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "EMMI;'IMA%'",
+    "checked": "false",
+    "index": "64",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "65",
+    "label": "EMMI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "ERIS",
+    "checked": "false",
+    "index": "66",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "67",
+    "label": "ERIS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "FORS1;'IMA%'",
+    "checked": "false",
+    "index": "68",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "69",
+    "label": "FORS1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "FORS2;'IMA%'",
+    "checked": "false",
+    "index": "70",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "71",
+    "label": "FORS2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "HAWKI;'IMA%'",
+    "checked": "false",
+    "index": "72",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "73",
+    "label": "HAWKI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "GROND",
+    "checked": "false",
+    "index": "74",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "75",
+    "label": "GROND",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "ISAAC;'IMA%'",
+    "checked": "false",
+    "index": "76",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "77",
+    "label": "ISAAC",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "ALL",
+    "index": "78",
+    "label": "ALL",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "NONE",
+    "index": "79",
+    "label": "NONE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "CES",
+    "checked": "false",
+    "index": "80",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "81",
+    "label": "CES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "CRIRE;'SPECTRUM%'",
+    "checked": "false",
+    "index": "82",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "83",
+    "label": "CRIRES",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "EFOSC;'SPECTRUM%'",
+    "checked": "false",
+    "index": "84",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "85",
+    "label": "EFOSC2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "EMMI;'SPECTRUM%','ECHELLE%','MOS%'",
+    "checked": "false",
+    "index": "86",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "87",
+    "label": "EMMI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "ERIS;'IFU%','%LSS%'",
+    "checked": "false",
+    "index": "88",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "89",
+    "label": "ERIS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "ESPRESSO",
+    "checked": "false",
+    "index": "90",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "91",
+    "label": "ESPRESSO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "FEROS",
+    "checked": "false",
+    "index": "92",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "93",
+    "label": "FEROS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "FORS1;'SPECTRUM%','MOS%','IMAGE_SPECTRUM%'",
+    "checked": "false",
+    "index": "94",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "95",
+    "label": "FORS1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "ALL",
+    "index": "96",
+    "label": "ALL",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "NONE",
+    "index": "97",
+    "label": "NONE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "AMBER",
+    "checked": "false",
+    "index": "98",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "99",
+    "label": "AMBER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "GRAVITY",
+    "checked": "false",
+    "index": "100",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "101",
+    "label": "GRAVITY",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "MATISSE",
+    "checked": "false",
+    "index": "102",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "103",
+    "label": "MATISSE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "MIDI",
+    "checked": "false",
+    "index": "104",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "105",
+    "label": "MIDI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "PIONIER",
+    "checked": "false",
+    "index": "106",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "107",
+    "label": "PIONIER",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "VINCI",
+    "checked": "false",
+    "index": "108",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "109",
+    "label": "VINCI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "ALL",
+    "index": "110",
+    "label": "ALL",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "NONE",
+    "index": "111",
+    "label": "NONE",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "ALPACA",
+    "checked": "false",
+    "index": "112",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "113",
+    "label": "ALPACA",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "APICAM",
+    "checked": "false",
+    "index": "114",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "115",
+    "label": "APICAM",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "APEXBOL",
+    "checked": "false",
+    "index": "116",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "117",
+    "label": "BOL",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "APEXHET",
+    "checked": "false",
+    "index": "118",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "119",
+    "label": "HET",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "FAIM6",
+    "checked": "false",
+    "index": "120",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "121",
+    "label": "FAIM6",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "FAIM7",
+    "checked": "false",
+    "index": "122",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "123",
+    "label": "FAIM7",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "GRIPS19",
+    "checked": "false",
+    "index": "124",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "125",
+    "label": "GRIPS19",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "LGSF",
+    "checked": "false",
+    "index": "126",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "127",
+    "label": "LGSF",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "128",
+    "label": "Type",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "true",
+    "index": "129",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Any",
+    "index": "130",
+    "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "130:1",
+      "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT \u2192 OBJECT",
+      "value": "OBJECT"
+     },
+     {
+      "index": "130:2",
+      "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT \u2192 STD",
+      "value": "STD"
+     },
+     {
+      "index": "130:3",
+      "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT \u2192 ASTROMETRY",
+      "value": "ASTROMETRY"
+     },
+     {
+      "index": "130:4",
+      "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT \u2192 BIAS",
+      "value": "BIAS"
+     },
+     {
+      "index": "130:5",
+      "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT \u2192 DARK",
+      "value": "DARK"
+     },
+     {
+      "index": "130:6",
+      "label": "Any OBJECT STD ASTROMETRY BIAS DARK FLAT \u2192 FLAT",
+      "value": "%FLAT"
+     }
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "131",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "132",
+    "label": "Mode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "true",
+    "index": "133",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "Any",
+    "index": "134",
+    "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "134:1",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 IMAGE",
+      "value": "IMAGE"
+     },
+     {
+      "index": "134:2",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 SPECTRUM",
+      "value": "SPECTRUM"
+     },
+     {
+      "index": "134:3",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 ECHELLE",
+      "value": "ECHELLE"
+     },
+     {
+      "index": "134:4",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 MOS",
+      "value": "MOS"
+     },
+     {
+      "index": "134:5",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 MXU",
+      "value": "MXU"
+     },
+     {
+      "index": "134:6",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 IFU",
+      "value": "%IFU"
+     },
+     {
+      "index": "134:7",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 POLARIMETRY",
+      "value": "POLARIMETRY"
+     },
+     {
+      "index": "134:8",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 CORONOGRAPHY",
+      "value": "CORONOGRAPHY"
+     },
+     {
+      "index": "134:9",
+      "label": "Any IMAGE SPECTRUM ECHELLE MOS MXU IFU POLARIMETRY CORONOGRAPHY INTERFEROMETRY \u2192 INTERFEROMETRY",
+      "value": "INTERFEROMETRY"
+     }
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "135",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "136",
+    "label": "Dataset ID",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "true",
+    "index": "137",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "138",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "139",
+    "label": "Orig Name",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "140",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "141",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "ESO",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "How to use?",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Instrument-specific Interfaces",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "ESO Archive Overview",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Archive FAQ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Archive Facility HOME",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "ESO HOME",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "registration form",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Request marked datasets",
+    "index": "9",
+    "label": "Request marked datasets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": " Reset ",
+    "index": "10",
+    "label": " Reset ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "MarkAll",
+    "index": "11",
+    "label": "MarkAll",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "MarkPublic",
+    "index": "12",
+    "label": "MarkPublic",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "MarkProprietary",
+    "index": "13",
+    "label": "MarkProprietary",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "New query",
+    "index": "14",
+    "label": "New query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Programmatic",
+    "index": "15",
+    "label": "Programmatic",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "M",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "More",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "HDR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "OBJECT",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Target Ra, Dec",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "Program_ID",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Instrument",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "Category",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "Type",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Mode",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Dataset ID",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "SAF+AMBER.2005-02-25T02:54:18.977",
+    "checked": "false",
+    "index": "27",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Header",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "60.A-9055(J)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "SAF+AMBER.2005-02-25T02:55:08.230",
+    "checked": "false",
+    "index": "31",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "Header",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "60.A-9055(J)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "SAF+AMBER.2005-02-25T02:55:22.364",
+    "checked": "false",
+    "index": "35",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "Header",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "60.A-9055(J)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "SAF+AMBER.2005-02-25T02:55:33.531",
+    "checked": "false",
+    "index": "39",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "41",
+    "label": "Header",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "42",
+    "label": "60.A-9055(J)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "SAF+AMBER.2005-02-25T02:55:43.578",
+    "checked": "false",
+    "index": "43",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "44",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "45",
+    "label": "Header",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "60.A-9055(J)",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 5 observations; the full traces stay on the machine that made the runs"
+}

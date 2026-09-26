@@ -1,0 +1,896 @@
+{
+ "task_id": "eso_portal_target_301",
+ "category": "interactive",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 1,
+ "started_at": "2026-09-22T03:29:37+00:00",
+ "goal": "In the ESO Science Portal, search the archive for observations of the target NGC 1068 and show the matching results.",
+ "start_url": "https://archive.eso.org/scienceportal/home",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "stale_loop",
+ "error": null,
+ "setup_seconds": 0.214,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": [
+   {
+    "passed": false,
+    "detail": "url=https://archive.eso.org/scienceportal/home"
+   },
+   {
+    "passed": false,
+    "detail": "no match for '(?i)NGC\\\\s*1068' in 18899 chars"
+   }
+  ],
+  "settle_seconds": 12.13
+ },
+ "final_url": "https://archive.eso.org/scienceportal/home",
+ "duration_seconds": 6.271,
+ "wall_seconds": 18.656,
+ "steps": 0,
+ "model_calls": 10,
+ "chooser_calls": 8,
+ "text_helper_calls": 2,
+ "chooser_tokens": 21522,
+ "text_tokens": 1396,
+ "chooser_latency_ms_median": 557.0,
+ "protocol_calls": 50,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 45
+ },
+ "stale_retries": 8,
+ "transient": {
+  "applicable": true,
+  "reached": false,
+  "at": null
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 2,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://archive.eso.org/scienceportal/home",
+  "title": "ESO Archive Science Portal",
+  "omitted_actions": 0,
+  "n_actions": 32
+ },
+ "failure_type": "unexecutable_target",
+ "history": [],
+ "decisions": [
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e19": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2332,
+    "completion_tokens": 14,
+    "total_tokens": 2346,
+    "prompt_tokens_details": {
+     "cached_tokens": 2176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 517,
+   "fingerprint": "161f54c16b25d8d1d4b40624fab51e4c02d8a86ca60385ec12ad61fca92a5e31",
+   "elapsed_ms": 571
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e19": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2332,
+    "completion_tokens": 14,
+    "total_tokens": 2346,
+    "prompt_tokens_details": {
+     "cached_tokens": 2176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 546,
+   "fingerprint": "161f54c16b25d8d1d4b40624fab51e4c02d8a86ca60385ec12ad61fca92a5e31",
+   "elapsed_ms": 1637
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e19": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2332,
+    "completion_tokens": 14,
+    "total_tokens": 2346,
+    "prompt_tokens_details": {
+     "cached_tokens": 2176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 708,
+   "fingerprint": "161f54c16b25d8d1d4b40624fab51e4c02d8a86ca60385ec12ad61fca92a5e31",
+   "elapsed_ms": 2369
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e19": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2332,
+    "completion_tokens": 14,
+    "total_tokens": 2346,
+    "prompt_tokens_details": {
+     "cached_tokens": 2176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 475,
+   "fingerprint": "161f54c16b25d8d1d4b40624fab51e4c02d8a86ca60385ec12ad61fca92a5e31",
+   "elapsed_ms": 2867
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e24": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3018,
+    "completion_tokens": 19,
+    "total_tokens": 3037,
+    "prompt_tokens_details": {
+     "cached_tokens": 2816,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 564,
+   "fingerprint": "522e9c2b4bf1752e4a887b9067c6ef7facdf88d811695bb47d276c9db56b5347",
+   "elapsed_ms": 3613
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e24": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3018,
+    "completion_tokens": 14,
+    "total_tokens": 3032,
+    "prompt_tokens_details": {
+     "cached_tokens": 2816,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 550,
+   "fingerprint": "522e9c2b4bf1752e4a887b9067c6ef7facdf88d811695bb47d276c9db56b5347",
+   "elapsed_ms": 4773
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e24": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3018,
+    "completion_tokens": 14,
+    "total_tokens": 3032,
+    "prompt_tokens_details": {
+     "cached_tokens": 2816,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 599,
+   "fingerprint": "522e9c2b4bf1752e4a887b9067c6ef7facdf88d811695bb47d276c9db56b5347",
+   "elapsed_ms": 5411
+  },
+  {
+   "choice": "e7",
+   "operation": "TYPE_TEXT",
+   "target": "6",
+   "confidence": 1.0,
+   "probabilities": {
+    "e7": 1.0,
+    "e24": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3018,
+    "completion_tokens": 19,
+    "total_tokens": 3037,
+    "prompt_tokens_details": {
+     "cached_tokens": 2816,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 751,
+   "fingerprint": "522e9c2b4bf1752e4a887b9067c6ef7facdf88d811695bb47d276c9db56b5347",
+   "elapsed_ms": 6221
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 496,
+   "usage": {
+    "prompt_tokens": 472,
+    "completion_tokens": 10,
+    "total_tokens": 482,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Target",
+   "value": "NGC 1068"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 535,
+   "usage": {
+    "prompt_tokens": 904,
+    "completion_tokens": 10,
+    "total_tokens": 914,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Target",
+   "value": "NGC 1068"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "button",
+    "value": "",
+    "index": "1",
+    "label": "Manage query parameters",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "2",
+    "label": "0  Datasets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "3",
+    "label": "0  Selected",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "SIN",
+    "index": "4",
+    "label": "SIN TAN",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "4:1",
+      "label": "SIN TAN \u2192 TAN",
+      "value": "TAN"
+     }
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "J2000",
+    "index": "5",
+    "label": "J2000 J2000d GAL",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "5:1",
+      "label": "J2000 J2000d GAL \u2192 J2000d",
+      "value": "J2000d"
+     },
+     {
+      "index": "5:2",
+      "label": "J2000 J2000d GAL \u2192 GAL",
+      "value": "GAL"
+     }
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "6",
+    "label": "Target",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "7",
+    "label": "Upload list of targets (supports drag-and-drop)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "8",
+    "label": "Reset all constraints",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "9",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "10",
+    "label": "Create a link to this page",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "11",
+    "label": "Broadcast the metadata via the Simple Application Messaging Protocol",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "12",
+    "label": "Download datasets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "13",
+    "label": "Help and feedback",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "14",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "Powered by Aladin Lite",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "16",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "00 00 00.0 +0 0 0",
+    "index": "17",
+    "label": "Search for an object...",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "18",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "19",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "20",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "Aladin Lite v3.7",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "22",
+    "label": "Help and feedback",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "23",
+    "label": "Continue",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "button",
+    "value": "",
+    "index": "1",
+    "label": "Manage query parameters",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "2",
+    "label": "4716115  Datasets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "3",
+    "label": "0  Selected",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "SIN",
+    "index": "4",
+    "label": "SIN TAN",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "4:1",
+      "label": "SIN TAN \u2192 TAN",
+      "value": "TAN"
+     }
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "J2000",
+    "index": "5",
+    "label": "J2000 J2000d GAL",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "5:1",
+      "label": "J2000 J2000d GAL \u2192 J2000d",
+      "value": "J2000d"
+     },
+     {
+      "index": "5:2",
+      "label": "J2000 J2000d GAL \u2192 GAL",
+      "value": "GAL"
+     }
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "6",
+    "label": "Target",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "7",
+    "label": "Search by polygon",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "8",
+    "label": "Upload list of targets (supports drag-and-drop)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "9",
+    "label": "Reset all constraints",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "10",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "11",
+    "label": "Create a link to this page",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "12",
+    "label": "Broadcast the metadata via the Simple Application Messaging Protocol",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "13",
+    "label": "Download datasets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "14",
+    "label": "Help and feedback",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "15",
+    "label": "Close",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "16",
+    "label": "Close",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "17",
+    "label": "Close",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "18",
+    "label": "Close",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "19",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Powered by Aladin Lite",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "21",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "15 55 23.62 -37 48 06.2",
+    "index": "22",
+    "label": "Search for an object...",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "23",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "24",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "25",
+    "label": "button",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Aladin Lite v3.7",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "27",
+    "label": "Help and feedback",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "28",
+    "label": "Continue",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 8 observations; the full traces stay on the machine that made the runs"
+}

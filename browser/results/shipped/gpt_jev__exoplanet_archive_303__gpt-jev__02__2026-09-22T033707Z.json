@@ -1,0 +1,1173 @@
+{
+ "task_id": "exoplanet_archive_303",
+ "category": "interactive",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 2,
+ "started_at": "2026-09-22T03:37:07+00:00",
+ "goal": "In the NASA Exoplanet Archive, open the overview page for the planet TRAPPIST-1 e.",
+ "start_url": "https://exoplanetarchive.ipac.caltech.edu/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "ready",
+ "error": "_IPCResponseTimeout: Runtime.evaluate timed out after 5s waiting for the daemon",
+ "setup_seconds": 0.435,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": "read failed: Runtime.evaluate timed out after 5s waiting for the daemon"
+ },
+ "final_url": "https://exoplanetarchive.ipac.caltech.edu/",
+ "duration_seconds": 2.375,
+ "wall_seconds": 35.61,
+ "steps": 2,
+ "model_calls": 5,
+ "chooser_calls": 4,
+ "text_helper_calls": 1,
+ "chooser_tokens": 14415,
+ "text_tokens": 516,
+ "chooser_latency_ms_median": 606.5,
+ "protocol_calls": 33,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 21,
+  "Input.dispatchMouseEvent": 4,
+  "Input.dispatchKeyEvent": 2,
+  "Input.insertText": 1
+ },
+ "stale_retries": 2,
+ "transient": {
+  "applicable": true,
+  "reached": false,
+  "at": null
+ },
+ "env_probe": {},
+ "last_page": {
+  "url": "https://exoplanetarchive.ipac.caltech.edu/",
+  "title": "NASA Exoplanet Archive",
+  "omitted_actions": 0,
+  "n_actions": 48
+ },
+ "failure_type": "browser_timeout",
+ "history": [
+  {
+   "step": 1,
+   "action": "Radius search returns all holdings in region. Leave blank for single object overview.",
+   "kind": "fill",
+   "choice": "e23",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 522,
+   "text": "TRAPPIST-1 e",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 509,
+   "operation": "TYPE_TEXT",
+   "target": "22",
+   "page_changed": true,
+   "url": "https://exoplanetarchive.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 3661,
+    "completion_tokens": 14,
+    "total_tokens": 3675,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1743,
+   "elapsed_ms": 1764
+  },
+  {
+   "step": 2,
+   "action": "Search",
+   "kind": "click",
+   "choice": "e21",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 567,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "20",
+   "page_changed": true,
+   "url": "https://exoplanetarchive.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 3726,
+    "completion_tokens": 13,
+    "total_tokens": 3739,
+    "prompt_tokens_details": {
+     "cached_tokens": 3584,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2351,
+   "elapsed_ms": 2375
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e19",
+   "operation": "TYPE_TEXT",
+   "target": "19",
+   "confidence": 0.95,
+   "probabilities": {
+    "e19": 1.0,
+    "e23": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3212,
+    "completion_tokens": 16,
+    "total_tokens": 3228,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 646,
+   "fingerprint": "6177efa8f8b532cf5e88567683e0b3cbdf278c9f3a501a5ad35c73eae9a26f11",
+   "elapsed_ms": 649
+  },
+  {
+   "choice": "e23",
+   "operation": "TYPE_TEXT",
+   "target": "22",
+   "confidence": 1.0,
+   "probabilities": {
+    "e19": 0.0,
+    "e23": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3661,
+    "completion_tokens": 14,
+    "total_tokens": 3675,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 522,
+   "fingerprint": "40256cc1ca6957c1376af91ef507f1f3fc81aeefa61a49710b6842740d44bac5",
+   "elapsed_ms": 1197
+  },
+  {
+   "choice": "e21",
+   "operation": "CLICK",
+   "target": "20",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e21": 1.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3726,
+    "completion_tokens": 13,
+    "total_tokens": 3739,
+    "prompt_tokens_details": {
+     "cached_tokens": 3584,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 567,
+   "fingerprint": "4c90a162f8dca996195c95124d7ac3f110a436e95671e4aa6f3114b993e5899f",
+   "elapsed_ms": 2336
+  },
+  {
+   "choice": "e15",
+   "operation": "CLICK",
+   "target": "15",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 1.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3758,
+    "completion_tokens": 15,
+    "total_tokens": 3773,
+    "prompt_tokens_details": {
+     "cached_tokens": 3584,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 696,
+   "fingerprint": "3cb81d852769d3aa50648749fec8e513ba1ecad6775243a89ae174c7d782e662",
+   "elapsed_ms": 3077
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 509,
+   "usage": {
+    "prompt_tokens": 504,
+    "completion_tokens": 12,
+    "total_tokens": 516,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Radius search returns all holdings in region. Leave blank for single object overview.",
+   "value": "TRAPPIST-1 e"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "NASA   Exoplanet   Archive",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "A   service   of   NASA   Exoplanet   Science   Institute",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "NASA's Exoplanet Exploration Program",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Exoplanet Archive on Wikipedia",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Exoplanet Archive on Facebook",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "Exoplanet Archive on X",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Exoplanet Archive on YouTube",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "10",
+    "label": "About Us",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "11",
+    "label": "Data",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "12",
+    "label": "Tools",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "13",
+    "label": "Support",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "14",
+    "label": "-",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "6,366 \n           Confirmed Planets \n           09/11/2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "936 \n         TESS Confirmed Planets \n         09/11/2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "8,148 \n         TESS Project Candidates \n         09/08/2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "View more Planet and Candidate statistics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "19",
+    "label": "Coordinates only valid for radius search.",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "20",
+    "label": "Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "Advanced Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "22",
+    "label": "Radius search returns all holdings in region. Leave blank for single object overview.",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "Search Inventory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "Query AstroFetch AI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Transmission Spectra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Eclipse Spectra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Direct Imaging Spectra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "NExoList",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Documentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "JWST",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "TESS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "Kepler/K2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "Pandora (Coming Soon)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "News",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "4",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "39",
+    "label": "Plots",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "41",
+    "label": "2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "42",
+    "label": "3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "43",
+    "label": "4",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "NASA   Exoplanet   Archive",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "A   service   of   NASA   Exoplanet   Science   Institute",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "NASA's Exoplanet Exploration Program",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Exoplanet Archive on Wikipedia",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Exoplanet Archive on Facebook",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "Exoplanet Archive on X",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Exoplanet Archive on YouTube",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "10",
+    "label": "About Us",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "11",
+    "label": "Data",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "12",
+    "label": "Tools",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "expanded": "false",
+    "index": "13",
+    "label": "Support",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "14",
+    "label": "Login",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "6,366 \n           Confirmed Planets \n           09/11/2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "936 \n         TESS Confirmed Planets \n         09/11/2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "8,148 \n         TESS Project Candidates \n         09/08/2026",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "View more Planet and Candidate statistics",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "19",
+    "label": "Coordinates only valid for radius search.",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "",
+    "index": "20",
+    "label": "Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "Advanced Search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "TRAPPIST-1 e",
+    "index": "22",
+    "label": "Radius search returns all holdings in region. Leave blank for single object overview.",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "Search Inventory",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "Query AstroFetch AI",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Transmission Spectra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Eclipse Spectra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Direct Imaging Spectra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "NExoList",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Documentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "JWST",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "TESS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "32",
+    "label": "Kepler/K2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "33",
+    "label": "Pandora (Coming Soon)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "34",
+    "label": "This graphic illustrates the concept of gravitational microlensing, showing light rays from a background source star bending as they pass through the warped spacetime of a foreground host star and its orbiting exoplanet. A corresponding light curve beneath the diagram demonstrates how the foreground objects temporarily magnify and spike the background star's observed brightness. \n   Six New Planets \n     September 11, 2026\n      \u2022\n      New Data \n     There are six new planets this week, comprising two warm Jupiters and four cold, giant microlensing planets. These additions bring the archive's total confirmed planet count to  6,366 . \n   Learn more!",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "News",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "39",
+    "label": "4",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "40",
+    "label": "Plots",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "41",
+    "label": "1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "42",
+    "label": "2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "43",
+    "label": "3",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "44",
+    "label": "4",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 4 observations; the full traces stay on the machine that made the runs"
+}

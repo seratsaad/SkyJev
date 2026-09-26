@@ -1,0 +1,62 @@
+{
+ "task_id": "arxiv_lookup_001",
+ "category": "lookup",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 1,
+ "started_at": "2026-09-22T17:05:19+00:00",
+ "goal": "Open the arXiv abstract page for the paper with identifier 2306.06308.",
+ "start_url": "https://arxiv.org/",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 25.44,
+ "goal_sent": "Start at https://arxiv.org/ . Open the arXiv abstract page for the paper with identifier 2306.06308. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 4,
+ "urls": [
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/abs/2306.06308"
+ ],
+ "actions": [
+  "navigate",
+  "click",
+  "input",
+  "send_keys",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "I have successfully used arXiv's own search interface starting from https://arxiv.org/ to find and open the abstract page for the paper with identifier 2306.06308. The current page is https://arxiv.org/abs/2306.06308, showing the full abstract and metadata for that paper as requested.",
+ "tokens": 64377,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "E18F075EA4CAA4D586A37624B77569B2",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://arxiv.org/abs/2306.06308"
+   },
+   {
+    "passed": true,
+    "detail": "'arXiv:2306.06308' found in 4293 chars"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://arxiv.org/abs/2306.06308",
+ "model_calls": 4,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 3,
+  "url": "https://arxiv.org/abs/2306.06308"
+ },
+ "failure_type": null
+}

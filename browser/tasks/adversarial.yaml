@@ -1,0 +1,65 @@
+# Category E -- deliberately outside the documented action space. Expected: failure, informatively.
+- id: gaia_archive_frames_401
+  category: adversarial
+  difficulty: high
+  goal: >
+    In the Gaia archive search interface, enter the target name M45 in the name field and run the
+    cone search so that a result table appears.
+  start_url: https://gea.esac.esa.int/archive/
+  gold_url: null
+  # v2 (2026-09-23): the URL clause was added after a gpt-jev-plus smoke run wandered off to
+  # cosmos.esa.int, whose pages say "results". No v1 score changes: every v1 pass ended on gea.esac.
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "gea\\.esac\\.esa\\.int/archive"}
+      - {type: frames_regex, value: "(?i)source_id|results|M45"}
+  timeout_seconds: 150
+  expected_limits: [iframes]
+  notes: The entire query UI lives in 5 iframes. JEV's snapshot does not traverse frames.
+
+- id: aladin_canvas_402
+  category: adversarial
+  difficulty: high
+  goal: >
+    In Aladin Lite, move the sky view so that it is centred on the Andromeda galaxy M31.
+  start_url: https://aladin.cds.unistra.fr/AladinLite/
+  gold_url: https://aladin.cds.unistra.fr/AladinLite/?target=M31&fov=2
+  # v2 (2026-09-23). v1 read window.aladin / window.A.aladin, which on the current app are undefined
+  # and the factory function, so it could never pass: 0/3 and 0/2 in the baseline measured nothing.
+  # v2 reads the view centre from the location box, which Aladin keeps in sync with the view. When a
+  # name was typed and resolved there, the box keeps the name and gains the class aladin-valid (checked:
+  # typing without Enter, or an unresolvable name, does not), so that counts too.
+  verifier:
+    type: js_expr
+    expression: >
+      (() => { const i = document.querySelector('input.aladin-input-text.search'); if (!i) return false;
+      const m = i.value.trim().match(/^(\d+)\s+(\d+)\s+([\d.]+)\s+([+-])(\d+)\s+(\d+)\s+([\d.]+)/);
+      if (!m) return /^(M\s*31|Messier\s*31|NGC\s*224|Andromeda( galaxy)?)$/i.test(i.value.trim()) && i.classList.contains('aladin-valid'); const ra = 15 * (+m[1] + m[2] / 60 + m[3] / 3600);
+      const dec = (m[4] === '-' ? -1 : 1) * (+m[5] + m[6] / 60 + m[7] / 3600);
+      return Math.abs(ra - (10.68)) < 1.5 && Math.abs(dec - (41.27)) < 1.5; })()
+  timeout_seconds: 150
+  expected_limits: [canvas]
+  notes: The sky itself is a canvas. A search box exists, so partial success is possible.
+
+- id: eso_etc_403
+  category: adversarial
+  difficulty: high
+  goal: >
+    In the ESO exposure time calculator for FORS2, set the target magnitude to 20 and run the
+    calculation so that a signal-to-noise result is displayed.
+  start_url: https://etc.eso.org/observing/etc/fors
+  gold_url: null
+  # v2 (2026-09-23): a gpt-jev-plus smoke run "passed" by opening the FORS help page, which says
+  # "signal to noise". The result must be on the calculator itself. No baseline score changes (0 passes).
+  # The start URL now redirects to a landing page; FORS2 is at etc.eso.org/fors. There is still no gold
+  # page: a scripted Compute did not produce a result in 45 s, so this task is excluded from headline
+  # numbers and reported separately.
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "etc\\.eso\\.org/(observing/etc/)?fors"}
+      - {type: page_regex, value: "(?i)signal.?to.?noise|S/N\\s*[:=]"}
+  timeout_seconds: 180
+  expected_limits: [dynamic_form, web_components]
+  notes: Angular app exposing 7 controls at 1.5 s. Expect WAIT then BLOCKED or a slow hydrate.

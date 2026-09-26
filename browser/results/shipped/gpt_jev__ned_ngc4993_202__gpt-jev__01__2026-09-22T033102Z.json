@@ -1,0 +1,23 @@
+{
+ "task_id": "ned_ngc4993_202",
+ "category": "multistep",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 1,
+ "started_at": "2026-09-22T03:31:02+00:00",
+ "goal": "Look up the galaxy NGC 4993 in the NASA/IPAC Extragalactic Database and open the page that shows its redshift.",
+ "start_url": "https://ned.ipac.caltech.edu/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "error",
+ "error": "_IPCResponseTimeout: Page.navigate timed out after 5s waiting for the daemon",
+ "setup_seconds": null,
+ "stale_loop_limit": 8,
+ "success": false,
+ "failure_type": "error",
+ "verification": {
+  "passed": false,
+  "detail": "_IPCResponseTimeout: Page.navigate timed out after 5s waiting for the daemon"
+ }
+}

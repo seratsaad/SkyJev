@@ -1,0 +1,14 @@
+failure_type,agent,count
+false_done,browser-use,8
+unexecutable_target,gpt-jev,7
+abandoned_success,gpt-jev,6
+browser_timeout,gpt-jev,3
+canvas,gpt-jev,3
+iframe,gpt-jev,3
+no_progress,gpt-jev,3
+popup_tab,gpt-jev,3
+unverifiable,browser-use,2
+agent_reported_failure,browser-use,1
+error,gpt-jev,1
+false_done,gpt-jev,1
+stale_page,gpt-jev,1

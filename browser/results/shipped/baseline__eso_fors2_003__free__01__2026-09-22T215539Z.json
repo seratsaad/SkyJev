@@ -1,0 +1,59 @@
+{
+ "task_id": "eso_fors2_003",
+ "category": "lookup",
+ "agent": "browser-use",
+ "mode": "free",
+ "run_index": 1,
+ "started_at": "2026-09-22T21:55:39+00:00",
+ "goal": "Open the ESO instrument overview page for FORS2 at the Very Large Telescope.",
+ "start_url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 23.968,
+ "goal_sent": "Start at https://www.eso.org/sci/facilities/paranal/instruments.html . Open the ESO instrument overview page for FORS2 at the Very Large Telescope.",
+ "steps": 3,
+ "urls": [
+  "https://www.eso.org/sci/facilities/paranal/instruments.html",
+  "https://www.eso.org/sci/facilities/paranal/instruments.html",
+  "https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html"
+ ],
+ "actions": [
+  "navigate",
+  "click",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The ESO instrument overview page for FORS2 at the Very Large Telescope has been successfully opened and verified at https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html. The page contains detailed information about the instrument as requested.",
+ "tokens": 41786,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "6085B3946086EC2ED3AF55E23FDBF167",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html"
+   },
+   {
+    "passed": true,
+    "detail": "match='FORS'"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html",
+ "model_calls": 3,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html"
+ },
+ "failure_type": null
+}

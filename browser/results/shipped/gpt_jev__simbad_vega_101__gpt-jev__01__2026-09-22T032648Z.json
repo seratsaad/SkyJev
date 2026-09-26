@@ -1,0 +1,1343 @@
+{
+ "task_id": "simbad_vega_101",
+ "category": "search",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 1,
+ "started_at": "2026-09-22T03:26:48+00:00",
+ "goal": "Using the SIMBAD basic search, search for the star Vega and open its result page.",
+ "start_url": "https://simbad.cds.unistra.fr/simbad/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "blocked",
+ "error": null,
+ "setup_seconds": 1.116,
+ "stale_loop_limit": 8,
+ "success": false,
+ "verification": {
+  "passed": false,
+  "detail": [
+   {
+    "passed": false,
+    "detail": "no match for '\\\\*\\\\s*alf\\\\s*Lyr' in 374 chars"
+   },
+   {
+    "passed": true,
+    "detail": "url=https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search"
+   }
+  ],
+  "settle_seconds": 12.1
+ },
+ "final_url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+ "duration_seconds": 8.458,
+ "wall_seconds": 21.734,
+ "steps": 6,
+ "model_calls": 9,
+ "chooser_calls": 8,
+ "text_helper_calls": 1,
+ "chooser_tokens": 23594,
+ "text_tokens": 413,
+ "chooser_latency_ms_median": 604.0,
+ "protocol_calls": 62,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 42,
+  "Input.dispatchMouseEvent": 12,
+  "Input.dispatchKeyEvent": 2,
+  "Input.insertText": 1
+ },
+ "stale_retries": 1,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega&submit=SIMBAD+search"
+ },
+ "env_probe": {
+  "iframes": 1,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+  "title": "SIMBAD basic query result",
+  "omitted_actions": 0,
+  "n_actions": 29
+ },
+ "failure_type": "abandoned_success",
+ "history": [
+  {
+   "step": 1,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 813,
+   "text": "Vega",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 492,
+   "operation": "TYPE_TEXT",
+   "target": "32",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/",
+   "usage": {
+    "prompt_tokens": 2662,
+    "completion_tokens": 19,
+    "total_tokens": 2681,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1336,
+   "elapsed_ms": 1352
+  },
+  {
+   "step": 2,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e34",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 872,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "33",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2694,
+    "completion_tokens": 18,
+    "total_tokens": 2712,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2237,
+   "elapsed_ms": 2582
+  },
+  {
+   "step": 3,
+   "action": "Identifier  query",
+   "kind": "click",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 563,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fid",
+   "usage": {
+    "prompt_tokens": 3643,
+    "completion_tokens": 20,
+    "total_tokens": 3663,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 3967,
+   "elapsed_ms": 4225
+  },
+  {
+   "step": 4,
+   "action": "submit id",
+   "kind": "click",
+   "choice": "e32",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 616,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "24",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=&NbIdent=1&Radius=2&Radius.unit=arcmin&submit=submit+id",
+   "usage": {
+    "prompt_tokens": 3808,
+    "completion_tokens": 13,
+    "total_tokens": 3821,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 4855,
+   "elapsed_ms": 5035
+  },
+  {
+   "step": 5,
+   "action": "Basic  query",
+   "kind": "click",
+   "choice": "e13",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 1051,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "13",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-fbasic",
+   "usage": {
+    "prompt_tokens": 2158,
+    "completion_tokens": 13,
+    "total_tokens": 2171,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6102,
+   "elapsed_ms": 6290
+  },
+  {
+   "step": 6,
+   "action": "SIMBAD search",
+   "kind": "click",
+   "choice": "e20",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 581,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "19",
+   "page_changed": true,
+   "url": "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=&submit=SIMBAD+search",
+   "usage": {
+    "prompt_tokens": 2449,
+    "completion_tokens": 13,
+    "total_tokens": 2462,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6885,
+   "elapsed_ms": 7847
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e32",
+   "operation": "TYPE_TEXT",
+   "target": "32",
+   "confidence": 1.0,
+   "probabilities": {
+    "e32": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2662,
+    "completion_tokens": 19,
+    "total_tokens": 2681,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 813,
+   "fingerprint": "bb0d5ab186a7c6f338b76424d2d06ef3879f8bb40fd54813eb3cc503120cfdcd",
+   "elapsed_ms": 816
+  },
+  {
+   "choice": "e34",
+   "operation": "CLICK",
+   "target": "33",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e33": 0.0,
+    "e34": 1.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2694,
+    "completion_tokens": 18,
+    "total_tokens": 2712,
+    "prompt_tokens_details": {
+     "cached_tokens": 2560,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 872,
+   "fingerprint": "5e761e4d75404389e318d64e17ec21ee2242d78cee921bef37f81282890bf33a",
+   "elapsed_ms": 2227
+  },
+  {
+   "choice": "e21",
+   "operation": "CLICK",
+   "target": "21",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 1.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0,
+    "e41": 0.0,
+    "e42": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3781,
+    "completion_tokens": 18,
+    "total_tokens": 3799,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 592,
+   "fingerprint": "5e5a791bf8e9d50d74f59b75e2c4f8e4d432838525e98f8ac33948751a14c2fd",
+   "elapsed_ms": 3369
+  },
+  {
+   "choice": "e9",
+   "operation": "CLICK",
+   "target": "9",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 1.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3643,
+    "completion_tokens": 20,
+    "total_tokens": 3663,
+    "prompt_tokens_details": {
+     "cached_tokens": 3456,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 563,
+   "fingerprint": "424860976614bcb5370acfcebfe5533f1a1d5585896edddee8880b32d65089ad",
+   "elapsed_ms": 3957
+  },
+  {
+   "choice": "e32",
+   "operation": "CLICK",
+   "target": "24",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e29": 0.0,
+    "e32": 1.0,
+    "e33": 0.0,
+    "e34": 0.0,
+    "e35": 0.0,
+    "e36": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e40": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 3808,
+    "completion_tokens": 13,
+    "total_tokens": 3821,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 616,
+   "fingerprint": "2319f1fd8b6bc552efe033203213a99d024a7a72d73bde618e497f8c5ccd8595",
+   "elapsed_ms": 4844
+  },
+  {
+   "choice": "e13",
+   "operation": "CLICK",
+   "target": "13",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 1.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2158,
+    "completion_tokens": 13,
+    "total_tokens": 2171,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 1051,
+   "fingerprint": "49882adc8dcfc8a3eb962d6c0a08f284dd18b6d3477c0ec4a3e5238fbf54f8d5",
+   "elapsed_ms": 6091
+  },
+  {
+   "choice": "e20",
+   "operation": "CLICK",
+   "target": "19",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e19": 0.0,
+    "e20": 1.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0,
+    "e26": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e29": 0.0,
+    "e30": 0.0,
+    "e31": 0.0,
+    "e32": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2449,
+    "completion_tokens": 13,
+    "total_tokens": 2462,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 581,
+   "fingerprint": "b5929b930b3f94d61758793c26888b17021a862cf9ebab24463d657d4ffe4b9c",
+   "elapsed_ms": 6874
+  },
+  {
+   "choice": "BLOCKED",
+   "operation": "BLOCKED",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "BLOCKED": 1.0
+   },
+   "operation_probabilities": {
+    "BLOCKED": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2271,
+    "completion_tokens": 14,
+    "total_tokens": 2285,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 590,
+   "fingerprint": "a302a020e917d7de6ccc5f34afc0cec6f331465463badd4a0e1ab339b95a496b",
+   "elapsed_ms": 8452
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 492,
+   "usage": {
+    "prompt_tokens": 406,
+    "completion_tokens": 7,
+    "total_tokens": 413,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "Vega"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "1",
+    "label": "CDS website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "2",
+    "label": "CDS Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "3",
+    "label": "Simbad",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "4",
+    "label": "VizieR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "5",
+    "label": "Aladin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "6",
+    "label": "X-Match",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "7",
+    "label": "Other resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "8",
+    "label": "Help resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "What is SIMBAD ?",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "basic search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "by identifier",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "by coordinates",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "by criteria",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "reference query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "scripts",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "TAP queries",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Output options",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Object types",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Nomenclature & Dictionary",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "Recommendations for Data Publication",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "User's guide",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "Measurement description",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "List of journals",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "User annotations documentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "Query by urls",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "Acknowledgment",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Presentation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Image thumbnails",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "29",
+    "label": "Mobile version",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "30",
+    "label": "SimWatch",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "31",
+    "label": "Releases history",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "32",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "SIMBAD search",
+    "index": "33",
+    "label": "SIMBAD search",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "clear",
+    "index": "34",
+    "label": "clear",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "Install the Simbad basic search in your tool bar",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "1",
+    "label": "CDS website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "2",
+    "label": "CDS Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "3",
+    "label": "Simbad",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "4",
+    "label": "VizieR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "5",
+    "label": "Aladin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "6",
+    "label": "X-Match",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "7",
+    "label": "Other resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "8",
+    "label": "Help resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Identifier  query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Coordinate  query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Criteria  query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Reference  query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "Basic  query",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Script  submission",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "TAP",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Output  options",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Object  types",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "Help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "\"Dictionary of Nomenclature\"",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "CDS - Centre de Donn\u00e9es astronomiques de Strasbourg",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "Send an email to the CDS team.",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "RSS Feed of the CDS news",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "CDS' BlueSky page.",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "CDS' Facebook page.",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "25",
+    "label": "CDS' Youtube channel.",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "26",
+    "label": "CDS' GitHub page.",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "27",
+    "label": "Contact",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "28",
+    "label": "Legals",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 8 observations; the full traces stay on the machine that made the runs"
+}

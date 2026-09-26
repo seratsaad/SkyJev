@@ -1,0 +1,59 @@
+{
+ "task_id": "eso_fors2_003",
+ "category": "lookup",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 1,
+ "started_at": "2026-09-22T17:06:32+00:00",
+ "goal": "Open the ESO instrument overview page for FORS2 at the Very Large Telescope.",
+ "start_url": "https://www.eso.org/sci/facilities/paranal/instruments.html",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 31.822,
+ "goal_sent": "Start at https://www.eso.org/sci/facilities/paranal/instruments.html . Open the ESO instrument overview page for FORS2 at the Very Large Telescope. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 3,
+ "urls": [
+  "https://www.eso.org/sci/facilities/paranal/instruments.html",
+  "https://www.eso.org/sci/facilities/paranal/instruments.html",
+  "https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html"
+ ],
+ "actions": [
+  "navigate",
+  "click",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The ESO instrument overview page for FORS2 at the Very Large Telescope has been successfully opened by navigating through the official ESO Paranal Instrumentation website interface. The page content matches expected details about FORS2, confirming correct navigation without directly typing any full URLs for results or record pages.",
+ "tokens": 56202,
+ "navigated_by_url": false,
+ "provider_errors": [],
+ "verified_tab": "6085B3946086EC2ED3AF55E23FDBF167",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html"
+   },
+   {
+    "passed": true,
+    "detail": "match='FORS'"
+   }
+  ],
+  "settle_seconds": 0.02
+ },
+ "final_url": "https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html",
+ "model_calls": 3,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://www.eso.org/sci/facilities/paranal/instruments/fors/overview.html"
+ },
+ "failure_type": null
+}

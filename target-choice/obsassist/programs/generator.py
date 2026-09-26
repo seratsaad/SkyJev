@@ -5,6 +5,11 @@ range at declinations the site can reach, with magnitudes chosen so each needs b
 minutes and ~3 hours, priorities, and a mix of the complications observers actually face:
 seeing-critical targets, time windows, fixed PAs, standards, backups and a ToO that arrives
 mid-night. `oversubscription` sets requested time / available time.
+
+`mode="queue"` draws a queue night instead, modelled on a partner queue such as the LBT's: many
+short observing blocks (OBs) from several programs, each program with a queue rank (the OB's
+priority), most OBs with a seeing or transparency limit, and no credit for an unfinished OB. The
+classical draw is unchanged by the queue option (the queue draws use their own random stream).
 """
 
 from __future__ import annotations
@@ -54,7 +59,13 @@ def generate_program(
     n_targets: Optional[int] = None,
     oversubscription: Optional[float] = None,
     configs: Optional[List[str]] = None,
+    mode: str = "classical",
 ) -> Program:
+    if mode not in ("classical", "queue"):
+        raise ValueError(f"mode must be classical or queue, not {mode!r}")
+    qrng = np.random.default_rng(seed + 7919)
+    if mode == "queue" and n_targets is None:
+        n_targets = int(qrng.integers(16, 25))
     rng = np.random.default_rng(seed)
     tel = TELESCOPES[telescope]
     site = SITES[tel.site_key]
@@ -145,14 +156,38 @@ def generate_program(
         )
         targets[k].pop("window", None)
     prog = {
-        "name": f"random {telescope} {date} #{seed}",
+        "name": f"random {'queue ' if mode == 'queue' else ''}{telescope} {date} #{seed}",
         "telescope": telescope,
         "date": date,
         "description": f"generated: {n} targets, oversubscription {over:.2f}",
         "targets": targets,
-        "extra": {"oversubscription": over, "generator_seed": seed},
+        "extra": {"oversubscription": over, "generator_seed": seed, "mode": mode},
     }
+    if mode == "queue":
+        _to_queue(prog, qrng)
     return load_program(prog)
+
+
+def _to_queue(prog: Dict, rng: np.random.Generator) -> None:
+    """Turn a drawn target list into a queue night: OBs grouped into ranked programs, with
+    observing-condition limits, and no partial credit for an unfinished OB."""
+    n_prog = int(rng.integers(4, 8))
+    ranks = rng.choice([1, 2, 3], size=n_prog, p=[0.3, 0.4, 0.3])
+    for d in prog["targets"]:
+        k = int(rng.integers(n_prog))
+        d["name"] = f"Q{k + 1}-{d['name']}"
+        d["program"] = f"Q{k + 1}"
+        if d.get("kind") != "too":
+            d["priority"] = int(ranks[k])
+            d["kind"] = "science"
+        d.pop("max_seeing", None)
+        if rng.random() < 0.6:
+            d["max_seeing"] = float(rng.choice([0.8, 1.0, 1.2, 1.5]))
+        if rng.random() < 0.35:
+            d["max_cloud"] = 0.1  # photometric
+    prog["partial_credit"] = 0.0
+    prog["description"] += f", queue of {n_prog} programs"
+    prog["extra"]["n_programs"] = n_prog
 
 
 def random_date(rng: np.random.Generator, year: int = 2026) -> str:

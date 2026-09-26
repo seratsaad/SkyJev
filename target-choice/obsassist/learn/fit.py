@@ -1,11 +1,14 @@
 """Fit AnyJev L2 heads on simulator-labelled decisions and measure them against the oracle.
 
     python -m obsassist.learn.fit --l0-states 120     # -> heads/qwen3-1.7b.json, reports/fit_qwen3-1.7b.json
+    python -m obsassist.learn.fit --train data/decisions/queue_train.jsonl --test data/decisions/queue_test.jsonl \
+        --out heads/qwen3-1.7b-queue.json --report reports/fit_qwen3-1.7b-queue.json --device cuda --dtype float16
 
 Reports, on held-out nights (different programs, dates and weather):
   * next-target choice: mean hindsight regret (fraction of the program's max score) of the
-    candidate System 1 ranks first, next to the greedy planner's pick, a random pick and the
-    oracle (0 by definition); the share of states where each picks a within-0.5% choice;
+    candidate System 1 ranks first, next to the greedy planner's pick, the queue rule's pick (rows
+    with `is_queue_rule`), a random pick and the oracle (0 by definition); the share of states
+    where each picks a within-0.5% choice;
   * calibration of the regret distribution (ECE of the "best choice" probability);
   * accuracy of the per-state questions (sky transparency, dome closure within 30 min);
   * with --l0-states, the same choice from AnyJev L0 (no heads, zero labels).
@@ -33,7 +36,8 @@ def load_rows(path: str) -> Dict[tuple, List[dict]]:
         for line in f:
             r = json.loads(line)
             states[(r["night"], r["t"])].append(r)
-    return states
+    # nights finish in any order in the parallel builder: sort, so sampling depends on the data only
+    return dict(sorted(states.items()))
 
 
 def ece(p: np.ndarray, y: np.ndarray, bins: int = 10) -> float:
@@ -73,6 +77,8 @@ def main(argv=None):
     ap.add_argument("--l0-states", type=int, default=0, help="also score zero-label L0 on this many test states")
     ap.add_argument("--report", default=str(REPORTS / "fit_qwen3-1.7b.json"))
     ap.add_argument("--eval-only", action="store_true", help="evaluate the heads already in --out, fit nothing")
+    ap.add_argument("--device", default=None, help="torch device (default: MPS, else CUDA, else CPU)")
+    ap.add_argument("--dtype", default="bfloat16", help="weights dtype (float16 on a V100)")
     a = ap.parse_args(argv)
 
     from obsassist.assistant.system1 import PER_CANDIDATE, QUESTIONS, System1
@@ -82,7 +88,7 @@ def main(argv=None):
     te = load_rows(a.test)
     rows, st_rows = sample_training(tr, a.n_train)
     print(f"train: {len(rows)} candidate rows from {len(st_rows)} states; test states available: {len(te)}", flush=True)
-    s1 = System1(model=a.model, heads=a.out if a.eval_only else None)
+    s1 = System1(model=a.model, heads=a.out if a.eval_only else None, device=a.device, dtype=a.dtype)
     report = {"model": a.model, "n_train_rows": len(rows), "n_train_states": len(st_rows), "fits": {}}
     t0 = time.time()
     for qn in [] if a.eval_only else qs:
@@ -145,6 +151,9 @@ def main(argv=None):
                 yb_all.append(1.0 if reg[j.name] < 0.005 else 0.0)
         g = [r for r in cand_rows if r["is_greedy"]]
         res["greedy"].append(g[0]["regret"] if g else float(np.mean(list(reg.values()))))
+        q = [r["regret"] for r in cand_rows if r.get("is_queue_rule")]
+        if q:  # the queue rule's pick, when it is among the labelled candidates
+            res["queue_rule"].append(q[0])
         res["random"].append(float(np.mean(list(reg.values()))))
     summ = {}
     for k, v in res.items():

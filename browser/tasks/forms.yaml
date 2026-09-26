@@ -1,0 +1,52 @@
+# Category B -- search forms. Expected difficulty: LOW-MEDIUM.
+- id: simbad_vega_101
+  category: search
+  difficulty: low-medium
+  goal: >
+    Using the SIMBAD basic search, search for the star Vega and open its result page.
+  start_url: https://simbad.cds.unistra.fr/simbad/
+  gold_url: https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Vega
+  goal_url: '(?i)simbad/sim-(basic|id)\?.*Ident=(Vega\b|[^&]*alf(\+|%20|\s)*Lyr)'
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "\\*\\s*alf\\s*Lyr"}
+      - {type: url_not_equal, value: "https://simbad.cds.unistra.fr/simbad/"}
+  timeout_seconds: 90
+  notes: Requires TYPE_TEXT into an unnamed field, then CLICK the search button.
+
+- id: vizier_hipparcos_102
+  category: search
+  difficulty: low-medium
+  goal: >
+    In VizieR, search the catalogue collection for Hipparcos and open the results list of matching catalogues.
+  start_url: https://vizier.cds.unistra.fr/viz-bin/VizieR
+  gold_url: https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-source=Hipparcos
+  goal_url: null  # not identifiable by URL: VizieR submits its search by POST; the result page URL is the same for any query
+  # v2 (2026-09-23). v1 was "hipparcos" and "I/239|I/311|catalog" anywhere on the page, which the VizieR
+  # front page itself satisfies (its mission list names Hipparcos), so a run that gave up there passed.
+  # v2 requires the result list's own search-criteria panel. See IMPROVING_JEV.md.
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)Keywords\\s+Hipparcos\\s+Tables"}
+      - {type: page_regex, value: "I/239|I/311"}
+      - {type: url_not_equal, value: "https://vizier.cds.unistra.fr/viz-bin/VizieR"}
+  timeout_seconds: 120
+  notes: 244 elements on the start page, close to JEV's 250-element cap.
+
+- id: arxiv_author_103
+  category: search
+  difficulty: low-medium
+  goal: >
+    Search arXiv for papers whose author is Yuan-Sen Ting and open the list of search results.
+  start_url: https://arxiv.org/
+  gold_url: https://arxiv.org/a/ting_y_1
+  goal_url: null  # not identifiable by URL: arXiv advanced search can submit by POST; a verified success ended on a bare /search/advanced
+  verifier:
+    type: all_of
+    items:
+      - {type: page_regex, value: "(?i)ting"}
+      - {type: url_regex, value: "(?i)search|/a/ting"}
+  timeout_seconds: 120
+  notes: Needs SELECT (search field = Author) plus TYPE_TEXT, or the author-search route.

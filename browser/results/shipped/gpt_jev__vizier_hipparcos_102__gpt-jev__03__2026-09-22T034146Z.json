@@ -1,0 +1,3761 @@
+{
+ "task_id": "vizier_hipparcos_102",
+ "category": "search",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 3,
+ "started_at": "2026-09-22T03:41:46+00:00",
+ "goal": "In VizieR, search the catalogue collection for Hipparcos and open the results list of matching catalogues.",
+ "start_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "ready",
+ "error": "ValueError: Chooser picked unoffered operation 'TYPE_TEXT'; no action executed.",
+ "setup_seconds": 0.489,
+ "stale_loop_limit": 8,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "match='Hipparcos'"
+   },
+   {
+    "passed": true,
+    "detail": "match='catalog'"
+   },
+   {
+    "passed": true,
+    "detail": "url=http://vizier.nao.ac.jp/viz-bin/VizieR"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "http://vizier.nao.ac.jp/viz-bin/VizieR",
+ "duration_seconds": 40.883,
+ "wall_seconds": 42.046,
+ "steps": 11,
+ "model_calls": 25,
+ "chooser_calls": 23,
+ "text_helper_calls": 2,
+ "chooser_tokens": 320918,
+ "text_tokens": 1297,
+ "chooser_latency_ms_median": 705,
+ "protocol_calls": 182,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 149,
+  "Input.dispatchMouseEvent": 22,
+  "Input.dispatchKeyEvent": 4,
+  "Input.insertText": 2
+ },
+ "stale_retries": 12,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-2"
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "http://vizier.nao.ac.jp/viz-bin/VizieR",
+  "title": "VizieR",
+  "omitted_actions": 0,
+  "n_actions": 10
+ },
+ "failure_type": null,
+ "history": [
+  {
+   "step": 1,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e51",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 734,
+   "text": "Hipparcos",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 443,
+   "operation": "TYPE_TEXT",
+   "target": "21",
+   "page_changed": true,
+   "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR",
+   "usage": {
+    "prompt_tokens": 34886,
+    "completion_tokens": 14,
+    "total_tokens": 34900,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 2765,
+   "elapsed_ms": 2804
+  },
+  {
+   "step": 2,
+   "action": " Find... ",
+   "kind": "click",
+   "choice": "e53",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 790,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "22",
+   "page_changed": true,
+   "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-2",
+   "usage": {
+    "prompt_tokens": 34889,
+    "completion_tokens": 13,
+    "total_tokens": 34902,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 3619,
+   "elapsed_ms": 4014
+  },
+  {
+   "step": 3,
+   "action": "I/239/hip_main",
+   "kind": "click",
+   "choice": "e68",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 594,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "22",
+   "page_changed": true,
+   "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+   "usage": {
+    "prompt_tokens": 14001,
+    "completion_tokens": 13,
+    "total_tokens": 14014,
+    "prompt_tokens_details": {
+     "cached_tokens": 13824,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 5295,
+   "elapsed_ms": 5690
+  },
+  {
+   "step": 4,
+   "action": "Similar Catalogs",
+   "kind": "click",
+   "choice": "e106",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 674,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "50",
+   "page_changed": null,
+   "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+   "usage": {
+    "prompt_tokens": 18340,
+    "completion_tokens": 13,
+    "total_tokens": 18353,
+    "prompt_tokens_details": {
+     "cached_tokens": 18176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7786,
+   "elapsed_ms": 7786
+  },
+  {
+   "step": 5,
+   "action": "VizieR",
+   "kind": "click",
+   "choice": "e4",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 705,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "4",
+   "page_changed": true,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR",
+   "usage": {
+    "prompt_tokens": 13047,
+    "completion_tokens": 18,
+    "total_tokens": 13065,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 9646,
+   "elapsed_ms": 10316
+  },
+  {
+   "step": 6,
+   "action": "textbox",
+   "kind": "fill",
+   "choice": "e51",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 649,
+   "text": "Hipparcos",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 568,
+   "operation": "TYPE_TEXT",
+   "target": "21",
+   "page_changed": true,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR",
+   "usage": {
+    "prompt_tokens": 34886,
+    "completion_tokens": 14,
+    "total_tokens": 34900,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 12245,
+   "elapsed_ms": 12288
+  },
+  {
+   "step": 7,
+   "action": " Find... ",
+   "kind": "click",
+   "choice": "e53",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 874,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "22",
+   "page_changed": true,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR-2",
+   "usage": {
+    "prompt_tokens": 34889,
+    "completion_tokens": 13,
+    "total_tokens": 34902,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 13190,
+   "elapsed_ms": 13654
+  },
+  {
+   "step": 8,
+   "action": "I/239/hip_main",
+   "kind": "click",
+   "choice": "e68",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 615,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "22",
+   "page_changed": true,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+   "usage": {
+    "prompt_tokens": 14128,
+    "completion_tokens": 13,
+    "total_tokens": 14141,
+    "prompt_tokens_details": {
+     "cached_tokens": 7040,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 14840,
+   "elapsed_ms": 15467
+  },
+  {
+   "step": 9,
+   "action": "Similar Catalogs",
+   "kind": "click",
+   "choice": "e106",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 839,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "50",
+   "page_changed": null,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+   "usage": {
+    "prompt_tokens": 18467,
+    "completion_tokens": 18,
+    "total_tokens": 18485,
+    "prompt_tokens_details": {
+     "cached_tokens": 10112,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 23727,
+   "elapsed_ms": 23727
+  },
+  {
+   "step": 10,
+   "action": "I/259",
+   "kind": "click",
+   "choice": "e51",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 777,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "20",
+   "page_changed": true,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR-3?-source=I/259",
+   "usage": {
+    "prompt_tokens": 12844,
+    "completion_tokens": 13,
+    "total_tokens": 12857,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 31807,
+   "elapsed_ms": 32285
+  },
+  {
+   "step": 11,
+   "action": "VizieR",
+   "kind": "click",
+   "choice": "e4",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 6780,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "4",
+   "page_changed": true,
+   "url": "http://vizier.nao.ac.jp/viz-bin/VizieR",
+   "usage": {
+    "prompt_tokens": 16324,
+    "completion_tokens": 15,
+    "total_tokens": 16339,
+    "prompt_tokens_details": {
+     "cached_tokens": 9088,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 40398,
+   "elapsed_ms": 40883
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "BLOCKED",
+   "operation": "BLOCKED",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "BLOCKED": 1.0
+   },
+   "operation_probabilities": {
+    "BLOCKED": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 757,
+    "completion_tokens": 14,
+    "total_tokens": 771,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 776,
+   "fingerprint": "7d6cbc4f78321ad3094c2dd0b8f4602a22b0fe65cb8bebdc5a58287970a11369",
+   "elapsed_ms": 781
+  },
+  {
+   "choice": "e4",
+   "operation": "CLICK",
+   "target": "4",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 1.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e37": 0.0,
+    "e38": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 6160,
+    "completion_tokens": 15,
+    "total_tokens": 6175,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 681,
+   "fingerprint": "d0c6b99e2ecf0066942231621bd97465a9149d821ef060df27ec54d29f429f73",
+   "elapsed_ms": 1471
+  },
+  {
+   "choice": "e51",
+   "operation": "TYPE_TEXT",
+   "target": "21",
+   "confidence": 1.0,
+   "probabilities": {
+    "e51": 1.0,
+    "e204": 0.0,
+    "e214": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 34886,
+    "completion_tokens": 14,
+    "total_tokens": 34900,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 734,
+   "fingerprint": "2071bf701b6638f1be079e7479b8c1e8edb8f7d87c400fd0d3f828558a2c308d",
+   "elapsed_ms": 2264
+  },
+  {
+   "choice": "e53",
+   "operation": "CLICK",
+   "target": "22",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e52": 0.0,
+    "e53": 1.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e201": 0.0,
+    "e202": 0.0,
+    "e203": 0.0,
+    "e205": 0.0,
+    "e215": 0.0,
+    "e218": 0.0,
+    "e219": 0.0,
+    "e220": 0.0,
+    "e221": 0.0,
+    "e222": 0.0,
+    "e223": 0.0,
+    "e224": 0.0,
+    "e225": 0.0,
+    "e226": 0.0,
+    "e227": 0.0,
+    "e228": 0.0,
+    "e229": 0.0,
+    "e230": 0.0,
+    "e231": 0.0,
+    "e232": 0.0,
+    "e233": 0.0,
+    "e234": 0.0,
+    "e235": 0.0,
+    "e236": 0.0,
+    "e237": 0.0,
+    "e238": 0.0,
+    "e239": 0.0,
+    "e240": 0.0,
+    "e241": 0.0,
+    "e242": 0.0,
+    "e243": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 34889,
+    "completion_tokens": 13,
+    "total_tokens": 34902,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 790,
+   "fingerprint": "fe03750641e6052b9c08df27fee023b71252a40aead9d62beac1d89c08a5d08f",
+   "elapsed_ms": 3605
+  },
+  {
+   "choice": "e26",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e26": 1.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 4001,
+    "completion_tokens": 15,
+    "total_tokens": 4016,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 630,
+   "fingerprint": "1149420f8734ea53ac16611704a48c624f4408e46bf677c67a44cba9b1af6bcb",
+   "elapsed_ms": 4659
+  },
+  {
+   "choice": "e68",
+   "operation": "CLICK",
+   "target": "22",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e26": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 1.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 14001,
+    "completion_tokens": 13,
+    "total_tokens": 14014,
+    "prompt_tokens_details": {
+     "cached_tokens": 13824,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 594,
+   "fingerprint": "f1ad4cdb05e231a94a7bc0a8f5885ddba4e737c2e4fcad351473929bc8929ff4",
+   "elapsed_ms": 5282
+  },
+  {
+   "choice": "e28",
+   "operation": "CLICK",
+   "target": "14",
+   "confidence": 0.95,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e27": 0.0,
+    "e28": 1.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 9473,
+    "completion_tokens": 15,
+    "total_tokens": 9488,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 693,
+   "fingerprint": "5be407ffa797771ade6a98293e7f4e5afdda0372ecf10cc3254265610a0b2c4a",
+   "elapsed_ms": 6388
+  },
+  {
+   "choice": "e106",
+   "operation": "CLICK",
+   "target": "50",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e88": 0.0,
+    "e98": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 1.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e126": 0.0,
+    "e127": 0.0,
+    "e128": 0.0,
+    "e129": 0.0,
+    "e131": 0.0,
+    "e132": 0.0,
+    "e133": 0.0,
+    "e134": 0.0,
+    "e135": 0.0,
+    "e137": 0.0,
+    "e138": 0.0,
+    "e139": 0.0,
+    "e140": 0.0,
+    "e142": 0.0,
+    "e143": 0.0,
+    "e144": 0.0,
+    "e145": 0.0,
+    "e147": 0.0,
+    "e148": 0.0,
+    "e149": 0.0,
+    "e150": 0.0,
+    "e151": 0.0,
+    "e153": 0.0,
+    "e154": 0.0,
+    "e155": 0.0,
+    "e156": 0.0,
+    "e157": 0.0,
+    "e159": 0.0,
+    "e160": 0.0,
+    "e161": 0.0,
+    "e162": 0.0,
+    "e163": 0.0,
+    "e165": 0.0,
+    "e166": 0.0,
+    "e167": 0.0,
+    "e168": 0.0,
+    "e169": 0.0,
+    "e170": 0.0,
+    "e172": 0.0,
+    "e173": 0.0,
+    "e174": 0.0,
+    "e175": 0.0,
+    "e176": 0.0,
+    "e177": 0.0,
+    "e179": 0.0,
+    "e180": 0.0,
+    "e181": 0.0,
+    "e182": 0.0,
+    "e183": 0.0,
+    "e184": 0.0,
+    "e185": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 18308,
+    "completion_tokens": 13,
+    "total_tokens": 18321,
+    "prompt_tokens_details": {
+     "cached_tokens": 18176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 606,
+   "fingerprint": "4bc9310dbac0dd21ec9d4a594244f89508ae46c18a5d59c4f8557841c0638414",
+   "elapsed_ms": 7029
+  },
+  {
+   "choice": "e106",
+   "operation": "CLICK",
+   "target": "50",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e88": 0.0,
+    "e98": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 1.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e126": 0.0,
+    "e127": 0.0,
+    "e128": 0.0,
+    "e129": 0.0,
+    "e131": 0.0,
+    "e132": 0.0,
+    "e133": 0.0,
+    "e134": 0.0,
+    "e135": 0.0,
+    "e137": 0.0,
+    "e138": 0.0,
+    "e139": 0.0,
+    "e140": 0.0,
+    "e142": 0.0,
+    "e143": 0.0,
+    "e144": 0.0,
+    "e145": 0.0,
+    "e147": 0.0,
+    "e148": 0.0,
+    "e149": 0.0,
+    "e150": 0.0,
+    "e151": 0.0,
+    "e153": 0.0,
+    "e154": 0.0,
+    "e155": 0.0,
+    "e156": 0.0,
+    "e157": 0.0,
+    "e159": 0.0,
+    "e160": 0.0,
+    "e161": 0.0,
+    "e162": 0.0,
+    "e163": 0.0,
+    "e165": 0.0,
+    "e166": 0.0,
+    "e167": 0.0,
+    "e168": 0.0,
+    "e169": 0.0,
+    "e170": 0.0,
+    "e172": 0.0,
+    "e173": 0.0,
+    "e174": 0.0,
+    "e175": 0.0,
+    "e176": 0.0,
+    "e177": 0.0,
+    "e179": 0.0,
+    "e180": 0.0,
+    "e181": 0.0,
+    "e182": 0.0,
+    "e183": 0.0,
+    "e184": 0.0,
+    "e185": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 18340,
+    "completion_tokens": 13,
+    "total_tokens": 18353,
+    "prompt_tokens_details": {
+     "cached_tokens": 18176,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 674,
+   "fingerprint": "44795227f75628eb114e317f00dd05179831a46cabef5afd60c986bcdeb7bc4e",
+   "elapsed_ms": 7764
+  },
+  {
+   "choice": "DONE",
+   "operation": "DONE",
+   "target": null,
+   "confidence": 1.0,
+   "probabilities": {
+    "DONE": 1.0
+   },
+   "operation_probabilities": {
+    "DONE": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1039,
+    "completion_tokens": 13,
+    "total_tokens": 1052,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 514,
+   "fingerprint": "c2f203ae5a6dd820b5cb6ff74a74f29c8fca0d89e1be4bc353696c2755feea08",
+   "elapsed_ms": 8901
+  },
+  {
+   "choice": "e4",
+   "operation": "CLICK",
+   "target": "4",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 1.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e120": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 13047,
+    "completion_tokens": 18,
+    "total_tokens": 13065,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 705,
+   "fingerprint": "c744afa8baf6c6c3fc2434f30f566f46453f0a091d1fc0ee828eb911153b24ef",
+   "elapsed_ms": 9634
+  },
+  {
+   "choice": "e4",
+   "operation": "CLICK",
+   "target": "4",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 1.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1100,
+    "completion_tokens": 13,
+    "total_tokens": 1113,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 589,
+   "fingerprint": "e6f4ffeafbab282611beb7aa52b986f540b3177e555b78d65ef493cceaf21885",
+   "elapsed_ms": 10907
+  },
+  {
+   "choice": "e51",
+   "operation": "TYPE_TEXT",
+   "target": "21",
+   "confidence": 1.0,
+   "probabilities": {
+    "e51": 1.0,
+    "e204": 0.0,
+    "e214": 0.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 34886,
+    "completion_tokens": 14,
+    "total_tokens": 34900,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 649,
+   "fingerprint": "f0adfa5913d69d90e60b30f46115835cfeb2ad0e53d738714cbf6d5a0368f355",
+   "elapsed_ms": 11614
+  },
+  {
+   "choice": "e53",
+   "operation": "CLICK",
+   "target": "22",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e37": 0.0,
+    "e38": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e52": 0.0,
+    "e53": 1.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e201": 0.0,
+    "e202": 0.0,
+    "e203": 0.0,
+    "e205": 0.0,
+    "e215": 0.0,
+    "e218": 0.0,
+    "e219": 0.0,
+    "e220": 0.0,
+    "e221": 0.0,
+    "e222": 0.0,
+    "e223": 0.0,
+    "e224": 0.0,
+    "e225": 0.0,
+    "e226": 0.0,
+    "e227": 0.0,
+    "e228": 0.0,
+    "e229": 0.0,
+    "e230": 0.0,
+    "e231": 0.0,
+    "e232": 0.0,
+    "e233": 0.0,
+    "e234": 0.0,
+    "e235": 0.0,
+    "e236": 0.0,
+    "e237": 0.0,
+    "e238": 0.0,
+    "e239": 0.0,
+    "e240": 0.0,
+    "e241": 0.0,
+    "e242": 0.0,
+    "e243": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 34889,
+    "completion_tokens": 13,
+    "total_tokens": 34902,
+    "prompt_tokens_details": {
+     "cached_tokens": 34688,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 874,
+   "fingerprint": "5b9ad1fd81c9429d2aa81f8d1498b9a6417156216f3e83455ae521c5d38a27ec",
+   "elapsed_ms": 13173
+  },
+  {
+   "choice": "e4",
+   "operation": "CLICK",
+   "target": "4",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 1.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1102,
+    "completion_tokens": 13,
+    "total_tokens": 1115,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 523,
+   "fingerprint": "89050f8fe2d8498007c6a958fc65378201f59dfef233d0ad163e154789329088",
+   "elapsed_ms": 14180
+  },
+  {
+   "choice": "e68",
+   "operation": "CLICK",
+   "target": "22",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e26": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 1.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 14128,
+    "completion_tokens": 13,
+    "total_tokens": 14141,
+    "prompt_tokens_details": {
+     "cached_tokens": 7040,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 615,
+   "fingerprint": "7e93843485f688ac6ce0ac27a3377ee6bd6473d55a4853dfe29c97dd51595603",
+   "elapsed_ms": 14823
+  },
+  {
+   "choice": "e28",
+   "operation": "CLICK",
+   "target": "14",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e27": 0.0,
+    "e28": 1.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 5483,
+    "completion_tokens": 13,
+    "total_tokens": 5496,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 725,
+   "fingerprint": "e78966448266cb1f3f7f479e1488cbe51a181ed09414551f1c8ef1db8d1b7f5b",
+   "elapsed_ms": 16195
+  },
+  {
+   "choice": "e106",
+   "operation": "CLICK",
+   "target": "50",
+   "confidence": 0.95,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e88": 0.0,
+    "e98": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 1.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e126": 0.0,
+    "e127": 0.0,
+    "e128": 0.0,
+    "e129": 0.0,
+    "e131": 0.0,
+    "e132": 0.0,
+    "e133": 0.0,
+    "e134": 0.0,
+    "e135": 0.0,
+    "e137": 0.0,
+    "e138": 0.0,
+    "e139": 0.0,
+    "e140": 0.0,
+    "e142": 0.0,
+    "e143": 0.0,
+    "e144": 0.0,
+    "e145": 0.0,
+    "e147": 0.0,
+    "e148": 0.0,
+    "e149": 0.0,
+    "e150": 0.0,
+    "e151": 0.0,
+    "e153": 0.0,
+    "e154": 0.0,
+    "e155": 0.0,
+    "e156": 0.0,
+    "e157": 0.0,
+    "e159": 0.0,
+    "e160": 0.0,
+    "e161": 0.0,
+    "e162": 0.0,
+    "e163": 0.0,
+    "e165": 0.0,
+    "e166": 0.0,
+    "e167": 0.0,
+    "e168": 0.0,
+    "e169": 0.0,
+    "e170": 0.0,
+    "e172": 0.0,
+    "e173": 0.0,
+    "e174": 0.0,
+    "e175": 0.0,
+    "e176": 0.0,
+    "e177": 0.0,
+    "e179": 0.0,
+    "e180": 0.0,
+    "e181": 0.0,
+    "e182": 0.0,
+    "e183": 0.0,
+    "e184": 0.0,
+    "e185": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 18435,
+    "completion_tokens": 15,
+    "total_tokens": 18450,
+    "prompt_tokens_details": {
+     "cached_tokens": 10112,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 6552,
+   "fingerprint": "41c0ea8dbb4b3c069449b44460da726a7e4d2450de47ce20ea62280b73620687",
+   "elapsed_ms": 22809
+  },
+  {
+   "choice": "e106",
+   "operation": "CLICK",
+   "target": "50",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e27": 0.0,
+    "e28": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e88": 0.0,
+    "e98": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 1.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e121": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e126": 0.0,
+    "e127": 0.0,
+    "e128": 0.0,
+    "e129": 0.0,
+    "e131": 0.0,
+    "e132": 0.0,
+    "e133": 0.0,
+    "e134": 0.0,
+    "e135": 0.0,
+    "e137": 0.0,
+    "e138": 0.0,
+    "e139": 0.0,
+    "e140": 0.0,
+    "e142": 0.0,
+    "e143": 0.0,
+    "e144": 0.0,
+    "e145": 0.0,
+    "e147": 0.0,
+    "e148": 0.0,
+    "e149": 0.0,
+    "e150": 0.0,
+    "e151": 0.0,
+    "e153": 0.0,
+    "e154": 0.0,
+    "e155": 0.0,
+    "e156": 0.0,
+    "e157": 0.0,
+    "e159": 0.0,
+    "e160": 0.0,
+    "e161": 0.0,
+    "e162": 0.0,
+    "e163": 0.0,
+    "e165": 0.0,
+    "e166": 0.0,
+    "e167": 0.0,
+    "e168": 0.0,
+    "e169": 0.0,
+    "e170": 0.0,
+    "e172": 0.0,
+    "e173": 0.0,
+    "e174": 0.0,
+    "e175": 0.0,
+    "e176": 0.0,
+    "e177": 0.0,
+    "e179": 0.0,
+    "e180": 0.0,
+    "e181": 0.0,
+    "e182": 0.0,
+    "e183": 0.0,
+    "e184": 0.0,
+    "e185": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 18467,
+    "completion_tokens": 18,
+    "total_tokens": 18485,
+    "prompt_tokens_details": {
+     "cached_tokens": 10112,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 839,
+   "fingerprint": "d0d498058571ef37cbe3c9d149b96b40a7da21fe0bfbefcb049ac9edfd10bd87",
+   "elapsed_ms": 23709
+  },
+  {
+   "choice": "e39",
+   "operation": "CLICK",
+   "target": "13",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e38": 0.0,
+    "e39": 1.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 6842,
+    "completion_tokens": 15,
+    "total_tokens": 6857,
+    "prompt_tokens_details": {
+     "cached_tokens": 2944,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 6515,
+   "fingerprint": "95f9e79f08dfabce9a7d43bc06651e68e0608aca8ce78062a8035be663493817",
+   "elapsed_ms": 30972
+  },
+  {
+   "choice": "e51",
+   "operation": "CLICK",
+   "target": "20",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e38": 0.0,
+    "e39": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 1.0,
+    "e52": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e61": 0.0,
+    "e62": 0.0,
+    "e63": 0.0,
+    "e64": 0.0,
+    "e65": 0.0,
+    "e66": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e72": 0.0,
+    "e73": 0.0,
+    "e74": 0.0,
+    "e75": 0.0,
+    "e76": 0.0,
+    "e77": 0.0,
+    "e78": 0.0,
+    "e79": 0.0,
+    "e80": 0.0,
+    "e81": 0.0,
+    "e82": 0.0,
+    "e83": 0.0,
+    "e84": 0.0,
+    "e85": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e114": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e120": 0.0,
+    "e121": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 12844,
+    "completion_tokens": 13,
+    "total_tokens": 12857,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 777,
+   "fingerprint": "3982d41e986a4ebf4b888143c28adde7b917e1427744f330cb0f19f18771e48e",
+   "elapsed_ms": 31784
+  },
+  {
+   "choice": "e4",
+   "operation": "CLICK",
+   "target": "4",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 1.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1188,
+    "completion_tokens": 18,
+    "total_tokens": 1206,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 1267,
+   "fingerprint": "df6684881d4b13c6f2890686939643d4bb49baeb8e2cbbfe8ae0746e23d22092",
+   "elapsed_ms": 33554
+  },
+  {
+   "choice": "e4",
+   "operation": "CLICK",
+   "target": "4",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 1.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e13": 0.0,
+    "e42": 0.0,
+    "e43": 0.0,
+    "e44": 0.0,
+    "e45": 0.0,
+    "e46": 0.0,
+    "e47": 0.0,
+    "e48": 0.0,
+    "e49": 0.0,
+    "e50": 0.0,
+    "e51": 0.0,
+    "e53": 0.0,
+    "e54": 0.0,
+    "e55": 0.0,
+    "e56": 0.0,
+    "e57": 0.0,
+    "e58": 0.0,
+    "e59": 0.0,
+    "e60": 0.0,
+    "e67": 0.0,
+    "e68": 0.0,
+    "e69": 0.0,
+    "e70": 0.0,
+    "e71": 0.0,
+    "e73": 0.0,
+    "e83": 0.0,
+    "e86": 0.0,
+    "e87": 0.0,
+    "e88": 0.0,
+    "e89": 0.0,
+    "e90": 0.0,
+    "e91": 0.0,
+    "e92": 0.0,
+    "e93": 0.0,
+    "e94": 0.0,
+    "e95": 0.0,
+    "e96": 0.0,
+    "e97": 0.0,
+    "e98": 0.0,
+    "e99": 0.0,
+    "e100": 0.0,
+    "e101": 0.0,
+    "e102": 0.0,
+    "e103": 0.0,
+    "e104": 0.0,
+    "e105": 0.0,
+    "e106": 0.0,
+    "e107": 0.0,
+    "e108": 0.0,
+    "e109": 0.0,
+    "e110": 0.0,
+    "e111": 0.0,
+    "e112": 0.0,
+    "e113": 0.0,
+    "e115": 0.0,
+    "e116": 0.0,
+    "e117": 0.0,
+    "e118": 0.0,
+    "e119": 0.0,
+    "e120": 0.0,
+    "e122": 0.0,
+    "e123": 0.0,
+    "e124": 0.0,
+    "e125": 0.0,
+    "e126": 0.0,
+    "e127": 0.0,
+    "e128": 0.0,
+    "e130": 0.0,
+    "e131": 0.0,
+    "e132": 0.0,
+    "e133": 0.0,
+    "e134": 0.0,
+    "e135": 0.0,
+    "e136": 0.0,
+    "e138": 0.0,
+    "e139": 0.0,
+    "e140": 0.0,
+    "e141": 0.0,
+    "e142": 0.0,
+    "e143": 0.0,
+    "e145": 0.0,
+    "e146": 0.0,
+    "e147": 0.0,
+    "e148": 0.0,
+    "e149": 0.0,
+    "e150": 0.0,
+    "e152": 0.0,
+    "e153": 0.0,
+    "e154": 0.0,
+    "e155": 0.0,
+    "e156": 0.0,
+    "e157": 0.0,
+    "e158": 0.0,
+    "e160": 0.0,
+    "e161": 0.0,
+    "e162": 0.0,
+    "e163": 0.0,
+    "e164": 0.0,
+    "e165": 0.0,
+    "e166": 0.0,
+    "e168": 0.0,
+    "e169": 0.0,
+    "e170": 0.0,
+    "e171": 0.0,
+    "e172": 0.0,
+    "e173": 0.0,
+    "e174": 0.0,
+    "e176": 0.0,
+    "e177": 0.0,
+    "e178": 0.0,
+    "e179": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 16324,
+    "completion_tokens": 15,
+    "total_tokens": 16339,
+    "prompt_tokens_details": {
+     "cached_tokens": 9088,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 6780,
+   "fingerprint": "d1887b50745e62028b47082b67f7808cf53152eac7e761828d85fe0ae8dd74eb",
+   "elapsed_ms": 40388
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 443,
+   "usage": {
+    "prompt_tokens": 607,
+    "completion_tokens": 8,
+    "total_tokens": 615,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "Hipparcos"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 568,
+   "usage": {
+    "prompt_tokens": 674,
+    "completion_tokens": 8,
+    "total_tokens": 682,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "textbox",
+   "value": "Hipparcos"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Anubis",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "Techaro",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "CELPHASE",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "1",
+    "label": "CDS website",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "2",
+    "label": "CDS Portal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "3",
+    "label": "Simbad",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "4",
+    "label": "VizieR",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "5",
+    "label": "Aladin",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "6",
+    "label": "X-Match",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "7",
+    "label": "Other resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "menuitem",
+    "value": "",
+    "index": "8",
+    "label": "Help resources",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Save in CDSportal",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Back",
+    "index": "11",
+    "label": "Back",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "..tyc2, ..suppl_1, ..suppl_2",
+    "index": "12",
+    "label": "I/259 ..tyc2 ..suppl_1 ..suppl_2",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "12:1",
+      "label": "I/259 ..tyc2 ..suppl_1 ..suppl_2 \u2192 I/259",
+      "value": "I/259"
+     }
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Choose",
+    "index": "13",
+    "label": "Choose",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "50",
+    "index": "14",
+    "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "14:1",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 1",
+      "value": "1"
+     },
+     {
+      "index": "14:2",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 5",
+      "value": "5"
+     },
+     {
+      "index": "14:3",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 10",
+      "value": "10"
+     },
+     {
+      "index": "14:4",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 20",
+      "value": "20"
+     },
+     {
+      "index": "14:5",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 100",
+      "value": "100"
+     },
+     {
+      "index": "14:6",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 200",
+      "value": "200"
+     },
+     {
+      "index": "14:7",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 1000",
+      "value": "1000"
+     },
+     {
+      "index": "14:8",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 9999",
+      "value": "9999"
+     },
+     {
+      "index": "14:9",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 99999",
+      "value": "99999"
+     },
+     {
+      "index": "14:10",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 999999",
+      "value": "999999"
+     },
+     {
+      "index": "14:11",
+      "label": "1 5 10 20 50 100 200 1000 9999 99999 999999 unlimited \u2192 unlimited",
+      "value": "unlimited"
+     }
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "HTML Table",
+    "index": "15",
+    "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "15:1",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 CDS portal",
+      "value": "CDS portal"
+     },
+     {
+      "index": "15:2",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 VOTable",
+      "value": "VOTable"
+     },
+     {
+      "index": "15:3",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 VOTable (bin-64)",
+      "value": "VOTable (bin-64)"
+     },
+     {
+      "index": "15:4",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 VOTable (bin2_64)",
+      "value": "VOTable (bin2_64)"
+     },
+     {
+      "index": "15:5",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 XML + CSV (Astrores)",
+      "value": "XML + CSV (Astrores)"
+     },
+     {
+      "index": "15:6",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 FITS (ascii) Table",
+      "value": "FITS (ascii) Table"
+     },
+     {
+      "index": "15:7",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 FITS (binary) Table",
+      "value": "FITS (binary) Table"
+     },
+     {
+      "index": "15:8",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 SkyCat-Compatible",
+      "value": "SkyCat-Compatible"
+     },
+     {
+      "index": "15:9",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 HTML with Checkboxes",
+      "value": "HTML with Checkboxes"
+     },
+     {
+      "index": "15:10",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 Detailed results",
+      "value": "Detailed results"
+     },
+     {
+      "index": "15:11",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 Tab-Separated-Values",
+      "value": "Tab-Separated-Values"
+     },
+     {
+      "index": "15:12",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 | -Separated-Values",
+      "value": "| -Separated-Values"
+     },
+     {
+      "index": "15:13",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 ; -Separated-Values",
+      "value": "; -Separated-Values"
+     },
+     {
+      "index": "15:14",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 ascii text/plain",
+      "value": "ascii text/plain"
+     },
+     {
+      "index": "15:15",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 ascii table",
+      "value": "ascii table"
+     },
+     {
+      "index": "15:16",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 ascii - with Checkboxes",
+      "value": "ascii - with Checkboxes"
+     },
+     {
+      "index": "15:17",
+      "label": "CDS portal VOTable VOTable (bin-64) VOTable (bin2_64) XML + CSV  (Astrores) FITS (ascii) Table FITS (binary) Table SkyCat-Compatible HTML Table HTML with Checkboxes Detailed results Tab-Separated-Values | -Separated-Values ; -Separated-Values ascii text/plain ascii table ascii - with Checkboxes ascii - 999'filled \u2192 ascii - 999'filled",
+      "value": "ascii - 999'filled"
+     }
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "2",
+    "checked": "false",
+    "index": "16",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "Compute",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_r",
+    "checked": "false",
+    "index": "18",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_p",
+    "checked": "false",
+    "index": "19",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_x,_y",
+    "checked": "false",
+    "index": "20",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_Glon,_Glat",
+    "checked": "false",
+    "index": "21",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_RAJ,_DEJ",
+    "checked": "false",
+    "index": "22",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_RAB,_DEB",
+    "checked": "false",
+    "index": "23",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_Elon,_Elat",
+    "checked": "false",
+    "index": "24",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "_RA*-c.eq,_DE*-c.eq",
+    "checked": "false",
+    "index": "25",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "default",
+    "index": "26",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "_r",
+    "checked": "false",
+    "index": "27",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "I",
+    "checked": "false",
+    "index": "28",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "D",
+    "checked": "false",
+    "index": "29",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "",
+    "checked": "false",
+    "index": "30",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "sexa",
+    "checked": "true",
+    "index": "31",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "dec",
+    "checked": "false",
+    "index": "32",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "min",
+    "checked": "false",
+    "index": "33",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "CDS, France",
+    "index": "34",
+    "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "34:1",
+      "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa \u2192 Tokyo, Japan",
+      "value": "Tokyo, Japan"
+     },
+     {
+      "index": "34:2",
+      "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa \u2192 CFA/Harvard, USA",
+      "value": "CFA/Harvard, USA"
+     },
+     {
+      "index": "34:3",
+      "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa \u2192 INASAN, Russia",
+      "value": "INASAN, Russia"
+     },
+     {
+      "index": "34:4",
+      "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa \u2192 IUCAA, India",
+      "value": "IUCAA, India"
+     },
+     {
+      "index": "34:5",
+      "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa \u2192 Beijing Obs., China",
+      "value": "Beijing Obs., China"
+     },
+     {
+      "index": "34:6",
+      "label": "CDS, France         Tokyo, Japan    \t CFA/Harvard, USA \t INASAN, Russia \t IUCAA, India   \t Beijing Obs., China  \t IDIA, South Africa \u2192 IDIA, South Africa",
+      "value": "IDIA, South Africa"
+     }
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "35",
+    "label": "Simple Target",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "36",
+    "label": "List Of Targets",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "37",
+    "label": "Fast Xmatch with large catalogs or Simbad",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "38",
+    "label": "Sesame",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": " Clear ",
+    "index": "39",
+    "label": " Clear ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "40",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "J2000",
+    "index": "41",
+    "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "41:1",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 B1975",
+      "value": "B1975"
+     },
+     {
+      "index": "41:2",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 B1950",
+      "value": "B1950"
+     },
+     {
+      "index": "41:3",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 B1900",
+      "value": "B1900"
+     },
+     {
+      "index": "41:4",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 B1875",
+      "value": "B1875"
+     },
+     {
+      "index": "41:5",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 B1855",
+      "value": "B1855"
+     },
+     {
+      "index": "41:6",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 Galactic",
+      "value": "Galactic"
+     },
+     {
+      "index": "41:7",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 Supergal.",
+      "value": "Supergal."
+     },
+     {
+      "index": "41:8",
+      "label": "J2000 B1975 B1950 B1900 B1875 B1855 Galactic Supergal. Ecl.J2000 \u2192 Ecl.J2000",
+      "value": "Ecl.J2000"
+     }
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "  2",
+    "index": "42",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "combobox",
+    "value": "arcmin",
+    "index": "43",
+    "label": "deg arcmin arcsec",
+    "operations": [
+     "SELECT"
+    ],
+    "options": [
+     {
+      "index": "43:1",
+      "label": "deg arcmin arcsec \u2192 deg",
+      "value": "deg"
+     },
+     {
+      "index": "43:2",
+      "label": "deg arcmin arcsec \u2192 arcsec",
+      "value": "arcsec"
+     }
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "r",
+    "checked": "true",
+    "index": "44",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "b",
+    "checked": "false",
+    "index": "45",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "46",
+    "label": "I/259",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "47",
+    "label": "link",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "48",
+    "label": "ReadMe+ftp",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "49",
+    "label": "2000A&A...355L..27H",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "50",
+    "label": "Similar Catalogs",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "51",
+    "label": "Post annotation",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "52",
+    "label": "img(gal)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "53",
+    "label": "I/259/tyc2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "54",
+    "label": "(Note)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "55",
+    "label": "I/259/suppl_1",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "56",
+    "label": "I/259/suppl_2",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "57",
+    "label": "Help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "on",
+    "checked": "false",
+    "index": "58",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "59",
+    "label": "Simple Constraint",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "60",
+    "label": "List Of Constraints",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": " Submit ",
+    "index": "61",
+    "label": " Submit ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Reset All",
+    "index": "62",
+    "label": "Reset All",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "63",
+    "label": "Constraints  constraints help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "I",
+    "checked": "true",
+    "index": "64",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "D",
+    "checked": "false",
+    "index": "65",
+    "label": "radio",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "66",
+    "label": "more",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "67",
+    "label": "join",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": " Clear ",
+    "index": "68",
+    "label": " Clear ",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "recno",
+    "checked": "false",
+    "index": "69",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "recno",
+    "checked": "false",
+    "index": "70",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "71",
+    "label": "(ALL)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "72",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "73",
+    "label": "meta.record",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "TYC1",
+    "checked": "true",
+    "index": "74",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "TYC1",
+    "checked": "false",
+    "index": "75",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "76",
+    "label": "click to join tables",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "77",
+    "label": "(ALL)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "78",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "79",
+    "label": "(Note 1)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "80",
+    "label": "meta.id.part;meta.main",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "TYC2",
+    "checked": "true",
+    "index": "81",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "TYC2",
+    "checked": "false",
+    "index": "82",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "83",
+    "label": "click to join tables",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "84",
+    "label": "(ALL)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "85",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "86",
+    "label": "(Note 1)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "87",
+    "label": "meta.id.part;meta.main",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "TYC3",
+    "checked": "true",
+    "index": "88",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "TYC3",
+    "checked": "false",
+    "index": "89",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "90",
+    "label": "click to join tables",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "91",
+    "label": "(ALL)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "92",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "93",
+    "label": "(Note 1)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "94",
+    "label": "meta.id.part;meta.main",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "pflag",
+    "checked": "false",
+    "index": "95",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "pflag",
+    "checked": "false",
+    "index": "96",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "97",
+    "label": "(1)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "98",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "99",
+    "label": "(Note 2)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "100",
+    "label": "meta.code",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "RAmdeg",
+    "checked": "false",
+    "index": "101",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "RAmdeg",
+    "checked": "false",
+    "index": "102",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "103",
+    "label": "(1)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "104",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "105",
+    "label": "deg",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "106",
+    "label": "(Note 3)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "107",
+    "label": "pos.eq.ra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "DEmdeg",
+    "checked": "false",
+    "index": "108",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "DEmdeg",
+    "checked": "false",
+    "index": "109",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "110",
+    "label": "(1)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "111",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "112",
+    "label": "deg",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "113",
+    "label": "(Note 3)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "114",
+    "label": "pos.eq.dec",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "pmRA",
+    "checked": "true",
+    "index": "115",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "pmRA",
+    "checked": "false",
+    "index": "116",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "117",
+    "label": "(ALL)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "118",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "119",
+    "label": "mas/yr",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "120",
+    "label": "(Note)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "121",
+    "label": "pos.pm;pos.eq.ra",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "checkbox",
+    "value": "pmDE",
+    "checked": "true",
+    "index": "122",
+    "label": "checkbox",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "radio",
+    "value": "pmDE",
+    "checked": "false",
+    "index": "123",
+    "label": "select this column as input for the list",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "124",
+    "label": "(ALL)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "125",
+    "label": "textbox",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "126",
+    "label": "mas/yr",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "127",
+    "label": "(Note)",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "128",
+    "label": "pos.pm;pos.eq.dec",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 23 observations; the full traces stay on the machine that made the runs"
+}

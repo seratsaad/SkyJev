@@ -1,0 +1,95 @@
+{
+ "task_id": "vizier_hipparcos_102",
+ "category": "search",
+ "agent": "browser-use",
+ "mode": "interface",
+ "run_index": 1,
+ "started_at": "2026-09-22T16:46:25+00:00",
+ "goal": "In VizieR, search the catalogue collection for Hipparcos and open the results list of matching catalogues.",
+ "start_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 153.397,
+ "goal_sent": "Start at https://vizier.cds.unistra.fr/viz-bin/VizieR . In VizieR, search the catalogue collection for Hipparcos and open the results list of matching catalogues. Work inside the website's own interface: use its links, search boxes, forms and buttons. Do not type a full URL for a results or record page into the address bar.",
+ "steps": 18,
+ "urls": [
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239/hip_main&-out.max=50&-out.form=HTML%20Table&-out.add=_r&-out.add=_RAJ,_DEJ&-sort=_r&-oc.form=sexa",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-kw.cat=1239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-kw.cat=1239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-kw.cat=1239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-kw.cat=1239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-kw.cat=1239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-kw.cat=1239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239",
+  "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239"
+ ],
+ "actions": [
+  "navigate",
+  "wait",
+  "input",
+  "click",
+  "wait",
+  "click",
+  "scroll",
+  "scroll",
+  "click",
+  "search_page",
+  "click",
+  "click",
+  "wait",
+  "wait",
+  "click",
+  "scroll",
+  "click",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "I have successfully navigated within VizieR starting from https://vizier.cds.unistra.fr/viz-bin/VizieR, searched for 'Hipparcos' in the catalogue collection, and opened the detailed results list of matching Hipparcos catalogues using only the website's interface. The current page shows a comprehensive list of 28 matching Hipparcos-related catalogues with links and descriptions, fulfilling your request to open the results list without typing any full URLs manually. If you need further actions or data extraction from these catalogues, please let me know.",
+ "tokens": 553424,
+ "navigated_by_url": false,
+ "provider_errors": [
+  "Invalid model output format. Please follow the correct schema.\nDetails: 23 validation errors for ActionModelUnion\nDoneActionModel\n  Input should be a valid dictionary or instance of DoneActionModel [t"
+ ],
+ "verified_tab": "D2ACBE4903E3073112C215BC52604BC4",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "match='Hipparcos'"
+   },
+   {
+    "passed": true,
+    "detail": "match='I/239'"
+   },
+   {
+    "passed": true,
+    "detail": "url=https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=I/239",
+ "model_calls": 18,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 3,
+  "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-2"
+ },
+ "failure_type": null
+}

@@ -1,0 +1,64 @@
+{
+ "task_id": "arxiv_lookup_001",
+ "category": "lookup",
+ "agent": "browser-use",
+ "mode": "free",
+ "run_index": 1,
+ "started_at": "2026-09-22T21:54:46+00:00",
+ "goal": "Open the arXiv abstract page for the paper with identifier 2306.06308.",
+ "start_url": "https://arxiv.org/",
+ "baseline_model": "gpt-4.1-mini",
+ "max_steps": 25,
+ "status": "done",
+ "error": null,
+ "duration_seconds": 28.229,
+ "goal_sent": "Start at https://arxiv.org/ . Open the arXiv abstract page for the paper with identifier 2306.06308.",
+ "steps": 5,
+ "urls": [
+  "https://arxiv.org/",
+  "https://arxiv.org/",
+  "https://arxiv.org/abs/2306.06308",
+  "https://arxiv.org/abs/2306.06308",
+  "https://arxiv.org/abs/2306.06308"
+ ],
+ "actions": [
+  "navigate",
+  "switch",
+  "extract",
+  "done"
+ ],
+ "agent_claimed_done": true,
+ "agent_claimed_success": true,
+ "final_result": "The arXiv abstract page for paper identifier 2306.06308 is already open and verified. The title on the page is 'The Early Data Release of the Dark Energy Spectroscopic Instrument,' matching exactly with the requested paper. No further navigation was required.",
+ "tokens": 112308,
+ "navigated_by_url": false,
+ "provider_errors": [
+  "Invalid model output format. Please follow the correct schema.\nDetails: 23 validation errors for ActionModelUnion\nDoneActionModel\n  Input should be a valid dictionary or instance of DoneActionModel [t"
+ ],
+ "verified_tab": "CCE801B438C4F4A6D91B97809DAF0375",
+ "unverifiable": false,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "url=https://arxiv.org/abs/2306.06308"
+   },
+   {
+    "passed": true,
+    "detail": "'arXiv:2306.06308' found in 4293 chars"
+   }
+  ],
+  "settle_seconds": 0.0
+ },
+ "final_url": "https://arxiv.org/abs/2306.06308",
+ "model_calls": 5,
+ "transient": {
+  "applicable": true,
+  "reached": true,
+  "at": 2,
+  "url": "https://arxiv.org/abs/2306.06308"
+ },
+ "failure_type": null
+}

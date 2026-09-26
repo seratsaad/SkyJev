@@ -1,0 +1,51 @@
+# Category A -- simple information retrieval. Expected difficulty: LOW.
+- id: arxiv_lookup_001
+  category: lookup
+  difficulty: low
+  goal: >
+    Open the arXiv abstract page for the paper with identifier 2306.06308.
+  start_url: https://arxiv.org/
+  gold_url: https://arxiv.org/abs/2306.06308
+  goal_url: 'arxiv\.org/abs/2306\.06308'
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "arxiv\\.org/abs/2306\\.06308"}
+      - {type: page_contains, value: "arXiv:2306.06308"}
+  timeout_seconds: 90
+  notes: The front page has a search box and an identifier field; either route is acceptable.
+
+- id: simbad_betelgeuse_002
+  category: lookup
+  difficulty: low
+  goal: >
+    Open the SIMBAD main record page for the star Betelgeuse.
+  start_url: https://simbad.cds.unistra.fr/simbad/
+  gold_url: https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=Betelgeuse
+  goal_url: '(?i)simbad/sim-(basic|id)\?.*Ident=(Betelgeuse|[^&]*alf(\+|%20|\s)*Ori)'
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "(?i)Ident=Betelgeuse|Ident=%2A\\+alf\\+Ori"}
+      - {type: page_regex, value: "\\*\\s*alf\\s*Ori"}
+      - {type: page_regex, value: "05 55 10"}
+  timeout_seconds: 90
+  notes: >
+    The basic-search box carries no accessible name; JEV sees it as "textbox". The URL clause is
+    part of the check and also lets the failure taxonomy tell "never got there" apart from "got
+    there and left", which it does by replaying the run's own URL history.
+
+- id: eso_fors2_003
+  category: lookup
+  difficulty: low
+  goal: >
+    Open the ESO instrument overview page for FORS2 at the Very Large Telescope.
+  start_url: https://www.eso.org/sci/facilities/paranal/instruments.html
+  gold_url: https://www.eso.org/sci/facilities/paranal/instruments/fors.html
+  goal_url: 'eso\.org/sci/facilities/paranal/instruments/fors'
+  verifier:
+    type: all_of
+    items:
+      - {type: url_regex, value: "eso\\.org/sci/facilities/paranal/instruments/fors"}
+      - {type: page_regex, value: "FORS"}
+  timeout_seconds: 90

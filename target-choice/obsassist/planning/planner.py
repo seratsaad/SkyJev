@@ -1,7 +1,7 @@
 """Planning from what the observer can know: a nowcast from telemetry, a forecast that relaxes
 toward the night's own conditions, predicted S/N from the planning tables, a greedy merit
-policy, and a projection of the rest of the night (per-target finishing times, the list
-completion time).
+policy, a queue observer's rule (priority first), and a projection of the rest of the night
+(per-target finishing times, the list completion time).
 
 The planner never reads the weather truth. It sees the DIMM, the guider flux ratio and the
 S/N it measured on its own exposures, as an observer does.
@@ -407,8 +407,25 @@ class GreedyPolicy:
         feas = [c for c in cands if c.feasible]
         if not feas:
             return Action("wait", minutes=10.0, reason="nothing observable meets its constraints"), cands
+        best, why = self.pick(feas)
+        return Action("observe", target=best.i, t_exp=best.t_exp, reason=why), cands
+
+    def pick(self, feas: List[Candidate]) -> Tuple[Candidate, str]:
+        """The candidate to observe among the feasible ones, and why."""
         best = max(feas, key=lambda c: c.merit)
-        return Action("observe", target=best.i, t_exp=best.t_exp, reason=f"highest merit ({best.merit:.3g})"), cands
+        return best, f"highest merit ({best.merit:.3g})"
+
+
+class QueueRulePolicy(GreedyPolicy):
+    """The rule a queue observer follows: among the feasible observing blocks, those that can still
+    be finished (merit > 0) first, then the best queue priority, then the one that sets soonest.
+    Focus and waiting as in the greedy policy."""
+
+    name = "queue-rule"
+
+    def pick(self, feas: List[Candidate]) -> Tuple[Candidate, str]:
+        best = min([c for c in feas if c.merit > 0] or feas, key=lambda c: (c.priority, c.window_left_min))
+        return best, f"queue rule: P{best.priority}, {best.window_left_min:.0f} min left"
 
 
 class ListOrderPolicy:

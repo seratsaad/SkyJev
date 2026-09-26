@@ -1,0 +1,1895 @@
+{
+ "task_id": "ned_ngc4993_202",
+ "category": "multistep",
+ "agent": "gpt-jev",
+ "arm": "gpt-jev",
+ "run_index": 2,
+ "started_at": "2026-09-22T03:38:17+00:00",
+ "goal": "Look up the galaxy NGC 4993 in the NASA/IPAC Extragalactic Database and open the page that shows its redshift.",
+ "start_url": "https://ned.ipac.caltech.edu/",
+ "jev_commit": "1231850",
+ "chooser_model": "gpt-4.1-mini",
+ "text_model": "gpt-4.1-mini",
+ "status": "blocked",
+ "error": null,
+ "setup_seconds": 3.317,
+ "stale_loop_limit": 8,
+ "success": true,
+ "verification": {
+  "passed": true,
+  "detail": [
+   {
+    "passed": true,
+    "detail": "match='NGC 4993'"
+   },
+   {
+    "passed": true,
+    "detail": "match='0.009'"
+   }
+  ],
+  "settle_seconds": 9.08
+ },
+ "final_url": "https://ned.ipac.caltech.edu/byname?objname=NGC+4993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+ "duration_seconds": 17.469,
+ "wall_seconds": 29.918,
+ "steps": 17,
+ "model_calls": 20,
+ "chooser_calls": 18,
+ "text_helper_calls": 2,
+ "chooser_tokens": 36754,
+ "text_tokens": 1247,
+ "chooser_latency_ms_median": 559.5,
+ "protocol_calls": 154,
+ "protocol_calls_by_method": {
+  "Target.createTarget": 1,
+  "Target.attachToTarget": 1,
+  "Emulation.setDeviceMetricsOverride": 1,
+  "Emulation.setFocusEmulationEnabled": 1,
+  "Page.navigate": 1,
+  "Runtime.evaluate": 109,
+  "Input.dispatchMouseEvent": 34,
+  "Input.dispatchKeyEvent": 4,
+  "Input.insertText": 2
+ },
+ "stale_retries": 0,
+ "transient": {
+  "applicable": false,
+  "reached": null,
+  "at": null
+ },
+ "env_probe": {
+  "iframes": 0,
+  "canvas": 0,
+  "shadow": 0
+ },
+ "last_page": {
+  "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+  "title": "By Name | NASA/IPAC Extragalactic Database",
+  "omitted_actions": 0,
+  "n_actions": 27
+ },
+ "failure_type": null,
+ "history": [
+  {
+   "step": 1,
+   "action": "Object Name, coordinates with search radius, etc.",
+   "kind": "fill",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 625,
+   "text": "NGC 4993",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 723,
+   "operation": "TYPE_TEXT",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 1791,
+    "completion_tokens": 19,
+    "total_tokens": 1810,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1381,
+   "elapsed_ms": 1403
+  },
+  {
+   "step": 2,
+   "action": "Go",
+   "kind": "click",
+   "choice": "e11",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 539,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "10",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+   "usage": {
+    "prompt_tokens": 1843,
+    "completion_tokens": 18,
+    "total_tokens": 1861,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 1959,
+   "elapsed_ms": 3738
+  },
+  {
+   "step": 3,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 1247,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 2184,
+    "completion_tokens": 13,
+    "total_tokens": 2197,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 5589,
+   "elapsed_ms": 5970
+  },
+  {
+   "step": 4,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 623,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 1877,
+    "completion_tokens": 18,
+    "total_tokens": 1895,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 6626,
+   "elapsed_ms": 6660
+  },
+  {
+   "step": 5,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 474,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 1905,
+    "completion_tokens": 13,
+    "total_tokens": 1918,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7145,
+   "elapsed_ms": 7168
+  },
+  {
+   "step": 6,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 559,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 1933,
+    "completion_tokens": 13,
+    "total_tokens": 1946,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 7746,
+   "elapsed_ms": 7776
+  },
+  {
+   "step": 7,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 550,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 1961,
+    "completion_tokens": 18,
+    "total_tokens": 1979,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8350,
+   "elapsed_ms": 8376
+  },
+  {
+   "step": 8,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 546,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 1989,
+    "completion_tokens": 20,
+    "total_tokens": 2009,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 8943,
+   "elapsed_ms": 8976
+  },
+  {
+   "step": 9,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 556,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 2017,
+    "completion_tokens": 20,
+    "total_tokens": 2037,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 9554,
+   "elapsed_ms": 9592
+  },
+  {
+   "step": 10,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 681,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 2045,
+    "completion_tokens": 20,
+    "total_tokens": 2065,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 10281,
+   "elapsed_ms": 10302
+  },
+  {
+   "step": 11,
+   "action": "Search Objects \u00bb",
+   "kind": "click",
+   "choice": "e2",
+   "probability": 1.0,
+   "confidence": 0.95,
+   "latency_ms": 697,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "2",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 2073,
+    "completion_tokens": 15,
+    "total_tokens": 2088,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 11016,
+   "elapsed_ms": 11045
+  },
+  {
+   "step": 12,
+   "action": "Object Name, coordinates with search radius, etc.",
+   "kind": "fill",
+   "choice": "e9",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 525,
+   "text": "NGC 4993",
+   "text_helper": "gpt-4.1-mini",
+   "text_latency_ms": 794,
+   "operation": "TYPE_TEXT",
+   "target": "9",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/",
+   "usage": {
+    "prompt_tokens": 2065,
+    "completion_tokens": 14,
+    "total_tokens": 2079,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 12394,
+   "elapsed_ms": 12411
+  },
+  {
+   "step": 13,
+   "action": "Go",
+   "kind": "click",
+   "choice": "e11",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 557,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "10",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+   "usage": {
+    "prompt_tokens": 2095,
+    "completion_tokens": 18,
+    "total_tokens": 2113,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 12984,
+   "elapsed_ms": 14808
+  },
+  {
+   "step": 14,
+   "action": "Open Object Name",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 586,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "11",
+   "page_changed": true,
+   "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+   "usage": {
+    "prompt_tokens": 2408,
+    "completion_tokens": 13,
+    "total_tokens": 2421,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 15428,
+   "elapsed_ms": 15447
+  },
+  {
+   "step": 15,
+   "action": "Open Object Name",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 677,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "11",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+   "usage": {
+    "prompt_tokens": 2405,
+    "completion_tokens": 13,
+    "total_tokens": 2418,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 16136,
+   "elapsed_ms": 16151
+  },
+  {
+   "step": 16,
+   "action": "Open Object Name",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 1.0,
+   "latency_ms": 535,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "11",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+   "usage": {
+    "prompt_tokens": 2402,
+    "completion_tokens": 13,
+    "total_tokens": 2415,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 16698,
+   "elapsed_ms": 16708
+  },
+  {
+   "step": 17,
+   "action": "Open Object Name",
+   "kind": "click",
+   "choice": "e12",
+   "probability": 1.0,
+   "confidence": 0.9,
+   "latency_ms": 727,
+   "text": null,
+   "text_helper": null,
+   "text_latency_ms": 0,
+   "operation": "CLICK",
+   "target": "11",
+   "page_changed": false,
+   "url": "https://ned.ipac.caltech.edu/byname?objname=NGC%204993&hconst=67.8&omegam=0.308&omegav=0.692&wmap=4&corr_z=1",
+   "usage": {
+    "prompt_tokens": 2399,
+    "completion_tokens": 15,
+    "total_tokens": 2414,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "executed_ms": 17448,
+   "elapsed_ms": 17469
+  }
+ ],
+ "decisions": [
+  {
+   "choice": "e9",
+   "operation": "TYPE_TEXT",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e9": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1791,
+    "completion_tokens": 19,
+    "total_tokens": 1810,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 625,
+   "fingerprint": "4e3fe58db92db76af7298f30d92c18ee9bf56672c2d2a72775a29040d394cbb4",
+   "elapsed_ms": 628
+  },
+  {
+   "choice": "e11",
+   "operation": "CLICK",
+   "target": "10",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 1.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1843,
+    "completion_tokens": 18,
+    "total_tokens": 1861,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 539,
+   "fingerprint": "b0bc216f55c1567ba834d4a758f61d4d63baad497d6d8ce64c136878991a49ed",
+   "elapsed_ms": 1945
+  },
+  {
+   "choice": "e6",
+   "operation": "CLICK",
+   "target": "5",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e6": 1.0,
+    "e7": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1074,
+    "completion_tokens": 15,
+    "total_tokens": 1089,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 560,
+   "fingerprint": "81dca7b88c8a84f3ca05baa02bfa469a65787262955ffcffec43f21d8c86caef",
+   "elapsed_ms": 4300
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2184,
+    "completion_tokens": 13,
+    "total_tokens": 2197,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 1247,
+   "fingerprint": "38febd2f0385cf5a8244c5ae2516a3aadd9adba0abe6f1f9462ce4864b2917ea",
+   "elapsed_ms": 5567
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1877,
+    "completion_tokens": 18,
+    "total_tokens": 1895,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 623,
+   "fingerprint": "e50b8933675c7783bf4f614b28a96515da037de86da159fb978949e0b87158a9",
+   "elapsed_ms": 6606
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1905,
+    "completion_tokens": 13,
+    "total_tokens": 1918,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 474,
+   "fingerprint": "34d24921f229656771727a9fad55c88fa838ae9e3f74c63e56791c03fe91b5e9",
+   "elapsed_ms": 7135
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1933,
+    "completion_tokens": 13,
+    "total_tokens": 1946,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 559,
+   "fingerprint": "4e3fe58db92db76af7298f30d92c18ee9bf56672c2d2a72775a29040d394cbb4",
+   "elapsed_ms": 7729
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1961,
+    "completion_tokens": 18,
+    "total_tokens": 1979,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 550,
+   "fingerprint": "34d24921f229656771727a9fad55c88fa838ae9e3f74c63e56791c03fe91b5e9",
+   "elapsed_ms": 8329
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 1989,
+    "completion_tokens": 20,
+    "total_tokens": 2009,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 546,
+   "fingerprint": "34d24921f229656771727a9fad55c88fa838ae9e3f74c63e56791c03fe91b5e9",
+   "elapsed_ms": 8925
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2017,
+    "completion_tokens": 20,
+    "total_tokens": 2037,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 556,
+   "fingerprint": "34d24921f229656771727a9fad55c88fa838ae9e3f74c63e56791c03fe91b5e9",
+   "elapsed_ms": 9534
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2045,
+    "completion_tokens": 20,
+    "total_tokens": 2065,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 681,
+   "fingerprint": "4e3fe58db92db76af7298f30d92c18ee9bf56672c2d2a72775a29040d394cbb4",
+   "elapsed_ms": 10275
+  },
+  {
+   "choice": "e2",
+   "operation": "CLICK",
+   "target": "2",
+   "confidence": 0.95,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 1.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 0.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2073,
+    "completion_tokens": 15,
+    "total_tokens": 2088,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 697,
+   "fingerprint": "4e3fe58db92db76af7298f30d92c18ee9bf56672c2d2a72775a29040d394cbb4",
+   "elapsed_ms": 11002
+  },
+  {
+   "choice": "e9",
+   "operation": "TYPE_TEXT",
+   "target": "9",
+   "confidence": 1.0,
+   "probabilities": {
+    "e9": 1.0
+   },
+   "operation_probabilities": {
+    "TYPE_TEXT": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2065,
+    "completion_tokens": 14,
+    "total_tokens": 2079,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 525,
+   "fingerprint": "4e3fe58db92db76af7298f30d92c18ee9bf56672c2d2a72775a29040d394cbb4",
+   "elapsed_ms": 11573
+  },
+  {
+   "choice": "e11",
+   "operation": "CLICK",
+   "target": "10",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e10": 0.0,
+    "e11": 1.0,
+    "e12": 0.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2095,
+    "completion_tokens": 18,
+    "total_tokens": 2113,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 557,
+   "fingerprint": "b0bc216f55c1567ba834d4a758f61d4d63baad497d6d8ce64c136878991a49ed",
+   "elapsed_ms": 12971
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2408,
+    "completion_tokens": 13,
+    "total_tokens": 2421,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 586,
+   "fingerprint": "55d950513e1ceb7defe20d0cc74162ae882c79f82fc5424ac15eac9b99db9741",
+   "elapsed_ms": 15409
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2405,
+    "completion_tokens": 13,
+    "total_tokens": 2418,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 677,
+   "fingerprint": "a9c6be29239172a6430494a13aa2092e6e5d5f7e3930fd0f24ea54075eb207bf",
+   "elapsed_ms": 16127
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 1.0,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2402,
+    "completion_tokens": 13,
+    "total_tokens": 2415,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 535,
+   "fingerprint": "a9c6be29239172a6430494a13aa2092e6e5d5f7e3930fd0f24ea54075eb207bf",
+   "elapsed_ms": 16692
+  },
+  {
+   "choice": "e12",
+   "operation": "CLICK",
+   "target": "11",
+   "confidence": 0.9,
+   "probabilities": {
+    "e1": 0.0,
+    "e2": 0.0,
+    "e3": 0.0,
+    "e4": 0.0,
+    "e5": 0.0,
+    "e6": 0.0,
+    "e7": 0.0,
+    "e8": 0.0,
+    "e9": 0.0,
+    "e10": 0.0,
+    "e12": 1.0,
+    "e13": 0.0,
+    "e14": 0.0,
+    "e15": 0.0,
+    "e16": 0.0,
+    "e17": 0.0,
+    "e18": 0.0,
+    "e19": 0.0,
+    "e20": 0.0,
+    "e21": 0.0,
+    "e22": 0.0,
+    "e23": 0.0,
+    "e24": 0.0,
+    "e25": 0.0
+   },
+   "operation_probabilities": {
+    "CLICK": 1.0
+   },
+   "target_probabilities": {},
+   "target_confidence": null,
+   "model": "gpt-4.1-mini",
+   "usage": {
+    "prompt_tokens": 2399,
+    "completion_tokens": 15,
+    "total_tokens": 2414,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "latency_ms": 727,
+   "fingerprint": "a9c6be29239172a6430494a13aa2092e6e5d5f7e3930fd0f24ea54075eb207bf",
+   "elapsed_ms": 17440
+  }
+ ],
+ "text_calls": [
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 723,
+   "usage": {
+    "prompt_tokens": 566,
+    "completion_tokens": 10,
+    "total_tokens": 576,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Object Name, coordinates with search radius, etc.",
+   "value": "NGC 4993"
+  },
+  {
+   "model": "gpt-4.1-mini",
+   "latency_ms": 794,
+   "usage": {
+    "prompt_tokens": 661,
+    "completion_tokens": 10,
+    "total_tokens": 671,
+    "prompt_tokens_details": {
+     "cached_tokens": 0,
+     "audio_tokens": 0
+    },
+    "completion_tokens_details": {
+     "reasoning_tokens": 0,
+     "audio_tokens": 0,
+     "accepted_prediction_tokens": 0,
+     "rejected_prediction_tokens": 0
+    }
+   },
+   "field": "Object Name, coordinates with search radius, etc.",
+   "value": "NGC 4993"
+  }
+ ],
+ "element_tables": [
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "Search Objects \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Literature \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "Services \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Tools \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Information \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "NED APIs \u2926",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "",
+    "index": "9",
+    "label": "Object Name, coordinates with search radius, etc.",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Go",
+    "index": "10",
+    "label": "Go",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "11",
+    "label": "Eberhard et al. 2025",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "NED-LVS",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "13",
+    "label": "New APIs",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Search for Objects By Parameters",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "NED-LVS",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ],
+  [
+   {
+    "role": "link",
+    "value": "",
+    "index": "1",
+    "label": "Home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "2",
+    "label": "Search Objects \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "3",
+    "label": "Literature \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "4",
+    "label": "Services \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "5",
+    "label": "Tools \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "6",
+    "label": "Information \u00bb",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "7",
+    "label": "NED APIs \u2926",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "8",
+    "label": "Home",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "9",
+    "label": "Search Objects",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "10",
+    "label": "Help",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "textbox",
+    "value": "NGC 4993",
+    "index": "11",
+    "label": "Object Name",
+    "operations": [
+     "TYPE_TEXT",
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "12",
+    "label": "Show   Search Options",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "button",
+    "value": "Go",
+    "index": "13",
+    "label": "Go",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "14",
+    "label": "Reload form",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "15",
+    "label": "IPAC",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "16",
+    "label": "Caltech",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "17",
+    "label": "NASA",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "18",
+    "label": "About NED",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "19",
+    "label": "Acknowledging NED",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "20",
+    "label": "EMail",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "21",
+    "label": "facebook",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "22",
+    "label": "youtube",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "23",
+    "label": "California Institute of Technology",
+    "operations": [
+     "CLICK"
+    ]
+   },
+   {
+    "role": "link",
+    "value": "",
+    "index": "24",
+    "label": "back up \u2191",
+    "operations": [
+     "CLICK"
+    ]
+   }
+  ]
+ ],
+ "element_tables_note": "first and last of 18 observations; the full traces stay on the machine that made the runs"
+}

@@ -1,0 +1,74 @@
+{
+ "info": {
+  "test": "test_decisions.jsonl",
+  "model": "Qwen/Qwen3-1.7B",
+  "dtype": "float16",
+  "heads": "heads/qwen3-1.7b.json",
+  "n_states": 60,
+  "device": "Tesla V100-PCIE-16GB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16",
+  "failure_rule": "an answer naming no candidate scores the state's mean regret"
+ },
+ "states_done": 60,
+ "summary": {
+  "jev_heads": {
+   "mean_regret_pct": 0.711,
+   "within_0.5pct": 0.883,
+   "n": 60,
+   "s_per_decision_mean": 0.0788,
+   "s_per_decision_median": 0.0679,
+   "failures": 0
+  },
+  "jev_l0": {
+   "mean_regret_pct": 0.706,
+   "within_0.5pct": 0.783,
+   "n": 60,
+   "s_per_decision_mean": 0.1081,
+   "s_per_decision_median": 0.0918,
+   "failures": 0
+  },
+  "jev_choice": {
+   "mean_regret_pct": 0.985,
+   "within_0.5pct": 0.8,
+   "n": 60,
+   "s_per_decision_mean": 0.1647,
+   "s_per_decision_median": 0.1579,
+   "failures": 0
+  },
+  "gen_direct": {
+   "mean_regret_pct": 0.704,
+   "within_0.5pct": 0.817,
+   "n": 60,
+   "s_per_decision_mean": 0.4064,
+   "s_per_decision_median": 0.3913,
+   "failures": 1,
+   "mean_new_tokens": 12.0
+  },
+  "gen_think": {
+   "mean_regret_pct": 1.269,
+   "within_0.5pct": 0.75,
+   "n": 60,
+   "s_per_decision_mean": 32.484,
+   "s_per_decision_median": 32.3996,
+   "failures": 0,
+   "mean_new_tokens": 1024.0
+  },
+  "greedy": {
+   "mean_regret_pct": 0.67,
+   "within_0.5pct": 0.883,
+   "n": 60
+  },
+  "queue_rule": {
+   "mean_regret_pct": 1.221,
+   "within_0.5pct": 0.767,
+   "n": 60
+  },
+  "random": {
+   "mean_regret_pct": 1.326,
+   "within_0.5pct": 0.533,
+   "n": 60
+  }
+ }
+}
