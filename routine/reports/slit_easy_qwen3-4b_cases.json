@@ -1,0 +1,531 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "dtype": "float16",
+ "task": "slit_easy",
+ "question": "Which row of the table has the lowest blue slit loss for this visit?",
+ "gate": "0.98 (validation target)",
+ "threshold": 0.7272,
+ "thresholds": {
+  "0.98": 0.7272,
+  "0.95": 0.5343
+ },
+ "head": {
+  "layer": 25,
+  "kind": "head:ridge",
+  "cv": {
+   "oof_nll": 0.05702562846931569,
+   "oof_acc": 0.9816147082334132
+  },
+  "fit_s": 74.8
+ },
+ "hardware": {
+  "gpu": "Tesla V100-PCIE-16GB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0",
+  "python": "3.11.16"
+ },
+ "check_vs_saved": {
+  "saved_threshold": {
+   "0.98": 0.7272,
+   "0.95": 0.5343
+  },
+  "refit_threshold": {
+   "0.98": 0.7272,
+   "0.95": 0.5343
+  },
+  "test_gate_0.98_accuracy": [
+   0.9769,
+   0.9769
+  ],
+  "test_gate_0.98_acted": [
+   342,
+   342
+  ],
+  "test_gate_0.98_accuracy_when_acting": [
+   0.9825,
+   0.9825
+  ],
+  "test_gate_0.98_ece": [
+   0.0095,
+   0.0095
+  ],
+  "test_gate_0.95_accuracy": [
+   0.9769,
+   0.9769
+  ],
+  "test_gate_0.95_acted": [
+   347,
+   347
+  ],
+  "test_gate_0.95_accuracy_when_acting": [
+   0.9769,
+   0.9769
+  ],
+  "test_gate_0.95_ece": [
+   0.0095,
+   0.0095
+  ],
+  "real_gate_0.98_accuracy": [
+   1.0,
+   1.0
+  ],
+  "real_gate_0.98_acted": [
+   15,
+   15
+  ],
+  "real_gate_0.98_accuracy_when_acting": [
+   1.0,
+   1.0
+  ],
+  "real_gate_0.98_ece": [
+   0.0033,
+   0.0033
+  ],
+  "real_gate_0.95_accuracy": [
+   1.0,
+   1.0
+  ],
+  "real_gate_0.95_acted": [
+   15,
+   15
+  ],
+  "real_gate_0.95_accuracy_when_acting": [
+   1.0,
+   1.0
+  ],
+  "real_gate_0.95_ece": [
+   0.0033,
+   0.0033
+  ],
+  "all_equal": true
+ },
+ "real_L2": {
+  "gate_0.98": {
+   "n": 15,
+   "accuracy": 1.0,
+   "accuracy_ci95": [
+    0.7961,
+    1.0
+   ],
+   "acted": 15,
+   "coverage": 1.0,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.7961,
+    1.0
+   ],
+   "always_majority": 0.4667,
+   "ece": 0.0033
+  },
+  "gate_0.95": {
+   "n": 15,
+   "accuracy": 1.0,
+   "accuracy_ci95": [
+    0.7961,
+    1.0
+   ],
+   "acted": 15,
+   "coverage": 1.0,
+   "accuracy_when_acting": 1.0,
+   "accuracy_when_acting_ci95": [
+    0.7961,
+    1.0
+   ],
+   "always_majority": 0.4667,
+   "ece": 0.0033
+  }
+ },
+ "note": "anonymous numbers only; row i is the i-th PA in ascending order",
+ "cases": [
+  {
+   "index": 0,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    85,
+    9,
+    53
+   ],
+   "ref_row": 1,
+   "probs": [
+    0.0002,
+    0.9989,
+    0.0005
+   ],
+   "probs_absent_rows": [
+    0.0004
+   ],
+   "pick": 1,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 1,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    49,
+    43,
+    10
+   ],
+   "ref_row": 2,
+   "probs": [
+    0.0005,
+    0.0008,
+    0.9984
+   ],
+   "probs_absent_rows": [
+    0.0003
+   ],
+   "pick": 2,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 2,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    34,
+    88,
+    47
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9986,
+    0.0007,
+    0.0002
+   ],
+   "probs_absent_rows": [
+    0.0005
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 3,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    24,
+    88,
+    52
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9965,
+    0.0012,
+    0.0015
+   ],
+   "probs_absent_rows": [
+    0.0008
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 4,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    18,
+    86,
+    53
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9948,
+    0.0016,
+    0.0019
+   ],
+   "probs_absent_rows": [
+    0.0017
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 5,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    33,
+    59,
+    17
+   ],
+   "ref_row": 2,
+   "probs": [
+    0.0171,
+    0.0029,
+    0.9774
+   ],
+   "probs_absent_rows": [
+    0.0025
+   ],
+   "pick": 2,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 6,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    82,
+    9,
+    48
+   ],
+   "ref_row": 1,
+   "probs": [
+    0.0003,
+    0.9985,
+    0.0006
+   ],
+   "probs_absent_rows": [
+    0.0006
+   ],
+   "pick": 1,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 7,
+   "n_rows": 3,
+   "pa_deg": [
+    -140,
+    -35,
+    0
+   ],
+   "blue_loss_pct": [
+    84,
+    9,
+    52
+   ],
+   "ref_row": 1,
+   "probs": [
+    0.0002,
+    0.9988,
+    0.0006
+   ],
+   "probs_absent_rows": [
+    0.0005
+   ],
+   "pick": 1,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 8,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    13,
+    12,
+    4
+   ],
+   "ref_row": 2,
+   "probs": [
+    0.0003,
+    0.0012,
+    0.9979
+   ],
+   "probs_absent_rows": [
+    0.0006
+   ],
+   "pick": 2,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 9,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    21,
+    26,
+    0
+   ],
+   "ref_row": 2,
+   "probs": [
+    0.0004,
+    0.0003,
+    0.9988
+   ],
+   "probs_absent_rows": [
+    0.0004
+   ],
+   "pick": 2,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 10,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    0,
+    57,
+    46
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9995,
+    0.0001,
+    0.0003
+   ],
+   "probs_absent_rows": [
+    0.0001
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 11,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    32,
+    40,
+    0
+   ],
+   "ref_row": 2,
+   "probs": [
+    0.0041,
+    0.0004,
+    0.9945
+   ],
+   "probs_absent_rows": [
+    0.0009
+   ],
+   "pick": 2,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 12,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    0,
+    59,
+    48
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9997,
+    0.0001,
+    0.0002
+   ],
+   "probs_absent_rows": [
+    0.0001
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 13,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    0,
+    58,
+    47
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9997,
+    0.0001,
+    0.0002
+   ],
+   "probs_absent_rows": [
+    0.0001
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  },
+  {
+   "index": 14,
+   "n_rows": 3,
+   "pa_deg": [
+    -65,
+    0,
+    65
+   ],
+   "blue_loss_pct": [
+    4,
+    6,
+    7
+   ],
+   "ref_row": 0,
+   "probs": [
+    0.9989,
+    0.0006,
+    0.0002
+   ],
+   "probs_absent_rows": [
+    0.0002
+   ],
+   "pick": 0,
+   "correct": true,
+   "acts_at_gate_0.98": true
+  }
+ ]
+}

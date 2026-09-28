@@ -1,0 +1,83 @@
+{
+ "state": {
+  "night": 200066,
+  "t": 132.401,
+  "test_file": "queue_test.jsonl",
+  "rendered": "UT 00:01, 10.3 h left (night). Seeing 0.51\" (+0.02\"/h), cloud 0.02 mag, RH 33% (+12%/h) limit 80, wind 17 mph limit 35, dome open, focus dT 0.1 C.\nDone 0/20, P1 left 7, score 0.0/96. On Q4-T02-0726+18.\nCandidates (name | priority | S/N now/goal | min to finish | min left | airmass +rising/-setting | efficiency):\nQ4-T02-0726+18 | P3 | 28/30 | 11 | 20 | 2.00- | 1.00 | FWHM<0.8 (pred 0.71), on it\nQ2-T19-1052-15 | P1 | 20/30 | 65 | 292 | 1.05+ | 1.00 | FWHM<1.0 (pred 0.50)\nQ3-T13-0952-32 | P2 | 0/30 | 35 | 234 | 1.00- | 1.00"
+ },
+ "question": "If the evaluated candidate is observed next, how does the night's total compare with the best choice now?",
+ "question_options": [
+  "best (within 0.5%)",
+  "0.5-2% worse",
+  "2-5% worse",
+  "5-15% worse",
+  "over 15% worse"
+ ],
+ "focus_line": "Evaluate: Q4-T02-0726+18.",
+ "selection": "test states with 3 candidates and unequal hindsight regrets; highest top P(best)",
+ "model": "Qwen/Qwen3-4B",
+ "heads": "routine/reports/target_heads_qwen3-4b_queue.json",
+ "dtype": "float16",
+ "candidates": [
+  {
+   "name": "Q4-T02-0726+18",
+   "priority": 3,
+   "min_to_finish": 11,
+   "window_left_min": 20,
+   "airmass": 2.0,
+   "rising": false,
+   "is_current": true,
+   "p_best": 0.8068,
+   "p_best_saved": 0.8068,
+   "expected_regret": 0.0108,
+   "level": "L2",
+   "hindsight_regret": 0.0
+  },
+  {
+   "name": "Q2-T19-1052-15",
+   "priority": 1,
+   "min_to_finish": 65,
+   "window_left_min": 292,
+   "airmass": 1.05,
+   "rising": true,
+   "is_current": false,
+   "p_best": 0.7638,
+   "p_best_saved": 0.7638,
+   "expected_regret": 0.0117,
+   "level": "L2",
+   "hindsight_regret": 0.02083
+  },
+  {
+   "name": "Q3-T13-0952-32",
+   "priority": 2,
+   "min_to_finish": 35,
+   "window_left_min": 234,
+   "airmass": 1.0,
+   "rising": false,
+   "is_current": false,
+   "p_best": 0.7589,
+   "p_best_saved": 0.7589,
+   "expected_regret": 0.0141,
+   "level": "L2",
+   "hindsight_regret": 0.02083
+  }
+ ],
+ "skyjev_top": "Q4-T02-0726+18",
+ "top_p_best": 0.8068,
+ "planner_pick": "Q4-T02-0726+18",
+ "queue_rule_pick": "Q2-T19-1052-15",
+ "best_in_hindsight": [
+  "Q4-T02-0726+18"
+ ],
+ "gate_val_target_0.98": 1.01,
+ "gate_used": 0.95,
+ "gate_note": "no validation threshold reaches 98 %; fixed 0.95 used",
+ "acts": false,
+ "max_abs_p_best_diff_vs_saved": 0.0,
+ "s_judge": 0.191,
+ "hardware": {
+  "gpu": "Tesla V100-PCIE-16GB",
+  "torch": "2.14.0+cu126",
+  "transformers": "5.17.0"
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "state": {
+  "night": 200066,
+  "t": 132.401
+ },
+ "llm_instructions": "obsassist.assistant.system2.PERSONA",
+ "llm_user": "UT 00:01, 10.3 h left (night). Seeing 0.51\" (+0.02\"/h), cloud 0.02 mag, RH 33% (+12%/h) limit 80, wind 17 mph limit 35, dome open, focus dT 0.1 C.\nDone 0/20, P1 left 7, score 0.0/96. On Q4-T02-0726+18.\nCandidates (name | priority | S/N now/goal | min to finish | min left | airmass +rising/-setting | efficiency):\nQ4-T02-0726+18 | P3 | 28/30 | 11 | 20 | 2.00- | 1.00 | FWHM<0.8 (pred 0.71), on it\nQ2-T19-1052-15 | P1 | 20/30 | 65 | 292 | 1.05+ | 1.00 | FWHM<1.0 (pred 0.50)\nQ3-T13-0952-32 | P2 | 0/30 | 35 | 234 | 1.00- | 1.00\n\nWhich candidate should be observed next and why? Answer briefly.",
+ "model": "gpt-5.6-sol",
+ "model_requested": "gpt-5.6-sol",
+ "reasoning_effort": "low",
+ "api": "OpenAI Responses",
+ "tools": null,
+ "status": "completed",
+ "response": "**Finish Q4-T02-0726+18 now:** type/select **target Q4-T02-0726+18, 11 min total exposure** (using the program\u2019s standard exposure split).\n\nIt needs only 11 min, is already setting at airmass 2.00, has just 20 min left, and requires <0.8\u2033 seeing. Current predicted FWHM is 0.71\u2033. Main risk: slit losses/airmass degradation if delayed. Then move to the P1 target.",
+ "wall_s": 7.67,
+ "input_tokens": 462,
+ "output_tokens": 113,
+ "reasoning_tokens": 0,
+ "prices_usd_per_1e6": {
+  "input": 15.0,
+  "output": 60.0,
+  "note": "conservative, for the spend guard"
+ },
+ "est_usd": 0.01371,
+ "llm_pick_first_named": "Q4-T02-0726+18",
+ "planner_pick": "Q4-T02-0726+18",
+ "skyjev_top": "Q4-T02-0726+18",
+ "best_in_hindsight": [
+  "Q4-T02-0726+18"
+ ],
+ "hindsight_regret": {
+  "Q4-T02-0726+18": 0.0,
+  "Q2-T19-1052-15": 0.02083,
+  "Q3-T13-0952-32": 0.02083
+ },
+ "date": "2026-09-28T09:44:40"
+}
