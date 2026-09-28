@@ -1,0 +1,58 @@
+{
+ "case": {
+  "run": "WFI.2026-03-02T07-19-28.487",
+  "window": "steps 1-5",
+  "steps": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "fwhm": [
+   1.8569,
+   1.7253,
+   1.4481,
+   1.503,
+   1.3283
+  ],
+  "n_good": 5,
+  "head_probs": [
+   0.7062,
+   0.0092,
+   0.2684,
+   0.0162
+  ],
+  "threshold": 0.8784,
+  "key1_window_rule": "C",
+  "key2_nine_step_fit": "A"
+ },
+ "jev_system": "You are a decision function. You will be given a state and one question. Reply with the answer label only: no words, no punctuation, no explanation.",
+ "jev_user": "State:\nTelescope auto-focus. A focus sequence stepped the focus in equal increments. Median star FWHM in arcsec at each step: step 1: 1.86; step 2: 1.73; step 3: 1.45; step 4: 1.50; step 5: 1.33. Stars measured: 5.\n\nQuestion: What should happen next?\nOptions:\nA. accept: best focus is inside the range, set it there\nB. move: best focus lies before the first step, shift the sequence that way and repeat\nC. move: best focus lies beyond the last step, shift the sequence that way and repeat\nD. retake: too few stars or a curve too flat to trust (seeing too poor)\nAnswer with the letter only.",
+ "llm_instructions": "obsassist.assistant.system2.PERSONA",
+ "llm_user": "State:\nTelescope auto-focus. A focus sequence stepped the focus in equal increments. Median star FWHM in arcsec at each step: step 1: 1.86; step 2: 1.73; step 3: 1.45; step 4: 1.50; step 5: 1.33. Stars measured: 5.\n\nQuestion: What should happen next?\nOptions:\nA. accept: best focus is inside the range, set it there\nB. move: best focus lies before the first step, shift the sequence that way and repeat\nC. move: best focus lies beyond the last step, shift the sequence that way and repeat\nD. retake: too few stars or a curve too flat to trust (seeing too poor)\nExplain briefly what the observer should do next and why.",
+ "model": "gpt-5.6-sol",
+ "model_requested": "gpt-5.6-sol",
+ "reasoning_effort": "low",
+ "api": "OpenAI Responses",
+ "tools": null,
+ "response": "**C. Move beyond the last step and repeat the focus sequence.**\n\nFWHM is still improving toward step 5, where the minimum measured value is **1.33\u2033**. The focus minimum is not bracketed, so do **not** accept step 5. Shift the sequence farther in the same focus direction and rerun it, with overlap around steps 4\u20135, until FWHM turns upward beyond the minimum. Main risk: changing seeing can distort the curve, but five stars is adequate here.",
+ "wall_s": 3.84,
+ "input_tokens": 359,
+ "output_tokens": 111,
+ "reasoning_tokens": 0,
+ "prices_usd_per_1e6": {
+  "input": 15.0,
+  "output": 60.0,
+  "note": "conservative, for the spend guard"
+ },
+ "est_usd": 0.01205,
+ "attempts": [
+  {
+   "model": "gpt-5.6-sol",
+   "wall_s": 3.84,
+   "status": "completed"
+  }
+ ],
+ "date": "2026-09-28T00:38:25"
+}
