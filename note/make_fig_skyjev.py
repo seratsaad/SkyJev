@@ -158,7 +158,7 @@ mid = [x["name"].split("-")[1] for x in cs]
 assert len(set(mid)) == len(mid)
 M["ThrBars"], M["ThrW"] = bars(mid, pb, tb, "oiOrange", g3)
 gate_macros(M, "Thr", g3, f"fixed gate {g3:.2f}" if card["gate_val_target_0.98"] > 1 else None)
-M["ThrYlab"] = "P(best)"
+M["ThrYlab"] = "model probability"
 M["ThrTag"] = "To writing LLM"
 M["ThrTagCol"] = "oiOrange"
 
