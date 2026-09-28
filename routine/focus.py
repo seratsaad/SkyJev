@@ -133,6 +133,26 @@ def real_cases() -> List[Dict]:
     return out
 
 
+def heldout_cases(results_dir: Path) -> List[Dict]:
+    """Cases from measured runs never used before (focus/measure.py output), windowed exactly as
+    focus/decide.py does. Key 2 is focus/score.truth_full, fixed before these runs were measured."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "focus"))
+    from score import truth_full  # noqa: E402
+
+    out = []
+    for rpath in sorted(Path(results_dir).glob("WFI.*.json")):
+        run = json.loads(rpath.read_text())
+        fw, n = run["median_fwhm_arcsec"], run["n_good"]
+        windows = [WINDOWS[0]] + (list(WINDOWS[1:]) if fw else [])
+        for name, steps in windows:
+            f = [fw[s - 1] for s in steps] if fw else None
+            out.append({"run": run["file"], "window": name, "steps": steps, "fwhm": f, "n_good": n,
+                        "key1": code_rule(steps, f, n), "key2": KEYS.index(truth_full(run, steps))})
+    return out
+
+
 def as_case(c: Dict, label_key: str = "label"):
     return (state_text(c["steps"], c["fwhm"], c["n_good"]), c[label_key])
 
@@ -154,14 +174,15 @@ def scored(probs: np.ndarray, y: np.ndarray, thr: Dict[str, float], rule: np.nda
     return out
 
 
-def run(model: str, out: str, n_train: int = 600, n_val: int = 250, n_test: int = 350, dtype: str = "float16") -> Dict:
+def run(model: str, out: str, n_train: int = 600, n_val: int = 250, n_test: int = 350, dtype: str = "float16",
+        heldout: Optional[str] = None) -> Dict:
     import torch
     import transformers
     from anyjev import Decider
 
     q = question()
     tr, va, te = synthetic(n_train, 1), synthetic(n_val, 2), synthetic(n_test, 3)
-    real = real_cases()
+    real = heldout_cases(Path(heldout)) if heldout else real_cases()
     split = Split([as_case(c) for c in tr], [as_case(c) for c in va], [as_case(c) for c in te],
                   [as_case(c, "key2") for c in real])
     be = backend(model, dtype)
@@ -171,6 +192,7 @@ def run(model: str, out: str, n_train: int = 600, n_val: int = 250, n_test: int 
     t0 = time.time()
     art = head.fit_head(q, [c[0] for c in split.train], [c[1] for c in split.train])
     rep = {"task": "focus_action", "model": model, "dtype": dtype, "options": list(q.options),
+           "real_set": f"held-out runs in {heldout}" if heldout else "the 84 cases of focus/results",
            "n": {"train": len(tr), "val": len(va), "test": len(te), "real": len(real)},
            "label_mix": {p: np.bincount([c["label"] for c in cs], minlength=4).tolist() for p, cs in
                          (("train", tr), ("val", va), ("test", te))},
@@ -212,6 +234,7 @@ def main(argv: Optional[List[str]] = None):
     ap.add_argument("--n-val", type=int, default=250)
     ap.add_argument("--n-test", type=int, default=350)
     ap.add_argument("--dtype", default="float16")
+    ap.add_argument("--heldout", default=None, help="score on measured runs in this folder instead of the 84 cases")
     ap.add_argument("--dry", action="store_true", help="build the cases and check the code rule only (CPU)")
     a = ap.parse_args(argv)
     if a.dry:
@@ -223,7 +246,7 @@ def main(argv: Optional[List[str]] = None):
         print("real", len(real), "code rule vs key2", np.mean([code_rule(c["steps"], c["fwhm"], c["n_good"]) == c["key2"] for c in real]))
         print(state_text(te[0]["steps"], te[0]["fwhm"], te[0]["n_good"]))
         return
-    run(a.model, a.out, a.n_train, a.n_val, a.n_test, a.dtype)
+    run(a.model, a.out, a.n_train, a.n_val, a.n_test, a.dtype, a.heldout)
 
 
 if __name__ == "__main__":

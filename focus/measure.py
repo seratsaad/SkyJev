@@ -19,6 +19,7 @@ mapping steps to focus values; "which step is best" does not depend on it.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -27,7 +28,9 @@ from astropy.io import fits
 from scipy import ndimage, optimize
 
 HERE = Path(__file__).resolve().parent
-DATA, OUT = HERE / "data", HERE / "results"
+# FOCUS_DATA / FOCUS_OUT move the frames and results (e.g. for a held-out set)
+DATA = Path(os.environ.get("FOCUS_DATA", HERE / "data"))
+OUT = Path(os.environ.get("FOCUS_OUT", HERE / "results"))
 NSTEP, PIXSCALE, SATURATION = 9, 0.238, 50000.0      # WFI: 0.238 arcsec per pixel; stay clear of 65535
 
 
