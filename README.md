@@ -1,7 +1,7 @@
 # SkyJev
 
 Code, results and manuscript for the research note *SkyJev: Fast Menu Choices and a Language Model
-for Telescope Observing* (Saad & Ting). SkyJev splits the decisions an observer makes during a night
+for Telescope Observing* (Saad et al.). SkyJev splits the decisions an observer makes during a night
 between a **Jev choice** and a **writing LLM**. For a call with a fixed set of answers, code builds a
 short menu from the measurements and a small open model gives a probability to each option in one
 forward pass, without writing text. A gate, like a detection threshold, lets SkyJev act only when the
