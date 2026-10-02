@@ -31,3 +31,16 @@ note/*.fdb_latexmk
 note/*.log
 note/*.out
 note/*.synctex.gz
+# kept locally, not part of the reproducible repository
+note/plot_*.py
+note/pantera_style.py
+demo/*.png
+routine/clm/
+routine/focus_typesafe.py
+routine/reports/focus_typesafe.json
+routine/reports/clm_*.json
+focus/plot.py
+focus/*.png
+browser/analysis/deck_numbers.py
+browser/analysis/plots.py
+browser/analysis/what_it_sees.py

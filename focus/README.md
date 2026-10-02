@@ -9,7 +9,6 @@ July 2026, one per night, R band (ESO template `WFI_cal_FocusSeq`). Each frame i
 exposures: the telescope focus steps between exposures and the charge is shifted 50 rows, so every star
 appears as a column of nine images, fuzzy at both ends and sharpest near best focus.
 
-![results](focus_results.png)
 
 ## The standard answer
 
@@ -95,7 +94,6 @@ uv run --env-file .env --with astropy --with scipy --with pillow python focus/de
 FOCUS_DETAIL=high uv run --env-file .env --with astropy --with scipy --with pillow python focus/decide.py --sharpest-only
 FOCUS_MODEL=gpt-4.1 uv run --env-file .env --with astropy --with scipy --with pillow python focus/decide.py --no-sharpest
 uv run --with astropy --with scipy --with pillow python focus/score.py gpt-4.1
-uv run --with matplotlib --with astropy --with scipy --with pillow python focus/plot.py
 ```
 
 `decide.py` stops itself at `FOCUS_MAX_USD` (default $0.50).

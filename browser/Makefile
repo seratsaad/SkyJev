@@ -25,12 +25,8 @@ gpt-jev:  ## JEV's action space with gpt-4.1-mini as the chooser, 3 repeats (nee
 summary:  ## rebuild results/summary/ from the raw runs under results/<arm>/
 	uv run python analysis/summarize_results.py --print
 
-plots:  ## summary figures from results/summary/ (written to slides/figures/, which is not tracked)
-	uv run python analysis/plots.py
-
-figures:  ## browser-side figures, no model calls: results/site_survey.csv and the what-it-sees pairs (slides/figures/)
+survey:  ## what the agent's page snapshot sees on the science sites, no model calls (results/site_survey.csv)
 	uv run --env-file .env python analysis/site_survey.py
-	uv run --env-file .env python analysis/what_it_sees.py --all
 
 ship:  ## compact the saved runs so the repository can carry them
 	uv run python analysis/compact_results.py

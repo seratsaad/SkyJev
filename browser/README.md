@@ -107,7 +107,6 @@ make gpt-jev     # 15 tasks x 3, about US$1.24 at the prices in src/astroweb/bud
 make baseline    # 15 tasks x 2 in interface mode, then the 3 lookup tasks in free mode
 make jev         # only with a TYPESAFE_API_KEY
 make summary     # rebuild results/summary/ from the raw runs
-make plots       # figures from results/summary/ into slides/figures/
 ```
 
 Each run writes one JSON file to `results/<arm>/`; `results/README.md` explains the fields and

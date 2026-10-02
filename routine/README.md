@@ -125,15 +125,6 @@ Simulated always-majority rates are 71% (sky) and 68% (dome). The simulator's we
 over well to the real LBT cases (Mt Graham limits and the few real cases), so real-night use needs
 labelled real weather data and a shadow run first.
 
-## CLM test (contrastive heads on Qwen3-8B embeddings)
-
-`clm/README.md` has the method, the V100 status and the numbers; reports are `reports/clm_*.json`.
-CLM-v0.1-8B runs on a V100 through vLLM 0.10.1.1 (the last vLLM with sm_70 kernels) or an
-equivalent transformers embedder. Zero-shot it is at about the majority or chance rate on next
-target, logging and focus, and no validated gate acts. CLM's own fine-tuning on the Jev heads'
-synthetic data helps on synthetic tests but stays below the Jev L2 heads, and does not transfer to
-the real logging messages. Speed is similar to a Jev head on these short menus (0.07-0.17 s).
-
 ## Held-out focus test (plan fixed on 2026-09-28, before any held-out frame was measured)
 
 - **Frames**: 300 WFI through-focus sequences (`WFI_cal_FocusSeq`, R band, one per night) drawn at
