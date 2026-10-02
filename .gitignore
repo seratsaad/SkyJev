@@ -19,3 +19,15 @@ browser/.venv/
 browser/results/*/*.json
 !browser/results/shipped/*.json
 demo/*.mp4
+# the manuscript draft and its figures stay local, not on GitHub
+note/main.*
+note/refs.bib
+note/fig_*
+note/*.aux
+note/*.bbl
+note/*.blg
+note/*.fls
+note/*.fdb_latexmk
+note/*.log
+note/*.out
+note/*.synctex.gz

@@ -1,7 +1,7 @@
 # SkyJev
 
-Code, results and manuscript for the research note *SkyJev: Fast Menu Choices and a Language Model
-for Telescope Observing* (Saad et al.). SkyJev splits the decisions an observer makes during a night
+Code and results for the research note *SkyJev: Fast Menu Choices and a Language Model for Telescope
+Observing* (Saad et al., in preparation). SkyJev splits the decisions an observer makes during a night
 between a **Jev choice** and a **writing LLM**. For a call with a fixed set of answers, code builds a
 short menu from the measurements and a small open model gives a probability to each option in one
 forward pass, without writing text. A gate, like a detection threshold, lets SkyJev act only when the
@@ -15,7 +15,7 @@ demo video is on the [releases page](https://github.com/seratsaad/SkyJev/release
 
 | Folder | Contents | Author |
 |---|---|---|
-| [`note/`](note/) | The manuscript (AASTeX 7), its TikZ figure, and the scripts that print every number from the saved results | both |
+| [`note/`](note/) | Scripts that print every number in the note from the saved results and draw its figures (the manuscript itself is not in this repository) | Serat Saad |
 | [`routine/`](routine/) | Routine decisions with a fitted head and a confidence gate (focus, slit angle, weather, logging, next target), the held-out focus test, and comparisons with TypeSafe's hosted Jev and CLM. See [routine/README.md](routine/README.md) | Serat Saad |
 | [`focus/`](focus/) | Measurement of archival ESO/MPG 2.2 m WFI through-focus sequences, the original 30 and a held-out set of 300 | Serat Saad |
 | [`target-choice/`](target-choice/) | Simulated classical and queue nights at Keck and Magellan, an exposure time calculator, a hindsight oracle, a greedy planner and the observing assistant (the `obsassist` package, originally `astrojev`) | Yuan-Sen Ting |
@@ -33,7 +33,6 @@ browser agent.
 # from the repository root
 pip install -e "target-choice[all]"                                # obsassist, AnyJev, torch, transformers
 python -m routine.focus --model Qwen/Qwen3-1.7B --out routine/reports/focus_qwen3-1.7b.json
-latexmk -pdf -cd note/main.tex                                     # the note
 ```
 
 * Target choice. See [target-choice/README.md](target-choice/README.md). `scripts/reproduce.sh` reruns
